@@ -7,3 +7,11 @@
 <style lang="scss">
 
 </style>
+
+<script>
+import './assets/main.scss'
+
+export default {
+  
+}
+</script>
