@@ -33,6 +33,10 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-gap: 16px;
+    padding: 20px;
+    p {
+      margin-right: 8px;
+    }
   }
   .legal {
     display: flex;
