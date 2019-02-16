@@ -42,6 +42,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 11px;
     span {
       border-right: 1px solid white;
       padding: 4px 16px;
