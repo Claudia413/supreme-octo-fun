@@ -1,8 +1,11 @@
 <template>
 	<footer class>
 		<section class="instafeed">
-      <span class="instagram-icon">ICON</span>
-			<p class="instagram-intro">Want to get to know me better? Instagram has all the dirt on my dog, some amazing pics from New Zealand and some silly selfies.</p>
+			<span class="instagram-icon fab fa-instagram"></span>
+			<div class="instagram-intro">
+				<p>Want to get to know me better? Instagram has all the dirt on my dog, some amazing pics from New Zealand and some silly selfies.</p>
+				<a href="http://instagram.com/claudia414" class="cta-link">@Claudia413</a>
+			</div>
 			<img src="../assets/Claudia.jpg">
 			<img src="../assets/Claudia.jpg">
 			<img src="../assets/Claudia.jpg">
@@ -26,6 +29,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../assets/_variables.scss";
+
 footer {
 	color: white;
 	background-color: #45484a;
@@ -33,41 +38,66 @@ footer {
 	max-width: 100vw;
 	.instafeed {
 		display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 100%;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 100%;
 		grid-template-areas: "instagram-intro ....";
-		padding: 20px 40px;
-		padding-right: 0;
+		padding: 0;
 		@media only screen and (max-width: 768px) {
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(2, auto);
+			grid-template-rows: repeat(2, 1fr);
 			grid-template-areas:
 				"instagram-icon  instagram-intro instagram-intro instagram-intro"
 				"instagram-pic    instagram-pic   instagram-pic   instagram-pic";
 			padding-left: 0;
 		}
 		.instagram-icon {
-      display: none;
-      @media only screen and (max-width: 768px) {
-      display: inline-block;
-      grid-area: instagram-icon;
-      }
+			display: none;
+			@media only screen and (max-width: 768px) {
+				display: inline-block;
+				grid-area: instagram-icon;
+				background-color: $highlight-color;
+				display: flex;
+				justify-content: center;
+				font-size: 32px;
+				color: $text-color;
+				align-items: center;
+			}
 		}
 		.instagram-intro {
 			grid-area: instagram-intro;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: column;
+			margin: 0;
+			padding: 20px;
+			.cta-link {
+				font-family: "Abel", sans-serif;
+				color: $primary-bright;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+			p {
+				color: inherit;
+				text-align: left;
+				margin: 0;
+				@media only screen and (max-width: 1028px) {
+					font-size: 11px;
+				}
+				@media only screen and (max-width: 768px) {
+					font-size: 14px;
+				}
+			}
 		}
-		p {
-			color: inherit;
-			text-align: justify;
-		}
+
 		img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      @media only screen and (max-width: 768px) {
-        width: 100%;
-        height: auto;
-      }
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			@media only screen and (max-width: 768px) {
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
 	.legal {

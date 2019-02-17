@@ -5,7 +5,7 @@
     <section class="intro-text">
       <h3>About</h3>
       <p>A business graduate turned developer. That is me, Claudia Engelsman. Switching from a job in purchasing to a developer job didn’t happen overnight, but I was earning a salary as a developer within a month of quitting and without any experience. I will help you to do the same by sharing everything I’ve learned, for free, and help you  find inspiration and stay motivated to start creating your own websites.</p>
-      <button>More about me</button>
+      <button class="mt-2">More about me</button>
     </section>
     <Footer class="footer"/>
   </div>
@@ -66,6 +66,9 @@ max-width: 100vw;
 .footer {
   grid-area: footer;
   max-width: 100vw;
+}
+.mt-2 {
+  margin-top: 20px;
 }
 
 </style>

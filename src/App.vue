@@ -10,6 +10,7 @@
 
 <script>
 import './assets/main.scss'
+import './assets/_variables.scss'
 
 export default {
   
