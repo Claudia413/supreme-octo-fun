@@ -48,7 +48,7 @@ header {
 		-moz-animation: MetallicBackground 10s ease infinite;
 		animation: MetallicBackground 10s ease infinite;
 
-		@-webkit-keyframes AnimMetallicBackgroundationName {
+		@-webkit-keyframes MetallicBackground {
 			0% {
 				background-position: 0% 50%;
 			}
