@@ -17,11 +17,13 @@ export default {
 @import "../assets/_variables.scss";
 
 header {
+	max-width: 100%;
+	min-height: 240px;
 	background-color: $primary-color;
-  height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	height: 40vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	h2 {
 		display: inline-block;
 		background: linear-gradient(
@@ -29,12 +31,10 @@ header {
 			#ffddaa 0%,
 			#fcecc4 10%,
 			#fcda7f 20%,
-      #fde799 33%
-      #ffddaa 43%,
+			#fde799 33% #ffddaa 43%,
 			#fcecc4 53%,
 			#fcda7f 60%,
-      #fde799 66%
-      #ffddaa 76%,
+			#fde799 66% #ffddaa 76%,
 			#fcecc4 86%,
 			#fcda7f 96%,
 			#fde799 100%
@@ -83,19 +83,35 @@ header {
 		}
 		&.developer {
 			font-size: 48px;
-      font-family: "Raleway", sans-serif;
-      animation-delay: 1.5s;
+			font-family: "Raleway", sans-serif;
+			animation-delay: 1.5s;
 		}
 		&.artist {
 			font-size: 48px;
-      font-family: "Radley", serif;
-      position: relative;
-      bottom: 48px;
+			font-family: "Radley", serif;
+			position: relative;
+			bottom: 48px;
 		}
 		&.dreamer {
 			font-size: 64px;
-      font-family: "Sacramento", sans-serif;
-      animation-delay: 2.5s;
+			font-family: "Sacramento", sans-serif;
+			animation-delay: 2.5s;
+		}
+	}
+	@media only screen and (max-width: 768px) {
+		height: 30vh;
+		min-height: unset;
+		h2 {
+			&.developer {
+				font-size: 28px;
+			}
+			&.artist {
+				font-size: 28px;
+				bottom: 28px;
+			}
+			&.dreamer {
+				font-size: 36px;
+			}
 		}
 	}
 }
