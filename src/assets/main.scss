@@ -15,14 +15,18 @@ p {
     color: $text-color;
 }
 
+h3 {
+    color: $primary-bright;
+}
+
 h3, button {
     font-family: 'Abel', sans-serif;
     text-transform: uppercase;
-    color: $text-color;
 }
 
 p {
     font-size: 14px;
+    color: $text-color;
     @media only screen and (max-width: 768px) {
     font-size: 12px;
     }
