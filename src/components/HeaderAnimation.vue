@@ -41,7 +41,7 @@ header {
 		);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		margin: 10%;
+		margin: 6%;
 		background-size: 800% 800%;
 
 		-webkit-animation: MetallicBackground 10s ease infinite;
@@ -82,16 +82,18 @@ header {
 			}
 		}
 		&.developer {
-			font-size: 32px;
+			font-size: 48px;
       font-family: "Raleway", sans-serif;
       animation-delay: 1.5s;
 		}
 		&.artist {
-			font-size: 32px;
-			font-family: "Radley", serif;
+			font-size: 48px;
+      font-family: "Radley", serif;
+      position: relative;
+      bottom: 48px;
 		}
 		&.dreamer {
-			font-size: 40px;
+			font-size: 64px;
       font-family: "Sacramento", sans-serif;
       animation-delay: 2.5s;
 		}
