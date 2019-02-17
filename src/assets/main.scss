@@ -9,10 +9,28 @@ body {
     padding: 0;
 }
 
-h3 {
-    font-family: 'Abel', sans-serif;
+body,
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: $text-color;
 }
 
-body, p {
-    font-family: 'Montserrat', sans-serif;
+h3, button {
+    font-family: 'Abel', sans-serif;
+    text-transform: uppercase;
+    color: $text-color;
+}
+
+p {
+    font-size: 14px;
+    @media only screen and (max-width: 768px) {
+    font-size: 12px;
+    }
+}
+
+button {
+   border: none;
+   background-color: $highlight-color;
+   padding: 16px 48px;
+   color: $text-color
 }
