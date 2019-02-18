@@ -12,13 +12,17 @@
 			<button class="mt-2">More about me</button>
 		</section>
 		<section class="slideit">
-			<div class="arrow back" @click="incrementSlideIndex(-1)"><</div>
+			<div class="arrow" @click="incrementSlideIndex(-1)">
+				<span class="fas fa-chevron-left"></span>
+			</div>
 			<transition name="fade" mode="out-in">
       	<p class="inspiration" v-if="slideIndex === 1" key="one">Hello test</p>
       	<p class="inspiration" v-if="slideIndex === 2" key="two">I should be visible</p>
 				<p class="inspiration" v-if="slideIndex === 3" key="three">Me too!</p>
 			</transition>
-			<div class="arrow forward" @click="incrementSlideIndex(1)">></div>
+			<div class="arrow" @click="incrementSlideIndex(1)">
+				<span class="fas fa-chevron-right"></span>
+			</div>
     </section>
 		<Footer class="footer"/>
 	</div>
@@ -45,7 +49,7 @@ export default {
 		incrementSlideIndex(number) {
 			if(this.slideIndex + number > this.numberOfSlides) {
 				this.slideIndex = 1;
-			}else if(this.slideIndex + number > -1){
+			}else if(this.slideIndex + number > 0){
 				this.slideIndex = this.slideIndex + number;
 			} else {
 				this.slideIndex = this.numberOfSlides;
@@ -114,12 +118,18 @@ export default {
 		font-size: 24px;
 		margin: 20px;
 		cursor: pointer;
+		height: 100%;
+		width: 40px;
+		display: flex;
+		.fas{
+			margin: auto;
+		}
 	}
 	.fade-enter-active {
-  	animation: fade-in 1s;
+  	animation: fade-in 0.3s;
 	}
 	.fade-leave-active {
-  	animation: fade-in .5s reverse;
+  	animation: fade-in .3s reverse;
 	}
 	@keyframes fade-in {
   	0% {
