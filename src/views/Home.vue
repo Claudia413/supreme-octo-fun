@@ -4,22 +4,35 @@
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
 			src="../assets/Claudia.jpg"
-			class="intro-pic img-block">
+			class="intro-pic img-block"
+		>
 		<section class="intro-text text-block">
 			<h3>About</h3>
 			<p>A business graduate turned developer. That is me, Claudia Engelsman. Switching from a job in purchasing to a developer job didn’t happen overnight, but I was earning a salary as a developer within a month of quitting and without any experience. I will help you to do the same by sharing everything I’ve learned, for free, and help you find inspiration and stay motivated to start creating your own websites.</p>
 			<button class="mt-2">More about me</button>
 		</section>
-		<section class="slideit">
+		<section class="slideit full-block">
 			<div class="arrow" @click="incrementSlideIndex(-1)">
 				<span class="fas fa-chevron-left"></span>
 			</div>
 			<div class="slider">
 				<h4>Now is the perfect time to start because:</h4>
 				<transition name="fade" mode="out-in">
-					<p class="inspiration" v-if="slideIndex === 1" key="one">It has never been easier to build websites. Not kidding, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again). </p>
-					<p class="inspiration" v-if="slideIndex === 2" key="two">There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the upperhand in job negotiations. Sounds good huh!</p>
-					<p class="inspiration" v-if="slideIndex === 3" key="three">Building websites can be done from any computer with a solid internet connection. Working from home, working remotely from a hammock, anything is possible.</p>
+					<p
+						class="inspiration"
+						v-if="slideIndex === 1"
+						key="one"
+					>It has never been easier to build websites. I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).</p>
+					<p
+						class="inspiration"
+						v-if="slideIndex === 2"
+						key="two"
+					>There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the upperhand in job negotiations. Sounds good huh!</p>
+					<p
+						class="inspiration"
+						v-if="slideIndex === 3"
+						key="three"
+					>Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection. Working from home, working remotely from a hammock, anything is possible.</p>
 				</transition>
 			</div>
 			<div class="arrow" @click="incrementSlideIndex(1)">
@@ -29,11 +42,26 @@
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
 			src="../assets/Claudia.jpg"
-			class="try-it-pic img-block">
+			class="try-it-pic img-block"
+		>
 		<section class="try-it-text text-block">
 			<h3>Try it</h3>
-			<p>Curious about building websites but don't know where to start?Feeling overwhelmed by all the information out there? Try out my guide with step by step articles, and practise, and I'll help you land a job as a webdeveloper in no time!</p>
-			<button class="mt-2">To the guide</button>
+			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out my guide with step by step articles, and practise, and I'll help you land a job as a webdeveloper in no time!</p>
+			<button class="mt-2">To the guide!</button>
+		</section>
+		<section class="blog-highlight full-block">
+			<div class="blog-post">
+				<img src="../assets/Claudia.jpg" class="blog-pic">
+				<span class="blog-tag">Long Blog Title about Something!</span>
+			</div>
+			<div class="blog-post">
+				<img src="../assets/Claudia.jpg" class="blog-pic">
+				<span class="blog-tag">Long Blog Title about Something else!</span>
+			</div>
+			<div class="blog-post">
+				<img src="../assets/Claudia.jpg" class="blog-pic">
+				<span class="blog-tag">Long Blog Title about other things!</span>
+			</div>
 		</section>
 		<Footer class="footer"/>
 	</div>
@@ -78,12 +106,13 @@ export default {
 	display: grid;
 	grid-gap: 0;
 	grid-template-columns: repeat(2, 50%);
-	grid-template-rows: auto 400px auto 400px;
+	grid-template-rows: auto 400px auto 400px auto;
 	grid-template-areas:
 		"header header"
 		"intro-pic intro-text"
 		"slider slider"
 		"try-it-text try-it-pic"
+		"blog-highlight blog-highlight"
 		"footer footer";
 	@media only screen and (max-width: 768px) {
 		grid-template-columns: repeat(2, 50%);
@@ -95,6 +124,7 @@ export default {
 			"slider slider"
 			"try-it-pic try-it-pic"
 			"try-it-text try-it-text"
+			"blog-highlight blog-highlight"
 			"footer footer";
 	}
 	.mt-2 {
@@ -112,25 +142,22 @@ export default {
 	grid-area: intro-text;
 }
 .slideit {
-	grid-area: slider;
-	background-color: $secondary-color;
 	height: 250px;
-	display: flex;
-	flex-direction: row;
+	grid-area: slider;
 	justify-content: space-between;
-	align-items: center;
-	font-family: 'Abel', sans-serif;
+	background-color: $secondary-color;
+	font-family: "Abel", sans-serif;
 	.arrow {
-			font-size: 24px;
-			cursor: pointer;
-			height: 100%;
-			width: 40px;
-			display: flex;
-			.fas {
-				color: #808080;
-				margin: auto;
-			}
+		font-size: 24px;
+		cursor: pointer;
+		height: 100%;
+		width: 40px;
+		display: flex;
+		.fas {
+			color: #808080;
+			margin: auto;
 		}
+	}
 	.slider {
 		display: flex;
 		flex-direction: column;
@@ -165,6 +192,13 @@ export default {
 	text-align: justify;
 	padding: 40px;
 }
+.blog-highlight {
+	grid-area: blog-highlight;
+	background-color: $primary-color;
+	height: auto;
+	padding: 40px;
+	justify-content: space-evenly;
+}
 .img-block {
 	width: 100%;
 	height: 100%;
@@ -172,6 +206,37 @@ export default {
 	@media only screen and (max-width: 768px) {
 		height: 400px;
 		max-width: 100vw;
+	}
+}
+.full-block {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.blog-post {
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	position: relative;
+	.blog-tag {
+		background-color: $secondary-color;
+		padding: 12px 20px;
+		position: absolute;
+		bottom: 0px;
+		left: -20px;
+		font-family: "Abel";
+		text-transform: uppercase;
+		font-size: 16px;
+		display: flex;
+		align-items: center;
+		height: 120px;
+		width: 100px;
+	}
+	.blog-pic {
+		height: 240px;
+		width: 240px;
+		object-fit: cover;
+		margin-bottom: 20px;
 	}
 }
 .footer {
