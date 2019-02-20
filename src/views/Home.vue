@@ -18,20 +18,11 @@
 			<div class="slider">
 				<h4>Now is the perfect time to start because:</h4>
 				<transition name="fade" mode="out-in">
-					<p
-						class="inspiration"
-						v-if="slideIndex === 1"
-						key="one"
+					<p class="inspiration" v-if="slideIndex === 1" key="one"
 					>It has never been easier to build websites. I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).</p>
-					<p
-						class="inspiration"
-						v-if="slideIndex === 2"
-						key="two"
+					<p class="inspiration" v-if="slideIndex === 2" key="two"
 					>There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the upperhand in job negotiations. Sounds good huh!</p>
-					<p
-						class="inspiration"
-						v-if="slideIndex === 3"
-						key="three"
+					<p class="inspiration" v-if="slideIndex === 3" key="three"
 					>Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection. Working from home, working remotely from a hammock, anything is possible.</p>
 				</transition>
 			</div>
@@ -39,11 +30,9 @@
 				<span class="fas fa-chevron-right"></span>
 			</div>
 		</section>
-		<img
-			alt="Claudia Engelsman, developer who will teach you how to code a website"
+		<img alt="Claudia Engelsman, developer who will teach you how to code a website"
 			src="../assets/Claudia.jpg"
-			class="try-it-pic img-block"
-		>
+			class="try-it-pic img-block">
 		<section class="try-it-text text-block">
 			<h3>Try it</h3>
 			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out my guide with step by step articles, and practise, and I'll help you land a job as a webdeveloper in no time!</p>
