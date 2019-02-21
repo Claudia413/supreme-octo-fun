@@ -1,6 +1,7 @@
 <template>
 	<div class="home">
 		<HeaderAnimation class="headeranimation"/>
+		<MenuSlide class="menu-slide"/>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
 			src="../assets/Claudia.jpg"
@@ -60,6 +61,7 @@
 // @ is an alias to /src
 import Footer from "@/components/Footer.vue";
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
+import MenuSlide from "@/components/MenuSlide.vue";
 
 export default {
 	name: "home",
@@ -71,7 +73,8 @@ export default {
 	},
 	components: {
 		Footer,
-		HeaderAnimation
+		HeaderAnimation,
+		MenuSlide
 	},
 	methods: {
 		incrementSlideIndex(number) {
