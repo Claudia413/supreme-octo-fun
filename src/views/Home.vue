@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<HeaderAnimation class="headeranimation"/>
-		<MenuSlide class="menu-slide"/>
+		<MenuSlide/>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
 			src="../assets/Claudia.jpg"

@@ -2,10 +2,12 @@
 	<transition name="slide-in">
 		<div class="menu-to-slide" :class="menuOpen? 'active' : ''">
 			<div class="menu-button" @click="menuOpen=!menuOpen">
-				<div class="triangle-top"></div>
-				<img src="../assets/Menu-compass.svg" class="menu-icon">
-				<div class="bar"></div>
-				<div class="triangle-bottom"></div>
+				<img
+					src="./../assets/hexagonal.svg"
+					alt="background hexagon for sliding out the menu"
+					class="hex"
+				>
+				<i class="far fa-compass menu-icon"></i>
 			</div>
 			<div class="menu-list">
 				<a href="#">Home</a>
@@ -53,37 +55,43 @@ export default {
 		top: 0;
 		bottom: 0;
 		transition: right 0.5s ease;
+		.menu-button {
+			.menu-icon {
+				transition: left 0.5s ease;
+				left: 32px;
+				&:hover {
+				transform: rotate(180deg);
+				transform-origin: 50% 50%;
+				transition: transform 5s;
+			}
+			}
+		}
 	}
 	.menu-button {
 		grid-area: menu-button;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		.triangle-top {
-			width: 0;
-			height: 0;
-			border-bottom: 47.5px solid white;
-			border-left: 48px solid transparent;
-		}
-		.triangle-bottom {
-			width: 0;
-			height: 0;
-			border-top: 47.5px solid white;
-			border-left: 48px solid transparent;
-		}
-		.bar {
-			width: 48px;
-			height: 1px;
-			background-color: white;
+		.hex {
+			height: 96px;
+			position: absolute;
 		}
 		.menu-icon {
 			position: absolute;
-			right: 2px;
-			left: 12px;
+			right: 0;
+			left: 16px;
 			top: 0;
 			bottom: 0;
 			height: 32px;
 			margin: auto;
+			font-size: 32px;
+			color: $text-color;
+			transition: left 0.5s ease;
+			&:hover {
+				transform: rotate(180deg);
+				transform-origin: 50% 50%;
+				transition: transform 5s;
+			}
 		}
 	}
 }
@@ -94,6 +102,7 @@ export default {
 	background-color: white;
 	align-items: center;
 	padding: 20px;
+	// box-shadow: -2px 0 5px rgba(128, 128, 128, 0.35);
 	a {
 		text-decoration: none;
 		color: inherit;
