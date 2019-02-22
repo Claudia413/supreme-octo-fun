@@ -57,13 +57,13 @@ export default {
 		transition: right 0.5s ease;
 		.menu-button {
 			.menu-icon {
-				transition: left 0.5s ease;
+				transition: left 0.5s ease, transform 5s;
 				left: 32px;
 				&:hover {
-				transform: rotate(180deg);
-				transform-origin: 50% 50%;
-				transition: transform 5s;
-			}
+					transform: rotate(180deg);
+					transform-origin: 50% 50%;
+					transition: transform 5s, left 0.5s ease;
+				}
 			}
 		}
 	}
@@ -82,15 +82,17 @@ export default {
 			left: 16px;
 			top: 0;
 			bottom: 0;
-			height: 32px;
+			// it is 33 instead of 32 because transform origin point can be exactly in the middle at 50% 50%
+			font-size: 33px;
+			height: 33px;
+			width: 33px;
 			margin: auto;
-			font-size: 32px;
 			color: $text-color;
-			transition: left 0.5s ease;
+			transition: left 0.5s ease, transform 5s;
 			&:hover {
 				transform: rotate(180deg);
 				transform-origin: 50% 50%;
-				transition: transform 5s;
+				transition: transform 5s, left 0.5s ease;
 			}
 		}
 	}
