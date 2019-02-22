@@ -1,7 +1,7 @@
 <template>
 	<transition name="slide-in">
-		<div class="menu-to-slide" :class="menuOpen? 'active' : ''">
-			<div class="menu-button" @click="menuOpen=!menuOpen">
+		<div class="menu-to-slide" :class="menuOpen? 'active' : ''" onclick="event.stopPropagation()">
+			<div class="menu-button" @click="toggleMenu();">
 				<img
 					src="./../assets/hexagonal.svg"
 					alt="background hexagon for sliding out the menu"
@@ -9,7 +9,7 @@
 				>
 				<i class="far fa-compass menu-icon"></i>
 			</div>
-			<div class="menu-list">
+			<div class="menu-list" onclick="event.stopPropagation()">
 				<a href="#">Home</a>
 				<a href="#">About</a>
 				<a href="#">Guide</a>
@@ -28,6 +28,11 @@ export default {
 		return {
 			menuOpen: false
 		};
+	},
+	methods: {
+		toggleMenu() {
+			this.menuOpen=!this.menuOpen
+		}
 	}
 };
 </script>
@@ -37,14 +42,10 @@ export default {
 @import "../assets/_variables.scss";
 
 .menu-to-slide {
-	display: grid;
-	grid-template-columns: 48px 200px;
-	grid-template-rows: 1fr 96px 1fr;
-	grid-template-areas:
-		". menu"
-		"menu-button menu"
-		". menu";
-	z-index: 9999;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	z-index: 999;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -68,10 +69,12 @@ export default {
 		}
 	}
 	.menu-button {
-		grid-area: menu-button;
+		width: 48px;
+		height: 96px;
 		display: flex;
 		flex-direction: column;
-		position: relative;
+		position: absolute;
+		left: -48px;
 		.hex {
 			height: 96px;
 			position: absolute;
@@ -98,7 +101,8 @@ export default {
 	}
 }
 .menu-list {
-	grid-area: menu;
+	width: 160px;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	background-color: white;
