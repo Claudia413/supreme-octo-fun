@@ -1,6 +1,6 @@
 <template>
 	<transition name="slide-in">
-		<div class="menu-to-slide" :class="menuOpen? 'active' : ''" onclick="event.stopPropagation()">
+		<div class="menu-to-slide" :class="menuOpen? 'active' : ''">
 			<div class="menu-button" @click="toggleMenu();">
 				<img
 					src="./../assets/hexagonal.svg"
@@ -9,7 +9,7 @@
 				>
 				<i class="far fa-compass menu-icon"></i>
 			</div>
-			<div class="menu-list" onclick="event.stopPropagation()">
+			<div class="menu-list">
 				<a href="#">Home</a>
 				<a href="#">About</a>
 				<a href="#">Guide</a>
@@ -49,8 +49,9 @@ export default {
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	right: -190px;
+	right: -193px;
 	transition: right 0.5s ease;
+	box-shadow: -2px 0 3px #80808047;
 	&.active {
 		right: 0;
 		top: 0;
@@ -78,6 +79,7 @@ export default {
 		.hex {
 			height: 96px;
 			position: absolute;
+			filter: drop-shadow(-2px 0 2px #80808047);
 		}
 		.menu-icon {
 			position: absolute;
