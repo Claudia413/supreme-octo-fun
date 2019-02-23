@@ -1,34 +1,32 @@
 <template>
-	<!-- <transition name="slide-in"> -->
-		<div class="menu-to-slide" :class="menuOpen? 'active' : ''">
-			<div class="menu-button" @click="toggleMenu();">
-				<img
-					src="./../assets/hexagonal.svg"
-					alt="background hexagon for sliding out the menu"
-					class="hex"
-				>
-				<i class="far fa-compass menu-icon"></i>
-			</div>
-			<div class="menu-list">
-				<a href="#">Home</a>
-				<a href="#">About</a>
-				<a href="#">Guide</a>
-				<a href="#">Blog</a>
-				<a href="#">Contact</a>
-				<div class="icon-bar">
-					<a href="#" class="hex-background">
-						<i class="fab fa-instagram"></i>
-					</a>
-					<a href="#" class="hex-background">
-						<i class="fab fa-pinterest"></i>
-					</a>
-					<a href="#" class="hex-background">
-						<i class="fab fa-github"></i>
-					</a>
-				</div>
+	<div class="menu-to-slide" :class="menuOpen? 'active' : ''">
+		<div class="menu-button" @click="toggleMenu();">
+			<img
+				src="./../assets/hexagonal.svg"
+				alt="background hexagon for sliding out the menu"
+				class="hex"
+			>
+			<i class="far fa-compass menu-icon"></i>
+		</div>
+		<div class="menu-list">
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Guide</a>
+			<a href="#">Blog</a>
+			<a href="#">Contact</a>
+			<div class="icon-bar">
+				<a href="#" class="hex-background">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a href="#" class="hex-background">
+					<i class="fab fa-pinterest"></i>
+				</a>
+				<a href="#" class="hex-background">
+					<i class="fab fa-github"></i>
+				</a>
 			</div>
 		</div>
-	<!-- </transition> -->
+	</div>
 </template>
 
 <script>
@@ -122,9 +120,14 @@ export default {
 	background-color: white;
 	align-items: center;
 	a {
+		font-size: 20px;
 		text-decoration: none;
 		color: inherit;
-		margin-bottom: 16px;
+		margin: 16px 0;
+		&:hover,
+		&:focus {
+			font-weight: 600;
+		}
 	}
 	.icon-bar {
 		display: flex;
@@ -143,6 +146,12 @@ export default {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			transition: 0.3s color ease;
+			&:hover,
+			&:focus {
+				color: $text-darkbg;
+				transition: 0.3s color ease;
+			}
 		}
 		.fab {
 			font-size: 24px;
