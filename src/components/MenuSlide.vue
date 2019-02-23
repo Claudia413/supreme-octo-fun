@@ -1,5 +1,5 @@
 <template>
-	<transition name="slide-in">
+	<!-- <transition name="slide-in"> -->
 		<div class="menu-to-slide" :class="menuOpen? 'active' : ''">
 			<div class="menu-button" @click="toggleMenu();">
 				<img
@@ -15,10 +15,20 @@
 				<a href="#">Guide</a>
 				<a href="#">Blog</a>
 				<a href="#">Contact</a>
-				<!-- Icons here -->
+				<div class="icon-bar">
+					<a href="#" class="hex-background">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="#" class="hex-background">
+						<i class="fab fa-pinterest"></i>
+					</a>
+					<a href="#" class="hex-background">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
 			</div>
 		</div>
-	</transition>
+	<!-- </transition> -->
 </template>
 
 <script>
@@ -31,7 +41,7 @@ export default {
 	},
 	methods: {
 		toggleMenu() {
-			this.menuOpen=!this.menuOpen
+			this.menuOpen = !this.menuOpen;
 		}
 	}
 };
@@ -49,7 +59,7 @@ export default {
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	right: -193px;
+	right: -223px;
 	transition: right 0.5s ease;
 	box-shadow: -2px 0 3px #80808047;
 	&.active {
@@ -103,18 +113,47 @@ export default {
 	}
 }
 .menu-list {
-	width: 160px;
+	width: 230px;
 	height: 100%;
+	padding: 20px 20px 20px 52px;
 	display: flex;
 	flex-direction: column;
+	box-sizing: border-box;
 	background-color: white;
 	align-items: center;
-	padding: 20px;
-	// box-shadow: -2px 0 5px rgba(128, 128, 128, 0.35);
 	a {
 		text-decoration: none;
 		color: inherit;
 		margin-bottom: 16px;
+	}
+	.icon-bar {
+		display: flex;
+		width: 180px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+		.hex-background {
+			height: 48px;
+			width: 48px;
+			background-image: url("./../assets/hexagonal.svg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-origin: border-box;
+			background-size: contain;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.fab {
+			font-size: 24px;
+			width: 23px;
+			height: 23px;
+		}
+		.fa-instagram {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 }
 </style>
