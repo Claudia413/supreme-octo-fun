@@ -82,24 +82,24 @@
 			</div>
 		</section>
 		<img alt="Claudia Engelsman, developer who will teach you how to code a website"
-			src="../assets/Claudia.jpg"
+			src="../assets/ClaudiaBWKaikoura.jpg"
 			class="try-it-pic img-block">
 		<section class="try-it-text text-block">
 			<h3>Try it</h3>
 			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out my guide with step by step articles, and practise, and I'll help you land a job as a webdeveloper in no time!</p>
 			<button class="mt-2">To the guide!</button>
 		</section>
-		<section class="blog-highlight full-block">
+		<section class="full-block blog-highlight">
 			<div class="blog-post">
-				<img src="../assets/Claudia.jpg" class="blog-pic">
+				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
 				<span class="blog-tag">Long Blog Title about Something!</span>
 			</div>
 			<div class="blog-post">
-				<img src="../assets/Claudia.jpg" class="blog-pic">
+				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
 				<span class="blog-tag">Long Blog Title about Something else!</span>
 			</div>
 			<div class="blog-post">
-				<img src="../assets/Claudia.jpg" class="blog-pic">
+				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
 				<span class="blog-tag">Long Blog Title about other things!</span>
 			</div>
 		</section>
@@ -227,8 +227,6 @@ export default {
 		font-size: 240px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
-
-
 	}
 	.slider {
 		display: flex;
@@ -246,11 +244,9 @@ export default {
 	.fade-enter-active {
 		animation: fade-in 0.3s;
 	}
-
 	.fade-leave-active {
 		animation: fade-in 0.3s reverse;
 	}
-
 	@keyframes fade-in {
 		0% {
 			opacity: 0;
@@ -288,12 +284,15 @@ export default {
 		max-width: 600px;
 	}
 }
-.blog-highlight {
+.home .blog-highlight {
 	grid-area: blog-highlight;
 	background-color: $primary-color;
 	height: auto;
 	padding: 40px;
 	justify-content: space-evenly;
+	@media only screen and (max-width: 768px) {
+		flex-direction: column;
+	}
 }
 .img-block {
 	width: 100%;
@@ -333,6 +332,26 @@ export default {
 		width: 240px;
 		object-fit: cover;
 		margin-bottom: 20px;
+	}
+	@media only screen and (max-width: 1112px) {
+		.blog-pic {
+			height: 200px;
+			width: 200px;
+		}
+	}
+	@media only screen and (max-width: 768px) {
+		margin-bottom: 20px;
+		.blog-tag {
+			padding: 12px 16px;
+			height: 100px;
+			width: 120px;
+			font-size: 14px;
+		}
+		.blog-pic {
+			height: 280px;
+			width: 280px;
+			margin-bottom: 40px;
+		}
 	}
 }
 .footer {
