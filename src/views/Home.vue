@@ -16,14 +16,64 @@
 			<div class="arrow" @click="incrementSlideIndex(-1)">
 				<span class="fas fa-chevron-left"></span>
 			</div>
+			<svg
+				class="hexagon-bg"
+				version="1.1"
+				id="Capa_1"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				x="0px"
+				y="0px"
+				viewBox="0 0 480 480"
+				style="enable-background:new 0 0 483.013 483.013;"
+				fill="#DCFBF7"
+				xml:space="preserve"
+			>
+				<path
+					d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
+	L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
+	c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
+				></path>
+			</svg>
+			<svg
+				class="hexagon-bg small"
+				version="1.1"
+				id="Capa_1"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				x="0px"
+				y="0px"
+				viewBox="0 0 480 480"
+				style="enable-background:new 0 0 483.013 483.013;"
+				fill="#DCFBF7"
+				xml:space="preserve"
+			>
+				<path
+					d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
+	L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
+	c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
+				></path>
+			</svg>
+			<transition name="fade-out" mode="out-in">
+				<div class="number" v-bind:key="slideIndex">0{{slideIndex}}</div>
+			</transition>
 			<div class="slider">
 				<h4>Now is the perfect time to start because:</h4>
 				<transition name="fade" mode="out-in">
-					<p class="inspiration" v-if="slideIndex === 1" key="one"
+					<p
+						class="inspiration"
+						v-if="slideIndex === 1"
+						key="one"
 					>It has never been easier to build websites. I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).</p>
-					<p class="inspiration" v-if="slideIndex === 2" key="two"
+					<p
+						class="inspiration"
+						v-if="slideIndex === 2"
+						key="two"
 					>There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the upperhand in job negotiations. Sounds good huh!</p>
-					<p class="inspiration" v-if="slideIndex === 3" key="three"
+					<p
+						class="inspiration"
+						v-if="slideIndex === 3"
+						key="three"
 					>Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection. Working from home, working remotely from a hammock, anything is possible.</p>
 				</transition>
 			</div>
@@ -135,11 +185,13 @@ export default {
 	grid-area: intro-text;
 }
 .slideit {
-	height: 250px;
+	height: 400px;
 	grid-area: slider;
 	justify-content: space-between;
 	background-color: $secondary-color;
 	font-family: "Abel", sans-serif;
+	padding: 0 40px;
+	position: relative;
 	.arrow {
 		font-size: 24px;
 		cursor: pointer;
@@ -151,6 +203,33 @@ export default {
 			margin: auto;
 		}
 	}
+	.hexagon-bg {
+		position: absolute;
+		fill: grey;
+		opacity: 0.2;
+		height: 360px;
+		left: calc(50% - 180px);
+		z-index: 0;
+		&.small {
+			height: 356px;
+			left: calc(50% - 178px);
+			fill: $secondary-color;
+			opacity: 1;
+		}
+	}
+	.number {
+		text-align: center;
+		width: 240px;
+		position: absolute;
+		left: calc(50% - 120px);
+		color: grey;
+		opacity: 0.2;
+		font-size: 240px;
+		bottom: calc(50% - 153px);
+		z-index: 0;
+
+
+	}
 	.slider {
 		display: flex;
 		flex-direction: column;
@@ -159,22 +238,40 @@ export default {
 		opacity: 1;
 		max-width: 70%;
 		text-align: center;
-		.fade-enter-active {
-			animation: fade-in 0.3s;
+		z-index: 20;
+	}
+	.fade-enter-active {
+		animation: fade-in 0.3s;
+	}
+
+	.fade-leave-active {
+		animation: fade-in 0.3s reverse;
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
 		}
-		.fade-leave-active {
-			animation: fade-in 0.3s reverse;
+		100% {
+			opacity: 1;
 		}
-		@keyframes fade-in {
-			0% {
-				opacity: 0;
-			}
-			100% {
-				opacity: 1;
-			}
+	}
+	.fade-out-enter-active {
+		animation: fade-out 0.3s reverse;
+	}
+	.fade-out-leave-active {
+		animation: fade-out 0.3s;
+	}
+	@keyframes fade-out {
+		0% {
+			opacity: 0.2;
+		}
+		100% {
+			opacity: 0;
 		}
 	}
 }
+
 .try-it-pic {
 	grid-area: try-it-pic;
 }
@@ -184,6 +281,9 @@ export default {
 .text-block {
 	text-align: justify;
 	padding: 40px;
+	p {
+		max-width: 600px;
+	}
 }
 .blog-highlight {
 	grid-area: blog-highlight;
