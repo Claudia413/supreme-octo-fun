@@ -129,6 +129,7 @@ export default {
 }
 .intro-pic {
 	grid-area: intro-pic;
+	object-position: top;
 }
 .intro-text {
 	grid-area: intro-text;
