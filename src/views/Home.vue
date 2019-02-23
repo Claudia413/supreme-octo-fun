@@ -239,6 +239,9 @@ export default {
 		max-width: 70%;
 		text-align: center;
 		z-index: 20;
+		.inspiration {
+			font-size: 16px;
+		}
 	}
 	.fade-enter-active {
 		animation: fade-in 0.3s;
