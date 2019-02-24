@@ -4,12 +4,12 @@
 		<MenuSlide/>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
-			src="../assets/Claudia.jpg"
+			src="../assets/ClaudiaBWKaikoura.jpg"
 			class="intro-pic img-block"
 		>
 		<section class="intro-text text-block">
 			<h3>About</h3>
-			<p>A business graduate turned developer. That is me, Claudia Engelsman. Switching from a job in purchasing to a developer job didn’t happen overnight, but I was earning a salary as a developer within a month of quitting and without any experience. I will help you to do the same by sharing everything I’ve learned, for free, and help you find inspiration and stay motivated to start creating your own websites.</p>
+			<p>Hi, I'm Claudia and I will teach you how to build websites. I didn't know how to write code 2 years ago, I had a job in a purchasing department. Switching from that job to a developer position didn’t happen overnight, but I was earning a salary as a developer within a month of quitting and without any experience. I will help you to do the same by sharing everything I’ve learned, for free, and help you find inspiration and stay motivated to start creating your own websites.</p>
 			<button class="mt-2">More about me</button>
 		</section>
 		<section class="slideit full-block">
@@ -64,44 +64,118 @@
 						class="inspiration"
 						v-if="slideIndex === 1"
 						key="one"
-					>It has never been easier to build websites. I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).</p>
+					><span class="bold"> It has never been easier to build websites.</span> I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).</p>
 					<p
 						class="inspiration"
 						v-if="slideIndex === 2"
 						key="two"
-					>There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the upperhand in job negotiations. Sounds good huh!</p>
+					>There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the <span class="bold">upperhand in job negotiations.</span> Sounds good huh!</p>
 					<p
 						class="inspiration"
 						v-if="slideIndex === 3"
 						key="three"
-					>Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection. Working from home, working remotely from a hammock, anything is possible.</p>
+					>Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection. <span class="bold">Working from home, working remotely from a hammock, anything is possible.</span></p>
 				</transition>
 			</div>
 			<div class="arrow" @click="incrementSlideIndex(1)">
 				<span class="fas fa-chevron-right"></span>
 			</div>
 		</section>
-		<img alt="Claudia Engelsman, developer who will teach you how to code a website"
+		<img
+			alt="Claudia Engelsman, developer who will teach you how to code a website"
 			src="../assets/ClaudiaBWKaikoura.jpg"
-			class="try-it-pic img-block">
+			class="try-it-pic img-block"
+		>
 		<section class="try-it-text text-block">
 			<h3>Try it</h3>
-			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out my guide with step by step articles, and practise, and I'll help you land a job as a webdeveloper in no time!</p>
+			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out my guide with step by step articles, practise exercises, and I'll help you land a job as a webdeveloper in no time!</p>
 			<button class="mt-2">To the guide!</button>
 		</section>
 		<section class="full-block blog-highlight">
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<span class="blog-tag">Long Blog Title about Something!</span>
+				<div class="blog-tag">
+					<svg
+						class="hexagon-tag"
+						version="1.1"
+						id="Capa_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px"
+						y="0px"
+						viewBox="0 0 480 480"
+						style="enable-background:new 0 0 483.013 483.013;"
+						fill="#DCFBF7"
+						xml:space="preserve">
+						<path
+							d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
+							L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
+							c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
+						></path>
+					</svg>
+					<span class="blog-tag-text">Long Blog Title about Something!</span>
+				</div>
 			</div>
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<span class="blog-tag">Long Blog Title about Something else!</span>
+				<div class="blog-tag">
+					<svg
+						class="hexagon-tag"
+						version="1.1"
+						id="Capa_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px"
+						y="0px"
+						viewBox="0 0 480 480"
+						style="enable-background:new 0 0 483.013 483.013;"
+						fill="#DCFBF7"
+						xml:space="preserve">
+						<path
+							d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
+							L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
+							c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
+						></path>
+					</svg>
+				<span class="blog-tag-text">Long Blog Title about Something else!</span>
+				</div>
 			</div>
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<span class="blog-tag">Long Blog Title about other things!</span>
+				<div class="blog-tag">
+					<svg
+						class="hexagon-tag"
+						version="1.1"
+						id="Capa_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px"
+						y="0px"
+						viewBox="0 0 480 480"
+						style="enable-background:new 0 0 483.013 483.013;"
+						fill="#DCFBF7"
+						xml:space="preserve">
+						<path
+							d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
+							L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
+							c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
+						></path>
+					</svg>
+				<span class="blog-tag-text">Long Blog Title about other things!</span>
+				</div>
 			</div>
+		</section>
+		<section class="freebie-text text-block">
+			<h3>Get a headstart</h3>
+			<p>With my starter website template</p>
+			<input type="text" title="name" placeholder="Name" class="sign-up"/>
+			<input type="email" title="email address" placeholder="Email address" class="sign-up"/>
+			<button class="mt-2">Yes, let's do this!</button>
+		</section>
+		<section class="bio-link-text text-block">
+			<h3>Try it</h3>
+			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out my guide with step by step articles, and practise, and I'll help you land a job as a webdeveloper in no time!</p>
+			<button class="mt-2">To the guide!</button>
 		</section>
 		<Footer class="footer"/>
 	</div>
@@ -148,13 +222,14 @@ export default {
 	display: grid;
 	grid-gap: 0;
 	grid-template-columns: repeat(2, 50%);
-	grid-template-rows: auto 400px auto 400px auto;
+	grid-template-rows: auto 400px auto 400px auto 400px;
 	grid-template-areas:
 		"header header"
 		"intro-pic intro-text"
 		"slider slider"
 		"try-it-text try-it-pic"
 		"blog-highlight blog-highlight"
+		"freebie-text bio-link-text"
 		"footer footer";
 	@media only screen and (max-width: 768px) {
 		grid-template-columns: repeat(2, 50%);
@@ -167,6 +242,8 @@ export default {
 			"try-it-pic try-it-pic"
 			"try-it-text try-it-text"
 			"blog-highlight blog-highlight"
+			"freebie-text freebie-text"
+			"bio-link-text bio-link-text"
 			"footer footer";
 	}
 	.mt-2 {
@@ -239,6 +316,9 @@ export default {
 		z-index: 20;
 		.inspiration {
 			font-size: 16px;
+		}
+		.bold {
+			font-weight: 600;
 		}
 	}
 	.fade-enter-active {
@@ -314,24 +394,34 @@ export default {
 	flex-direction: column;
 	position: relative;
 	.blog-tag {
-		background-color: $secondary-color;
-		padding: 12px 20px;
 		position: absolute;
-		bottom: 0px;
-		left: -20px;
+		left: -48px;
+		bottom: -20px;
+		height: 160px;
+		width: 160px;
+		display: flex;
+		align-items: center;
+	}
+	.hexagon-tag {
+		height: 160px;
+		width: 160px;
+		fill: $secondary-color;
+	}
+	.blog-tag-text {
+		position: absolute;
 		font-family: "Abel";
 		text-transform: uppercase;
 		font-size: 16px;
-		display: flex;
-		align-items: center;
-		height: 120px;
-		width: 100px;
+		max-width: 140px;
+		margin-left: 16px;
 	}
 	.blog-pic {
 		height: 240px;
-		width: 240px;
+		width: 220px;
 		object-fit: cover;
 		margin-bottom: 20px;
+		// -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+		// clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 	}
 	@media only screen and (max-width: 1112px) {
 		.blog-pic {
@@ -342,17 +432,37 @@ export default {
 	@media only screen and (max-width: 768px) {
 		margin-bottom: 20px;
 		.blog-tag {
-			padding: 12px 16px;
-			height: 100px;
-			width: 120px;
+			height: 160px;
+			width: 160px;
 			font-size: 14px;
+		}
+		.blog-tag-text {
+			padding: 12px 12px;
 		}
 		.blog-pic {
 			height: 280px;
-			width: 280px;
+			width: 300px;
 			margin-bottom: 40px;
 		}
 	}
+}
+.freebie-text {
+	grid-area: freebie-text;
+	background-color: $secondary-color;
+	// Try out half hexagon shape on the right side of coloredbg text block
+	// clip-path: polygon(80% 0, 100% 25%, 100% 75%, 80% 100%, 0% 100%, 0% 0%);
+	.sign-up {
+		display: block;
+		border: none;
+		height: 24px;
+		width: 256px;
+		color: $primary-bright;
+		margin-bottom: 16px;
+		padding: 8px;
+	}
+}
+.bio-link-text {
+	grid-area: bio-link-text;
 }
 .footer {
 	grid-area: footer;
