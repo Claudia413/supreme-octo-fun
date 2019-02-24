@@ -108,8 +108,8 @@
 		<section class="freebie-text text-block">
 			<h3>Get a headstart</h3>
 			<p>With my starter website template</p>
-			<input type="text" title="name" placeholder="Name" class="sign-up"/>
-			<input type="email" title="email address" placeholder="Email address" class="sign-up"/>
+			<input type="text" title="name" placeholder="Name" class="sign-up">
+			<input type="email" title="email address" placeholder="Email address" class="sign-up">
 			<button class="mt-2">Yes, let's do this!</button>
 		</section>
 		<section class="bio-link-text text-block">
@@ -182,8 +182,8 @@ export default {
 			"try-it-pic try-it-pic"
 			"try-it-text try-it-text"
 			"blog-highlight blog-highlight"
-			"freebie-text freebie-text"
 			"bio-link-text bio-link-text"
+			"freebie-text freebie-text"
 			"footer footer";
 	}
 	.mt-2 {
@@ -394,6 +394,11 @@ export default {
 		color: $primary-bright;
 		margin-bottom: 16px;
 		padding: 8px;
+	}
+	@media only screen and (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }
 .bio-link-text {
