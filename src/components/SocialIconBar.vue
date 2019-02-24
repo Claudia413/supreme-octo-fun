@@ -40,12 +40,13 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.3s color ease;
-
-        &:hover,
-        &:focus {
-            color: $text-darkbg;
-            transition: 0.3s color ease;
+        opacity: 1;
+        transition: 0.3s opacity ease;
+        &:hover, &:focus {
+            opacity: 0.6;
+            transition: 0.3s opacity ease;
+            color: $text-color;
+            font-weight: 500;
         }
     }
 
