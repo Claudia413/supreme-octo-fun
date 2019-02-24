@@ -113,17 +113,7 @@
 			<p>I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead of a stomach.
 			My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started to learn coding 2 years ago and it was so overwhelming to started in a structured way, so I am creating the place I would have loved to have found back then.
 			</p>
-			<div class="icon-bar">
-				<a href="#" class="hex-background">
-					<i class="fab fa-instagram"></i>
-				</a>
-				<a href="#" class="hex-background">
-					<i class="fab fa-pinterest"></i>
-				</a>
-				<a href="#" class="hex-background">
-					<i class="fab fa-linkedin"></i>
-				</a>
-			</div>
+			<SocialIconBar></SocialIconBar>
 		</section>
 		<Footer class="footer"/>
 	</div>
@@ -134,6 +124,7 @@
 import Footer from "@/components/Footer.vue";
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
+import SocialIconBar from "@/components/SocialIconBar.vue";
 
 export default {
 	name: "home",
@@ -146,7 +137,8 @@ export default {
 	components: {
 		Footer,
 		HeaderAnimation,
-		MenuSlide
+		MenuSlide,
+		SocialIconBar
 	},
 	methods: {
 		incrementSlideIndex(number) {

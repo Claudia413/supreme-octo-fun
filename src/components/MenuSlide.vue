@@ -14,28 +14,23 @@
 			<a href="#">Guide</a>
 			<a href="#">Blog</a>
 			<a href="#">Contact</a>
-			<div class="icon-bar">
-				<a href="#" class="hex-background">
-					<i class="fab fa-instagram"></i>
-				</a>
-				<a href="#" class="hex-background">
-					<i class="fab fa-pinterest"></i>
-				</a>
-				<a href="#" class="hex-background">
-					<i class="fab fa-linkedin"></i>
-				</a>
-			</div>
+			<SocialIconBar></SocialIconBar>
 		</div>
 	</div>
 </template>
 
 <script>
+import SocialIconBar from "@/components/SocialIconBar.vue";
+
 export default {
 	name: "MenuSlide",
 	data() {
 		return {
 			menuOpen: false
 		};
+	},
+	components: {
+		SocialIconBar
 	},
 	methods: {
 		toggleMenu() {
