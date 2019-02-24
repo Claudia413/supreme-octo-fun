@@ -56,21 +56,21 @@
 			<div class="slider">
 				<h4>Now is the perfect time to start because:</h4>
 				<transition name="fade" mode="out-in">
-					<p
-						class="inspiration"
-						v-if="slideIndex === 1"
-						key="one"
-					><span class="bold"> It has never been easier to build websites.</span> I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).</p>
-					<p
-						class="inspiration"
-						v-if="slideIndex === 2"
-						key="two"
-					>There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the <span class="bold">upperhand in job negotiations.</span> Sounds good huh!</p>
-					<p
-						class="inspiration"
-						v-if="slideIndex === 3"
-						key="three"
-					>Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection. <span class="bold">Working from home, working remotely from a hammock, anything is possible.</span></p>
+					<p class="inspiration" v-if="slideIndex === 1" key="one">
+						<span class="bold">It has never been easier to build websites.</span> I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
+					</p>
+					<p class="inspiration" v-if="slideIndex === 2" key="two">
+						There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the
+						<span
+							class="bold"
+						>advantage in job negotiations.</span> Sounds good huh?
+					</p>
+					<p class="inspiration" v-if="slideIndex === 3" key="three">
+						Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection.
+						<span
+							class="bold"
+						>Working from home, working remotely from a hammock, anything is possible.</span>
+					</p>
 				</transition>
 			</div>
 			<div class="arrow" @click="incrementSlideIndex(1)">
@@ -373,9 +373,16 @@ export default {
 	@media only screen and (max-width: 768px) {
 		margin-bottom: 20px;
 		.blog-tag-text {
+			top: 0;
+			left: -64px;
+			right: 176px;
+			right: 64%;
+			bottom: 0;
 			padding: 40px;
+			text-align: left;
 		}
 		.blog-pic {
+			margin-left: 40px;
 			height: 280px;
 			width: 300px;
 		}
