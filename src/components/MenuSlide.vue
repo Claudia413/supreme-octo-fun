@@ -22,7 +22,7 @@
 					<i class="fab fa-pinterest"></i>
 				</a>
 				<a href="#" class="hex-background">
-					<i class="fab fa-github"></i>
+					<i class="fab fa-linkedin"></i>
 				</a>
 			</div>
 		</div>
@@ -119,50 +119,5 @@ export default {
 	box-sizing: border-box;
 	background-color: white;
 	align-items: center;
-	a {
-		font-size: 20px;
-		text-decoration: none;
-		color: inherit;
-		margin: 16px 0;
-		&:hover,
-		&:focus {
-			font-weight: 600;
-		}
-	}
-	.icon-bar {
-		display: flex;
-		width: 180px;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-evenly;
-		.hex-background {
-			height: 48px;
-			width: 48px;
-			background-image: url("./../assets/hexagonal.svg");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-origin: border-box;
-			background-size: contain;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			transition: 0.3s color ease;
-			&:hover,
-			&:focus {
-				color: $text-darkbg;
-				transition: 0.3s color ease;
-			}
-		}
-		.fab {
-			font-size: 24px;
-			width: 23px;
-			height: 23px;
-		}
-		.fa-instagram {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	}
 }
 </style>
