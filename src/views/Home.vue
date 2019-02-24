@@ -94,75 +94,15 @@
 		<section class="full-block blog-highlight">
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<div class="blog-tag">
-					<svg
-						class="hexagon-tag"
-						version="1.1"
-						id="Capa_1"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						x="0px"
-						y="0px"
-						viewBox="0 0 480 480"
-						style="enable-background:new 0 0 483.013 483.013;"
-						fill="#DCFBF7"
-						xml:space="preserve">
-						<path
-							d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
-							L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
-							c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
-						></path>
-					</svg>
-					<span class="blog-tag-text">Long Blog Title about Something!</span>
-				</div>
+				<span class="blog-tag-text">Long Blog Title about Something!</span>
 			</div>
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<div class="blog-tag">
-					<svg
-						class="hexagon-tag"
-						version="1.1"
-						id="Capa_1"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						x="0px"
-						y="0px"
-						viewBox="0 0 480 480"
-						style="enable-background:new 0 0 483.013 483.013;"
-						fill="#DCFBF7"
-						xml:space="preserve">
-						<path
-							d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
-							L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
-							c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
-						></path>
-					</svg>
 				<span class="blog-tag-text">Long Blog Title about Something else!</span>
-				</div>
 			</div>
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<div class="blog-tag">
-					<svg
-						class="hexagon-tag"
-						version="1.1"
-						id="Capa_1"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						x="0px"
-						y="0px"
-						viewBox="0 0 480 480"
-						style="enable-background:new 0 0 483.013 483.013;"
-						fill="#DCFBF7"
-						xml:space="preserve">
-						<path
-							d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
-							L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
-							c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"
-						></path>
-					</svg>
 				<span class="blog-tag-text">Long Blog Title about other things!</span>
-				</div>
 			</div>
 		</section>
 		<section class="freebie-text text-block">
@@ -393,33 +333,34 @@ export default {
 	align-content: center;
 	flex-direction: column;
 	position: relative;
-	.blog-tag {
-		position: absolute;
-		left: -48px;
-		bottom: -20px;
-		height: 160px;
-		width: 160px;
-		display: flex;
-		align-items: center;
-	}
-	.hexagon-tag {
-		height: 160px;
-		width: 160px;
-		fill: $secondary-color;
+	&:hover {
+		.blog-tag-text {
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
 	}
 	.blog-tag-text {
 		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		font-family: "Abel";
 		text-transform: uppercase;
+		font-weight: 600;
 		font-size: 16px;
-		max-width: 140px;
-		margin-left: 16px;
+		max-width: 100%;
+		margin: 16px;
+		text-align: center;
+		background-color: #fdfdfd73;
+		padding: 40px;
+		opacity: 1;
+		transition: opacity 0.3s ease;
 	}
 	.blog-pic {
 		height: 240px;
 		width: 220px;
 		object-fit: cover;
-		margin-bottom: 20px;
 		// -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 		// clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 	}
@@ -431,18 +372,12 @@ export default {
 	}
 	@media only screen and (max-width: 768px) {
 		margin-bottom: 20px;
-		.blog-tag {
-			height: 160px;
-			width: 160px;
-			font-size: 14px;
-		}
 		.blog-tag-text {
-			padding: 12px 12px;
+			padding: 40px;
 		}
 		.blog-pic {
 			height: 280px;
 			width: 300px;
-			margin-bottom: 40px;
 		}
 	}
 }
