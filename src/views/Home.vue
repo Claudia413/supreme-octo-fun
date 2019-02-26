@@ -297,13 +297,6 @@ export default {
 .try-it-text {
 	grid-area: try-it-text;
 }
-.text-block {
-	text-align: justify;
-	padding: 40px;
-	p {
-		max-width: 600px;
-	}
-}
 .home .blog-highlight {
 	grid-area: blog-highlight;
 	background-color: $primary-color;

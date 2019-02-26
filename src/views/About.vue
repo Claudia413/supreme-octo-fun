@@ -36,9 +36,6 @@ export default {
 	grid-template-areas:
 		"intro-pic intro-text"
 		"slider slider"
-		"try-it-text try-it-pic"
-		"blog-highlight blog-highlight"
-		"freebie-text bio-link-text"
 		"footer footer";
 	@media only screen and (max-width: 768px) {
 		grid-template-columns: repeat(2, 50%);
@@ -47,11 +44,6 @@ export default {
 			"intro-pic intro-pic"
 			"intro-text intro-text"
 			"slider slider"
-			"try-it-pic try-it-pic"
-			"try-it-text try-it-text"
-			"blog-highlight blog-highlight"
-			"bio-link-text bio-link-text"
-			"freebie-text freebie-text"
 			"footer footer";
 	}
 	.mt-2 {
