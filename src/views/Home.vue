@@ -307,20 +307,6 @@ export default {
 		flex-direction: column;
 	}
 }
-.img-block {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	@media only screen and (max-width: 768px) {
-		height: 400px;
-		max-width: 100vw;
-	}
-}
-.full-block {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
 .blog-post {
 	display: flex;
 	align-content: center;
