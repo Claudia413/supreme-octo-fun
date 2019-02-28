@@ -16,40 +16,6 @@
 			<div class="arrow" @click="incrementSlideIndex(-1)">
 				<span class="fas fa-chevron-left"></span>
 			</div>
-			<svg
-				class="hexagon-bg"
-				version="1.1"
-				id="Capa_1"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				x="0px"
-				y="0px"
-				viewBox="0 0 480 480"
-				style="enable-background:new 0 0 483.013 483.013;"
-				fill="#DCFBF7"
-				xml:space="preserve">
-				<path
-					d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
-					L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
-					c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"></path>
-			</svg>
-			<svg
-				class="hexagon-bg small"
-				version="1.1"
-				id="Capa_1"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				x="0px"
-				y="0px"
-				viewBox="0 0 480 480"
-				style="enable-background:new 0 0 483.013 483.013;"
-				fill="#DCFBF7"
-				xml:space="preserve">
-				<path
-					d="M477.043,219.205L378.575,48.677c-7.974-13.802-22.683-22.292-38.607-22.292H143.041c-15.923,0-30.628,8.49-38.608,22.292
-					L5.971,219.205c-7.961,13.801-7.961,30.785,0,44.588l98.462,170.543c7.98,13.802,22.685,22.293,38.608,22.293h196.926
-					c15.925,0,30.634-8.491,38.607-22.293l98.469-170.543C485.003,249.99,485.003,233.006,477.043,219.205z"></path>
-			</svg>
 			<transition name="fade-out" mode="out-in">
 				<div class="number" v-bind:key="slideIndex">0{{slideIndex}}</div>
 			</transition>
@@ -102,8 +68,8 @@
 			</div>
 		</section>
 		<section class="freebie-text text-block">
-			<h3>Get a headstart</h3>
-			<p>With my starter website template</p>
+			<h3>Got errors?</h3>
+			<p>Fix those errors with my free 3 step guide</p>
 			<input type="text" title="name" placeholder="Name" class="sign-up">
 			<input type="email" title="email address" placeholder="Email address" class="sign-up">
 			<button class="mt-2">Yes, let's do this!</button>
@@ -220,27 +186,13 @@ export default {
 			margin: auto;
 		}
 	}
-	.hexagon-bg {
-		position: absolute;
-		fill: grey;
-		opacity: 0.2;
-		height: 360px;
-		left: calc(50% - 180px);
-		z-index: 0;
-		&.small {
-			height: 356px;
-			left: calc(50% - 178px);
-			fill: $secondary-color;
-			opacity: 1;
-		}
-	}
 	.number {
 		text-align: center;
 		width: 240px;
 		position: absolute;
 		left: calc(50% - 120px);
-		color: grey;
-		opacity: 0.2;
+		color: white;
+		opacity: 1;
 		font-size: 240px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
@@ -255,7 +207,8 @@ export default {
 		text-align: center;
 		z-index: 20;
 		.inspiration {
-			font-size: 16px;
+			font-size: 24px;
+			color: $primary-bright;
 		}
 		.bold {
 			font-weight: 600;

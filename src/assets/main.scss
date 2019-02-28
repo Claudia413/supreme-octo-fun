@@ -17,12 +17,13 @@ p {
 
 h3 {
     color: $primary-bright;
+    font-size: 24px;
 }
 
 h4 {
     font-family: 'Abel', sans-serif;
-    color: white;
-    font-size: 36px;
+    color: $text-color;
+    font-size: 16px;
     font-weight: 400;
     margin-top: 0;
     text-transform: uppercase;

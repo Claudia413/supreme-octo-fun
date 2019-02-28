@@ -113,6 +113,6 @@ export default {
 	flex-direction: column;
 	box-sizing: border-box;
 	background-color: white;
-	align-items: center;
+	align-items: flex-end;
 }
 </style>

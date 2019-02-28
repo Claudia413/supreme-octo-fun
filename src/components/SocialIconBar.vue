@@ -24,10 +24,10 @@ export default {
 
 .icon-bar {
     display: flex;
-    width: 180px;
+    width: 156px;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     .hex-background {
         height: 48px;
