@@ -32,7 +32,7 @@
 						>advantage in job negotiations.</span> Sounds good huh?
 					</p>
 					<p class="inspiration" v-if="slideIndex === 3" key="three">
-						Is your current office space a bit gloom? Building websites can be done from any computer with a solid internet connection.
+						Is your current office space a bit gloomy? Building websites can be done from any computer with a solid internet connection.
 						<span
 							class="bold"
 						>Working from home, working remotely from a hammock, anything is possible.</span>

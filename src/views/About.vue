@@ -8,7 +8,7 @@
 		>
 		<section class="intro-text text-block">
 			<h3>Hello there!</h3>
-			<p>Hello text here etc</p>
+			<p>This is the story of a business graduate who became a paid developer in just weeks. This is also the story of a girl who believes </p>
 		</section>
 		<section class="full-block long-bio">
       <h3>My story</h3>
