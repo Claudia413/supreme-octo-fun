@@ -323,8 +323,6 @@ export default {
 .freebie-text {
 	grid-area: freebie-text;
 	background-color: $secondary-color;
-	// Try out half hexagon shape on the right side of coloredbg text block
-	// clip-path: polygon(80% 0, 100% 25%, 100% 75%, 80% 100%, 0% 100%, 0% 0%);
 	.sign-up {
 		display: block;
 		border: none;
