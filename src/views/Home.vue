@@ -236,7 +236,7 @@ export default {
 	}
 	@keyframes fade-out {
 		0% {
-			opacity: 0.2;
+			opacity: 1;
 		}
 		100% {
 			opacity: 0;
