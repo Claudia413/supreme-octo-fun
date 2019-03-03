@@ -8,7 +8,7 @@
 		>
 		<section class="intro-text text-block">
 			<h3>Hello there!</h3>
-			<p>This is the story of a business graduate who became a paid developer in just weeks. This is also the story of a girl who believes</p>
+			<p>This is the story of a business graduate who became a paid developer in just weeks. This is also the story of a girl who believes life is about helping each other and passing it on. I received a lot of help during my journey to become a developer, and now that I am one, I want to pay it forward and help others to get there as well. Read on to find out how I plan to do that.</p>
 		</section>
 		<section class="full-block long-bio">
 			<h3>My story</h3>
