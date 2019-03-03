@@ -1,12 +1,12 @@
 <template>
 	<div class="icon-bar">
-		<a href="#" class="hex-background">
+		<a href="http://instagram.com/claudia414" target="_blank" class="hex-background">
 			<i class="fab fa-instagram"></i>
 		</a>
-		<a href="#" class="hex-background">
+		<a href="https://pinterest.com/djerra/" target="_blank" class="hex-background">
 			<i class="fab fa-pinterest"></i>
 		</a>
-		<a href="#" class="hex-background">
+		<a href="https://www.linkedin.com/in/claudia-engelsman/" target="_blank" class="hex-background">
 			<i class="fab fa-linkedin"></i>
 		</a>
 	</div>
