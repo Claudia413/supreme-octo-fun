@@ -21,28 +21,20 @@
 		<section class="video-block full-block">
 			<!-- insert video piece here -->
 		</section>
-		<section class="did-you-know text-block">
-			<h3>10 Things you didn't know about me</h3>
-			<ol>
-				<li>If you ask me to choose between my favorite icecream(Chunky monkey or Coockie dough) and homemade pumpkin soup by my boyfriend, I will have a huge dillema even with the apetite of a large dinosaur.</li>
-				<li>I am a geek and I love videogames, I can literally forget time when I am playing Dragon Age Inquisition, Diablo or Pokemon.</li>
-				<li>Horses have a special place in my heart, the best part of them is their soft velvet nose.</li>
-				<li>I love surprising my friends with elaborate set up gifts that cost me way, way too much time and way more money than expected, but when it all works out, it's totally worth it to me.</li>
-				<li>During my trip to New Zealand I fell head over heels for this beautiful country and have been trying to find a way back ever since.</li>
-				<li>My favorite geometric shape is a hexagon, can’t get enough of it, even while it is hard to use in webdevelopment.</li>
-				<li>Nailbiting has been a problem since I got my first teeth. I’m working on it. For about 26 years in a row now.</li>
-				<li>Also, not a pro in cleaning my house, I just don’t get the point of dusting when new dust is arriving as soon as I dust it off.</li>
-				<li>I am a huge Harry Potter fan, books, movies, art, merch. I might have seen the first movie over 50 times, ssshhh.</li>
-				<li>I graduated high school twice, once in the Netherlands and once in California during my exchange year.</li>
-			</ol>
-		</section>
-		<img
-			alt="Claudia Engelsman, developer who will teach you how to code a website"
-			src="../assets/ClaudiaBWKaikoura.jpg"
-			class="did-you-know-pic img-block"
-		>
-		<section class="video-block full-block">
-		</section>
+		<TextSlider class="did-you-know" title="10 Things you didn't know about me" :numberOfSlides="10" background-color="bg-light"
+		number-color="grey">
+			<template v-slot:slide1>If you ask me to choose between my favorite icecream(Chunky monkey or Coockie dough) and homemade pumpkin soup by my boyfriend, I will have a huge dillema even with the apetite of a large dinosaur.</template>
+			<template v-slot:slide2>I am a geek and I love videogames, I can literally forget time when I am playing Dragon Age Inquisition, Diablo or Pokemon.</template>
+			<template v-slot:slide3>Horses have a special place in my heart, the best part of them is their soft velvet nose.</template>
+			<template v-slot:slide4>I love surprising my friends with elaborate set up gifts that cost me way, way too much time and way more money than expected, but when it all works out, it's totally worth it to me.</template>
+			<template v-slot:slide5>During my trip to New Zealand I fell head over heels for this beautiful country and have been trying to find a way back ever since.</template>
+			<template v-slot:slide6>My favorite geometric shape is a hexagon, can’t get enough of it, even while it is hard to use in webdevelopment.</template>
+			<template v-slot:slide7>Nailbiting has been a problem since I got my first teeth. I’m working on it. For about 26 years in a row now.</template>
+			<template v-slot:slide8>Also, not a pro in cleaning my house, I just don’t get the point of dusting when new dust is arriving as soon as I dust it off.</template>
+			<template v-slot:slide9>I am a huge Harry Potter fan, books, movies, art, merch. I might have seen the first movie over 50 times, ssshhh.</template>
+			<template v-slot:slide10>I graduated high school twice, once in the Netherlands and once in California during my exchange year.</template>
+		</TextSlider>
+		<section class="video-block full-block"></section>
 		<Footer class="footer"/>
 	</div>
 </template>
@@ -50,11 +42,13 @@
 <script>
 import Footer from "@/components/Footer.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
+import TextSlider from "@/components/TextSlider.vue";
 
 export default {
 	components: {
 		Footer,
-		MenuSlide
+		MenuSlide,
+		TextSlider
 	}
 };
 </script>
@@ -73,7 +67,7 @@ export default {
 		"intro-pic intro-text"
 		"long-bio long-bio"
 		"video-first video-first"
-		"did-you-know did-you-know-pic"
+		"did-you-know did-you-know"
 		"video-second video-second"
 		"footer footer";
 	@media only screen and (max-width: 768px) {
