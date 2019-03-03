@@ -35,12 +35,10 @@
 			<template v-slot:slide10>I graduated high school twice, once in the Netherlands and once in California during my exchange year.</template>
 		</TextSlider>
 		<section class="video-block full-block"></section>
-		<Footer class="footer"/>
 	</div>
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
 import TextSlider from "@/components/TextSlider.vue";
 

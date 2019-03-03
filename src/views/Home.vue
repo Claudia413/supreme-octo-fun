@@ -61,13 +61,11 @@
 			</p>
 			<SocialIconBar></SocialIconBar>
 		</section>
-		<Footer class="footer"/>
 	</div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Footer from "@/components/Footer.vue";
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
 import SocialIconBar from "@/components/SocialIconBar.vue";
@@ -81,7 +79,6 @@ export default {
 		};
 	},
 	components: {
-		Footer,
 		HeaderAnimation,
 		MenuSlide,
 		SocialIconBar,
