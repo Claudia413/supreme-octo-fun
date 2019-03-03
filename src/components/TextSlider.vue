@@ -1,15 +1,25 @@
 <template>
-	<section class="slideit full-block">
+	<section class="slideit full-block" :class="backgroundColor">
 		<div class="arrow" @click="incrementSlideIndex(-1)">
 			<span class="fas fa-chevron-left"></span>
 		</div>
 		<transition name="fade-out" mode="out-in">
-			<div class="number" v-bind:key="slideIndex">0{{slideIndex}}</div>
+			<div
+				class="number"
+				v-bind:key="slideIndex"
+				:class="numberColor"
+			>{{slideIndex>9? '' : '0'}}{{slideIndex}}</div>
 		</transition>
 		<div class="slider">
-			<h4>{{title}}</h4>
+			<h4 :class="titleColor">{{title}}</h4>
 			<transition name="fade" mode="out-in">
-				<p v-for="n in numberOfSlides" class="inspiration" v-if="slideIndex === n" :key="n">
+				<p
+					v-for="n in numberOfSlides"
+					class="inspiration"
+					:class="textColor"
+					v-if="slideIndex === n"
+					:key="n"
+				>
 					<slot :name="'slide'+n"></slot>
 				</p>
 			</transition>
@@ -30,7 +40,23 @@ export default {
 	},
 	props: {
 		title: String,
-		numberOfSlides: Number
+		numberOfSlides: Number,
+		backgroundColor: {
+			type: String,
+			default: "bg-sec"
+		},
+		numberColor: {
+			type: String,
+			default: "white"
+		},
+		titleColor: {
+			type: String,
+			default: "text-color"
+		},
+		textColor: {
+			type: String,
+			default: "color-primary"
+		}
 	},
 	methods: {
 		incrementSlideIndex(number) {
@@ -53,7 +79,6 @@ export default {
 	height: 400px;
 	grid-area: slider;
 	justify-content: space-between;
-	background-color: $secondary-color;
 	font-family: "Abel", sans-serif;
 	padding: 0 40px;
 	position: relative;
@@ -68,16 +93,27 @@ export default {
 			margin: auto;
 		}
 	}
+	&.bg-sec {
+		background-color: $secondary-color;
+	}
+	&.bg-light {
+		background-color: white;
+	}
 	.number {
 		text-align: center;
 		width: 240px;
 		position: absolute;
 		left: calc(50% - 120px);
-		color: white;
 		opacity: 1;
 		font-size: 240px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
+		&.white {
+			color: white;
+		}
+		&.grey {
+			color: #cacaca;
+		}
 	}
 	.slider {
 		display: flex;
@@ -88,9 +124,15 @@ export default {
 		max-width: 70%;
 		text-align: center;
 		z-index: 20;
+		min-height: 165px;
 		.inspiration {
 			font-size: 24px;
-			color: $primary-bright;
+			&.color-primary {
+				color: $primary-bright;
+			}
+		}
+		.text-color {
+			color: $text-color;
 		}
 	}
 	.fade-enter-active {
