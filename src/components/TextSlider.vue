@@ -116,23 +116,22 @@ export default {
 		}
 	}
 	.slider {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
 		opacity: 1;
 		max-width: 70%;
 		text-align: center;
 		z-index: 20;
-		min-height: 165px;
+		min-height: 180px;
 		.inspiration {
 			font-size: 24px;
 			&.color-primary {
 				color: $primary-bright;
 			}
 		}
-		.text-color {
-			color: $text-color;
+		h4 {
+			margin-bottom: 48px;
+			&.text-color {
+				color: $text-color;
+			}
 		}
 	}
 	.fade-enter-active {
