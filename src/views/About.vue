@@ -44,7 +44,6 @@ import TextSlider from "@/components/TextSlider.vue";
 
 export default {
 	components: {
-		Footer,
 		MenuSlide,
 		TextSlider
 	}
