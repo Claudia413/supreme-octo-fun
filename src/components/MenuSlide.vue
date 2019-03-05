@@ -9,7 +9,7 @@
 			<i class="far fa-compass menu-icon"></i>
 		</div>
 		<div class="menu-list">
-			<a href="#">Home</a>
+			<a href="/index">Home</a>
 			<a href="/about">About</a>
 			<a href="#">Guide</a>
 			<a href="#">Blog</a>
