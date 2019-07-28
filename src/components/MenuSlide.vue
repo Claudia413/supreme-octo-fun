@@ -9,11 +9,11 @@
 			<i class="far fa-compass menu-icon"></i>
 		</div>
 		<div class="menu-list">
-			<a href="/index">Home</a>
-			<a href="/about">About</a>
-			<a href="#">Guide</a>
-			<a href="#">Blog</a>
-			<a href="#">Contact</a>
+			<router-link to="/">Home</router-link>
+			<router-link to="/about">About</router-link>
+			<router-link to="/guide">Guide</router-link>
+			<router-link to="blog">Blog</router-link>
+			<router-link to="contact">Contact</router-link>
 			<SocialIconBar></SocialIconBar>
 		</div>
 	</div>
