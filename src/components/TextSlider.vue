@@ -12,17 +12,15 @@
 		</transition>
 		<div class="slider">
 			<h4 :class="titleColor">{{title}}</h4>
-			<transition name="fade" mode="out-in">
-				<p
-					v-for="n in numberOfSlides"
-					class="inspiration"
-					:class="textColor"
-					v-if="slideIndex === n"
-					:key="n"
-				>
-					<slot :name="'slide'+n"></slot>
-				</p>
-			</transition>
+			<transition-group name="fade" mode="out-in">
+				<div v-for="n in numberOfSlides" :key="n">
+					<p	class="inspiration"
+						:class="textColor"
+						v-show="slideIndex === n">
+						<slot :name="'slide'+n"></slot>
+					</p>
+				</div>
+			</transition-group>
 		</div>
 		<div class="arrow" @click="incrementSlideIndex(1)">
 			<span class="fas fa-chevron-right"></span>
