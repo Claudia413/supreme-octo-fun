@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Abel|Montserrat|Sacramento|Raleway|Radley');
+@import url('https://fonts.googleapis.com/css?family=Abel|Montserrat|Sacramento|Raleway|Radley|Rokkitt');
 
 // Variables
 @import "variables";
@@ -12,7 +12,15 @@ body {
 body,
 p {
     font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-family: 'Abel', ;
     color: $text-color;
+}
+
+h2 {
+    font-family: 'Rokkit', sans-serif;
 }
 
 h3 {
@@ -39,8 +47,10 @@ h3, button {
 p {
     font-size: 14px;
     color: $text-color;
+    line-height: 1.4rem;
     @media only screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.2rem;
     }
 }
 
@@ -50,7 +60,7 @@ button {
    padding: 16px 48px;
    color: $text-color;
    cursor: pointer;
-   &:hover, &:focus {
+   &:hover, &:focus, &active {
        font-weight: 600;
    }
 }
@@ -78,7 +88,9 @@ a {
 .text-block {
     text-align: justify;
     padding: 40px;
-
+    @media only screen and (max-width: 1148px) {
+        padding: 32px;
+    }
     p {
         max-width: 600px;
     }
