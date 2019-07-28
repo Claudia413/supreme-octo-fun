@@ -121,8 +121,12 @@ export default {
 		min-height: 180px;
 		.inspiration {
 			font-size: 24px;
+			line-height: 1.5rem;
 			&.color-primary {
 				color: $primary-bright;
+			}
+			@media screen and (max-width: 496px) {
+				font-size: 1rem;
 			}
 		}
 		h4 {
