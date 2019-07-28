@@ -8,7 +8,8 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block">
 			<h3>About</h3>
-			<p>Hi, I'm Claudia and I will teach you how to build websites. I didn't know how to write code 2 years ago, I had a job in a purchasing department. Switching from that job to a developer position didn’t happen overnight, but I was earning a salary as a developer within a month of quitting and without any experience. I will help you to do the same by sharing everything I’ve learned, for free, and help you find inspiration and stay motivated to start creating your own websites.</p>
+			<p>Hi, I'm Claudia and I will teach you how to build websites. I didn't know how to write code 2 years ago, I switch from a job in purchasing to a developer position and while that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. Without any prior experience. I will help you to do the same by sharing everything I’ve learned, for free, and help you find inspiration and stay motivated to start creating your own websites.</p>
+			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<button class="mt-2">More about me</button>
 		</section>
 		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="3">
@@ -19,7 +20,7 @@
 			</template>
 			<template v-slot:slide3>
 				Is your current office space a bit gloomy? Building websites can be done from any computer with a solid internet connection.
-				<span class="bold">Working from home, working remotely from a hammock, anything is possible.</span>
+				<span class="bold">Working from home or working remotely from a hammock, it is your choice.</span>
 			</template>
 		</TextSlider>
 		<img
@@ -40,6 +41,10 @@
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
 				<span class="blog-tag-text">Long Blog Title about Something else!</span>
+			</div>
+			<div class="blog-post">
+				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
+				<span class="blog-tag-text">Long Blog Title about other things!</span>
 			</div>
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
@@ -135,6 +140,11 @@ export default {
 }
 .intro-text {
 	grid-area: intro-text;
+	line-height: 1.4rem;
+	// @media only screen and (max-width: 1148px) {
+	// 	line-height: 1.3rem;
+	// }
+
 }
 .try-it-pic {
 	grid-area: try-it-pic;
@@ -147,7 +157,7 @@ export default {
 }
 .home .blog-highlight {
 	grid-area: blog-highlight;
-	background-color: $primary-color;
+	background-color: $background-color-grey;
 	height: auto;
 	padding: 40px;
 	justify-content: space-evenly;
@@ -162,7 +172,7 @@ export default {
 	position: relative;
 	&:hover {
 		.blog-tag-text {
-			opacity: 0;
+			opacity: 0.95;
 			transition: opacity 0.3s ease;
 		}
 	}
@@ -177,19 +187,17 @@ export default {
 		font-weight: 600;
 		font-size: 16px;
 		max-width: 100%;
-		margin: 16px;
+		margin: 24px;
 		text-align: center;
-		background-color: #fdfdfd73;
-		padding: 40px;
-		opacity: 1;
+		background-color: #fdfdfd;
+		padding: 32px;
+		opacity: 0.85;
 		transition: opacity 0.3s ease;
 	}
 	.blog-pic {
 		height: 240px;
 		width: 220px;
 		object-fit: cover;
-		// -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-		// clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 	}
 	@media only screen and (max-width: 1112px) {
 		.blog-pic {
@@ -198,20 +206,21 @@ export default {
 		}
 	}
 	@media only screen and (max-width: 768px) {
-		margin-bottom: 20px;
+		margin-bottom: 32px;
 		.blog-tag-text {
-			top: 0;
-			left: -64px;
-			right: 176px;
-			right: 64%;
-			bottom: 0;
-			padding: 40px;
-			text-align: left;
+			margin: 32px;
+		// 	top: 0;
+		// 	left: 176px;
+		// 	right: -64px;
+		// 	left: 64%;
+		// 	bottom: 0;
+		// 	padding: 40px;
+		// 	text-align: left;
 		}
 		.blog-pic {
-			margin-left: 40px;
-			height: 280px;
-			width: 300px;
+			// margin-right: 40px;
+			height: 320px;
+			width: 340px;
 		}
 	}
 }
