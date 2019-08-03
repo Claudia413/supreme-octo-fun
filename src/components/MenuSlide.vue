@@ -79,6 +79,7 @@ export default {
 		flex-direction: column;
 		position: absolute;
 		left: -48px;
+		cursor: pointer;
 		.hex {
 			height: 96px;
 			position: absolute;

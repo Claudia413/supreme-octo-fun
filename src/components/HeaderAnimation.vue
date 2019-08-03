@@ -2,7 +2,7 @@
 	<header>
 		<div class="title">
 			<h1>Claudia Engelsman</h1>
-			<h2> Developer, dreamer, dog-lover</h2>
+			<h2> Developer, educator, adventurer</h2>
 		</div>
 	</header>
 </template>
@@ -20,16 +20,17 @@ export default {
 header {
 	max-width: 100%;
 	min-height: 240px;
-	background-image: url('../assets/HeaderHome.jpg');
+	background-image: url('../assets/HeaderCoralIce.jpg');
 	background-repeat: none;
 	background-size: cover;
-	background-color: $primary-color;
+	background-color: $background-color-grey;
+	overflow: hidden;
 	height: 40vh;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	.title {
-		background-color: $background-color-grey;
+		// background-color: $background-color-grey;
 		padding: 32px;
 		max-width: 40%;
 	}
@@ -40,6 +41,7 @@ header {
 	}
 	h2 {
 		color: $text-color;
+		font-size: 24px;
 	}
 }
 </style>
