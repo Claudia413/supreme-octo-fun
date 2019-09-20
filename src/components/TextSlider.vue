@@ -103,7 +103,7 @@ export default {
 		position: absolute;
 		left: calc(50% - 120px);
 		opacity: 1;
-		font-size: 240px;
+		font-size: 252px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
 		&.white {

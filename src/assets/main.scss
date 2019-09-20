@@ -17,25 +17,33 @@ p {
 h1 {
     font-family: 'Abel', ;
     color: $text-color;
+    font-size: 37px;
+    line-height: 61px;
+    margin: 0;
 }
 
 h2 {
     font-family: 'Rokkit', sans-serif;
+    font-size: 29px;
+    line-height: 50px;
+    margin: 0;
 }
 
 h3 {
     color: $primary-bright;
-    font-size: 24px;
+    font-size: 23px;
+    line-height: 41px;
+    margin: 0;
 }
 
 h4 {
     font-family: 'Abel', sans-serif;
     color: $text-color;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 34px;
     font-weight: 400;
-    margin-top: 0;
+    margin: 0;
     text-transform: uppercase;
-    margin-bottom: 9px;
     font-weight: 600;
 }
 
@@ -47,7 +55,7 @@ h3, button {
 p {
     font-size: 14px;
     color: $text-color;
-    line-height: 1.4rem;
+    line-height: 29px;
     @media only screen and (max-width: 768px) {
     font-size: 13px;
     line-height: 1.2rem;

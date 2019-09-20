@@ -37,11 +37,9 @@ header {
 	h1 {
 		// text-transform: uppercase;
 		opacity: 1;
-		font-size: 32px;
 	}
 	h2 {
 		color: $text-color;
-		font-size: 24px;
 	}
 }
 </style>
