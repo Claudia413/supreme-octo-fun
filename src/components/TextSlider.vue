@@ -119,6 +119,9 @@ export default {
 		text-align: center;
 		z-index: 20;
 		min-height: 180px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		.inspiration {
 			font-size: 24px;
 			line-height: 1.5rem;
@@ -130,7 +133,7 @@ export default {
 			}
 		}
 		h4 {
-			margin-bottom: 48px;
+			margin: 0;
 			&.text-color {
 				color: $text-color;
 			}

@@ -8,7 +8,7 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block">
 			<h3>About</h3>
-			<p>Hi, I'm Claudia and I will teach you how to build websites. I didn't know how to write code 2 years ago, I switched from a job in purchasing to a developer position and while that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch.</p>
+			<p>Hi, I'm Claudia and I want to help you learn how to build websites. I didn't know how to write code 2 years ago, I switched from a job in purchasing to a developer position and while that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch.</p>
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<button class="mt-2">More about me</button>
 		</section>
@@ -16,7 +16,7 @@
 			<template v-slot:slide1>
 				<span class="bold">It has never been easier to build websites.</span> I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
 			</template>
-			<template v-slot:slide2>There is a huge shortage of developers and this amount is only growing. More jobs than developers means developers have the <span class="bold">advantage in job negotiations.</span> Sounds good huh?
+			<template v-slot:slide2>There is a huge shortage of developers and there is a big gap in male/female ratio in development. More job openings than developers means developers have the <span class="bold">advantage in job negotiations.</span> Sounds good huh?
 			</template>
 			<template v-slot:slide3>
 				Is your current office space a bit gloomy? Building websites can be done from any computer with a solid internet connection.
@@ -24,7 +24,7 @@
 			</template>
 		</TextSlider>
 		<img
-			alt="Claudia Engelsman, developer who will teach you how to code a website"
+			alt="Claudia Engelsman, developer who will help you how to code a website"
 			src="../assets/ClaudiaBWKaikoura.jpg"
 			class="try-it-pic img-block"
 		>
