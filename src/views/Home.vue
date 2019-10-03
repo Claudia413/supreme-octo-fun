@@ -6,7 +6,7 @@
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
 			src="../assets/ClaudiaBWKaikoura.jpg"
 			class="intro-pic img-block">
-		<section class="intro-text text-block">
+		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
 			<p>Hi, I'm Claudia and I want to help you learn how to build websites. I didn't know how to write code 2 years ago, I switched from a job in purchasing to a developer position and while that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch.</p>
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
@@ -58,7 +58,7 @@
 			<input type="email" title="email address" placeholder="Email address" class="sign-up">
 			<button class="mt-2">Yes, let's do this!</button>
 		</section>
-		<section class="bio-link-text text-block">
+		<section class="bio-link-text text-block menu-padding">
 			<h3>Try it</h3>
 			<p>
 				I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead of a stomach.

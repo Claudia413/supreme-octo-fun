@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Abel|Montserrat|Sacramento|Raleway|Radley|Rokkitt');
+@import url('https://fonts.googleapis.com/css?family=Karla|Spectral');
 
 // Variables
 @import "variables";
@@ -11,11 +11,11 @@ body {
 
 body,
 p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Karla', sans-serif;
 }
 
 h1 {
-    font-family: 'Abel', ;
+    font-family: 'Spectral', ;
     color: $text-color;
     font-size: 37px;
     line-height: 61px;
@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Rokkit', sans-serif;
+    font-family: 'Karla', sans-serif;
     font-size: 29px;
     line-height: 50px;
     margin: 0;
@@ -34,10 +34,11 @@ h3 {
     font-size: 23px;
     line-height: 41px;
     margin: 0;
+    font-family: 'Spectral', sans-serif
 }
 
 h4 {
-    font-family: 'Abel', sans-serif;
+    font-family: 'Spectral', sans-serif;
     color: $text-color;
     font-size: 18px;
     line-height: 34px;
@@ -47,8 +48,8 @@ h4 {
     font-weight: 600;
 }
 
-h3, button {
-    font-family: 'Abel', sans-serif;
+button {
+    font-family: 'Karla', sans-serif;
     text-transform: uppercase;
 }
 
@@ -96,8 +97,14 @@ a {
 .text-block {
     text-align: justify;
     padding: 40px;
+    &.menu-padding {
+        padding-right: 56px;
+    }
     @media only screen and (max-width: 1148px) {
         padding: 32px;
+        &.menu-padding {
+            padding-right: 48px;
+        }
     }
     p {
         max-width: 600px;
