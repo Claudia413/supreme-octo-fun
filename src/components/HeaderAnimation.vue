@@ -39,7 +39,7 @@ header {
 		opacity: 1;
 	}
 	h2 {
-		color: $text-color;
+		color: $text-darkbg;
 	}
 }
 </style>

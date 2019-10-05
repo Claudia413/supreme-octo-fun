@@ -16,7 +16,7 @@ p {
 
 h1 {
     font-family: 'Spectral', ;
-    color: $text-color;
+    color: $text-darkbg;
     font-size: 37px;
     line-height: 61px;
     margin: 0;
@@ -65,12 +65,14 @@ p {
 
 button {
    border: none;
-   background-color: $highlight-color;
+   background-color: $primary-color;
    padding: 16px 48px;
-   color: $text-color;
+   color: $text-darkbg;
    cursor: pointer;
+   transition: background-color 2s ease-in-out;
    &:hover, &:focus, &active {
        font-weight: 600;
+       background-color: $primary-bright;
    }
 }
 

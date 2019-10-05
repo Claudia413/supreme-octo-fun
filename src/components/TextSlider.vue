@@ -45,7 +45,7 @@ export default {
 		},
 		numberColor: {
 			type: String,
-			default: "white"
+			default: "primary"
 		},
 		titleColor: {
 			type: String,
@@ -53,7 +53,7 @@ export default {
 		},
 		textColor: {
 			type: String,
-			default: "color-primary"
+			default: "color-darkbg"
 		}
 	},
 	methods: {
@@ -102,7 +102,7 @@ export default {
 		width: 240px;
 		position: absolute;
 		left: calc(50% - 120px);
-		opacity: 1;
+		opacity: 0.4;
 		font-size: 252px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
@@ -111,6 +111,9 @@ export default {
 		}
 		&.grey {
 			color: #cacaca;
+		}
+		&.primary {
+			color: $primary-color;
 		}
 	}
 	.slider {
@@ -127,6 +130,9 @@ export default {
 			line-height: 1.5rem;
 			&.color-primary {
 				color: $primary-bright;
+			}
+			&.color-darkbg {
+				color: $text-darkbg;
 			}
 			@media screen and (max-width: 496px) {
 				font-size: 1rem;
