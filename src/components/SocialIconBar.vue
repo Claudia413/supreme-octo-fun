@@ -40,19 +40,25 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: $text-color;
-        transition: 0.3s color ease;
-        &:hover, &:focus {
-            transition: 0.3s color ease;
-            color: #2e3031;
-            font-weight: 500;
-        }
+        font-weight: 500;
     }
 
     .fab {
         font-size: 24px;
         width: 23px;
         height: 23px;
+        background: -webkit-linear-gradient(left top, #FEDB37, #FDB931, #9f7928, #8A6E2F);
+        opacity: 0.8;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: 0.3s all ease;
+        &:hover, &focus {
+            transition: 0.3s all ease;
+            opacity: 1;
+            // background: -webkit-linear-gradient(left top, #FFFFAC, #FEDB37, #FDB931, #5d4a1f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     .fa-instagram {

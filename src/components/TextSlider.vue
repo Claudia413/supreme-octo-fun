@@ -45,11 +45,11 @@ export default {
 		},
 		numberColor: {
 			type: String,
-			default: "primary"
+			default: "primary-bright"
 		},
 		titleColor: {
 			type: String,
-			default: "text-color"
+			default: "grey"
 		},
 		textColor: {
 			type: String,
@@ -102,7 +102,6 @@ export default {
 		width: 240px;
 		position: absolute;
 		left: calc(50% - 120px);
-		opacity: 0.4;
 		font-size: 252px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
@@ -115,6 +114,9 @@ export default {
 		&.primary {
 			color: $primary-color;
 		}
+		&.primary-bright {
+			color: $primary-bright;
+		}
 	}
 	.slider {
 		opacity: 1;
@@ -126,8 +128,8 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		.inspiration {
-			font-size: 24px;
-			line-height: 1.5rem;
+			font-size: 20px;
+			line-height: 2rem;
 			&.color-primary {
 				color: $primary-bright;
 			}
@@ -142,6 +144,9 @@ export default {
 			margin: 0;
 			&.text-color {
 				color: $text-color;
+			}
+			&.grey {
+				color: grey;
 			}
 		}
 	}
