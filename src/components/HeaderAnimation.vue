@@ -20,7 +20,7 @@ export default {
 header {
 	max-width: 100%;
 	min-height: 240px;
-	background-image: url('../assets/HeaderCoralIce.jpg');
+	background-image: url('../assets/Darkheader.jpg');
 	background-repeat: none;
 	background-size: cover;
 	background-color: $background-color-grey;
@@ -39,7 +39,7 @@ header {
 		opacity: 1;
 	}
 	h2 {
-		color: $text-color;
+		color: $text-darkbg;
 	}
 }
 </style>

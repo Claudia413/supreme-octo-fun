@@ -45,15 +45,15 @@ export default {
 		},
 		numberColor: {
 			type: String,
-			default: "white"
+			default: "primary-bright"
 		},
 		titleColor: {
 			type: String,
-			default: "text-color"
+			default: "grey"
 		},
 		textColor: {
 			type: String,
-			default: "color-primary"
+			default: "color-darkbg"
 		}
 	},
 	methods: {
@@ -102,7 +102,6 @@ export default {
 		width: 240px;
 		position: absolute;
 		left: calc(50% - 120px);
-		opacity: 1;
 		font-size: 252px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
@@ -111,6 +110,12 @@ export default {
 		}
 		&.grey {
 			color: #cacaca;
+		}
+		&.primary {
+			color: $primary-color;
+		}
+		&.primary-bright {
+			color: $primary-bright;
 		}
 	}
 	.slider {
@@ -123,10 +128,13 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		.inspiration {
-			font-size: 24px;
-			line-height: 1.5rem;
+			font-size: 20px;
+			line-height: 2rem;
 			&.color-primary {
 				color: $primary-bright;
+			}
+			&.color-darkbg {
+				color: $text-darkbg;
 			}
 			@media screen and (max-width: 496px) {
 				font-size: 1rem;
@@ -136,6 +144,9 @@ export default {
 			margin: 0;
 			&.text-color {
 				color: $text-color;
+			}
+			&.grey {
+				color: grey;
 			}
 		}
 	}

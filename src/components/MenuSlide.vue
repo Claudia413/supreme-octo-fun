@@ -83,7 +83,7 @@ export default {
 		.hex {
 			height: 96px;
 			position: absolute;
-			filter: drop-shadow(-2px 0 2px #80808047);
+			filter: drop-shadow(-2px 0 2px #29292947);
 		}
 		.menu-icon {
 			position: absolute;
@@ -96,7 +96,9 @@ export default {
 			height: 33px;
 			width: 33px;
 			margin: auto;
-			color: $text-color;
+			background: -webkit-linear-gradient(left top, #FEDB37, #FDB931, #9f7928, #8A6E2F);
+			-webkit-background-clip: text;
+        	-webkit-text-fill-color: transparent;
 			transition: left 0.5s ease, transform 5s;
 			&:hover {
 				transform: rotate(180deg);
