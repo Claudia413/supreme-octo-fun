@@ -8,7 +8,8 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, I'm Claudia and I want to help you learn how to build websites. I didn't know how to write code 2 years ago, I switched from a job in purchasing to a developer position and while that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch.</p>
+			<p>Hi, I'm Claudia and I want to help you learn how to build websites. I didn't know how to write code 2 years ago, I switched from a job in purchasing to a developer position and while that didn’t happen overnight, I was earning a salary as a developer within a month of quitting.</p>
+			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<button class="mt-2">More about me</button>
 		</section>
@@ -52,8 +53,8 @@
 			</div>
 		</section>
 		<section class="freebie-text text-block">
-			<h3>Got errors?</h3>
-			<p>Fix those errors with my free 3 step guide</p>
+			<h3>Stuff here</h3>
+			<p class="text-darkbg">CTA for download here, text, lorem ipsum</p>
 			<input type="text" title="name" placeholder="Name" class="sign-up">
 			<input type="email" title="email address" placeholder="Email address" class="sign-up">
 			<button class="mt-2">Yes, let's do this!</button>

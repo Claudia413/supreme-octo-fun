@@ -98,7 +98,7 @@ export default {
 			margin: auto;
 			background: -webkit-linear-gradient(left top, #FEDB37, #FDB931, #9f7928, #8A6E2F);
 			-webkit-background-clip: text;
-        	-webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: transparent;
 			transition: left 0.5s ease, transform 5s;
 			&:hover {
 				transform: rotate(180deg);

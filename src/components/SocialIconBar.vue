@@ -41,6 +41,12 @@ export default {
         justify-content: center;
         align-items: center;
         font-weight: 500;
+        &:hover, &:focus {
+            .fab {
+                transition: 0.3s all ease;
+                opacity: 1;
+            }
+        }
     }
 
     .fab {
