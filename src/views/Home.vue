@@ -8,7 +8,7 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, I'm Claudia and I want to help you learn how to build websites. I didn't know how to write code 2 years ago, I switched from a job in purchasing to a developer position and while that didn’t happen overnight, I was earning a salary as a developer within a month of quitting.</p>
+			<p>Hi, hi, I'm Claudia and I want to help you learn how to build websites. A mere 3 years ago I switched from a job in purchasing to a developer position without any prior coding knowledge. While that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. The best part: I want to help you do the same!</p>
 			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<button class="mt-2">More about me</button>
@@ -31,7 +31,7 @@
 		>
 		<section class="try-it-text text-block">
 			<h3>Try it</h3>
-			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out my guide with step by step articles, practise exercises, and I'll help you land a job as a webdeveloper in no time!</p>
+			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out the guide with step by step articles, practise exercises, and you will land a job as a webdeveloper in no time!</p>
 			<button class="mt-2">To the guide!</button>
 		</section>
 		<section class="full-block blog-highlight">
@@ -63,7 +63,7 @@
 			<h3>Try it</h3>
 			<p>
 				I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead of a stomach.
-				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started to learn coding 2 years ago and it was so overwhelming to started in a structured way, so I am creating the place I would have loved to have found back then.
+				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started to learn coding 3 years ago and it was so overwhelming to started in a structured way, so I am creating the place I would have loved to have found back then.
 			</p>
 			<SocialIconBar></SocialIconBar>
 		</section>

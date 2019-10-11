@@ -102,6 +102,7 @@ a {
 .text-block {
     text-align: justify;
     padding: 40px;
+    background-color: $body-bg;
     &.menu-padding {
         padding-right: 56px;
     }
