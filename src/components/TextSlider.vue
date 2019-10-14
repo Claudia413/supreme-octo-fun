@@ -95,7 +95,7 @@ export default {
 		background-color: $secondary-color;
 	}
 	&.bg-light {
-		background-color: white;
+		background-color: $body-bg;
 	}
 	.number {
 		text-align: center;
@@ -130,7 +130,7 @@ export default {
 		.inspiration {
 			font-size: 20px;
 			line-height: 2rem;
-			&.color-primary {
+			&.primary-color {
 				color: $primary-bright;
 			}
 			&.color-darkbg {
@@ -147,6 +147,9 @@ export default {
 			}
 			&.grey {
 				color: grey;
+			}
+			&.secondary-color {
+				color: $secondary-color;
 			}
 		}
 	}
