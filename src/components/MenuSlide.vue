@@ -82,6 +82,7 @@ export default {
 		cursor: pointer;
 		.hex {
 			height: 96px;
+			width: 97px;
 			position: absolute;
 			filter: drop-shadow(-2px 0 2px #29292947);
 		}
