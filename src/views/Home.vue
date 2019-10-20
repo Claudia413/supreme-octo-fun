@@ -8,7 +8,7 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, hi, I'm Claudia and I want to help you learn how to build websites. A mere 3 years ago I switched from a job in purchasing to a developer position without any prior coding knowledge. While that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. The best part: I want to help you do the same!</p>
+			<p>Hi, hi, I'm Claudia and I want to help you learn how to build websites. A mere 3 years ago I switched from a job in purchasing to a developer position without any prior coding knowledge. While that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. The best part: I can help you do the same.</p>
 			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<button class="mt-2">More about me</button>
@@ -53,11 +53,9 @@
 			</div>
 		</section>
 		<section class="freebie-text text-block">
-			<h3>Stuff here</h3>
-			<p class="text-darkbg">CTA for download here, text, lorem ipsum</p>
-			<input type="text" title="name" placeholder="Name" class="sign-up">
-			<input type="email" title="email address" placeholder="Email address" class="sign-up">
-			<button class="mt-2">Yes, let's do this!</button>
+			<h3>Freebies, tips and more?</h3>
+			<p class="text-darkbg">Sign up and get tricks, cool resources and the latest blog updates on a regular basis.</p>
+			<NewsletterSignUp/>
 		</section>
 		<section class="bio-link-text text-block menu-padding">
 			<h3>Try it</h3>
@@ -76,6 +74,7 @@ import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
 import SocialIconBar from "@/components/SocialIconBar.vue";
 import TextSlider from "@/components/TextSlider.vue";
+import NewsletterSignUp from "@/components/NewsletterSignUp.vue"
 
 export default {
 	name: "home",
@@ -88,7 +87,8 @@ export default {
 		HeaderAnimation,
 		MenuSlide,
 		SocialIconBar,
-		TextSlider
+		TextSlider,
+		NewsletterSignUp
 	},
 	methods: {
 	}
@@ -229,15 +229,7 @@ export default {
 .freebie-text {
 	grid-area: freebie-text;
 	background-color: $secondary-color;
-	.sign-up {
-		display: block;
-		border: none;
-		height: 24px;
-		width: 256px;
-		color: $primary-bright;
-		margin-bottom: 16px;
-		padding: 8px;
-	}
+
 	@media only screen and (max-width: 768px) {
 		display: flex;
 		flex-direction: column;
