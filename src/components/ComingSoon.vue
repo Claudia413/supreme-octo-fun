@@ -1,87 +1,57 @@
 <template>
 	<header>
-		<h2 class="developer">Coming soon!</h2>
+		<div class="overlay">
+			<h2>Coming soon</h2>
+			<p>A website to help you learn how to build a website from scratch.</p>
+			<p>No previous skills required</p>
+			<p>Sign up for the newsletter to be informed when the site launches. I can't wait until it is finished and I can share it with you!</p>
+			<NewsletterSignUp/>
+		</div>
 	</header>
 </template>
 
 <script>
+import NewsletterSignUp from "@/components/NewsletterSignUp.vue"
+
 export default {
-	name: "ComingSoon"
-};
+	name: "ComingSoon",
+	components: {
+			NewsletterSignUp
+		}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "../assets/_variables.scss";
+@import "../assets/main.scss";
 // This is in unscss style so that I could paste it in notepad and send 1 html file to the interwebs.
 header {
 	max-width: 100%;
+	background-image: url(../assets/Darkheader.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-color: $primary-color;
 	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	color: $text-darkbg;
+	p {
+		color: $text-darkbg;
+		text-align: center;
+	}
+	.overlay {
+		height: 100%;
+		width: 100%;
+		background-color: RGBA(0,0,0,0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
 }
 h2 {
 	display: inline-block;
-	background: linear-gradient(
-		to top right,
-		#ffddaa 0%,
-		#fcecc4 10%,
-		#fcda7f 20%,
-		#fde799 33% #ffddaa 43%,
-		#fcecc4 53%,
-		#fcda7f 60%,
-		#fde799 66% #ffddaa 76%,
-		#fcecc4 86%,
-		#fcda7f 96%,
-		#fde799 100%
-	);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	margin: 6%;
-	background-size: 800% 800%;
-	-webkit-animation: MetallicBackground 15s ease infinite;
-	-moz-animation: MetallicBackground 15s ease infinite;
-	animation: MetallicBackground 15s ease infinite;
-}
-h2.developer {
 	font-size: 64px;
-	font-family: "Raleway", sans-serif;
-	animation-delay: 1.5s;
+	text-align: center;
 }
 
-@-webkit-keyframes MetallicBackground {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-@-moz-keyframes MetallicBackground {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-@keyframes MetallicBackground {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 </style>

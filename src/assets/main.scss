@@ -51,6 +51,31 @@ h4 {
 button, .button {
     font-family: 'Karla', sans-serif;
     text-transform: uppercase;
+    border: none;
+    border-radius: 0;
+    background-color: $primary-color;
+    padding: 16px 48px;
+    color: $text-darkbg;
+    cursor: pointer;
+    transition: background-color 1.8s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &active {
+        font-weight: 600;
+        background-color: $primary-bright;
+    }
+
+    &input[type="submit"],
+    &input[type="reset"] {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
 }
 
 p {
@@ -64,19 +89,6 @@ p {
     &.text-darkbg {
         color: $text-darkbg;
     }
-}
-
-button, .button {
-   border: none;
-   background-color: $primary-color;
-   padding: 16px 48px;
-   color: $text-darkbg;
-   cursor: pointer;
-   transition: background-color 1.8s ease-in-out;
-   &:hover, &:focus, &active {
-       font-weight: 600;
-       background-color: $primary-bright;
-   }
 }
 
 a {
