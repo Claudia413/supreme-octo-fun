@@ -3,11 +3,17 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ComingSoon from './components/ComingSoon.vue'
 import About from './views/About.vue'
+import ThanksForSigningUp from './components/ThanksForSigningUp.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: "*",
+    //   name: 'everything',
+    //   component: ComingSoon
+    // },
     {
       path: '/about',
       name: 'about',
@@ -23,10 +29,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/comingsoon',
-      name: 'comingsoon',
-      component: ComingSoon
+      path: '/thank-you',
+      name: 'thank-you',
+      component: ThanksForSigningUp
     },
-
   ]
 })
