@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ComingSoon from './components/ComingSoon.vue'
 import About from './views/About.vue'
-import ThanksForSigningUp from './components/ThanksForSigningUp.vue'
+import AlmostThere from './components/AlmostThere.vue'
+import ThanksForSigningUp from './components/ThanksForSigningUp'
 
 Vue.use(Router)
 
@@ -29,9 +30,14 @@ export default new Router({
       component: Home
     },
     {
+      path: '/almost-there',
+      name: 'almost-there',
+      component: AlmostThere
+    },
+    {
       path: '/thank-you',
       name: 'thank-you',
       component: ThanksForSigningUp
-    },
+    }
   ]
 })

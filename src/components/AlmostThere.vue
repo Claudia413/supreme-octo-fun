@@ -1,10 +1,10 @@
 <template>
 	<header>
 		<div class="overlay">
-			<h2>All set!</h2>
-			<p>Thank you for trusting me with your e-mail address. I promise to keep it safe and will only send you stuff I know you'll love.</p>
-			<p>If you ever feel that your interests change because, you know life happens, feel free to unsubscribe.</p>
-			<p>PS. If you can't wait for the website to launch like me, feel free to get in touch on <span><a href="https://www.instagram.com/claudia414" target="_blank">Instagram</a></span>, <span><a href="https://twitter.com/Claudia_blonde" target="_blank">Twitter</a></span>, or just send me an <span><a href="mailto:welcome@claudiaengelsman.com">email</a></span>. We don't have to wait for this website to launch to get to know each other =)</p>
+			<h2>Almost there!</h2>
+			<p>Head over to your email inbox and you'll find an email from me, click the confirmation link in there.</p>
+			<p>Then we're all set. You will get an e-mail as soon as the website goes live!</p>
+			<p>PS. If the email doesn't show up in a minute, check your spam folder, it may have ended up there. If you want it to show up in your normal inbox you can mark it as not spam, or add my email to your contact list.</p>
 		</div>
 	</header>
 </template>
@@ -13,7 +13,7 @@
 
 
 export default {
-	name: "ThanksForSigningUp",
+	name: "AlmostThere",
 }
 </script>
 
@@ -39,9 +39,6 @@ header {
 	}
 	p + p{
 		font-size: 1rem;
-	}
-	a {
-		text-decoration: underline;
 	}
 	.overlay {
 		height: 100%;
