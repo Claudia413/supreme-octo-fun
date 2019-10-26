@@ -65,6 +65,7 @@
 			</p>
 			<SocialIconBar></SocialIconBar>
 		</section>
+		<section class="footer-space"></section>
 	</div>
 </template>
 
@@ -152,6 +153,10 @@ export default {
 }
 .try-it-text {
 	grid-area: try-it-text;
+}
+.footer-space {
+	grid-area: footer;
+	height: 250px;
 }
 .bold {
 	font-weight: 600;

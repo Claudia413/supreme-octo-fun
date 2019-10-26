@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import ComingSoon from './components/ComingSoon.vue'
+// import ComingSoon from './components/ComingSoon.vue'
 import About from './views/About.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'

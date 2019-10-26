@@ -34,8 +34,11 @@ export default {
 footer {
 	color: white;
 	background-color: #45484a;
-	position: relative;
+	position: fixed;
+	bottom: 0;
+	z-index: -1;
 	max-width: 100vw;
+	padding: 10px 0 0 0;
 	.instafeed {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
@@ -104,10 +107,10 @@ footer {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 11px;
+		font-size: 12px;
 		span {
 			border-right: 1px solid white;
-			padding: 4px 16px;
+			padding: 8px 16px;
 		}
 		span:last-of-type {
 			border: none;
