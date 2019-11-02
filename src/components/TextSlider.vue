@@ -128,7 +128,7 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		.inspiration {
-			font-size: 20px;
+			font-size: 16px;
 			line-height: 2rem;
 			&.primary-color {
 				color: $primary-bright;

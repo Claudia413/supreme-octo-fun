@@ -98,6 +98,7 @@ export default {
 			width: 33px;
 			margin: auto;
 			background: -webkit-linear-gradient(left top, #FEDB37, #FDB931, #9f7928, #8A6E2F);
+			background: -webkit-linear-gradient(left top, #ac6943, #fbd1c1, #ab6943, #faf4ed);
 			-webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
 			transition: left 0.5s ease, transform 5s;

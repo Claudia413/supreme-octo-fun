@@ -54,7 +54,9 @@ export default {
         width: 23px;
         height: 23px;
         background: -webkit-linear-gradient(left top, #FEDB37, #FDB931, #9f7928, #8A6E2F);
-        opacity: 0.8;
+        background: -webkit-linear-gradient(left top, #a66251, #facec8, #a26050, #faf3f3);
+        background: -webkit-linear-gradient(left top, #ac6943, #fbd1c1, #ab6943, #faf4ed);
+        opacity: 0.9;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: 0.3s all ease;
