@@ -20,7 +20,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/main.scss";
-// This is in unscss style so that I could paste it in notepad and send 1 html file to the interwebs.
+
 header {
 	max-width: 100%;
 	background-image: url(../assets/Darkheader.jpg);
@@ -36,6 +36,10 @@ header {
 		font-size: 1.2rem;
 		min-width: 400px;
 		max-width: 50%;
+		@media only screen and (max-width: 768px) {
+			min-width: 200px;
+			max-width: 80%;
+		}
 	}
 	p + p{
 		font-size: 1rem;

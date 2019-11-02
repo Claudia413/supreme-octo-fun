@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Karla|Spectral');
+@import url('https://fonts.googleapis.com/css?family=Karla|Spectral|Inconsolata');
 
 // Variables
 @import "variables";
@@ -132,4 +132,8 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.code-font {
+    font-family: 'Inconsolata', monospace;
 }
