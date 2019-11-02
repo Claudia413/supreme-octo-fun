@@ -207,6 +207,10 @@
                 </div>
             </template>
         </TutorialField>
+        <section class="text-block">
+            <h3>Want to play around with it some more?</h3>
+            <p>Check out the code on Codepen here: </p>
+        </section>
         <section class="footer-space"></section>
 	</div>
 </template>
