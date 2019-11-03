@@ -30,9 +30,12 @@ export default {
 	grid-gap: 0;
 	grid-template-columns: repeat(2, 50%);
     grid-template-rows: 700px;
+    position: sticky;
+    top: 0;
 	@media only screen and (max-width: 768px) {
         display: flex;
         flex-direction: column;
+        position: relative;
     }
     .text-block {
         background-color: $primary-color;
