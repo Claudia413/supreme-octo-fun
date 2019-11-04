@@ -1,5 +1,6 @@
 <template>
 	<div class="tutorial">
+        <header><h3>How to create a simple loading animation with CSS</h3></header>
 		<MenuSlide/>
 		<section class="intro-text text-block">
 			<h3>How to create a simple loading animation with CSS</h3>
@@ -29,7 +30,7 @@
                 <p>We'll give the parent div a nice width, height and flexbox display.</p>
                 <p>Let's make the spans look like dots with a bit of color and a border-radius for the corners. We'll give them a square size to make sure they seem round when we round of the corners.</p>
                 <p>Also let's give them some space to breath by adding a little bit of margin so they don't touch eachother.</p>
-                <p>(For showing how the dots appear inside their parent div, there is an extra background added here which is not added in the code)</p>
+                <p>(For viewing how the dots appear inside their parent div, there is an outline around them which is not set in our example code)</p>
             </template>
             <template v-slot:preview2 class="preview">
                 <div class="preview split-block">
@@ -51,7 +52,7 @@
                     <p>height: 50px;</p>
                     <p>width: 50px;</p>
                     <p>margin: 10px;</p>
-                    <p>background-color: #242331;</p>
+                    <p>background-color: #284B63;</p>
                     <p>border-radius: 50%;</p>
                     <p>}</p>
                 </div>
@@ -86,7 +87,7 @@
                     <p>height: 50px;</p>
                     <p>width: 50px;</p>
                     <p>margin: 10px;</p>
-                    <p>background-color: #242331;</p>
+                    <p>background-color: #284B63;</p>
                     <p>border-radius: 50%;</p>
                     <p>animation-iteration-count: infinite;
                     <p>animation-name: grow;</p>
@@ -130,7 +131,7 @@
                     <p>height: 50px;</p>
                     <p>width: 50px;</p>
                     <p>margin: 10px;</p>
-                    <p>background-color: #242331;</p>
+                    <p>background-color: #284B63;</p>
                     <p>border-radius: 50%;</p>
                     <p>animation-iteration-count: infinite;
                     <p>animation-name: grow;</p>
@@ -181,7 +182,7 @@
                     <p>height: 50px;</p>
                     <p>width: 50px;</p>
                     <p>margin: 10px;</p>
-                    <p>background-color: #242331;</p>
+                    <p>background-color: #284B63;</p>
                     <p>border-radius: 50%;</p>
                     <p>animation-iteration-count: infinite;
                     <p>animation-name: grow;</p>
@@ -242,18 +243,29 @@ export default {
     }
 }
 
+header {
+	max-width: 100%;
+	min-height: 240px;
+	background-image: url('../assets/TutorialHeader.jpg');
+	background-repeat: none;
+	background-size: cover;
+	background-color: $background-color-grey;
+    overflow: hidden;
+    padding: 40px;
+}
 
 .loader {
   display: flex;
   height: 80px;
   width: 250px;
-  background-color: grey;
+  border: 2px dashed blue;
+  border-radius: 3px;
   &.step3 {
     justify-content: center;
     align-items: center;
   }
   .dot {
-    background-color: $primary-color;
+    background-color: $primary-bright;
     border-radius: 50%;
     height: 50px;
     width: 50px;
