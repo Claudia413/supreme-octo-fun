@@ -4,7 +4,7 @@
 		<MenuSlide/>
 		<section class="intro-text text-block">
 			<h3>How to create a simple loading animation with CSS</h3>
-			<p>A little while ago at work I needed to create a loading animation to show our users while they waited for the app to load. I could have got one from the internet but instead decided to try and create one from scratch. It was supposed to have blinking dots that in increased in size one by one. The result you can find below and we will go through the steps to create this yourself.</p>
+			<p>The other day at Tellow I needed to create a loading animation to show our users while they waited for the app to load. I could have got one from the internet but instead decided to try and create one from scratch. It was supposed to have blinking dots that in increased in size one by one. The result you can find below and we will go through the 5 steps to recreate this yourself.</p>
 		</section>
         <TutorialField :numberOfSteps="5">
             <!-- Step 1 -->
