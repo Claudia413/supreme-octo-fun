@@ -1,22 +1,20 @@
 <template>
-<div>
-	<section class="tutorial-field" v-for="n in numberOfSteps" :key="n">
+	<section class="tutorial-field" v-on:scroll.native="handleScroll()">
         <div class="text-block">
-            <slot :name="'step'+n"></slot>
+            <slot :name="'step'+card"></slot>
         </div>
         <div class="imagery">
-            <slot :name="'preview'+n"></slot>
-            <slot :name="'code'+n" class="code"></slot>
+            <slot :name="'preview'+card"></slot>
+            <slot :name="'code'+card" class="code"></slot>
         </div>
     </section>
-</div>
 </template>
 
 <script>
 export default {
-	name: "Footer",
+    name: "TutorialField",
 	props: {
-        numberOfSteps: Number
+        card: Number
     }
 };
 </script>

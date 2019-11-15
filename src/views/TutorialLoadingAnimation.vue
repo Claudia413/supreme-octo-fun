@@ -6,7 +6,7 @@
 			<h3>How to create a simple loading animation with CSS</h3>
 			<p>The other day at Tellow I needed to create a loading animation to show our users while they waited for the app to load. I could have got one from the internet but instead decided to try and create one from scratch. It was supposed to have blinking dots that in increased in size one by one. The result you can find below and we will go through the 5 steps to recreate this yourself.</p>
 		</section>
-        <TutorialField :numberOfSteps="5">
+        <TutorialField v-for="n in numberOfSteps" :key="n" :card="n">
             <!-- Step 1 -->
             <template v-slot:step1>
                 <p>Let's get started with the html structure for the dots. For this one we just need a box to hold the 3 dots and the dots. I went with a div and spans because spans will appear next to each other by default.</p>
@@ -224,7 +224,34 @@ export default {
 	components: {
         MenuSlide,
         TutorialField
-	}
+    },
+    data() {
+        return{
+            numberOfSteps: 5
+        }
+    },
+    methods: {
+        handleScroll() {
+            switch(window.scrollY) {
+            case 598:
+                // Start of card 1
+                break;
+            case 1298 :
+                console.log('1298')
+                break;
+            default:
+                console.log('default')
+            }
+
+
+        }
+    },
+    created () {
+    window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
 };
 </script>
 
@@ -253,7 +280,7 @@ header {
     overflow: hidden;
     padding: 40px;
 }
-
+// Loading animation
 .loader {
   display: flex;
   height: 80px;
