@@ -54,7 +54,7 @@
 		</section>
 		<section class="freebie-text text-block">
 			<h3>Freebies, tips and more?</h3>
-			<p class="text-darkbg">Sign up and get tricks, cool resources and the latest blog updates on a regular basis.</p>
+			<p class="text-darkbg">Sign up to get tricks, cool resources and the latest blog updates in your inbox.</p>
 			<NewsletterSignUp/>
 		</section>
 		<section class="bio-link-text text-block menu-padding">
@@ -64,6 +64,11 @@
 				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started to learn coding 3 years ago and it was so overwhelming to started in a structured way, so I am creating the place I would have loved to have found back then.
 			</p>
 			<SocialIconBar></SocialIconBar>
+		</section>
+		<section class="blog text-block menu-padding">
+			<Blogpost>
+				<p>hi</p>
+			</Blogpost>
 		</section>
 		<section class="footer-space"></section>
 	</div>
@@ -76,6 +81,7 @@ import MenuSlide from "@/components/MenuSlide.vue";
 import SocialIconBar from "@/components/SocialIconBar.vue";
 import TextSlider from "@/components/TextSlider.vue";
 import NewsletterSignUp from "@/components/NewsletterSignUp.vue"
+import Blogpost from "@/components/BlogPost.vue"
 
 export default {
 	name: "home",
@@ -89,7 +95,8 @@ export default {
 		MenuSlide,
 		SocialIconBar,
 		TextSlider,
-		NewsletterSignUp
+		NewsletterSignUp,
+		Blogpost
 	},
 	methods: {
 	}

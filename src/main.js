@@ -1,9 +1,19 @@
 import Vue from 'vue'
+import PrismicVue from 'prismic-vue';
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import linkResolver from './link-resolver'
 
 Vue.config.productionTip = false
+
+Vue.use(PrismicVue, {
+  endpoint: window.prismic.endpoint,
+  linkResolver,
+  apiOptions: {
+    accessToken
+  }
+});
 
 new Vue({
   router,
