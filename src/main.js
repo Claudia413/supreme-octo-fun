@@ -7,6 +7,8 @@ import linkResolver from './link-resolver'
 
 Vue.config.productionTip = false
 
+const accessToken = 'MC5YaGlBeXhVQUFDUUFHZ0Ew.Kgbvv70TUu-_vX7vv73vv73vv73vv73vv73vv73vv73vv70cNO-_vTgL77-977-9LhXvv71gJUbvv71A77-9aA';
+
 Vue.use(PrismicVue, {
   endpoint: window.prismic.endpoint,
   linkResolver,
