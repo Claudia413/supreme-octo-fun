@@ -35,11 +35,11 @@
 			<button class="mt-2">To the guide!</button>
 		</section>
 		<section class="full-block blog-highlight">
-			<div class="blog-post">
-				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<span class="blog-tag-text">Long Blog Title about Something!</span>
+			<div v-for="(post, index) in blogpreviews" :key="'post-' + index" class="blog-post">
+				<prismic-image :field="post.data.blog_image" class="blog-pic"/>
+				<span class="blog-tag-text">{{post.data.title[0].text}}</span>
 			</div>
-			<div class="blog-post">
+			<!-- <div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
 				<span class="blog-tag-text">Long Blog Title about Something else!</span>
 			</div>
@@ -50,7 +50,7 @@
 			<div class="blog-post">
 				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
 				<span class="blog-tag-text">Long Blog Title about other things!</span>
-			</div>
+			</div> -->
 		</section>
 		<section class="freebie-text text-block">
 			<h3>Freebies, tips and more?</h3>
@@ -65,11 +65,6 @@
 			</p>
 			<SocialIconBar></SocialIconBar>
 		</section>
-		<section class="blog text-block menu-padding">
-			<Blogpost>
-				<p>hi</p>
-			</Blogpost>
-		</section>
 		<section class="footer-space"></section>
 	</div>
 </template>
@@ -81,12 +76,13 @@ import MenuSlide from "@/components/MenuSlide.vue";
 import SocialIconBar from "@/components/SocialIconBar.vue";
 import TextSlider from "@/components/TextSlider.vue";
 import NewsletterSignUp from "@/components/NewsletterSignUp.vue"
-import Blogpost from "@/components/BlogPost.vue"
 
 export default {
 	name: "home",
 	data() {
 		return {
+			blogpreviews: [
+			],
 
 		};
 	},
@@ -96,10 +92,22 @@ export default {
 		SocialIconBar,
 		TextSlider,
 		NewsletterSignUp,
-		Blogpost
 	},
 	methods: {
-	}
+		getContent() {
+			this.$prismic.client.query(
+			this.$prismic.Predicates.at('document.type', 'blogpost'),
+			{ pageSize : 4, fetch : ['blogpost.title', 'blogpost.blog_image'] }
+			).then((response) => {
+				this.blogpreviews = response.results
+				console.log('this.blogs', this.blogpreviews)
+			// response is the response object, response.results holds the documents
+			});
+		}
+	},
+	created () {
+    this.getContent();
+  }
 };
 </script>
 
