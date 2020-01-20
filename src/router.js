@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-// import ComingSoon from './components/ComingSoon.vue'
+import ComingSoon from './components/ComingSoon.vue'
 import About from './views/About.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'
@@ -11,11 +11,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: "*",
-    //   name: 'everything',
-    //   component: ComingSoon
-    // },
     {
       path: '/about',
       name: 'about',
@@ -44,6 +39,11 @@ export default new Router({
       path: '/loading-animation',
       name: 'loading-animation',
       component: TutorialLodingAnimation
-    }
+    },
+    {
+      path: "*",
+      name: 'everything',
+      component: ComingSoon
+    },
   ]
 })
