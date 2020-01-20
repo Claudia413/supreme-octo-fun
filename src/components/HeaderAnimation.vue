@@ -1,8 +1,7 @@
 <template>
 	<header>
 		<div class="title">
-			<h1>Claudia Engelsman</h1>
-			<h2> Developer, educator, adventurer</h2>
+			<slot :name="'title'"></slot>
 		</div>
 	</header>
 </template>
@@ -35,7 +34,6 @@ header {
 		max-width: 40%;
 	}
 	h1 {
-		// text-transform: uppercase;
 		opacity: 1;
 	}
 	h2 {

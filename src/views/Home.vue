@@ -1,6 +1,11 @@
 <template>
 	<div class="home">
-		<HeaderAnimation class="headeranimation"/>
+		<HeaderAnimation class="headeranimation">
+			<template v-slot:title>
+				<h1>Claudia Engelsman</h1>
+				<h2> Developer, educator, adventurer</h2>
+			</template>
+		</HeaderAnimation>
 		<MenuSlide/>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
@@ -156,6 +161,12 @@ export default {
 	}
 	.mt-2 {
 		margin-top: 20px;
+	}
+	h1 {
+		opacity: 1;
+	}
+	h2 {
+		color: $text-darkbg;
 	}
 }
 .headeranimation {
