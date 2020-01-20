@@ -26,16 +26,34 @@
 		</TextSlider>
 		<img
 			alt="Claudia Engelsman, developer who will help you build a website yourself"
-			src="../assets/ClaudiaBWKaikoura.jpg"
+			src="../assets/ClaudiaEngelsmanHike.jpg"
 			class="try-it-pic img-block"
 		>
 		<section class="try-it-text text-block">
-			<h3>Try it</h3>
-			<p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Try out the guide with step by step articles, practise exercises, and you will land a job as a webdeveloper in no time!</p>
-			<button class="mt-2">To the guide!</button>
+			<h3>The blog</h3>
+			<!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
+			<p>These articles will soon become a library of posts for any girl who needs some help or inspiration about webdevelopment or moving to New Zealand.</p>
+			<button class="mt-2">To the blog</button>
 		</section>
+		<!-- Blog previews from Prismic and empty squares while loading from Prismic -->
 		<section class="full-block blog-highlight">
-			<div v-for="(post, index) in blogpreviews" :key="'post-' + index" class="blog-post">
+			<div v-if="loadingBlogs" class="blog-post">
+				<div class="blog-pic placeholder"></div>
+				<div class="blog-tag-text placeholder"></div>
+			</div>
+			<div v-if="loadingBlogs" class="blog-post">
+				<div class="blog-pic placeholder"></div>
+				<div class="blog-tag-text placeholder"></div>
+			</div>
+			<div v-if="loadingBlogs" class="blog-post">
+				<div class="blog-pic placeholder"></div>
+				<div class="blog-tag-text placeholder"></div>
+			</div>
+			<div v-if="loadingBlogs" class="blog-post">
+				<div class="blog-pic placeholder"></div>
+				<div class="blog-tag-text placeholder"></div>
+			</div>
+			<div v-else v-for="(post, index) in blogpreviews" :key="'post-' + index" class="blog-post">
 				<prismic-image :field="post.data.blog_image" class="blog-pic"/>
 				<span class="blog-tag-text">{{post.data.title[0].text}}</span>
 			</div>
@@ -46,14 +64,13 @@
 			<NewsletterSignUp/>
 		</section>
 		<section class="bio-link-text text-block menu-padding">
-			<h3>Try it</h3>
+			<h3>Hiya!</h3>
 			<p>
 				I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead of a stomach.
-				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started coding 3 years ago and it was so overwhelming to started in a structured way, so I am creating the place I would have loved to have found back then.
+				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started coding 3 years ago and it was so overwhelming to get started in a structured way. Now I am creating the place I would have loved to have found back then in the hopes more women join me in this awesome field of work.
 			</p>
-			<SocialIconBar></SocialIconBar>
+			<!-- <SocialIconBar></SocialIconBar> -->
 		</section>
-		<section class="footer-space"></section>
 	</div>
 </template>
 
@@ -69,6 +86,7 @@ export default {
 	name: "home",
 	data() {
 		return {
+			loadingBlogs: true,
 			blogpreviews: [
 			],
 
@@ -91,6 +109,7 @@ export default {
 			fetch : ['blogpost.title', 'blogpost.blog_image'] }
 			).then((response) => {
 				this.blogpreviews = response.results
+				this.loadingBlogs = false
 			// response is the response object, response.results holds the documents
 			});
 		}
@@ -105,11 +124,13 @@ export default {
 @import "../assets/_variables.scss";
 
 .home {
+	z-index: 100;
 	max-width: 100%;
+	height: calc(100% - 400px);
 	display: grid;
 	grid-gap: 0;
 	grid-template-columns: repeat(2, 50%);
-	grid-template-rows: auto 400px auto 400px auto 400px;
+	grid-template-rows: auto 440px auto 400px auto 480px;
 	grid-template-areas:
 		"header header"
 		"intro-pic intro-text"
@@ -158,10 +179,6 @@ export default {
 }
 .try-it-text {
 	grid-area: try-it-text;
-}
-.footer-space {
-	grid-area: footer;
-	height: 250px;
 }
 .bold {
 	font-weight: 600;
