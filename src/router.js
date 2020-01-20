@@ -3,9 +3,10 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ComingSoon from './components/ComingSoon.vue'
 import About from './views/About.vue'
+import BlogOverview from './views/BlogOverview.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'
-import TutorialLodingAnimation from './views/TutorialLoadingAnimation'
+import TutorialLoadingAnimation from './views/TutorialLoadingAnimation'
 
 Vue.use(Router)
 
@@ -38,7 +39,12 @@ export default new Router({
     {
       path: '/loading-animation',
       name: 'loading-animation',
-      component: TutorialLodingAnimation
+      component: TutorialLoadingAnimation
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: BlogOverview
     },
     {
       path: "*",
