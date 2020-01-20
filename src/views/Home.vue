@@ -39,18 +39,6 @@
 				<prismic-image :field="post.data.blog_image" class="blog-pic"/>
 				<span class="blog-tag-text">{{post.data.title[0].text}}</span>
 			</div>
-			<!-- <div class="blog-post">
-				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<span class="blog-tag-text">Long Blog Title about Something else!</span>
-			</div>
-			<div class="blog-post">
-				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<span class="blog-tag-text">Long Blog Title about other things!</span>
-			</div>
-			<div class="blog-post">
-				<img src="../assets/ClaudiaBWKaikoura.jpg" class="blog-pic">
-				<span class="blog-tag-text">Long Blog Title about other things!</span>
-			</div> -->
 		</section>
 		<section class="freebie-text text-block">
 			<h3>Freebies, tips and more?</h3>
@@ -97,7 +85,10 @@ export default {
 		getContent() {
 			this.$prismic.client.query(
 			this.$prismic.Predicates.at('document.type', 'blogpost'),
-			{ pageSize : 4, fetch : ['blogpost.title', 'blogpost.blog_image'] }
+			{
+			orderings : '[document.first_publication_date desc]',
+			pageSize : 4,
+			fetch : ['blogpost.title', 'blogpost.blog_image'] }
 			).then((response) => {
 				this.blogpreviews = response.results
 				console.log('this.blogs', this.blogpreviews)
