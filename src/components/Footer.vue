@@ -1,10 +1,10 @@
 <template>
-	<footer class>
+	<footer>
 		<section class="instafeed">
 			<span class="instagram-icon fab fa-instagram"></span>
 			<div class="instagram-intro">
 				<p>Want to get to know me better? Instagram has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
-				<a href="http://instagram.com/claudia414" target="_blank" class="cta-link">@Claudia413</a>
+				<a href="http://instagram.com/claudia414" target="_blank" class="cta-link">@Claudia414</a>
 			</div>
 			<img src="../assets/Claudia.jpg" />
 			<img src="../assets/Claudia.jpg" />
@@ -34,11 +34,9 @@ export default {
 footer {
 	color: white;
 	background-color: #45484a;
-	position: fixed;
-	bottom: 0;
-	z-index: -1;
 	max-width: 100vw;
 	padding: 10px 0 0 0;
+	height: auto;
 	.instafeed {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
