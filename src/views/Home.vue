@@ -8,14 +8,14 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, hi, I'm Claudia and I want to help you learn how to build websites. A mere 3 years ago I switched from a job in purchasing to a developer position without any prior coding knowledge. While that didn’t happen overnight, I was earning a salary as a developer within a month of quitting. The best part: I can help you do the same.</p>
+			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Oh, and I recently moved to New Zealand and share about that journey as well. For websites and emigration to NZ, I'm here to help!</p>
 			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<button class="mt-2">More about me</button>
 		</section>
 		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="3">
 			<template v-slot:slide1>
-				<span class="bold">It has never been easier to build websites.</span> I am not making this up, technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
+				<span class="bold">It has never been easier to build websites.</span> I am not making this up; technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
 			</template>
 			<template v-slot:slide2>There is a huge shortage of developers and there is a big gap in male/female ratio in development. More job openings than developers means developers have the <span class="bold">advantage in job negotiations.</span> Sounds good huh?
 			</template>
@@ -25,7 +25,7 @@
 			</template>
 		</TextSlider>
 		<img
-			alt="Claudia Engelsman, developer who will help you how to code a website"
+			alt="Claudia Engelsman, developer who will help you build a website yourself"
 			src="../assets/ClaudiaBWKaikoura.jpg"
 			class="try-it-pic img-block"
 		>
@@ -49,7 +49,7 @@
 			<h3>Try it</h3>
 			<p>
 				I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead of a stomach.
-				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started to learn coding 3 years ago and it was so overwhelming to started in a structured way, so I am creating the place I would have loved to have found back then.
+				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started coding 3 years ago and it was so overwhelming to started in a structured way, so I am creating the place I would have loved to have found back then.
 			</p>
 			<SocialIconBar></SocialIconBar>
 		</section>
@@ -91,7 +91,6 @@ export default {
 			fetch : ['blogpost.title', 'blogpost.blog_image'] }
 			).then((response) => {
 				this.blogpreviews = response.results
-				console.log('this.blogs', this.blogpreviews)
 			// response is the response object, response.results holds the documents
 			});
 		}
