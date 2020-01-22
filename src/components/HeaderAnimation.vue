@@ -19,12 +19,12 @@ export default {
 header {
 	max-width: 100%;
 	min-height: 240px;
+	height: 50vh;
 	background-image: url('../assets/Darkheader.jpg');
 	background-repeat: none;
 	background-size: cover;
 	background-color: $background-color-grey;
 	overflow: hidden;
-	height: 40vh;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;

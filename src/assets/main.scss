@@ -128,9 +128,15 @@ a {
         max-width: 600px;
     }
 }
-.full-block {
+.full-block-row {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.full-block {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 

@@ -6,49 +6,58 @@
 			</template>
 		</HeaderAnimation>
 		<MenuSlide/>
-        <section class="full-block blog-highlight tech">
-			<div v-if="loadingBlogsTech" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-if="loadingBlogsTech" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-if="loadingBlogsTech" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-if="loadingBlogsTech" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" class="blog-post">
-				<prismic-image :field="post.data.blog_image" class="blog-pic"/>
-				<span class="blog-tag-text">{{post.data.title[0].text}}</span>
-			</div>
+        <section class="full-block blog-reel tech">
+            <h3>Tech blogs</h3>
+            <div class="blogs">
+                <div v-if="loadingBlogsTech" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-if="loadingBlogsTech" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-if="loadingBlogsTech" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-if="loadingBlogsTech" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" class="blog-post">
+                    <prismic-image :field="post.data.blog_image" class="blog-pic"/>
+                    <span class="blog-tag-text">{{post.data.title[0].text}}</span>
+                </div>
+            </div>
 		</section>
-        <section class="full-block blog-highlight tech">
-			<div v-if="loadingBlogsNZ" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-if="loadingBlogsNZ" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-if="loadingBlogsNZ" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-if="loadingBlogsNZ" class="blog-post">
-				<div class="blog-pic placeholder"></div>
-				<div class="blog-tag-text placeholder"></div>
-			</div>
-			<div v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" class="blog-post">
-				<prismic-image :field="post.data.blog_image" class="blog-pic"/>
-				<span class="blog-tag-text">{{post.data.title[0].text}}</span>
-			</div>
+        <!-- <section class="featured-blog">
+            <h3>Featured post</h3>
+        </section> -->
+        <section class="full-block blog-reel nz">
+            <h3>Blogs about New Zealand and emigration</h3>
+            <div class="blogs">
+                <div v-if="loadingBlogsNZ" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-if="loadingBlogsNZ" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-if="loadingBlogsNZ" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-if="loadingBlogsNZ" class="blog-post">
+                    <div class="blog-pic placeholder"></div>
+                    <div class="blog-tag-text placeholder"></div>
+                </div>
+                <div v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" class="blog-post">
+                    <prismic-image :field="post.data.blog_image" class="blog-pic"/>
+                    <span class="blog-tag-text">{{post.data.title[0].text}}</span>
+                </div>
+            </div>
 		</section>
 	</div>
 </template>
@@ -114,6 +123,37 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/_variables.scss";
 
+.blog-reel {
+    background-color: $primary-color;
+	height: auto;
+    padding: 40px;
+    &.nz {
+        background-color: $text-darkbg;
+        color: $primary-color;
+        h3 {
+            color: $primary-color;
+        }
+    }
+    h3 {
+        color: $text-darkbg;
+        padding: 0 24px 24px;
+    }
+    .blogs {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        @media only screen and (max-width: 768px) {
+            width: auto;
+            flex-direction: column;
+        }
+    }
+}
+
+// .featured-blog {
+//     background-color: $body-bg;
+// }
+
 .blog-post {
 	display: flex;
 	align-content: center;
@@ -159,16 +199,8 @@ export default {
 		margin-bottom: 32px;
 		.blog-tag-text {
 			margin: 32px;
-		// 	top: 0;
-		// 	left: 176px;
-		// 	right: -64px;
-		// 	left: 64%;
-		// 	bottom: 0;
-		// 	padding: 40px;
-		// 	text-align: left;
 		}
 		.blog-pic {
-			// margin-right: 40px;
 			height: 320px;
 			width: 340px;
 		}

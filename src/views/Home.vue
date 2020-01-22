@@ -20,7 +20,7 @@
 		</section>
 		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="3">
 			<template v-slot:slide1>
-				<span class="bold">It has never been easier to build websites.</span> I am not making this up; technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
+				<span class="bold">It has never been easier to build websites.</span> Not kidding; technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
 			</template>
 			<template v-slot:slide2>There is a huge shortage of developers and there is a big gap in male/female ratio in development. More job openings than developers means developers have the <span class="bold">advantage in job negotiations.</span> Sounds good huh?
 			</template>
@@ -41,7 +41,7 @@
 			<button class="mt-2">To the blog</button>
 		</section>
 		<!-- Blog previews from Prismic and empty squares while loading from Prismic -->
-		<section class="full-block blog-highlight">
+		<section class="full-block-row blog-highlight">
 			<div v-if="loadingBlogs" class="blog-post">
 				<div class="blog-pic placeholder"></div>
 				<div class="blog-tag-text placeholder"></div>
@@ -64,15 +64,15 @@
 			</div>
 		</section>
 		<section class="freebie-text text-block">
-			<h3>Freebies, tips and more?</h3>
-			<p class="text-darkbg">Sign up to get tricks, cool resources and the latest blog updates in your inbox.</p>
+			<h3>Let's stay in touch</h3>
+			<p class="text-darkbg">Sign up to get cool resources and the latest blog updates in your inbox. And don't worry, I hate spam just as much as you do and promise I will only send you the really cool stuff!</p>
 			<NewsletterSignUp/>
 		</section>
 		<section class="bio-link-text text-block menu-padding">
 			<h3>Hiya!</h3>
 			<p>
 				I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead of a stomach.
-				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, guides and templates. I started coding 3 years ago and it was so overwhelming to get started in a structured way. Now I am creating the place I would have loved to have found back then in the hopes more women join me in this awesome field of work.
+				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, templates and inspiration. I started coding 3 years ago and it was so overwhelming to get started in a structured way. Now I am creating the place I would have loved to have found back then in the hopes more women join me in this awesome field of work.
 			</p>
 			<!-- <SocialIconBar></SocialIconBar> -->
 		</section>
@@ -135,7 +135,7 @@ export default {
 	display: grid;
 	grid-gap: 0;
 	grid-template-columns: repeat(2, 50%);
-	grid-template-rows: auto 440px auto 400px auto 480px;
+	grid-template-rows: auto 440px auto 400px auto auto;
 	grid-template-areas:
 		"header header"
 		"intro-pic intro-text"
@@ -249,16 +249,8 @@ export default {
 		margin-bottom: 32px;
 		.blog-tag-text {
 			margin: 32px;
-		// 	top: 0;
-		// 	left: 176px;
-		// 	right: -64px;
-		// 	left: 64%;
-		// 	bottom: 0;
-		// 	padding: 40px;
-		// 	text-align: left;
 		}
 		.blog-pic {
-			// margin-right: 40px;
 			height: 320px;
 			width: 340px;
 		}

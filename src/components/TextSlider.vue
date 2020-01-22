@@ -1,5 +1,5 @@
 <template>
-	<section class="slideit full-block" :class="backgroundColor">
+	<section class="slideit full-block-row" :class="backgroundColor">
 		<div class="arrow" @click="incrementSlideIndex(-1)">
 			<span class="fas fa-chevron-left"></span>
 		</div>

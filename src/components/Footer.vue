@@ -35,7 +35,7 @@ footer {
 	color: white;
 	background-color: #45484a;
 	max-width: 100vw;
-	padding: 10px 0 0 0;
+	padding: 0;
 	height: auto;
 	.instafeed {
 		display: grid;
@@ -82,11 +82,13 @@ footer {
 				color: inherit;
 				text-align: left;
 				margin: 0;
+				line-height: 20px;
 				@media only screen and (max-width: 1028px) {
 					font-size: 11px;
 				}
 				@media only screen and (max-width: 768px) {
 					font-size: 14px;
+					line-height: 22px;
 				}
 			}
 		}
