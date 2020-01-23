@@ -53,10 +53,10 @@
                     <div class="blog-pic placeholder"></div>
                     <div class="blog-tag-text placeholder"></div>
                 </div>
-                <div v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" class="blog-post">
+                <router-link v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" :to="'/blog/' + post.uid" class="blog-post">
                     <prismic-image :field="post.data.blog_image" class="blog-pic"/>
                     <span class="blog-tag-text">{{post.data.title[0].text}}</span>
-                </div>
+                </router-link>
             </div>
 		</section>
 	</div>
@@ -68,7 +68,7 @@ import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
 
 export default {
-	name: "home",
+	name: "blogOverview",
 	data() {
 		return {
 			blogpreviewsnz: [
@@ -95,7 +95,7 @@ export default {
 			fetch : ['blogpost.title', 'blogpost.blog_image'] }).then((response) => {
                 this.loadingBlogsTech = false
 				this.blogpreviewstech = response.results
-			// response is the response object, response.results holds the documents
+            // response is the response object, response.results holds the documents
 			});
         },
         getContentTech() {

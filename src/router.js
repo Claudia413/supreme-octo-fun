@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import ComingSoon from './components/ComingSoon.vue'
 import About from './views/About.vue'
 import BlogOverview from './views/BlogOverview.vue'
+import BlogPost from './views/BlogPost.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'
 import TutorialLoadingAnimation from './views/TutorialLoadingAnimation'
@@ -45,6 +46,11 @@ export default new Router({
       path: '/blog',
       name: 'blog',
       component: BlogOverview
+    },
+    {
+      path: '/blog/:uid',
+      name: 'blog-post',
+      component: BlogPost
     },
     {
       path: "*",
