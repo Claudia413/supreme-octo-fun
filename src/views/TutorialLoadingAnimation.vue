@@ -237,10 +237,10 @@ export default {
                 // Start of card 1
                 break;
             case 1298 :
-                console.log('1298')
+                // console.log('1298')
                 break;
             default:
-                console.log('default')
+                // console.log('default')
             }
 
 

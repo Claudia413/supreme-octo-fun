@@ -83,7 +83,6 @@
 // @ is an alias to /src
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
-import SocialIconBar from "@/components/SocialIconBar.vue";
 import TextSlider from "@/components/TextSlider.vue";
 import NewsletterSignUp from "@/components/NewsletterSignUp.vue"
 
@@ -100,7 +99,6 @@ export default {
 	components: {
 		HeaderAnimation,
 		MenuSlide,
-		SocialIconBar,
 		TextSlider,
 		NewsletterSignUp,
 	},
