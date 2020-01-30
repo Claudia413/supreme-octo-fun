@@ -7,7 +7,7 @@
 			</header>
 			<div class="content">
 				<h1 class="title">{{blog.title[0].text}}</h1>
-				<prismic-rich-text :field="blog.subtitle" />
+				<prismic-rich-text :field="blog.subtitle" class="subtitle"/>
 				<section v-for="(slice, index) in slices" :key="'slice-' + index">
 					<template v-if="slice.slice_type === 'blog_text_block'">
 						<h2 class="heading" >{{slice.primary.section_title[0].text}}</h2>
@@ -19,10 +19,7 @@
 					</template>
 				</section>
 			</div>
-			<aside>
-				<p>short bio here</p>
-				<p>links here</p>
-			</aside>
+			<AsideBlog/>
 		</div>
 	</div>
 </template>
@@ -30,13 +27,16 @@
 <script>
 // @ is an alias to /src
 import MenuSlide from "@/components/MenuSlide.vue";
+import AsideBlog from "@/components/AsideBlog.vue"
 
 export default {
 	name: "blogPost",
 	data() {
 		return {
 			blog: {
-				title: [],
+				title: [
+                    { text: ""}
+                ],
 				subtitle: [],
 				header: {}
 			},
@@ -44,7 +44,8 @@ export default {
 		};
 	},
 	components: {
-		MenuSlide
+        MenuSlide,
+        AsideBlog
 	},
 	methods: {
 		getContent(uid) {
@@ -97,6 +98,9 @@ export default {
             text-align: center;
             padding: 24px 12px;
         }
+        .subtitle {
+            padding: 12px;
+        }
 		.heading {
 			color: $primary-bright;
 			font-family: "Spectral", sans-serif;
@@ -121,7 +125,7 @@ export default {
 	}
 	aside {
 		grid-area: aside;
-		width: 100%;
+		width: auto;
 		max-width: 400px;
 	}
 }
