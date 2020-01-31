@@ -25,10 +25,10 @@
                     <div class="blog-pic placeholder"></div>
                     <div class="blog-tag-text placeholder"></div>
                 </div>
-                <div v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" class="blog-post">
+                <router-link v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" :to="'/blog/' + post.uid" class="blog-post">
                     <prismic-image :field="post.data.blog_image" class="blog-pic"/>
                     <span class="blog-tag-text">{{post.data.title[0].text}}</span>
-                </div>
+                </router-link>
             </div>
 		</section>
         <!-- <section class="featured-blog">

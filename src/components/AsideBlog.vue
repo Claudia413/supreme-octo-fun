@@ -1,7 +1,7 @@
 <template>
 	<aside>
 		<section class="short-bio">
-
+            <img src="../assets/ClaudiaWithMacbookSmall.jpg" class="headshot"/>
             <p>Hiya, I'm Claudia and here to help with coding websites and tips on moving to New Zealand</p>
 		</section>
         <section class="featured-blog">
@@ -35,5 +35,12 @@ aside {
 	width: auto;
 	padding: 0 56px 0 0;
 	height: auto;
+}
+
+.short-bio {
+    .headshot {
+        width: 100%;
+        height: auto;
+    }
 }
 </style>

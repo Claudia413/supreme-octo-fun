@@ -56,6 +56,8 @@ button, .button {
     background-color: $primary-color;
     padding: 16px 48px;
     color: $text-darkbg;
+    font-size: 14px;
+    display: inline-block;
     cursor: pointer;
     transition: background-color 1.8s ease-in-out;
 

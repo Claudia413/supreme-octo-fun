@@ -13,10 +13,10 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Oh, and I recently moved to New Zealand and share about that journey as well. For websites and emigration to NZ, I'm here to help!</p>
+			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Oh, and I recently moved to New Zealand and share about that journey as well. For websites and moving to NZ, I'm here to help!</p>
 			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
-			<button class="mt-2">More about me</button>
+			<router-link to="/about" class="button mt-2">More about me</router-link>
 		</section>
 		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="3">
 			<template v-slot:slide1>
@@ -38,7 +38,7 @@
 			<h3>The blog</h3>
 			<!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
 			<p>These articles will soon become a library of posts for any girl who needs some help or inspiration about webdevelopment or moving to New Zealand.</p>
-			<button class="mt-2">To the blog</button>
+			<router-link to="/blog" class="button mt-2">To the blog</router-link>
 		</section>
 		<!-- Blog previews from Prismic and empty squares while loading from Prismic -->
 		<section class="full-block-row blog-highlight">
@@ -58,10 +58,10 @@
 				<div class="blog-pic placeholder"></div>
 				<div class="blog-tag-text placeholder"></div>
 			</div>
-			<div v-else v-for="(post, index) in blogpreviews" :key="'post-' + index" class="blog-post">
+			<router-link v-else v-for="(post, index) in blogpreviews" :key="'post-' + index" :to="'/blog/' + post.uid" class="blog-post">
 				<prismic-image :field="post.data.blog_image" class="blog-pic"/>
 				<span class="blog-tag-text">{{post.data.title[0].text}}</span>
-			</div>
+			</router-link>
 		</section>
 		<section class="freebie-text text-block">
 			<h3>Let's stay in touch</h3>
