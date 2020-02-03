@@ -32,14 +32,19 @@ export default {
     },
     data() {
         return {
-            blogpreview: [
-            ],
+            blogpreview: {
+                data: {
+                    blog_image: {},
+                    title: [
+                        {text: ""}
+                    ]
+                }
+            },
             currentCategory: "",
         }
     },
     methods: {
         getBlogFromThisCategory(categoryLabel) {
-            console.log('3 category label sent to Prismic as variable', categoryLabel);
 			this.$prismic.client.query([
             this.$prismic.Predicates.at('document.type', 'blogpost'),
             this.$prismic.Predicates.at('document.tags', [ categoryLabel ]),
@@ -58,19 +63,14 @@ export default {
         },
     },
     mounted() {
-        // this.currentCategory = ;
         this.getBlogFromThisCategory(this.labels[0]);
     },
     watch: {
-    // whenever question changes, this function will run
+    // whenever blogID changes, this function will run
     blogID: function (newBlogID, oldBlogID) {
       this.getBlogFromThisCategory(this.labels[0]);
     }
   },
-    // beforeRouteUpdate (to, from, next) {
-	// 	this.getBlogFromThisCategory(this.labels[0]);
-	// 	next();
-	// }
 };
 </script>
 
