@@ -19,7 +19,7 @@
 					</template>
 				</section>
 			</div>
-			<AsideBlog/>
+			<AsideBlog v-if="!contentLoading" :labels="blog.labels" :blogID="blog.prismicID" />
 		</div>
 	</div>
 </template>
@@ -38,9 +38,12 @@ export default {
                     { text: ""}
                 ],
 				subtitle: [],
-				header: {}
+				header: {},
+				labels: [],
+				prismicID: ""
 			},
-			slices: []
+			slices: [],
+			contentLoading: true
 		};
 	},
 	components: {
@@ -54,8 +57,10 @@ export default {
 				this.blog.title = document.data.title;
 				this.blog.subtitle = document.data.subtitle;
 				this.blog.header = document.data.blog_image;
-                this.slices = document.data.body;
-                console.log('slices', this.slices);
+				this.blog.labels = document.tags;
+				this.slices = document.data.body;
+				this.blog.prismicID = document.id;
+				this.contentLoading = false
 			});
 		}
 	},
@@ -69,7 +74,7 @@ export default {
 @import "../assets/_variables.scss";
 
 .blog {
-	background-color: $body-bg;
+	background-color: #f5f5f5;
 	.blog-grid {
 		display: grid;
 		grid-gap: 0;
@@ -93,6 +98,7 @@ export default {
 		margin-right: auto;
 		display: flex;
         flex-direction: column;
+		padding-top: 48px;
         .title {
             color: $primary-bright;
             text-align: center;

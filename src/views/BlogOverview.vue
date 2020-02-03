@@ -84,7 +84,7 @@ export default {
 		MenuSlide,
 	},
 	methods: {
-		getContentNZ() {
+		getContentTech() {
 			this.$prismic.client.query([
             this.$prismic.Predicates.at('document.type', 'blogpost'),
             this.$prismic.Predicates.at('document.tags', ['Tech']),
@@ -98,7 +98,7 @@ export default {
             // response is the response object, response.results holds the documents
 			});
         },
-        getContentTech() {
+        getContentNZ() {
 			this.$prismic.client.query([
             this.$prismic.Predicates.at('document.type', 'blogpost'),
             this.$prismic.Predicates.at('document.tags', ['NZ'])],
