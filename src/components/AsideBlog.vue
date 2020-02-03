@@ -61,7 +61,16 @@ export default {
         // this.currentCategory = ;
         this.getBlogFromThisCategory(this.labels[0]);
     },
-
+    watch: {
+    // whenever question changes, this function will run
+    blogID: function (newBlogID, oldBlogID) {
+      this.getBlogFromThisCategory(this.labels[0]);
+    }
+  },
+    // beforeRouteUpdate (to, from, next) {
+	// 	this.getBlogFromThisCategory(this.labels[0]);
+	// 	next();
+	// }
 };
 </script>
 
