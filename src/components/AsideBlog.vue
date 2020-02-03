@@ -8,7 +8,7 @@
             <p>Latest post in the {{labels[0]}} category</p>
             <router-link :to="'/blog/' + blogpreview.uid" class="blog-post">
                     <prismic-image :field="blogpreview.data.blog_image" class="blog-pic"/>
-                    <span class="blog-tag-text">{{blogpreview.data.title[0].text}}</span>
+                    <span class="blog-title">{{blogpreview.data.title[0].text}}</span>
             </router-link>
 		</section>
         <section class="cta newsletter">
@@ -82,7 +82,7 @@ aside {
 	color: white;
 	width: auto;
 	padding: 48px 56px 0 0;
-	height: auto;
+    height: auto;
 }
 
 .short-bio {
@@ -99,6 +99,9 @@ aside {
 .featured-blog {
     .blog-pic {
         width: 100%;
+    }
+    .blog-title {
+        color: black;
     }
 }
 </style>

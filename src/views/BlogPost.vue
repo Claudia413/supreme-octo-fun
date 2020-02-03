@@ -7,6 +7,8 @@
 			</header>
 			<div class="content">
 				<h1 class="title">{{blog.title[0].text}}</h1>
+				<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
+				<p class="author">by Claudia Engelsman</p>
 				<prismic-rich-text :field="blog.subtitle" class="subtitle"/>
 				<section v-for="(slice, index) in slices" :key="'slice-' + index">
 					<template v-if="slice.slice_type === 'blog_text_block'">
@@ -107,7 +109,17 @@ export default {
             color: $primary-bright;
             text-align: center;
             padding: 24px 12px;
-        }
+		}
+		.deco {
+			width: 48px;
+			margin: 0 auto;
+		}
+		.author {
+			text-align: center;
+			font-size: 12px;
+			font-weight: bold;
+			margin-top: 24px;
+		}
         .subtitle {
             padding: 12px;
         }
