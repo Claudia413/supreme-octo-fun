@@ -149,6 +149,10 @@ export default {
 		grid-area: aside;
 		width: auto;
 		max-width: 400px;
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+        	max-width: unset;
+		}
 	}
 }
 
