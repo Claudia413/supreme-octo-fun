@@ -261,7 +261,9 @@ export default {
 .freebie-text {
 	grid-area: freebie-text;
 	background-color: $secondary-color;
-
+	h3 {
+		color: $light-blue;
+	}
 	@media only screen and (max-width: 768px) {
 		display: flex;
 		flex-direction: column;

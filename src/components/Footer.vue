@@ -73,10 +73,11 @@ footer {
 			margin: 0;
 			padding: 20px;
 			.cta-link {
-				font-family: "Abel", sans-serif;
-				color: $primary-bright;
+				font-family: "Karla", sans-serif;
+				color: $light-blue;
 				text-transform: uppercase;
 				text-decoration: none;
+				font-size: 16px;
 			}
 			p {
 				color: inherit;
