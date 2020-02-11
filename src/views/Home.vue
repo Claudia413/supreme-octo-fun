@@ -37,7 +37,7 @@
 		<section class="try-it-text text-block">
 			<h3>The blog</h3>
 			<!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
-			<p>These articles will soon become a library of posts for any girl who needs some help or inspiration about webdevelopment or moving to New Zealand.</p>
+			<p>These articles will soon become a library of posts for any woman who needs some help or inspiration about webdevelopment or moving to New Zealand.</p>
 			<router-link to="/blog" class="button mt-2">To the blog</router-link>
 		</section>
 		<!-- Blog previews from Prismic and empty squares while loading from Prismic -->
@@ -65,14 +65,14 @@
 		</section>
 		<section class="freebie-text text-block">
 			<h3>Let's stay in touch</h3>
-			<p class="text-darkbg">Sign up to get cool resources and the latest blog updates in your inbox. And don't worry, I hate spam just as much as you do and promise I will only send you the really cool stuff!</p>
+			<p class="text-darkbg">Sign up to receive cool resources and the latest blog updates in your inbox. And don't worry, I hate spam just as much as you do. I promise you will only get the really cool stuff!</p>
 			<NewsletterSignUp/>
 		</section>
 		<section class="bio-link-text text-block menu-padding">
 			<h3>Hiya!</h3>
 			<p>
 				I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead of a stomach.
-				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, templates and inspiration. I started coding 3 years ago and it was so overwhelming to get started in a structured way. Now I am creating the place I would have loved to have found back then in the hopes more women join me in this awesome field of work.
+				My mission is to help women learn to build websites with HTML, CSS and Javascript by providing tutorials, templates and inspiration. I started coding 3 years ago and it was so overwhelming to get started in a structured way. Now I am creating the place I would have loved to have found back then in pursuit of more women joining me in this awesome field of work.
 			</p>
 			<!-- <SocialIconBar></SocialIconBar> -->
 		</section>
@@ -93,7 +93,8 @@ export default {
 			loadingBlogs: true,
 			blogpreviews: [
 			],
-
+			today: new Date(),
+			launchdate: new Date(2020, 3, 1, 0, 1),
 		};
 	},
 	components: {
@@ -118,6 +119,9 @@ export default {
 		}
 	},
 	created () {
+		if ( this.today < this.launchdate ) {
+			this.$router.push('/comingsoon')
+		}
     this.getContent();
   }
 };

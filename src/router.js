@@ -53,6 +53,11 @@ export default new Router({
       component: BlogPost
     },
     {
+      path: "comingsoon",
+      name: 'comingsoon',
+      component: ComingSoon
+    },
+    {
       path: "*",
       name: 'everything',
       component: ComingSoon
