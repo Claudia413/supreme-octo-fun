@@ -69,7 +69,7 @@ export default {
     },
     watch: {
     // whenever blogID changes, this function will run
-    blogID: function (newBlogID, oldBlogID) {
+    blogID: function () {
       this.getBlogFromThisCategory(this.labels[0]);
     }
   },
@@ -105,6 +105,9 @@ aside {
                     display: none;
                 }
         }
+    }
+    .newsletter {
+        margin-bottom: 36px;
     }
     @media only screen and (max-width: 768px) {
         display: flex;

@@ -6,13 +6,13 @@
 				<p>Want to get to know me better? Instagram has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
 				<a href="http://instagram.com/claudia414" target="_blank" class="cta-link">@Claudia414</a>
 			</div>
-			<img src="../assets/Claudia.jpg" />
-			<img src="../assets/Claudia.jpg" />
-			<img src="../assets/Claudia.jpg" />
-			<img src="../assets/Claudia.jpg" />
+			<img src="../assets/Instagramfoto1editedWEB.jpg" />
+			<img src="../assets/Instagramfoto3editedWEB.jpg" />
+			<img src="../assets/Instagramfoto5editedWEB.jpg" />
+			<img src="../assets/Instagramfoto4editedWEB.jpg" />
 		</section>
 		<section class="legal">
-			<span>@ Claudia Engelsman Copyright 2019</span>
+			<span>@ Claudia Engelsman Copyright {{currentYear}}</span>
 			<span>All rights reserved</span>
 			<span>Get in touch</span>
 			<span>Legal</span>
@@ -23,7 +23,12 @@
 <script>
 export default {
 	name: "Footer",
-	props: {}
+	props: {},
+	data() {
+		return {
+			currentYear: new Date().getFullYear(),
+		}
+	},
 };
 </script>
 
