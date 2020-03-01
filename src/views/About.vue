@@ -69,16 +69,14 @@ export default {
 		"long-bio long-bio"
 		"video-first video-first"
 		"did-you-know did-you-know"
-		"video-second video-second"
-		"footer footer";
+		"video-second video-second";
 	@media only screen and (max-width: 768px) {
 		grid-template-columns: repeat(2, 50%);
 		grid-template-rows: auto;
 		grid-template-areas:
 			"intro-pic intro-pic"
 			"intro-text intro-text"
-			"long-bio long-bio"
-			"footer footer";
+			"long-bio long-bio";
 	}
 	.mt-2 {
 		margin-top: 20px;
@@ -96,8 +94,11 @@ export default {
 	display: flex;
 	flex-direction: column;
 	padding: 40px;
-	background-color: $secondary-color;
+	background-color: $dark-blue;
 	text-align: center;
+	h3 {
+		color: $light-blue;
+	}
 	p {
 		color: $text-darkbg;
 		width: 80%;
@@ -105,6 +106,7 @@ export default {
 		&.highlight {
 			font-size: 18px;
 			font-style: italic;
+			color: $light-blue;
 			padding: 12px 0;
 			font-weight: 500;
 		}
@@ -112,13 +114,6 @@ export default {
 }
 .did-you-know {
 	grid-area: did-you-know;
-}
-.did-you-know-pic {
-	grid-area: did-you-know-pic;
-}
-.footer {
-	grid-area: footer;
-	max-width: 100vw;
 }
 </style>
 

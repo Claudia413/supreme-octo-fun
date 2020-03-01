@@ -61,7 +61,7 @@ footer {
 			@media only screen and (max-width: 768px) {
 				display: inline-block;
 				grid-area: instagram-icon;
-				background-color: $highlight-color;
+				background-color: $gold2;
 				display: flex;
 				justify-content: center;
 				font-size: 32px;
