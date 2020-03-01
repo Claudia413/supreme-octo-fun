@@ -3,7 +3,7 @@
 		<MenuSlide/>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"
-			src="../assets/ClaudiaBWKaikoura.jpg"
+			src="../assets/ClaudiaByLaurenMcCormick.jpg"
 			class="intro-pic img-block"
 		>
 		<section class="intro-text text-block">
