@@ -109,7 +109,7 @@ export default {
 			color: white;
 		}
 		&.grey {
-			color: #cacaca;
+			color: #d8d8d8;
 		}
 		&.primary {
 			color: $primary-color;
@@ -128,7 +128,7 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		.inspiration {
-			font-size: 16px;
+			font-size: 18px;
 			line-height: 2rem;
 			&.primary-color {
 				color: $primary-bright;
@@ -142,6 +142,7 @@ export default {
 		}
 		h4 {
 			margin: 0;
+			font-size: 14px;
 			&.text-color {
 				color: $text-color;
 			}

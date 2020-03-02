@@ -6,10 +6,18 @@
 				<p>Want to get to know me better? Instagram has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
 				<a href="http://instagram.com/claudia414" target="_blank" class="cta-link">@Claudia414</a>
 			</div>
-			<img src="../assets/Instagramfoto1editedWEB.jpg" />
-			<img src="../assets/Instagramfoto3editedWEB.jpg" />
-			<img src="../assets/Instagramfoto5editedWEB.jpg" />
-			<img src="../assets/Instagramfoto4editedWEB.jpg" />
+			<a href="https://www.instagram.com/p/BpMC6uWFZjl/" target="blank">
+				<img src="../assets/Instagramfoto1editedWEB.jpg" />
+			</a>
+			<a href="https://www.instagram.com/p/B8P9ledBA4l/" target="blank">
+				<img src="../assets/Instagramfoto3editedWEB.jpg" />
+			</a>
+			<a href="https://www.instagram.com/p/B3bW_xdBGk9/" target="blank">
+				<img src="../assets/Instagramfoto5editedWEB.jpg" />
+			</a>
+			<a href="https://www.instagram.com/p/BtWhHvSnMMa/" target="blank">
+				<img src="../assets/Instagramfoto4editedWEB.jpg" />
+			</a>
 		</section>
 		<section class="legal">
 			<span>@ Claudia Engelsman Copyright {{currentYear}}</span>
