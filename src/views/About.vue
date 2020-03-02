@@ -113,6 +113,9 @@ export default {
 			font-weight: 500;
 		}
 	}
+	@media only screen and (max-width: 768px) {
+		padding: 80px 40px;
+	}
 }
 .did-you-know {
 	grid-area: did-you-know;

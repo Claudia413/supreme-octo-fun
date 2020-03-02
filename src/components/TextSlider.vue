@@ -105,6 +105,7 @@ export default {
 		font-size: 252px;
 		bottom: calc(50% - 153px);
 		z-index: 0;
+		pointer-events: none;
 		&.white {
 			color: white;
 		}
@@ -116,6 +117,10 @@ export default {
 		}
 		&.primary-bright {
 			color: $primary-bright;
+		}
+		@media only screen and (max-width: 768px) {
+			font-size: 226px;
+			width: 210px;
 		}
 	}
 	.slider {
