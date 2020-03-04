@@ -3,7 +3,7 @@
 		<HeaderAnimation class="headeranimation">
 			<template v-slot:title>
 				<h1>Claudia Engelsman</h1>
-				<h2> Developer, side-kick for new developers, and part-time adventurer</h2>
+				<h2> Developer, mentor, and adventurer</h2>
 			</template>
 		</HeaderAnimation>
 		<MenuSlide/>
@@ -13,7 +13,7 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Oh, and I recently moved to New Zealand and share about that journey as well. For websites and moving to NZ, I'm here to help!</p>
+			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Oh, and I recently moved to New Zealand and share about that journey as well. For building websites and moving to NZ, you're in the right place!</p>
 			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<router-link to="/about" class="button mt-2">More about me</router-link>
@@ -37,7 +37,7 @@
 		<section class="try-it-text text-block">
 			<h3>The blog</h3>
 			<!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
-			<p>Dive in to the library of posts for help and inspiration about webdevelopment, or moving to New Zealand.</p>
+			<p>Dive in to the library of posts for help, inspiration, tutorials, resources and so much more.</p>
 			<router-link to="/blog" class="button mt-2">To the blog</router-link>
 		</section>
 		<!-- Blog previews from Prismic and empty squares while loading from Prismic -->

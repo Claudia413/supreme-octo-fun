@@ -2,7 +2,7 @@
 	<aside>
 		<section class="short-bio">
             <img src="../assets/ClaudiaWithMacbookSmall.jpg" class="headshot"/>
-            <p>Hiya, I'm Claudia and and here to help you with coding websites and tips on moving to New Zealand.<span class="extended-bio"> My dream is for more women succeed in developer and tech roles and I personally want to help you get there and cheer you on along the way.</span></p>
+            <p>Hiya, I'm Claudia and and here to help you with upping your website skills and I write about moving to New Zealand.<span class="extended-bio"> My dream is for more women succeed in developer and tech roles and I personally want to help you get there and cheer you on along the way.</span></p>
 		</section>
         <img src="../assets/Dashdecoleft.png" alt="decoration scribbly" class="deco" />
         <section class="featured-blog">
@@ -128,7 +128,7 @@ aside {
             }
             p {
                 margin: 24px;
-                font-size: 16px;
+                font-size: 14px;
                 text-align: right;
                 span {
                     display: inline;

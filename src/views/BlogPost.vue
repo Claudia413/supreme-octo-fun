@@ -9,8 +9,8 @@
 				<h1 class="title">{{blog.title[0].text}}</h1>
 				<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
 				<p class="author">by Claudia Engelsman</p>
-				<prismic-rich-text :field="blog.subtitle" class="subtitle"/>
-				<section v-for="(slice, index) in slices" :key="'slice-' + index">
+				<prismic-rich-text :field="blog.subtitle" class="subtitle dent-right"/>
+				<section v-for="(slice, index) in slices" :key="'slice-' + index" class="dent-right">
 					<template v-if="slice.slice_type === 'blog_text_block'">
 						<h2 class="heading" >{{slice.primary.section_title[0].text}}</h2>
 						<prismic-rich-text :field="slice.primary.section_text" class="text"/>
@@ -131,10 +131,12 @@ export default {
         }
         section {
             padding: 12px;
-            @media only screen and (max-width: 768px) {
-                padding: 12px 60px 12px 12px;
-            }
         }
+		.dent-right {
+			@media only screen and (max-width: 768px) {
+                padding: 12px 60px 12px 20px;
+            }
+		}
 		p {
 			line-height: 26px;
 		}
