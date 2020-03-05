@@ -12,6 +12,7 @@ import TutorialLoadingAnimation from './views/TutorialLoadingAnimation'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/about',
@@ -62,5 +63,15 @@ export default new Router({
       name: 'everything',
       component: ComingSoon
     },
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return {
+        x: 0,
+        y: 0
+      }
+    }
+  }
 })
