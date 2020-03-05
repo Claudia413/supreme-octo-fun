@@ -3,7 +3,15 @@
 		<MenuSlide />
 		<div class="blog-grid">
 			<header>
-				<prismic-image :field="blog.header" class="cover" />
+				<div v-if="contentLoading" class="cover"></div>
+				<img v-else-if="blog.labels[0] == 'NZ'" src="../assets/BlogHeaderNZ.png" alt="close-up of a fern plant in the shade" class="cover" />
+				<img v-else src="../assets/BlogHeaderTech.png" alt="close-up of a alocasia (elephants ear) plant in the shade" class="cover" />
+				<div class="intro">
+					<p>Welcome to the blog</p>
+					<vue-typed-js :strings="['Guide', 'Education', 'Motivation', 'Resources', 'Inspiration']" :loop="true" :loopCount="2" :typeSpeed="75" :backDelay="250" :backSpeed="35" :smartBackspace="true">
+						<h1>Your {{blog.labels[0] == 'NZ'? 'New Zealand' : 'Coding'}} <span class="typing"></span></h1>
+					</vue-typed-js>
+				</div>
 			</header>
 			<div class="content">
 				<h1 class="title">{{blog.title[0].text}}</h1>
@@ -29,7 +37,7 @@
 <script>
 // @ is an alias to /src
 import MenuSlide from "@/components/MenuSlide.vue";
-import AsideBlog from "@/components/AsideBlog.vue"
+import AsideBlog from "@/components/AsideBlog.vue";
 
 export default {
 	name: "blogPost",
@@ -50,7 +58,7 @@ export default {
 	},
 	components: {
         MenuSlide,
-        AsideBlog
+		AsideBlog
 	},
 	methods: {
 		getContent(uid) {
@@ -79,13 +87,57 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/_variables.scss";
 
+header {
+	grid-area: header;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	.cover {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 300px;
+		object-fit: cover;
+		width: 100%;
+		max-width: 1400px;
+		object-position: center;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		z-index: 0
+	}
+	.intro {
+		z-index: 100;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h1 {
+			font-family: 'Karla', sans-serif;
+			display: inline-block;
+		}
+		h2 {
+			font-family: 'Spectral', sans-serif;
+			font-size: 37px;
+			line-height: 64px;
+			color: white;
+		}
+		p {
+			color: white;
+			border-bottom: white 2px solid;
+		}
+	}
+}
+
 .blog {
 	background-color: #f5f5f5;
 	.blog-grid {
 		display: grid;
 		grid-gap: 0;
 		grid-template-columns: 80fr 20fr;
-		grid-template-rows: 50vh auto;
+		grid-template-rows: 300px auto;
 		grid-template-areas:
 			"header header"
 			"content aside";
@@ -104,7 +156,7 @@ export default {
 		margin-right: auto;
 		display: flex;
         flex-direction: column;
-		padding-top: 48px;
+		padding: 48px 0;
         .title {
             color: $primary-bright;
             text-align: center;
@@ -125,9 +177,8 @@ export default {
         }
 		.heading {
 			color: $primary-bright;
-			font-family: "Spectral", sans-serif;
-			line-height: 39px;
-			font-size: 23px;
+			line-height: 36px;
+			font-size: 18px;
         }
         section {
             padding: 12px;
@@ -155,22 +206,6 @@ export default {
 			width: 100%;
         	max-width: unset;
 		}
-	}
-}
-
-header {
-	grid-area: header;
-	position: relative;
-	.cover {
-		grid-area: header;
-		height: 50vh;
-		object-fit: cover;
-		width: 100%;
-		max-width: 1400px;
-		object-position: center;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
 	}
 }
 
