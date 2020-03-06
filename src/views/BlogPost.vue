@@ -28,6 +28,10 @@
 						<prismic-rich-text :field="slice.primary.image_description" />
 					</template>
 				</section>
+				<section class="cta">
+					<router-link to="/blog" > << Back to blog overview</router-link>
+					<router-link :to="'/blog/' + relatedPostId"> {{ relatedPostTitle }} >> </router-link>
+				</section>
 			</div>
 			<AsideBlog v-if="!contentLoading" :labels="blog.labels" :blogID="blog.prismicID" />
 		</div>
@@ -53,7 +57,9 @@ export default {
 				prismicID: ""
 			},
 			slices: [],
-			contentLoading: true
+			contentLoading: true,
+			relatedPostTitle: "",
+			relatedPostId: ""
 		};
 	},
 	components: {
@@ -71,7 +77,17 @@ export default {
 				this.slices = document.data.body;
 				this.blog.prismicID = document.id;
 				this.contentLoading = false
+				this.getRelatedContent(document.id);
 			});
+		},
+		getRelatedContent(prismicId) {
+			this.$prismic.client.query(
+			this.$prismic.Predicates.similar(prismicId, 10),
+			{ orderings : '[my.blog_post.date desc]' }).then(response => {
+				console.log(response.results[0]);
+				this.relatedPostTitle = response.results[0].data.title[0].text;
+				this.relatedPostId = response.results[0].uid;
+			})
 		}
 	},
 	created() {
@@ -197,6 +213,13 @@ header {
         .text {
             text-align: justify;
         }
+		.cta {
+			display: flex;
+			justify-content: space-between;
+			a {
+				font-size: 14px;
+			}
+		}
 	}
 	aside {
 		grid-area: aside;

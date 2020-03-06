@@ -7,7 +7,7 @@
 		</HeaderAnimation>
 		<MenuSlide/>
         <section class="full-block blog-reel tech">
-            <h3>Tech blogs</h3>
+            <h3>Tech & Coding</h3>
             <div class="blogs">
                 <div v-if="loadingBlogsTech" class="blog-post">
                     <div class="blog-pic placeholder"></div>
@@ -35,7 +35,7 @@
             <h3>Featured post</h3>
         </section> -->
         <section class="full-block blog-reel nz">
-            <h3>Blogs about New Zealand and emigration</h3>
+            <h3>New Zealand & Emigration</h3>
             <div class="blogs">
                 <div v-if="loadingBlogsNZ" class="blog-post">
                     <div class="blog-pic placeholder"></div>
