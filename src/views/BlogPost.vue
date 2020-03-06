@@ -204,7 +204,7 @@ header {
 		max-width: 400px;
 		@media only screen and (max-width: 768px) {
 			width: 100%;
-        	max-width: unset;
+			max-width: unset;
 		}
 	}
 }
