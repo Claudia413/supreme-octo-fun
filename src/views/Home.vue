@@ -3,7 +3,10 @@
 		<HeaderAnimation class="headeranimation">
 			<template v-slot:title>
 				<h1>Claudia Engelsman</h1>
-				<h2> Developer, mentor, and adventurer</h2>
+				<vue-typed-js :strings="['Developer', 'Mentor', 'Adventurer', 'Geek', 'Artist', 'Mermaid',  ]" :loop="true" :loopCount="2" :typeSpeed="75" :backDelay="250" :backSpeed="35" :smartBackspace="true">
+						<h2><span class="typing"></span> </h2>
+					</vue-typed-js>
+				<!-- <h2> Developer, mentor, and adventurer</h2> -->
 			</template>
 		</HeaderAnimation>
 		<MenuSlide/>
