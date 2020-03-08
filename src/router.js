@@ -8,6 +8,7 @@ import BlogPost from './views/BlogPost.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'
 import TutorialLoadingAnimation from './views/TutorialLoadingAnimation'
+import Links from './views/Links.vue'
 
 Vue.use(Router)
 
@@ -54,12 +55,17 @@ export default new Router({
       component: BlogPost
     },
     {
-      path: "comingsoon",
+      path: '/links',
+      name: 'links',
+      component: Links
+    },
+    {
+      path: '/comingsoon',
       name: 'comingsoon',
       component: ComingSoon
     },
     {
-      path: "*",
+      path: '*',
       name: 'everything',
       component: ComingSoon
     },

@@ -23,12 +23,12 @@ export default {
       Footer
     },
     created() {
-      if (this.$route.path === '/comingsoon' || this.$route.path === '/almost-there' || this.$route.path === '/thank-you') {
+      if (this.$route.path === '/comingsoon' || this.$route.path === '/almost-there' || this.$route.path === '/thank-you' || this.$route.path === '/links') {
         this.showFooter = false
       }
     },
     updated() {
-      if (this.$route.path === '/comingsoon' || this.$route.path === '/almost-there' || this.$route.path === '/thank-you') {
+      if (this.$route.path === '/comingsoon' || this.$route.path === '/almost-there' || this.$route.path === '/thank-you' || this.$route.path === '/links') {
         this.showFooter = false
       } else {
         this.showFooter = true
