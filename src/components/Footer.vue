@@ -22,8 +22,8 @@
 		<section class="legal">
 			<span>@ Claudia Engelsman Copyright {{currentYear}}</span>
 			<span>All rights reserved</span>
-			<span>Get in touch</span>
-			<span>Legal</span>
+			<a href="mailto:claudiaengelsman@gmail.com">Get in touch <i class="far fa-envelope"></i></a>
+			<!-- <span>Legal</span> -->
 		</section>
 	</footer>
 </template>
@@ -58,7 +58,7 @@ footer {
 		padding: 0;
 		@media only screen and (max-width: 768px) {
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(2, 1fr);
+			grid-template-rows: repeat(2, auto);
 			grid-template-areas:
 				"instagram-icon  instagram-intro instagram-intro instagram-intro"
 				"instagram-pic    instagram-pic   instagram-pic   instagram-pic";
@@ -75,6 +75,7 @@ footer {
 				font-size: 32px;
 				color: $text-color;
 				align-items: center;
+				min-height: 140px;
 			}
 		}
 		.instagram-intro {
@@ -124,18 +125,32 @@ footer {
 		align-items: center;
 		justify-content: center;
 		font-size: 12px;
-		span {
+		span, a {
 			border-right: 1px solid white;
 			padding: 8px 16px;
+			font-size: inherit;
+			margin: 0;
 		}
-		span:last-of-type {
+		a {
 			border: none;
+			.fa-envelope {
+				font-size: 10px;
+				margin: 0 4px;
+			}
 		}
 		@media only screen and (max-width: 768px) {
 			font-size: 10px;
-			span {
+			span, a {
 				border-right: 1px solid white;
 				padding: 2px 8px;
+				font-size: inherit;
+				margin: 0;
+			}
+			a {
+				border: none;
+				.fa-envelope {
+					font-size: 8px;
+				}
 			}
 		}
 	}

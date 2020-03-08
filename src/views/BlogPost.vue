@@ -84,7 +84,6 @@ export default {
 			this.$prismic.client.query(
 			this.$prismic.Predicates.similar(prismicId, 10),
 			{ orderings : '[my.blog_post.date desc]' }).then(response => {
-				console.log(response.results[0]);
 				this.relatedPostTitle = response.results[0].data.title[0].text;
 				this.relatedPostId = response.results[0].uid;
 			})
