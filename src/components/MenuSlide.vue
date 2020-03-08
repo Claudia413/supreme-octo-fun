@@ -119,8 +119,15 @@ export default {
 	box-sizing: border-box;
 	background-color: white;
 	align-items: flex-end;
+	a:last-of-type {
+		margin-bottom: 36px;
+	}
 	@media only screen and (max-width: 768px) {
 		flex-direction: column-reverse;
+		a:last-of-type {
+			margin-bottom: 16px;
+			margin-top: 32px;
+		}
 	}
 }
 </style>

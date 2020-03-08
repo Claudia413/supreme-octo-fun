@@ -1,20 +1,48 @@
 <template>
 	<div class="icon-bar">
-		<a href="http://instagram.com/claudia414" target="_blank" class="hex-background">
+		<a v-if="instagram" href="http://instagram.com/claudia414" target="_blank" class="hex-background">
 			<i class="fab fa-instagram"></i>
 		</a>
-		<a href="https://pinterest.com/djerra/" target="_blank" class="hex-background">
+		<a v-if="pinterest" href="https://pinterest.com/djerra/" target="_blank" class="hex-background">
 			<i class="fab fa-pinterest"></i>
 		</a>
-		<a href="https://www.linkedin.com/in/claudia-engelsman/" target="_blank" class="hex-background">
+		<a v-if="linkedIn" href="https://www.linkedin.com/in/claudia-engelsman/" target="_blank" class="hex-background">
 			<i class="fab fa-linkedin"></i>
 		</a>
+        <a v-if="twitter" href="https://twitter.com/claudia_blonde" target="_blank" class="hex-background">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a v-if="website" href="https://www.claudiaengelsman.com" target="_blank" class="hex-background">
+            <i class="fas fa-globe-europe"></i>
+        </a>
 	</div>
 </template>
 
 <script>
 export default {
-	name: "SocialIconBar"
+    name: "SocialIconBar",
+    props: {
+		instagram: {
+			type: Boolean,
+			default: true
+		},
+		linkedIn: {
+			type: Boolean,
+			default: true
+		},
+		pinterest: {
+			type: Boolean,
+			default: true
+        },
+        twitter: {
+            type: Boolean,
+            default: true
+        },
+        website: {
+            type: Boolean,
+            default: false
+        }
+	},
 };
 </script>
 
@@ -28,7 +56,7 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
+    flex-wrap: wrap;
     .hex-background {
         height: 48px;
         width: 48px;
@@ -41,15 +69,15 @@ export default {
         justify-content: center;
         align-items: center;
         font-weight: 500;
+        margin: auto;
         &:hover, &:focus {
-            .fab {
+            .fab, .fas {
                 transition: 0.3s all ease;
                 opacity: 1;
             }
         }
     }
-
-    .fab {
+    .fab, .fas {
         font-size: 24px;
         width: 23px;
         height: 23px;
@@ -68,11 +96,13 @@ export default {
             -webkit-text-fill-color: transparent;
         }
     }
-
     .fa-instagram {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    @media only screen and (max-width: 768px) {
+        flex-wrap: wrap-reverse;
     }
 }
 

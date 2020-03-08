@@ -3,7 +3,7 @@
 		<HeaderAnimation class="headeranimation">
 			<template v-slot:title>
 				<h1>Claudia Engelsman</h1>
-				<vue-typed-js :strings="['Developer', 'Mentor', 'Adventurer', 'Geek', 'Artist', 'Mermaid',  ]" :loop="true" :loopCount="2" :typeSpeed="75" :backDelay="250" :backSpeed="35" :smartBackspace="true">
+				<vue-typed-js :strings="['Developer', 'Mentor', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Here to help you'  ]" :loop="false" :typeSpeed="75" :backDelay="250" :backSpeed="35" :smartBackspace="true">
 						<h2><span class="typing"></span> </h2>
 					</vue-typed-js>
 				<!-- <h2> Developer, mentor, and adventurer</h2> -->
@@ -21,7 +21,7 @@
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<router-link to="/about" class="button mt-2">More about me</router-link>
 		</section>
-		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="3">
+		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="4">
 			<template v-slot:slide1>
 				<span class="bold">It has never been easier to build websites.</span> Not kidding; technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
 			</template>
@@ -30,6 +30,10 @@
 			<template v-slot:slide3>
 				Is your current office space a bit gloomy? Building websites can be done from any computer with a solid internet connection.
 				<span class="bold">Working from home or working remotely from a hammock, it is your choice.</span>
+			</template>
+			<template v-slot:slide4>
+				You already know someone in the field, who's can answer questions and help you get started.
+				<span class="bold">Spoiler alert: It's me! I want to help you, wherever you're starting from. {{'<3'}} </span>
 			</template>
 		</TextSlider>
 		<img
@@ -122,9 +126,9 @@ export default {
 		}
 	},
 	created () {
-		if ( this.today < this.launchdate ) {
-			this.$router.push('/comingsoon')
-		}
+		// if ( this.today < this.launchdate ) {
+		// 	this.$router.push('/comingsoon')
+		// }
     this.getContent();
   }
 };
