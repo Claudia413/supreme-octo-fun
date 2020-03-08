@@ -126,9 +126,9 @@ export default {
 		}
 	},
 	created () {
-		// if ( this.today < this.launchdate ) {
-		// 	this.$router.push('/comingsoon')
-		// }
+		if ( this.today < this.launchdate ) {
+			this.$router.push('/comingsoon')
+		}
     this.getContent();
   }
 };
