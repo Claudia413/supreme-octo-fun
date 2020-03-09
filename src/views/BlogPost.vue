@@ -29,8 +29,8 @@
 					</template>
 				</section>
 				<section class="cta">
-					<router-link to="/blog" > << Back to blog overview</router-link>
-					<router-link :to="'/blog/' + relatedPostId"> {{ relatedPostTitle }} >> </router-link>
+					<router-link to="/blog" > {{'<<'}} Back to blog overview</router-link>
+					<router-link :to="'/blog/' + relatedPostId"> {{ relatedPostTitle }} {{'>>'}} </router-link>
 				</section>
 			</div>
 			<AsideBlog v-if="!contentLoading" :labels="blog.labels" :blogID="blog.prismicID" />

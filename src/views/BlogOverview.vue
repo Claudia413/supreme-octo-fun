@@ -9,26 +9,23 @@
         <section class="full-block blog-reel tech">
             <h3>Tech & Coding</h3>
             <div class="blogs">
-                <div v-if="loadingBlogsTech" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsTech" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsTech" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsTech" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <router-link v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" :to="'/blog/' + post.uid" class="blog-post">
-                    <prismic-image :field="post.data.blog_image" class="blog-pic"/>
-                    <span class="blog-tag-text">{{post.data.title[0].text}}</span>
-                </router-link>
+                <BlogPreview v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
             </div>
 		</section>
         <!-- <section class="featured-blog">
@@ -37,26 +34,23 @@
         <section class="full-block blog-reel nz">
             <h3>New Zealand & Emigration</h3>
             <div class="blogs">
-                <div v-if="loadingBlogsNZ" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                    <div class="blog-pic "></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsNZ" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsNZ" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsNZ" class="blog-post">
-                    <div class="blog-pic placeholder"></div>
-                    <div class="blog-tag-text placeholder"></div>
+                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
                 </div>
-                <router-link v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" :to="'/blog/' + post.uid" class="blog-post">
-                    <prismic-image :field="post.data.blog_image" class="blog-pic"/>
-                    <span class="blog-tag-text">{{post.data.title[0].text}}</span>
-                </router-link>
+                <BlogPreview v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
             </div>
 		</section>
 	</div>
@@ -66,6 +60,7 @@
 // @ is an alias to /src
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
+import BlogPreview from "@/components/BlogPreview.vue";
 
 export default {
 	name: "blogOverview",
@@ -81,7 +76,8 @@ export default {
 	},
 	components: {
 		HeaderAnimation,
-		MenuSlide,
+        MenuSlide,
+        BlogPreview
 	},
 	methods: {
 		getContentTech() {
@@ -149,50 +145,16 @@ export default {
         }
     }
 }
-
-// .featured-blog {
-//     background-color: $body-bg;
-// }
-
-.blog-post {
-	display: flex;
-	align-content: center;
-	flex-direction: column;
-	position: relative;
-	cursor: pointer;
-	&:hover {
-		.blog-tag-text {
-			opacity: 0.95;
-			transition: opacity 0.3s ease;
-		}
-	}
-	.blog-tag-text {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		font-family: "Abel";
-		text-transform: uppercase;
-		font-weight: 600;
-		font-size: 16px;
-		max-width: 100%;
-		margin: 24px;
-		text-align: center;
-		background-color: #fdfdfd;
-		padding: 32px;
-		opacity: 0.85;
-		transition: opacity 0.3s ease;
-	}
-	.blog-pic {
+.placeholder{
+    .blog-pic {
 		height: 240px;
-		width: 220px;
-		object-fit: cover;
+        width: 240px;
+        background-color: $grey;
 	}
 	@media only screen and (max-width: 1112px) {
 		.blog-pic {
-			height: 200px;
-			width: 200px;
+			height: 220px;
+			width: 220px;
 		}
 	}
 	@media only screen and (max-width: 768px) {
@@ -201,10 +163,11 @@ export default {
 			margin: 32px;
 		}
 		.blog-pic {
-			height: 320px;
-			width: 340px;
+			height: 280px;
+			width: 280px;
 		}
     }
 }
+
 
 </style>
