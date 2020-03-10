@@ -1,18 +1,18 @@
 <template>
 	<div class="icon-bar">
-		<a v-if="instagram" href="http://instagram.com/claudia414" target="_blank" class="hex-background">
+		<a v-if="instagram" href="http://instagram.com/claudia414" target="_blank" rel="noreferrer" class="hex-background">
 			<i class="fab fa-instagram"></i>
 		</a>
-		<a v-if="pinterest" href="https://pinterest.com/djerra/" target="_blank" class="hex-background">
+		<a v-if="pinterest" href="https://pinterest.com/djerra/" target="_blank" rel="noreferrer" class="hex-background">
 			<i class="fab fa-pinterest"></i>
 		</a>
-		<a v-if="linkedIn" href="https://www.linkedin.com/in/claudia-engelsman/" target="_blank" class="hex-background">
+		<a v-if="linkedIn" href="https://www.linkedin.com/in/claudia-engelsman/" target="_blank" rel="noreferrer" class="hex-background">
 			<i class="fab fa-linkedin"></i>
 		</a>
-        <a v-if="twitter" href="https://twitter.com/claudia_blonde" target="_blank" class="hex-background">
+        <a v-if="twitter" href="https://twitter.com/claudia_blonde" target="_blank" rel="noreferrer" class="hex-background">
             <i class="fab fa-twitter"></i>
         </a>
-        <a v-if="website" href="https://www.claudiaengelsman.com" target="_blank" class="hex-background">
+        <a v-if="website" href="https://www.claudiaengelsman.com" target="_blank" rel="noreferrer" class="hex-background">
             <i class="fas fa-globe-europe"></i>
         </a>
 	</div>

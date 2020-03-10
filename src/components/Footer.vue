@@ -3,7 +3,7 @@
 		<section class="instafeed">
 			<span class="instagram-icon fab fa-instagram"></span>
 			<div class="instagram-intro">
-				<p>Want to get to know me better? Instagram has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
+				<p>Want to get to know me better? I hang out on Instagram, it has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
 				<a href="http://instagram.com/claudia414" target="_blank" class="cta-link">@Claudia414</a>
 			</div>
 			<a href="https://www.instagram.com/p/BpMC6uWFZjl/" target="blank">
@@ -100,6 +100,10 @@ footer {
 				line-height: 20px;
 				@media only screen and (max-width: 1028px) {
 					font-size: 11px;
+				}
+				@media only screen and (max-width: 850px) {
+					font-size: 11px;
+					line-height: 15px;
 				}
 				@media only screen and (max-width: 768px) {
 					font-size: 14px;

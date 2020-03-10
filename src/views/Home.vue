@@ -16,7 +16,7 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Oh, and I recently moved to New Zealand and share about that journey as well. For building websites and moving to NZ, you're in the right place!</p>
+			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Coding helped me move to New Zealand and I share about that journey as well. For building websites and moving to NZ, you're in the right place!</p>
 			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<router-link to="/about" class="button mt-2">More about me</router-link>
