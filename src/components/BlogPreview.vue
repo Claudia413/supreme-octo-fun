@@ -20,10 +20,7 @@ export default {
         title: String,
         image: Object,
         blogId: String
-		},
-	created () {
-		console.log('image:', this.image)
-	}
+		}
 };
 </script>
 

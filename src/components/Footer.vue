@@ -3,7 +3,7 @@
 		<section class="instafeed">
 			<span class="instagram-icon fab fa-instagram"></span>
 			<div class="instagram-intro">
-				<p>Want to get to know me better? I hang out on Instagram, it has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
+				<p>Want to get to know me better? Let's hang out on Instagram, it has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
 				<a href="http://instagram.com/claudia414" target="_blank" rel="noreferrer" class="cta-link">@Claudia414</a>
 			</div>
 			<a href="https://www.instagram.com/p/BpMC6uWFZjl/" target="_blank" rel="noreferrer">
