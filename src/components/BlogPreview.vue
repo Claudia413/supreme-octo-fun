@@ -1,7 +1,6 @@
 <template>
     <router-link :to="'/blog/' + blogId" class="blog-post">
-            <!-- <prismic-image :field="image" class="blog-pic" loading="lazy"/> -->
-			<picture class="blog-pic">
+			<picture class="blog-pic" loading="lazy">
 				<source :srcset="image.mobileoverview.url" media="(max-width: 768px)">
 				<source :srcset="image.tablet.url" media="(max-width: 1112px)">
 				<source :srcset="image.large.url" media="(min-width: 1113px)">

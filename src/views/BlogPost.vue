@@ -116,7 +116,7 @@ header {
 		height: 300px;
 		object-fit: cover;
 		width: 100%;
-		max-width: 1400px;
+		max-width: 4000px;
 		object-position: center;
 		margin-left: auto;
 		margin-right: auto;
@@ -148,6 +148,7 @@ header {
 
 .blog {
 	background-color: #f5f5f5;
+	width: 100%;
 	.blog-grid {
 		display: grid;
 		grid-gap: 0;

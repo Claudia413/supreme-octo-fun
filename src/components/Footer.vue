@@ -48,6 +48,7 @@ footer {
 	color: white;
 	background-color: #45484a;
 	max-width: 100vw;
+	max-width: 4000px;
 	padding: 0;
 	height: auto;
 	.instafeed {

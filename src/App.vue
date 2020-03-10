@@ -7,6 +7,14 @@
 
 <style lang="scss">
 
+  #app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 4000px;
+    margin: auto;
+  }
 </style>
 
 <script>

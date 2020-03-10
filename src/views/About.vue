@@ -60,7 +60,7 @@ export default {
 @import "../assets/_variables.scss";
 
 .about {
-	max-width: 100%;
+	width: 100%;
 	display: grid;
 	grid-gap: 0;
 	grid-template-columns: repeat(2, 50%);

@@ -119,6 +119,10 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/_variables.scss";
 
+.overview {
+    width: 100%;
+}
+
 .blog-reel {
     background-color: $primary-color;
 	height: auto;

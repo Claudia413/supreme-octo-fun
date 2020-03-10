@@ -139,6 +139,7 @@ export default {
 
 .home {
 	z-index: 100;
+	width: 100%;
 	max-width: 100%;
 	height: calc(100% - 400px);
 	display: grid;
@@ -180,8 +181,6 @@ export default {
 }
 .headeranimation {
 	grid-area: header;
-	max-width: 100vw;
-	max-width: 1800px;
 }
 .intro-pic {
 	grid-area: intro-pic;
