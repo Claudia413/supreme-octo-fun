@@ -3,7 +3,7 @@
 		<a v-if="instagram" href="http://instagram.com/claudia414" target="_blank" rel="noreferrer" class="hex-background">
 			<i class="fab fa-instagram"></i>
 		</a>
-		<a v-if="pinterest" href="https://pinterest.com/djerra/" target="_blank" rel="noreferrer" class="hex-background">
+		<a v-if="pinterest" href="https://pinterest.com/djerra/" target="_blank" rel="noopener" class="hex-background">
 			<i class="fab fa-pinterest"></i>
 		</a>
 		<a v-if="linkedIn" href="https://www.linkedin.com/in/claudia-engelsman/" target="_blank" rel="noreferrer" class="hex-background">
