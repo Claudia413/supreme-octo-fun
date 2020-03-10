@@ -7,16 +7,16 @@
 				<a href="http://instagram.com/claudia414" target="_blank" class="cta-link">@Claudia414</a>
 			</div>
 			<a href="https://www.instagram.com/p/BpMC6uWFZjl/" target="blank">
-				<img src="../assets/Insta-ClaudiaOnARock.jpg" alt="Instagram photo of Claudia sitting on a rock in a river" />
+				<img src="../assets/Insta-ClaudiaOnARock.jpg" alt="Instagram photo of Claudia sitting on a rock in a river" loading="lazy"/>
 			</a>
 			<a href="https://www.instagram.com/p/B8P9ledBA4l/" target="blank">
-				<img src="../assets/Insta-ClaudiaInChristchurch.jpg" alt="Instagram photo of Claudia on a bench in a field of gold grass looking at the view"/>
+				<img src="../assets/Insta-ClaudiaInChristchurch.jpg" alt="Instagram photo of Claudia on a bench in a field of gold grass looking at the view" loading="lazy"/>
 			</a>
 			<a href="https://www.instagram.com/p/B3bW_xdBGk9/" target="blank">
-				<img src="../assets/Insta-ClaudiaAtLakePukaki.jpg" alt="Instagram photo of Claudia looking at Mount Cook on the edge of Lake Pukaki"/>
+				<img src="../assets/Insta-ClaudiaAtLakePukaki.jpg" alt="Instagram photo of Claudia looking at Mount Cook on the edge of Lake Pukaki" loading="lazy"/>
 			</a>
 			<a href="https://www.instagram.com/p/BtWhHvSnMMa/" target="blank">
-				<img src="../assets/Insta-GuusGolden.jpg" alt="Instagram photo headshot of Guus, Claudia's Golden Retriever"/>
+				<img src="../assets/Insta-GuusGolden.jpg" alt="Instagram photo headshot of Guus, Claudia's Golden Retriever" loading="lazy"/>
 			</a>
 		</section>
 		<section class="legal">

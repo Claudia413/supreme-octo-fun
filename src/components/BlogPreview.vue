@@ -1,6 +1,6 @@
 <template>
     <router-link :to="'/blog/' + blogId" class="blog-post">
-            <prismic-image :field="image" class="blog-pic"/>
+            <prismic-image :field="image" class="blog-pic" loading="lazy"/>
             <span class="blog-tag-text">{{title}}</span>
     </router-link>
 </template>

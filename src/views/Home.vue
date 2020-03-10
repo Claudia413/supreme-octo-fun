@@ -181,6 +181,7 @@ export default {
 .headeranimation {
 	grid-area: header;
 	max-width: 100vw;
+	max-width: 1800px;
 }
 .intro-pic {
 	grid-area: intro-pic;
