@@ -40,7 +40,7 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "vue/no-parsing-error": "1"
+      "vue/no-parsing-error": 1
     }
   },
   "postcss": {
