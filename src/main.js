@@ -8,7 +8,7 @@ import VueTypedJs from 'vue-typed-js'
 
 Vue.config.productionTip = false
 
-const accessToken = 'MC5YaGlBeXhVQUFDUUFHZ0Ew.Kgbvv70TUu-_vX7vv73vv73vv73vv73vv73vv73vv73vv70cNO-_vTgL77-977-9LhXvv71gJUbvv71A77-9aA';
+const accessToken = process.env.VUE_APP_PRISMIC_API_KEY;
 
 Vue.use(PrismicVue, {
   endpoint: window.prismic.endpoint,
