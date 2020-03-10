@@ -5,6 +5,10 @@
 npm install
 ```
 
+## Connecting to Prismic
+
+Set up your Prismic access token in the env file as the VUE_APP_PRISMIC_API_KEY=YOURSECRETAPIKEYHERE
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
