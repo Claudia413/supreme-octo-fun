@@ -27,15 +27,15 @@
 		textColor="primary-color"
 		number-color="grey">
 			<template v-slot:slide1>If you ask me to choose between my favorite icecream(B&J Cookie dough) and homemade pumpkin soup made by my boyfriend, I will have a huge dillema. Even with the apetite of a large dinosaur.</template>
-			<template v-slot:slide2>During my trip to New Zealand a few years back I fell head over heels for this beautiful country and have been trying to find a way back ever since. We got a 1 year visa, so this dreams has come true!</template>
+			<template v-slot:slide2>During my trip to New Zealand a few years back I fell head over heels for this beautiful country and have been trying to find a way back ever since. We got a 2,5 year visa, so this dreams has come true!</template>
 			<template v-slot:slide3>Horses have a special place in my heart, and I hope I can keep riding until I'm old and wrinkly!</template>
 			<template v-slot:slide4>I love surprising my friends with elaborate set up gifts that cost me way, way too much time and often way more money than expected, but when it all works out it's totally worth it.</template>
 			<template v-slot:slide5>I am a geek and I love videogames, I can literally forget time when I am playing Dragon Age Inquisition, Diablo or Pokemon.</template>
 			<template v-slot:slide6>My favorite geometric shape is a hexagon, can’t get enough of it, even while it is hard to use in webdevelopment.</template>
 			<template v-slot:slide7>Nailbiting has been a problem since I got my first teeth. I’m working on it. For about 26 years in a row now.</template>
-			<template v-slot:slide8>Also, not a pro in cleaning my house, I just don’t get the point of dusting when new dust is arriving as soon as I dust it off.</template>
-			<template v-slot:slide9>I am a huge Harry Potter fan, books, movies, art, merch. I might have seen the first movie over 50 times, ssshhh.</template>
-			<template v-slot:slide10>I graduated high school twice, once in the Netherlands and once in California during an exchange year.</template>
+			<template v-slot:slide8>Also, not a pro in cleaning my house, I just don’t get the point of dusting when new dust is arriving as soon as I dust it off. Can't wait until tech is available to automatically clean my house!</template>
+			<template v-slot:slide9>I am a huge Harry Potter fan, books, movies, art, merch. Sorry, not sorry for my references on the blog.</template>
+			<template v-slot:slide10>Coding is the closest I can get to magic, with coding I can create things from thin air, and give people a wonderfull experience. I'd do good magic, no dark arts and making people feel horrible using it.</template>
 		</TextSlider>
 		<!-- <section class="video-block full-block">
 			video block
