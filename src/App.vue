@@ -19,7 +19,7 @@
 
 <script>
 import './assets/main.scss'
-import Footer from "@/components/Footer.vue";
+import Footer from "@/components/Footer.vue"
 
 export default {
     data() {

@@ -1,5 +1,11 @@
 <template>
 	<div class="overview">
+        <vue-headful
+			title="CE | Developer, educator, adventurer"
+			description="Blog library with posts about Coding, Tech, New Zealand and emigration"
+			image="../assets/ClaudiaByLaurenMcCormick2.jpg"
+			url="https://www.claudiaengelsman.com/blog"
+		/>
 		<HeaderAnimation class="headeranimation">
             <template v-slot:title>
 				<h1>Welcome to the blog!</h1>

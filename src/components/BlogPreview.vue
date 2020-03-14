@@ -19,7 +19,7 @@ export default {
         title: String,
         image: Object,
         blogId: String
-		}
+	}
 };
 </script>
 

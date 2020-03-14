@@ -1,10 +1,11 @@
 import Vue from 'vue'
-import PrismicVue from 'prismic-vue';
+import PrismicVue from 'prismic-vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import linkResolver from './link-resolver'
 import VueTypedJs from 'vue-typed-js'
+import vueHeadful from 'vue-headful';
 
 Vue.config.productionTip = false
 
@@ -18,6 +19,8 @@ Vue.use(PrismicVue, {
   }
 });
 Vue.use(VueTypedJs);
+
+Vue.component('vue-headful', vueHeadful);
 
 new Vue({
   router,

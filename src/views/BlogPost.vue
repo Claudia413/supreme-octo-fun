@@ -1,5 +1,11 @@
 <template>
 	<div class="blog">
+		<vue-headful
+			:title="blog.seo_title"
+			:description="blog.seo_description"
+			:image="blog.seo_image"
+			:url="'/blog' + blog.uid"
+		/>
 		<MenuSlide />
 		<div class="blog-grid">
 			<header>
@@ -54,7 +60,11 @@ export default {
 				subtitle: [],
 				header: {},
 				labels: [],
-				prismicID: ""
+				prismicID: "",
+				uid: "",
+				seo_title: "",
+				seo_description: "",
+				seo_image: ""
 			},
 			slices: [],
 			contentLoading: true,
@@ -74,6 +84,9 @@ export default {
 				this.blog.subtitle = document.data.subtitle;
 				this.blog.header = document.data.blog_image;
 				this.blog.labels = document.tags;
+				this.blog.seo_title = document.data.seo_title[0].text;
+				this.blog.seo_description = document.data.seo_description[0].text;
+				this.blog.seo_image = document.data.seo_image.url;
 				this.slices = document.data.body;
 				this.blog.prismicID = document.id;
 				this.contentLoading = false
@@ -91,6 +104,7 @@ export default {
 	},
 	created() {
 		this.getContent(this.$route.params.uid);
+		this.blog.uid = this.$route.params.uid;
 	},
 	beforeRouteUpdate (to, from, next) {
 		this.getContent(to.params.uid);

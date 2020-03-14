@@ -1,5 +1,11 @@
 <template>
 	<div class="home">
+		<vue-headful
+			title="CE | Developer, educator, adventurer"
+			description="Claudia writes about coding websites for beginners and migrating to New Zealand. She wants to help more women into webdevelopment"
+			image="../assets/ClaudiaByLaurenMcCormick2.jpg"
+			url="https://www.claudiaengelsman.com/"
+		/>
 		<HeaderAnimation class="headeranimation">
 			<template v-slot:title>
 				<h1>Claudia Engelsman</h1>
@@ -21,17 +27,19 @@
 			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
 			<router-link to="/about" class="button mt-2">More about me</router-link>
 		</section>
-		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="4">
+		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="5">
 			<template v-slot:slide1>
 				<span class="bold">It has never been easier to build websites.</span> Not kidding; technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
 			</template>
 			<template v-slot:slide2>There is a huge shortage of developers and there is a big gap in male/female ratio in development. More job openings than developers means developers have the <span class="bold">advantage in job negotiations.</span> Sounds good huh?
 			</template>
-			<template v-slot:slide3>
+			<template v-slot:slide3>Are you bored out of your mind with your current job? Do you feel your brain melting doing the same tasks over and over again? Coding websites will always have you <span class="bold">finding new solutions and using your brain</span> to create.
+			</template>
+			<template v-slot:slide4>
 				Is your current office space a bit gloomy? Building websites can be done from any computer with a solid internet connection.
 				<span class="bold">Working from home or working remotely from a hammock, it is your choice.</span>
 			</template>
-			<template v-slot:slide4>
+			<template v-slot:slide5>
 				You already know someone in the field, who's can answer questions and help you get started.
 				<span class="bold">Spoiler alert: It's me! I want to help you, wherever you're starting from. {{'<3'}} </span>
 			</template>
