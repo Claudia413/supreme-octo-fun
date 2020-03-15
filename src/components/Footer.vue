@@ -89,7 +89,7 @@ footer {
 			padding: 20px;
 			.cta-link {
 				font-family: "Karla", sans-serif;
-				color: $light-blue;
+				color: $gold;
 				text-transform: uppercase;
 				text-decoration: none;
 				font-size: 16px;
