@@ -8,14 +8,14 @@
 			>
 			<i class="far fa-compass menu-icon"></i>
 		</div>
-		<div class="menu-list">
+		<nav class="menu-list" aria-label="Main">
 			<router-link to="/">Home</router-link>
 			<router-link to="/about">About</router-link>
 			<!-- <router-link to="/guide">Guide</router-link> -->
 			<router-link to="/blog">Blog</router-link>
 			<!-- <router-link to="/contact">Contact</router-link> -->
 			<SocialIconBar></SocialIconBar>
-		</div>
+		</nav>
 	</div>
 </template>
 

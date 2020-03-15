@@ -1,19 +1,19 @@
 <template>
 	<div class="icon-bar">
 		<a v-if="instagram" href="http://instagram.com/claudia414" target="_blank" rel="noreferrer" class="hex-background">
-			<i class="fab fa-instagram"></i>
+			<i class="fab fa-instagram">Instagram</i>
 		</a>
 		<a v-if="pinterest" href="https://pinterest.com/djerra/" target="_blank" rel="noopener" class="hex-background">
-			<i class="fab fa-pinterest"></i>
+			<i class="fab fa-pinterest">Pinterest</i>
 		</a>
 		<a v-if="linkedIn" href="https://www.linkedin.com/in/claudia-engelsman/" target="_blank" rel="noreferrer" class="hex-background">
-			<i class="fab fa-linkedin"></i>
+			<i class="fab fa-linkedin">LinkedIn</i>
 		</a>
         <a v-if="twitter" href="https://twitter.com/claudia_blonde" target="_blank" rel="noreferrer" class="hex-background">
-            <i class="fab fa-twitter"></i>
+            <i class="fab fa-twitter">Twitter</i>
         </a>
         <a v-if="website" href="https://www.claudiaengelsman.com" target="_blank" rel="noreferrer" class="hex-background">
-            <i class="fas fa-globe-europe"></i>
+            <i class="fas fa-globe-europe">Website</i>
         </a>
 	</div>
 </template>
@@ -97,9 +97,7 @@ export default {
         }
     }
     .fa-instagram {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin-left: 2px;
     }
     @media only screen and (max-width: 768px) {
         flex-wrap: wrap-reverse;
