@@ -15,22 +15,22 @@
         <section class="full-block blog-reel tech">
             <h3>Tech & Coding</h3>
             <div class="blogs">
-                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                <!-- <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsTech" class="blog-post placeholder">
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
-                </div>
+                </div> -->
                 <BlogPreview v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
             </div>
 		</section>
@@ -40,22 +40,22 @@
         <section class="full-block blog-reel nz">
             <h3>New Zealand & Emigration</h3>
             <div class="blogs">
-                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
                     <div class="blog-pic "></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                <!-- <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <div v-if="loadingBlogsNZ" class="blog-post placeholder">
+                <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
-                </div>
+                </div> -->
                 <BlogPreview v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
             </div>
 		</section>
@@ -64,6 +64,7 @@
 
 <script>
 // @ is an alias to /src
+import { mapState } from 'vuex';
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
 import BlogPreview from "@/components/BlogPreview.vue";
@@ -72,12 +73,7 @@ export default {
 	name: "blogOverview",
 	data() {
 		return {
-			blogpreviewsnz: [
-            ],
-            blogpreviewstech: [
-            ],
-            loadingBlogsTech: true,
-            loadingBlogsNZ: true
+
 		};
 	},
 	components: {
@@ -95,8 +91,7 @@ export default {
 			orderings : '[document.first_publication_date desc]',
 			pageSize : 4,
 			fetch : ['blogpost.title', 'blogpost.blog_image'] }).then((response) => {
-                this.loadingBlogsTech = false
-				this.blogpreviewstech = response.results
+               this.$store.dispatch('setTechBlogPreviewsFromPrismic', response.results);
             // response is the response object, response.results holds the documents
 			});
         },
@@ -109,15 +104,22 @@ export default {
 			pageSize : 4,
 			fetch : ['blogpost.title', 'blogpost.blog_image'] }
             ).then((response) => {
-                this.loadingBlogsNZ = false
-				this.blogpreviewsnz = response.results
+                this.$store.dispatch('setNZBlogPreviewsFromPrismic', response.results);
 			// response is the response object, response.results holds the documents
 			});
         }
-	},
+    },
+    computed: mapState([
+        'blogpreviewsnz',
+        'blogpreviewstech'
+        ]),
 	created () {
-    this.getContentNZ();
-    this.getContentTech();
+        if (this.$store.state.blogpreviewsnz.length === 0) {
+            this.getContentNZ();
+        }
+        if (this.$store.state.blogpreviewstech.length === 0) {
+            this.getContentTech();
+        }
   }
 };
 </script>
