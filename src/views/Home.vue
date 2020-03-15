@@ -109,7 +109,7 @@ export default {
 			blogpreviews: [
 			],
 			today: new Date(),
-			launchdate: new Date(2020, 3, 1, 0, 1),
+			launchdate: new Date(2020, 2, 18, 0, 1),
 		};
 	},
 	components: {

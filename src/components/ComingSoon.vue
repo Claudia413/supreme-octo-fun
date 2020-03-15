@@ -4,7 +4,7 @@
 			<h2>Coming soon</h2>
 			<p>A website to help you learn how to build a website from scratch.</p>
 			<p>No previous skills required</p>
-			<p>Sign up for the newsletter to be informed when the site launches. I can't wait until it is finished and I can share it with you!</p>
+			<p>Sign up for the newsletter to be informed when the site launches. This will be March 18th 2020. I can't wait until then and I can share it with you!</p>
 			<NewsletterSignUp/>
 		</div>
 	</header>
