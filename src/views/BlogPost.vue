@@ -188,6 +188,9 @@ header {
 		display: flex;
         flex-direction: column;
 		padding: 48px 0;
+		@media only screen and (max-width: 768px) {
+                padding: 0;
+            }
         .title {
             color: $primary-bright;
             text-align: center;

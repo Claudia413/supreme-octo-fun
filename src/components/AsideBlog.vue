@@ -114,7 +114,7 @@ aside {
         flex-direction: column-reverse;
         justify-content: space-between;
         align-items: center;
-        padding: 48px 0 0 0;
+        padding: 0;
         .short-bio {
             display: flex;
             flex-direction: row-reverse;
