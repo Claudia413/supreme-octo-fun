@@ -49,6 +49,7 @@ export default {
 		// text-transform: uppercase;
 		font-weight: 600;
 		font-size: 16px;
+		line-height: 32px;
 		max-width: 100%;
 		margin: 24px;
 		text-align: center;

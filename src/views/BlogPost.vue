@@ -146,6 +146,7 @@ header {
 		h1 {
 			font-family: 'Karla', sans-serif;
 			display: inline-block;
+			text-align: center;
 		}
 		h2 {
 			font-family: 'Spectral', sans-serif;

@@ -93,6 +93,7 @@ footer {
 				text-transform: uppercase;
 				text-decoration: none;
 				font-size: 16px;
+				line-height: 33px;
 			}
 			p {
 				color: inherit;
