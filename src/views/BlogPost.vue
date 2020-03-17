@@ -204,7 +204,8 @@ header {
 			margin-top: 24px;
 		}
         .subtitle {
-            padding: 12px;
+			padding: 12px;
+			text-align: justify;
         }
 		.heading {
 			color: $primary-bright;
