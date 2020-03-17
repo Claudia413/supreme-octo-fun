@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.2.0",
+    "prismic-javascript": "^2.3.0",
     "prismic-vue": "^2.0.0",
     "vue": "^2.6.11",
     "vue-headful": "^2.1.0",
