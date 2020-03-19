@@ -22,6 +22,7 @@ export default {
 @import "../assets/main.scss";
 
 header {
+	width: 100%;
 	max-width: 100%;
 	background-image: url(../assets/Darkheader.jpg);
 	background-position: center;

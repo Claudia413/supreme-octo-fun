@@ -26,6 +26,7 @@ export default {
 @import "../assets/main.scss";
 // This is in unscss style so that I could paste it in notepad and send 1 html file to the interwebs.
 header {
+	width: 100%;
 	max-width: 100%;
 	background-image: url(../assets/Darkheader.jpg);
 	background-position: center;
