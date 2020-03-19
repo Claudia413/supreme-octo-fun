@@ -67,7 +67,7 @@ export default new Router({
     {
       path: '*',
       name: 'everything',
-      component: ComingSoon
+      component: Home
     },
   ],
   scrollBehavior(to, from, savedPosition) {
