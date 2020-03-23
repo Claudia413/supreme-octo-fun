@@ -1,5 +1,7 @@
 # supreme-octo
 
+View this project live at: https://www.claudiaengelsman.com/
+
 ## Project setup
 ```
 npm install
