@@ -113,7 +113,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 @import "../assets/_variables.scss";
 
 header {
@@ -225,6 +225,9 @@ header {
 		}
 		p {
 			line-height: 26px;
+		}
+		a {
+			font-size: 14px;
 		}
 		.blog-image {
 			max-width: 100%;
