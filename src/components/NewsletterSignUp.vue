@@ -10,7 +10,8 @@
                    size="25"
                    value=""
                    placeholder="Name"
-                   class="sign-up">
+                   class="sign-up"
+                   aria-label="Name">
             <input type="email"
                    autocapitalize="off"
                    autocorrect="off"
@@ -19,7 +20,8 @@
                    size="25"
                    value=""
                    placeholder="E-mail address"
-                   class="sign-up">
+                   class="sign-up"
+                   aria-label="E-mail address">
             <input type="submit" value="Subscribe" class="button mt-2">
 		</form>
 	</div>
