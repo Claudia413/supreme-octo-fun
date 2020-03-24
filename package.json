@@ -1,13 +1,14 @@
 {
   "name": "supreme-octo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build:prerender",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.5.0",
     "prismic-vue": "^2.0.0",
@@ -28,6 +29,11 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
+  },
+  "vuePlugins": {
+    "service": [
+      "build.prerender.js"
+    ]
   },
   "eslintConfig": {
     "root": true,
