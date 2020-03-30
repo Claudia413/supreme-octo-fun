@@ -23,16 +23,17 @@
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <!-- <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
                 <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
-                </div> -->
+                </div>
                 <BlogPreview v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
             </div>
+            <p :class="maxPageNumber>pageNumber?'':'hidden'" @click="showMoreTechBlogPosts()"> More blogs >> </p>
 		</section>
         <!-- <section class="featured-blog">
             <h3>Featured post</h3>
@@ -48,14 +49,14 @@
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div>
-                <!-- <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
-                    <div class="blog-pic"></div>
-                    <div class="blog-tag-text"></div>
-                </div>
-                <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
+                <!-- <!-- <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
                     <div class="blog-pic"></div>
                     <div class="blog-tag-text"></div>
                 </div> -->
+                <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
+                </div>
                 <BlogPreview v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
             </div>
 		</section>
@@ -73,7 +74,8 @@ export default {
 	name: "blogOverview",
 	data() {
 		return {
-
+            pageNumber: 1,
+            maxPageNumber: 2
 		};
 	},
 	components: {
@@ -82,16 +84,18 @@ export default {
         BlogPreview
 	},
 	methods: {
-		getContentTech() {
+		getContentTech(pageNumber) {
 			this.$prismic.client.query([
             this.$prismic.Predicates.at('document.type', 'blogpost'),
             this.$prismic.Predicates.at('document.tags', ['Tech']),
             ],
             {
 			orderings : '[document.first_publication_date desc]',
-			pageSize : 4,
+            pageSize : 4,
+            page: pageNumber,
 			fetch : ['blogpost.title', 'blogpost.blog_image'] }).then((response) => {
-               this.$store.dispatch('setTechBlogPreviewsFromPrismic', response.results);
+                this.maxPageNumber = response.total_pages
+                this.$store.dispatch('setTechBlogPreviewsFromPrismic', response.results);
             // response is the response object, response.results holds the documents
 			});
         },
@@ -107,6 +111,10 @@ export default {
                 this.$store.dispatch('setNZBlogPreviewsFromPrismic', response.results);
 			// response is the response object, response.results holds the documents
 			});
+        },
+        showMoreTechBlogPosts() {
+            this.pageNumber = this.pageNumber + 1;
+            this.getContentTech(this.pageNumber);
         }
     },
     computed: mapState([
@@ -118,7 +126,7 @@ export default {
             this.getContentNZ();
         }
         if (this.$store.state.blogpreviewstech.length === 0) {
-            this.getContentTech();
+            this.getContentTech(this.pageNumber);
         }
   }
 };
@@ -146,11 +154,25 @@ export default {
         color: $text-darkbg;
         padding: 0 24px 24px;
     }
+    p {
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: opacity 0.4s, visibility 0.4s ease-in-out;
+        &.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:hover {
+            font-weight: bold;
+        }
+    }
     .blogs {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        flex-wrap: wrap;
         @media only screen and (max-width: 768px) {
             width: auto;
             flex-direction: column;
