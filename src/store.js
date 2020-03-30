@@ -32,7 +32,12 @@ export default new Vuex.Store({
       },
       setTechBlogPreviewsFromPrismic({ commit }, results) {
         commit('SET_LOADINGSTATE_TECH', false)
-        commit('SET_BLOGPREVIEWS_TECH', results)
+        if(this.state.blogpreviewstech.length === 0){
+          commit('SET_BLOGPREVIEWS_TECH', results)
+        } else {
+          var addedResults = this.state.blogpreviewstech.concat(results)
+          commit('SET_BLOGPREVIEWS_TECH', addedResults)
+        }
         // response is the response object, response.results holds the documents
       }
   },

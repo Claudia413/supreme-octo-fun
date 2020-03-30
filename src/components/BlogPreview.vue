@@ -68,11 +68,15 @@ export default {
 			height: 220px;
 			width: 220px;
 		}
+		.blog-tag-text {
+			line-height: 22px;
+		}
 	}
 	@media only screen and (max-width: 768px) {
 		margin-bottom: 32px;
 		.blog-tag-text {
 			margin: 32px;
+			line-height: 32px;
 		}
 		.blog-pic {
 			height: 280px;
