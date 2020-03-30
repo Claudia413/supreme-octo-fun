@@ -12,7 +12,6 @@
 				<vue-typed-js :strings="['Developer', 'Mentor', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Here to help you'  ]" :loop="false" :typeSpeed="75" :backDelay="250" :backSpeed="35" :smartBackspace="true">
 						<h2><span class="typing"></span> </h2>
 					</vue-typed-js>
-				<!-- <h2> Developer, mentor, and adventurer</h2> -->
 			</template>
 		</HeaderAnimation>
 		<MenuSlide/>
@@ -108,8 +107,6 @@ export default {
 			loadingBlogs: true,
 			blogpreviews: [
 			],
-			today: new Date(),
-			launchdate: new Date(2020, 2, 18, 0, 1),
 		};
 	},
 	components: {
