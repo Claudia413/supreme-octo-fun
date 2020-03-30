@@ -102,6 +102,7 @@ export default {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	h3 {
 		font-family: 'Karla', sans-serif;
 		font-size: 18px;
