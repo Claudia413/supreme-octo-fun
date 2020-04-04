@@ -9,6 +9,7 @@
 		<div class="hex photo"></div>
 		<SocialIconBar :instagram="false" :website="true"/>
 		<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
+		<a href="https://feminine-project-name-generator.netlify.com/" class="button mt-2">Try the Feminine project name generator</a>
 		<h3>Latest post on Coding & Tech:</h3>
 		<div class="blogs">
 			<div v-if="loadingBlogsTech" class="blog-post placeholder">
@@ -126,6 +127,11 @@ export default {
 	@media only screen and (max-width: 768px) {
 		font-size: 14px;
 	}
+}
+
+.button {
+	text-align: center;
+	max-width: 50%;
 }
 
 .blogs {
