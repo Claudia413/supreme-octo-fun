@@ -27,8 +27,12 @@ export default new Vuex.Store({
   actions: {
     setNZBlogPreviewsFromPrismic({ commit }, results) {
         commit('SET_LOADINGSTATE_NZ', false)
-        commit('SET_BLOGPREVIEWS_NZ', results)
-        // response is the response object, response.results holds the documents
+        if (this.state.blogpreviewsnz.length === 0) {
+          commit('SET_BLOGPREVIEWS_NZ', results)
+        } else {
+          var addedResultsNZ = this.state.blogpreviewsnz.concat(results)
+          commit('SET_BLOGPREVIEWS_NZ', addedResultsNZ)
+        }
       },
       setTechBlogPreviewsFromPrismic({ commit }, results) {
         commit('SET_LOADINGSTATE_TECH', false)
@@ -38,7 +42,6 @@ export default new Vuex.Store({
           var addedResults = this.state.blogpreviewstech.concat(results)
           commit('SET_BLOGPREVIEWS_TECH', addedResults)
         }
-        // response is the response object, response.results holds the documents
       }
   },
   getters: {
