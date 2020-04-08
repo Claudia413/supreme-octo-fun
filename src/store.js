@@ -28,7 +28,6 @@ export default new Vuex.Store({
     setNZBlogPreviewsFromPrismic({ commit }, results) {
         commit('SET_LOADINGSTATE_NZ', false)
         if (this.state.blogpreviewsnz.length === 0) {
-          console.log('no blogs in state')
           commit('SET_BLOGPREVIEWS_NZ', results)
         } else {
           var addedResultsNZ = this.state.blogpreviewsnz.concat(results)
