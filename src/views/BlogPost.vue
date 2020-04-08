@@ -233,7 +233,12 @@ header {
 			max-width: 100%;
         }
         .text {
-            text-align: justify;
+			text-align: justify;
+			ol {
+				font-size: 14px;
+				line-height: 26px;
+				color: #30343f;
+			}
         }
 		.cta {
 			display: flex;
