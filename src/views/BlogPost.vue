@@ -9,9 +9,8 @@
 		<MenuSlide />
 		<div class="blog-grid">
 			<header>
-				<div v-if="contentLoading" class="cover"></div>
-				<img v-else-if="blog.labels[0] == 'NZ'" src="../assets/BlogHeaderNZ.png" alt="close-up of a fern plant in the shade" class="cover" />
-				<img v-else src="../assets/BlogHeaderTech.png" alt="close-up of a alocasia (elephants ear) plant in the shade" class="cover" />
+				<div v-if="$route.query.label === ''" class="cover"></div>
+				<img v-else src="../assets/BlogHeaderNZ.png" alt="close-up of a fern plant in the shade" class="cover" >
 				<div class="intro">
 					<p>Welcome to the blog</p>
 					<vue-typed-js :strings="['Guide', 'Education', 'Motivation', 'Resources', 'Inspiration']" :loop="true" :loopCount="2" :typeSpeed="75" :backDelay="250" :backSpeed="35" :smartBackspace="true">
