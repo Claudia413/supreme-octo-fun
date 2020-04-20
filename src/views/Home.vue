@@ -117,8 +117,10 @@ export default {
 	},
 	methods: {
 		getContent() {
-			this.$prismic.client.query(
+			this.$prismic.client.query([
 			this.$prismic.Predicates.at('document.type', 'blogpost'),
+			this.$prismic.Predicates.not('document.tags', ['TEST']),
+			],
 			{
 			orderings : '[document.first_publication_date desc]',
 			pageSize : 4,
