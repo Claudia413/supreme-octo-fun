@@ -18,7 +18,8 @@
 					</vue-typed-js>
 				</div>
 			</header>
-			<div class="content">
+			<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" />
+			<div class="content" :class="showTutorial?'':'blur'">
 				<h1 class="title">{{blog.title[0].text}}</h1>
 				<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
 				<p class="author">by Claudia Engelsman</p>
@@ -32,13 +33,21 @@
 						<prismic-image :field="slice.primary.image" class="blog-image" />
 						<prismic-rich-text :field="slice.primary.image_description" />
 					</template>
+					<template v-else-if="slice.slice_type === 'text_with_custom_link'">
+						<p>{{slice.primary.text[0].text}}
+							<span @click="openTutorial(slice.primary.tutorial_uid[0].text)" class="tutorial-link">
+								{{ slice.primary.link[0].text}}
+							</span>
+							{{slice.primary.text_continued[0].text}}
+						</p>
+					</template>
 				</section>
 				<section class="cta">
 					<router-link to="/blog" > {{'<<'}} Back to blog overview</router-link>
 					<router-link :to="'/blog/' + relatedPostId"> {{ relatedPostTitle }} {{'>>'}} </router-link>
 				</section>
 			</div>
-			<AsideBlog v-if="!contentLoading" :labels="blog.labels" :blogID="blog.prismicID" />
+			<AsideBlog v-if="!contentLoading" :labels="blog.labels" :blogID="blog.prismicID" class="blog-bar" />
 		</div>
 	</div>
 </template>
@@ -47,6 +56,7 @@
 // @ is an alias to /src
 import MenuSlide from "@/components/MenuSlide.vue";
 import AsideBlog from "@/components/AsideBlog.vue";
+import TutorialScroll from "@/components/TutorialScroll.vue";
 
 export default {
 	name: "blogPost",
@@ -68,12 +78,15 @@ export default {
 			slices: [],
 			contentLoading: true,
 			relatedPostTitle: "",
-			relatedPostId: ""
+			relatedPostId: "",
+			clickedTutorialUid: "",
+			showTutorial: false
 		};
 	},
 	components: {
         MenuSlide,
-		AsideBlog
+		AsideBlog,
+		TutorialScroll
 	},
 	methods: {
 		getContent(uid) {
@@ -99,6 +112,10 @@ export default {
 				this.relatedPostTitle = response.results[0].data.title[0].text;
 				this.relatedPostId = response.results[0].uid;
 			})
+		},
+		openTutorial(tutorialUid) {
+			this.clickedTutorialUid = tutorialUid
+			this.showTutorial = true
 		}
 	},
 	created() {
@@ -178,6 +195,14 @@ header {
 				"aside aside";
 		}
 	}
+	.overlay-tutorial {
+			grid-area: content;
+			background-color: rgba(230, 230, 230, 100);
+			box-sizing: border-box;
+			z-index: 800;
+			margin: 0;
+			height: auto;
+		}
 	.content {
 		grid-area: content;
 		width: 100%;
@@ -246,8 +271,15 @@ header {
 				font-size: 14px;
 			}
 		}
+		.tutorial-link {
+			color: $yellow;
+			cursor: pointer;
+			&:hover{
+				font-weight: bolder;
+			}
+		}
 	}
-	aside {
+	.blog-bar {
 		grid-area: aside;
 		width: auto;
 		max-width: 400px;
