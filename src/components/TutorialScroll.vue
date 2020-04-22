@@ -11,7 +11,7 @@
             <template v-if="slice.slice_type === 'step'">
                         <h2 class="heading" >{{slice.primary.step_name[0].text}}</h2>
                         <prismic-rich-text :field="slice.primary.step_text" class="text"/>
-                        <prismic-image :field="slice.primary.image" class="tutorial-image" />
+                        <prismic-image :field="slice.primary.image" class="step-img" />
                     </template>
             </section>
             <div v-if="!loading" class="clickable align-right" @click="returnToArticle()"><p>Return to where I was in the article {{' >>'}}</p></div>
@@ -75,10 +75,6 @@ aside {
     @media only screen and (max-width: 768px) {
         padding: 12px 16px 24px 24px;
     }
-    img {
-        max-width: 100%;
-        margin-bottom: 24px;
-    }
     p {
         a {
             font-size: inherit;
@@ -119,12 +115,15 @@ aside {
         margin-left: auto;
         position: sticky;
         top: 8px;
-
     }
     .heading {
         color: $primary-bright;
         line-height: 36px;
         font-size: 18px;
+    }
+    .step-img {
+        max-width: 100%;
+        margin-bottom: 24px;
     }
     .clickable {
         cursor: pointer;
