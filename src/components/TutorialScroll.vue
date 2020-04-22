@@ -1,17 +1,20 @@
 <template>
 	<aside>
+        <div class="close clickable"  @click="returnToArticle()">X</div>
 		<section class="tutorial">
             <div v-if="loading" class="loader"><i class="far fa-hourglass"></i></div>
-            <h2>{{tutorial.title.text}}</h2>
-            <prismic-rich-text :field="tutorial.introduction" class=""/>
-            <section v-for="(slice, index) in slices" :key="'slice-' + index" class="">
+            <div class="intro">
+                <h2>{{tutorial.title.text}}</h2>
+                <prismic-rich-text :field="tutorial.introduction" class=""/>
+            </div>
+            <section v-for="(slice, index) in slices" :key="'slice-' + index" class="step">
             <template v-if="slice.slice_type === 'step'">
-						<h2 class="heading" >{{slice.primary.step_name[0].text}}</h2>
-						<prismic-rich-text :field="slice.primary.step_text" class="text"/>
+                        <h2 class="heading" >{{slice.primary.step_name[0].text}}</h2>
+                        <prismic-rich-text :field="slice.primary.step_text" class="text"/>
                         <prismic-image :field="slice.primary.image" class="tutorial-image" />
-					</template>
+                    </template>
             </section>
-            <div v-if="!loading" class="clickable" @click="returnToArticle()"><p>Return to where I was in the article</p></div>
+            <div v-if="!loading" class="clickable align-right" @click="returnToArticle()"><p>Return to where I was in the article {{' >>'}}</p></div>
 		</section>
 	</aside>
 </template>
@@ -47,10 +50,9 @@ export default {
                 this.slices = document.data.body;
                 this.loading=false;
             });
-
         },
         returnToArticle() {
-            this.$emit('hideTutorial')
+            this.$emit('hideTutorial');
         }
     },
     mounted() {
@@ -59,19 +61,36 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style  lang="scss">
 @import "../assets/_variables.scss";
 
 aside {
     height: auto;
-    text-align: left;
-    padding: 48px;
+    text-align: justify;
+    padding: 12px 16px 48px 48px;
     box-shadow: 2px 0 3px #80808047;
     width: 90%;
-    max-width: 600px;
+    max-width: 640px;
+    position: relative;
+    @media only screen and (max-width: 768px) {
+        padding: 12px 16px 24px 24px;
+    }
     img {
         max-width: 100%;
+        margin-bottom: 24px;
+    }
+    p {
+        a {
+            font-size: inherit;
+        }
+    }
+    .intro, .step {
+        padding-right: 36px;
+    }
+    .intro {
+        h2 {
+            color: $primary-bright;
+        }
     }
     .loader {
         text-align: center;
@@ -90,6 +109,18 @@ aside {
             animation-direction: alternate-reverse;
         }
     }
+    .close {
+        display: flex;
+        justify-content: flex-end;
+        color: $primary-bright;
+        opacity: 1;
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: auto;
+        position: sticky;
+        top: 8px;
+
+    }
     .heading {
         color: $primary-bright;
         line-height: 36px;
@@ -101,7 +132,10 @@ aside {
             font-weight: bolder;
         }
     }
-
+    .align-right {
+        padding-right: 36px;
+        text-align: right;
+    }
     @keyframes rotate {
         from {transform: rotate(-5deg);}
         to {transform: rotate(185deg);}

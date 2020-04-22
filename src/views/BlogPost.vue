@@ -120,7 +120,7 @@ export default {
 			this.clickedTutorialUid = tutorialUid
 			this.savedScrollPosition = window.scrollY;
 			this.showTutorial = true;
-			console.log(this.savedScrollPosition);
+			window.scrollTo({top: 300, behavior: "smooth",});
 		},
 		returnFromTutorial() {
 			this.showTutorial = false;
