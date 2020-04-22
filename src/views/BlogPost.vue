@@ -18,7 +18,9 @@
 					</vue-typed-js>
 				</div>
 			</header>
-			<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" v-on:hideTutorial="returnFromTutorial" />
+			<transition name="slide">
+				<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" v-on:hideTutorial="returnFromTutorial" />
+			</transition>
 			<div class="content" :class="showTutorial?'blur':''">
 				<h1 class="title">{{blog.title[0].text}}</h1>
 				<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
@@ -122,7 +124,7 @@ export default {
 		},
 		returnFromTutorial() {
 			this.showTutorial = false;
-			window.scrollTo(0,this.savedScrollPosition);
+			window.scrollTo({top: this.savedScrollPosition, behavior: "smooth",});
 		}
 	},
 	created() {
@@ -201,6 +203,12 @@ header {
 				"content content"
 				"aside aside";
 		}
+	}
+	.slide-enter-active, .slide-leave-active {
+		transition: transform 0.5s;
+	}
+	.slide-enter, .slide-leave-to {
+		transform: translate(-600px, 0px);
 	}
 	.overlay-tutorial {
 			grid-area: content;
