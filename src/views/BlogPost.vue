@@ -18,8 +18,8 @@
 					</vue-typed-js>
 				</div>
 			</header>
-			<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" />
-			<div class="content" :class="showTutorial?'':'blur'">
+			<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" v-on:hideTutorial="returnFromTutorial" />
+			<div class="content" :class="showTutorial?'blur':''">
 				<h1 class="title">{{blog.title[0].text}}</h1>
 				<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
 				<p class="author">by Claudia Engelsman</p>
@@ -80,6 +80,7 @@ export default {
 			relatedPostTitle: "",
 			relatedPostId: "",
 			clickedTutorialUid: "",
+			savedScrollPosition: Number,
 			showTutorial: false
 		};
 	},
@@ -115,7 +116,13 @@ export default {
 		},
 		openTutorial(tutorialUid) {
 			this.clickedTutorialUid = tutorialUid
-			this.showTutorial = true
+			this.savedScrollPosition = window.scrollY;
+			this.showTutorial = true;
+			console.log(this.savedScrollPosition);
+		},
+		returnFromTutorial() {
+			this.showTutorial = false;
+			window.scrollTo(0,this.savedScrollPosition);
 		}
 	},
 	created() {
@@ -212,6 +219,9 @@ header {
 		display: flex;
         flex-direction: column;
 		padding: 48px 0;
+		&.blur {
+			filter: blur(8px);
+		}
 		@media only screen and (max-width: 768px) {
                 padding: 0;
             }
