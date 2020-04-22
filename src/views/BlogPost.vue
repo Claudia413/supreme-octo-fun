@@ -83,13 +83,19 @@ export default {
 			relatedPostId: "",
 			clickedTutorialUid: "",
 			savedScrollPosition: Number,
-			showTutorial: false
+			showTutorial: false,
+			currentUrl: window.location.href
 		};
 	},
 	components: {
         MenuSlide,
 		AsideBlog,
 		TutorialScroll
+	},
+	computed: {
+		notAlreadyInUrl: function() {
+			return !this.currentUrl.includes(this.$route.params.tutid);
+		}
 	},
 	methods: {
 		getContent(uid) {
@@ -119,6 +125,9 @@ export default {
 		openTutorial(tutorialUid) {
 			this.clickedTutorialUid = tutorialUid
 			this.savedScrollPosition = window.scrollY;
+			if(!this.$route.params.tutid && this.notAlreadyInUrl){
+				history.pushState({}, '', this.currentUrl + '/' + tutorialUid)
+			}
 			this.showTutorial = true;
 			window.scrollTo({top: 300, behavior: "smooth",});
 		},
@@ -128,8 +137,15 @@ export default {
 		}
 	},
 	created() {
+		let that = this
 		this.getContent(this.$route.params.uid);
 		this.blog.uid = this.$route.params.uid;
+		window.addEventListener('popstate', function() {
+			that.returnFromTutorial()
+		})
+		if (this.$route.params.tutid) {
+			this.openTutorial(this.$route.params.tutid)
+		}
 	},
 	beforeRouteUpdate (to, from, next) {
 		this.getContent(to.params.uid);
