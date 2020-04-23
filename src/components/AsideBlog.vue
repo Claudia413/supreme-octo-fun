@@ -14,7 +14,7 @@
 		</section>
         <img src="../assets/Dashdecoleft.png" alt="decoration scribbly" class="deco" />
         <section class="cta newsletter">
-            <p>Do you want a bi-weekly update on what's new? You can sign up here</p>
+            <p>Do you want a monthly update on what's new? You can sign up here</p>
             <NewsletterSignUp/>
 		</section>
 	</aside>

@@ -43,7 +43,6 @@ export default {
     },
     methods: {
         getTutorial(tutorialuid) {
-
             this.$prismic.client.getByUID('step-by-step-tutorial', tutorialuid).then((document) => {
                 this.tutorial.title.text = document.data.title[0].text
                 this.tutorial.introduction = document.data.introduction
@@ -90,12 +89,12 @@ aside {
     }
     .loader {
         text-align: center;
+        height: 100%;
+        margin: auto;
+        margin-top: 48px;
         .fa-hourglass {
-            font-size: 48px;
-            background: -webkit-linear-gradient(left top, #ac6943, #fbd1c1, #ab6943, #faf4ed);
-            opacity: 0.9;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            color: $yellow;
             transform: rotate(0deg);
             animation-name: rotate;
             animation-duration: 1.5s;
