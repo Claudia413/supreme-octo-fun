@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import ComingSoon from './components/ComingSoon.vue'
+import TutorialLoadingAnimation from './views/TutorialLoadingAnimation'
 import About from './views/About.vue'
 import BlogOverview from './views/BlogOverview.vue'
 import BlogPost from './views/BlogPost.vue'
+import Links from './views/Links.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'
-import TutorialLoadingAnimation from './views/TutorialLoadingAnimation'
-import Links from './views/Links.vue'
+import ComingSoon from './components/ComingSoon.vue'
+
 
 Vue.use(Router)
 
@@ -50,9 +51,9 @@ export default new Router({
       component: BlogOverview
     },
     {
-      path: '/blog/:uid',
+      path: '/blog/:uid/:tutid?',
       name: 'blog-post',
-      component: BlogPost
+      component: BlogPost,
     },
     {
       path: '/links',

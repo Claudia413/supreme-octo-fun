@@ -18,7 +18,10 @@
 					</vue-typed-js>
 				</div>
 			</header>
-			<div class="content">
+			<transition name="slide">
+				<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" v-on:hideTutorial="returnFromTutorial" />
+			</transition>
+			<div class="content" :class="showTutorial?'blur':''">
 				<h1 class="title">{{blog.title[0].text}}</h1>
 				<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
 				<p class="author">by Claudia Engelsman</p>
@@ -32,13 +35,21 @@
 						<prismic-image :field="slice.primary.image" class="blog-image" />
 						<prismic-rich-text :field="slice.primary.image_description" />
 					</template>
+					<template v-else-if="slice.slice_type === 'text_with_custom_link'">
+						<p>{{slice.primary.text[0].text}}
+							<span @click="openTutorial(slice.primary.tutorial_uid[0].text)" class="tutorial-link">
+								{{ slice.primary.link[0].text}}
+							</span>
+							{{slice.primary.text_continued[0].text}}
+						</p>
+					</template>
 				</section>
 				<section class="cta">
 					<router-link to="/blog" > {{'<<'}} Back to blog overview</router-link>
 					<router-link :to="'/blog/' + relatedPostId"> {{ relatedPostTitle }} {{'>>'}} </router-link>
 				</section>
 			</div>
-			<AsideBlog v-if="!contentLoading" :labels="blog.labels" :blogID="blog.prismicID" />
+			<AsideBlog v-if="!contentLoading" :labels="blog.labels" :blogID="blog.prismicID" class="blog-bar" />
 		</div>
 	</div>
 </template>
@@ -47,6 +58,7 @@
 // @ is an alias to /src
 import MenuSlide from "@/components/MenuSlide.vue";
 import AsideBlog from "@/components/AsideBlog.vue";
+import TutorialScroll from "@/components/TutorialScroll.vue";
 
 export default {
 	name: "blogPost",
@@ -68,12 +80,22 @@ export default {
 			slices: [],
 			contentLoading: true,
 			relatedPostTitle: "",
-			relatedPostId: ""
+			relatedPostId: "",
+			clickedTutorialUid: "",
+			savedScrollPosition: Number,
+			showTutorial: false,
+			currentUrl: window.location.href
 		};
 	},
 	components: {
         MenuSlide,
-		AsideBlog
+		AsideBlog,
+		TutorialScroll
+	},
+	computed: {
+		notAlreadyInUrl: function() {
+			return !this.currentUrl.includes(this.$route.params.tutid);
+		}
 	},
 	methods: {
 		getContent(uid) {
@@ -99,11 +121,31 @@ export default {
 				this.relatedPostTitle = response.results[0].data.title[0].text;
 				this.relatedPostId = response.results[0].uid;
 			})
+		},
+		openTutorial(tutorialUid) {
+			this.clickedTutorialUid = tutorialUid
+			this.savedScrollPosition = window.scrollY;
+			if(!this.$route.params.tutid && this.notAlreadyInUrl){
+				history.pushState({}, '', this.currentUrl + '/' + tutorialUid)
+			}
+			this.showTutorial = true;
+			window.scrollTo({top: 300, behavior: "smooth",});
+		},
+		returnFromTutorial() {
+			this.showTutorial = false;
+			window.scrollTo({top: this.savedScrollPosition, behavior: "smooth",});
 		}
 	},
 	created() {
+		let that = this
 		this.getContent(this.$route.params.uid);
 		this.blog.uid = this.$route.params.uid;
+		window.addEventListener('popstate', function() {
+			that.returnFromTutorial()
+		})
+		if (this.$route.params.tutid) {
+			this.openTutorial(this.$route.params.tutid)
+		}
 	},
 	beforeRouteUpdate (to, from, next) {
 		this.getContent(to.params.uid);
@@ -178,6 +220,20 @@ header {
 				"aside aside";
 		}
 	}
+	.slide-enter-active, .slide-leave-active {
+		transition: transform 0.5s;
+	}
+	.slide-enter, .slide-leave-to {
+		transform: translate(-600px, 0px);
+	}
+	.overlay-tutorial {
+			grid-area: content;
+			background-color: rgba(230, 230, 230, 100);
+			box-sizing: border-box;
+			z-index: 800;
+			margin: 0;
+			height: auto;
+		}
 	.content {
 		grid-area: content;
 		width: 100%;
@@ -187,6 +243,9 @@ header {
 		display: flex;
         flex-direction: column;
 		padding: 48px 0;
+		&.blur {
+			filter: blur(8px);
+		}
 		@media only screen and (max-width: 768px) {
                 padding: 0;
             }
@@ -246,8 +305,15 @@ header {
 				font-size: 14px;
 			}
 		}
+		.tutorial-link {
+			color: $yellow;
+			cursor: pointer;
+			&:hover{
+				font-weight: bolder;
+			}
+		}
 	}
-	aside {
+	.blog-bar {
 		grid-area: aside;
 		width: auto;
 		max-width: 400px;
