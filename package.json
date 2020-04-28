@@ -11,7 +11,7 @@
     "axios": "^0.19.2",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1",
-    "prismic-vue": "^2.0.0",
+    "prismic-vue": "^2.0.1",
     "vue": "^2.6.11",
     "vue-headful": "^2.1.0",
     "vue-router": "^3.1.6",
