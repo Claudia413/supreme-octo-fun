@@ -36,7 +36,7 @@
 					</template>
 					<template v-else-if="slice.slice_type === 'image_with_caption'">
 						<prismic-image :field="slice.primary.image" class="blog-image" />
-						<prismic-rich-text :field="slice.primary.image_description" />
+						<prismic-rich-text :field="slice.primary.image_description" class="caption"/>
 					</template>
 					<template v-else-if="slice.slice_type === 'text_with_custom_link'">
 						<p>{{slice.primary.text[0].text}}
@@ -277,7 +277,7 @@ header {
 			font-size: 18px;
         }
         section {
-            padding: 12px;
+            padding: 8px 12px 12px;
         }
 		.dent-right {
 			@media only screen and (max-width: 768px) {
@@ -301,6 +301,12 @@ header {
 				color: #30343f;
 			}
         }
+		.caption {
+			color: $dark-blue;
+			p {
+				margin-top: 0;
+			}
+		}
 		.cta {
 			display: flex;
 			justify-content: space-between;
