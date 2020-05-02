@@ -31,6 +31,9 @@
 						<h2 class="heading" >{{slice.primary.section_title[0].text}}</h2>
 						<prismic-rich-text :field="slice.primary.section_text" class="text"/>
 					</template>
+					<template v-else-if="slice.slice_type === 'blog_text_block_continued'">
+						<prismic-rich-text :field="slice.primary.section_text" class="text"/>
+					</template>
 					<template v-else-if="slice.slice_type === 'image_with_caption'">
 						<prismic-image :field="slice.primary.image" class="blog-image" />
 						<prismic-rich-text :field="slice.primary.image_description" />
