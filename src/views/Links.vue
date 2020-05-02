@@ -9,8 +9,8 @@
 		<div class="hex photo"></div>
 		<SocialIconBar :instagram="false" :website="true"/>
 		<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
-		<a href="https://feminine-project-name-generator.netlify.com/" class="button mt-2">Try the Feminine project name generator</a>
 		<a href="https://www.youtube.com/watch?v=w_lgHMAMLyg" class="button mt-2">New Zealand Road Trip part 2 on Youtube</a>
+		<a href="https://feminine-project-name-generator.netlify.com/" class="button mt-2">Try the Feminine project name generator</a>
 		<h3>Latest post on Coding & Tech:</h3>
 		<div class="blogs">
 			<div v-if="loadingBlogsTech" class="blog-post placeholder">
