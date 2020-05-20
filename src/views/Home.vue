@@ -72,10 +72,7 @@
 				<div class="blog-pic placeholder"></div>
 				<div class="blog-tag-text placeholder"></div>
 			</div>
-			<router-link v-else v-for="(post, index) in blogpreviews" :key="'post-' + index" :to="'/blog/' + post.uid" class="blog-post">
-				<prismic-image :field="post.data.blog_image" class="blog-pic"/>
-				<span class="blog-tag-text">{{post.data.title[0].text}}</span>
-			</router-link>
+			<BlogPreview v-else v-for="(post, index) in blogpreviews" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
 		</section>
 		<section class="freebie-text text-block">
 			<h3>Let's stay in touch</h3>
@@ -99,6 +96,7 @@ import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
 import TextSlider from "@/components/TextSlider.vue";
 import NewsletterSignUp from "@/components/NewsletterSignUp.vue"
+import BlogPreview from "@/components/BlogPreview.vue"
 
 export default {
 	name: "home",
@@ -114,6 +112,7 @@ export default {
 		MenuSlide,
 		TextSlider,
 		NewsletterSignUp,
+		BlogPreview
 	},
 	methods: {
 		getContent() {
