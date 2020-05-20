@@ -4,9 +4,10 @@
 				<source :srcset="image.mobileoverview.url" media="(max-width: 768px)">
 				<source :srcset="image.tablet.url" media="(max-width: 1112px)">
 				<source :srcset="image.large.url" media="(min-width: 1113px)">
-				<img :src="image.url" :alt="image.alt" class="blog-pic">
+				<img :src="image.url" :alt="image.alt">
 			</picture>
-            <span class="blog-tag-text">{{title}}</span>
+			<div class="img-line"></div>
+			<div class="blog-tag-text"><p>{{title}}</p></div>
     </router-link>
 </template>
 
@@ -33,11 +34,35 @@ export default {
 	flex-direction: column;
 	position: relative;
 	cursor: pointer;
+	overflow: hidden;
+	margin: 24px;
 	&:hover {
 		.blog-tag-text {
 			opacity: 0.95;
 			transition: opacity 0.3s ease;
 		}
+		.img-line {
+			opacity: 1;
+			transition: opacity 0.3s ease;
+		}
+		.blog-pic {
+			transform: scale(1.05);
+			transition: all 0.3s ease;
+		}
+	}
+	.img-line {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0.4;
+		border: 1px white solid;
+		margin: 20px;
+		transition: opacity 0.3s ease;
+	}
+	.blog-info {
+		background-color: white;
 	}
 	.blog-tag-text {
 		position: absolute;
@@ -45,16 +70,17 @@ export default {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		font-family: "Spectral", serif;
-		// text-transform: uppercase;
+		font-family: "Karla", serif;
 		font-weight: 600;
 		font-size: 16px;
-		line-height: 32px;
+		line-height: 24px;
 		max-width: 100%;
-		margin: 24px;
+		margin: 34px;
 		text-align: center;
 		background-color: #fdfdfd;
-		padding: 32px;
+		padding: 20px 20px;
+		display: flex;
+		align-items: center;
 		opacity: 0.85;
         transition: opacity 0.3s ease;
 	}
@@ -62,9 +88,10 @@ export default {
 		height: 240px;
 		width: 240px;
 		object-fit: cover;
+		transition: all 0.3s ease;
 	}
 	@media only screen and (max-width: 1112px) {
-		.blog-pic {
+		.blog-post, .blog-pic {
 			height: 220px;
 			width: 220px;
 		}
@@ -76,9 +103,12 @@ export default {
 		margin-bottom: 32px;
 		.blog-tag-text {
 			margin: 32px;
+			p {
 			line-height: 32px;
+			font-size: 18px;
+			}
 		}
-		.blog-pic {
+		.blog-post, .blog-pic {
 			height: 280px;
 			width: 280px;
 		}
