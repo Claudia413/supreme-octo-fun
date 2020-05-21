@@ -39,15 +39,15 @@ export default {
 	&:hover {
 		.blog-tag-text {
 			opacity: 0.95;
-			transition: opacity 0.3s ease;
+			transition: opacity 0.4s ease;
 		}
 		.img-line {
 			opacity: 1;
-			transition: opacity 0.3s ease;
+			transition: opacity 0.4s ease;
 		}
 		.blog-pic {
 			transform: scale(1.05);
-			transition: all 0.3s ease;
+			transition: all 0.4s ease;
 		}
 	}
 	.img-line {
@@ -59,7 +59,7 @@ export default {
 		opacity: 0.4;
 		border: 1px white solid;
 		margin: 20px;
-		transition: opacity 0.3s ease;
+		transition: opacity 0.4s ease;
 	}
 	.blog-info {
 		background-color: white;
@@ -81,14 +81,14 @@ export default {
 		padding: 20px 20px;
 		display: flex;
 		align-items: center;
-		opacity: 0.85;
-        transition: opacity 0.3s ease;
+		opacity: 0.75;
+        transition: opacity 0.4s ease;
 	}
 	.blog-pic {
 		height: 240px;
 		width: 240px;
 		object-fit: cover;
-		transition: all 0.3s ease;
+		transition: all 0.4s ease;
 	}
 	@media only screen and (max-width: 1112px) {
 		.blog-post, .blog-pic {
