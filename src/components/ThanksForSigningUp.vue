@@ -4,16 +4,23 @@
 			<h2>All set!</h2>
 			<p>Thank you for trusting me with your e-mail address. I promise to keep it safe and will only send you stuff I know you'll love.</p>
 			<p>If you ever feel that your interests change because you know, life happens, feel free to unsubscribe.</p>
-			<p>PS. If you can't wait for the website to launch like me, feel free to get in touch on <span><a href="https://www.instagram.com/claudia414" target="_blank">Instagram</a></span>, <span><a href="https://twitter.com/Claudia_blonde" target="_blank">Twitter</a></span>, or just send me an <span><a href="mailto:claudiaengelsman@gmail.com">email</a></span>. We don't have to wait for this website to launch to get to know each other =)</p>
+			<p>You will be redirected back to the website in 7 seconds or you can click <span class="clickable" @click="goBack()">here</span> to go back now.</p>
 		</div>
 	</header>
 </template>
 
 <script>
 
-
 export default {
 	name: "ThanksForSigningUp",
+	methods: {
+		goBack() {
+			history.back()
+		}
+	},
+	created() {
+		setTimeout(() => this.goBack(), 7000);
+	},
 }
 </script>
 
@@ -41,8 +48,9 @@ header {
 	p + p{
 		font-size: 1rem;
 	}
-	a {
+	.clickable {
 		text-decoration: underline;
+		cursor: pointer;
 	}
 	.overlay {
 		height: 100%;
