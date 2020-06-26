@@ -25,11 +25,13 @@
 
               <label class="checkbox" for="group_1">
                      <input type="checkbox" id="group_1" name="group[28069][1]" value="1" class="av-checkbox">
-                     <span>Coding</span>
+                     <span></span>
+                     Coding
               </label>
               <label class="checkbox" for="group_2">
                      <input type="checkbox" id="group_2" name="group[28069][2]" value="1" class="av-checkbox">
-                     <span>Moving to New Zealand</span>
+                     <span></span>
+                     Moving to New Zealand
               </label>
               <input type="submit" value="Subscribe" class="button mt-2">
               </form>
@@ -56,8 +58,9 @@ form {
 		padding: 8px;
 	}
        label {
+              display: flex;
+              align-items: center;
               color: white;
-              display: block;
               font-family: 'Karla', sans-serif;
               font-size: 14px;
               margin-bottom: 12px;
@@ -65,12 +68,57 @@ form {
                      font-family: inherit;
               }
        }
-       .av-checkbox {
-              cursor: pointer;
-              margin-left: 0;
+       input[type=checkbox] {
+              visibility: hidden;
+              margin-right: 16px;
        }
        .mt-2 {
               margin-top: 12px;
+       }
+       .checkbox {
+              width: 200px;
+              margin: 16px 0;
+              position: relative;
+       }
+       .checkbox span {
+              cursor: pointer;
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              top: 0;
+              border-radius: 0;
+              background: #fcfff4;
+       }
+
+       .checkbox span:after {
+              filter: alpha(opacity=0);
+              opacity: 0;
+              content: '';
+              position: absolute;
+              width: 9px;
+              height: 5px;
+              background: transparent;
+              top: 4px;
+              left: 4px;
+              border: 3px solid $primary-bright;
+              border-top: none;
+              border-right: none;
+
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+       }
+
+       .checkbox span:hover::after {
+              filter: alpha(opacity=30);
+              opacity: 0.5;
+       }
+
+       .checkbox input[type=checkbox]:checked + span:after {
+              filter: alpha(opacity=100);
+              opacity: 1;
        }
 }
 
