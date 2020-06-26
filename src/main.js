@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import PrismicVue from 'prismic-vue'
+import PrismicVue from '@prismicio/vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
