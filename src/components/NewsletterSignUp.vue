@@ -3,7 +3,18 @@
        <form action="https://claudiaengelsman.us3.list-manage.com/subscribe/post" method="POST">
               <input type="hidden" name="u" value="629c031bdb910f99adde2fc0f">
               <input type="hidden" name="id" value="d3e968d617">
+              <!-- people should not fill these in and expect good things -->
+              <div class="field-shift" aria-label="Please leave the following three fields empty">
+                     <label for="b_name">Name: </label>
+                     <input type="text" name="b_name" tabindex="-1" value="" placeholder="Freddie" id="b_name">
 
+                     <label for="b_email">Email: </label>
+                     <input type="email" name="b_email" tabindex="-1" value="" placeholder="youremail@gmail.com" id="b_email">
+
+                     <label for="b_comment">Comment: </label>
+                     <textarea name="b_comment" tabindex="-1" placeholder="Please comment" id="b_comment"></textarea>
+              </div>
+              <!-- Back to normal form fields -->
               <input type="text"
                    name="MERGE1"
                    id="MERGE1"
@@ -48,6 +59,10 @@ export default {
 @import "../assets/_variables.scss";
 
 form {
+       .field-shift {
+              left: -9999px;
+              position: absolute;
+       }
        .sign-up {
 		display: block;
 		border: none;
