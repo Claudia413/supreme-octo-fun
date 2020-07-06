@@ -18,6 +18,15 @@
 			<a href="https://www.instagram.com/p/BtWhHvSnMMa/" target="_blank" rel="noreferrer">
 				<img src="../assets/Insta-GuusGolden.jpg" alt="Instagram photo headshot of Guus, Claudia's Golden Retriever" loading="lazy"/>
 			</a>
+			<a href="https://www.instagram.com/p/CCCezaXhBoW/" target="_blank" rel="noreferrer" class="show-med">
+				<img src="../assets/Insta-ClaudiaAtPunakaiki.jpg" alt="Instagram photo of Claudia at Punakaiki Pancake Rocks at sunset" loading="lazy"/>
+			</a>
+			<a href="https://www.instagram.com/p/B_Qqrpxpkf2/" target="_blank" rel="noreferrer" class="show-med">
+				<img src="../assets/Insta-ClaudiaAtKaikouraWithShell.jpg" alt="Instagram photo of Claudia with a shell on the rocks at Kaikoura" loading="lazy"/>
+			</a>
+			<a href="https://www.instagram.com/p/B98PlGuBULZ/" target="_blank" rel="noreferrer" class="show-med show-xxl">
+				<img src="../assets/Insta-Waterfall.jpg" alt="Instagram photo of a watterfall" loading="lazy"/>
+			</a>
 		</section>
 		<section class="legal">
 			<span>@ Claudia Engelsman Copyright {{currentYear}}</span>
@@ -53,21 +62,19 @@ footer {
 	height: auto;
 	.instafeed {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: 100%;
-		grid-template-areas: "instagram-intro ....";
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: repeat(2, auto);
+		grid-template-areas:
+				"instagram-icon  instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro"
+				"instagram-pic    instagram-pic   instagram-pic   instagram-pic instagram-pic    instagram-pic   instagram-pic";
 		padding: 0;
+		@media only screen and (max-width: 1200px) {
+			grid-template-columns: repeat(6, 1fr);
+				}
 		@media only screen and (max-width: 768px) {
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(2, auto);
-			grid-template-areas:
-				"instagram-icon  instagram-intro instagram-intro instagram-intro"
-				"instagram-pic    instagram-pic   instagram-pic   instagram-pic";
-			padding-left: 0;
 		}
 		.instagram-icon {
-			display: none;
-			@media only screen and (max-width: 768px) {
 				display: inline-block;
 				grid-area: instagram-icon;
 				background-color: $gold2;
@@ -76,8 +83,7 @@ footer {
 				font-size: 32px;
 				color: $text-color;
 				align-items: center;
-				min-height: 140px;
-			}
+				min-height: 80px;
 		}
 		.instagram-intro {
 			grid-area: instagram-intro;
@@ -99,8 +105,8 @@ footer {
 				color: inherit;
 				text-align: left;
 				margin: 0;
-				line-height: 20px;
-				@media only screen and (max-width: 1028px) {
+				line-height: 18px;
+				@media only screen and (max-width: 1280px) {
 					font-size: 11px;
 				}
 				@media only screen and (max-width: 850px) {
@@ -115,10 +121,20 @@ footer {
 		}
 		a {
 			margin: 0;
+			@media only screen and (max-width: 1200px) {
+				&.show-xxl {
+					display: none;
+				}
+			}
+			@media only screen and (max-width: 768px) {
+				&.show-med {
+					display: none;
+				}
+			}
 		}
 		img {
 			width: 100%;
-			height: auto;
+			height: 15vw;
 			object-fit: cover;
 			@media only screen and (max-width: 768px) {
 				width: 100%;
