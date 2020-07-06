@@ -1,10 +1,8 @@
 <template>
 	<footer>
 		<section class="instafeed">
-			<span class="instagram-icon fab fa-instagram"></span>
 			<div class="instagram-intro">
 				<p>Want to get to know me better? Let's hang out on Instagram, it has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
-				<a href="http://instagram.com/claudia414" target="_blank" rel="noreferrer" class="cta-link">@Claudia414</a>
 			</div>
 			<a href="https://www.instagram.com/p/BpMC6uWFZjl/" target="_blank" rel="noreferrer">
 				<img src="../assets/Insta-ClaudiaOnARock.jpg" alt="Instagram photo of Claudia sitting on a rock in a river" loading="lazy"/>
@@ -65,7 +63,7 @@ footer {
 		grid-template-columns: repeat(7, 1fr);
 		grid-template-rows: repeat(2, auto);
 		grid-template-areas:
-				"instagram-icon  instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro"
+				"instagram-intro  instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro"
 				"instagram-pic    instagram-pic   instagram-pic   instagram-pic instagram-pic    instagram-pic   instagram-pic";
 		padding: 0;
 		@media only screen and (max-width: 1200px) {
@@ -74,59 +72,45 @@ footer {
 		@media only screen and (max-width: 768px) {
 			grid-template-columns: repeat(4, 1fr);
 		}
-		.instagram-icon {
-				display: inline-block;
-				grid-area: instagram-icon;
-				background-color: $gold2;
-				display: flex;
-				justify-content: center;
-				font-size: 32px;
-				color: $text-color;
-				align-items: center;
-				min-height: 80px;
-		}
 		.instagram-intro {
 			grid-area: instagram-intro;
 			display: flex;
 			justify-content: center;
-			align-items: flex-start;
+			align-items: center;
 			flex-direction: column;
 			margin: 0;
 			padding: 20px;
-			.cta-link {
-				font-family: "Karla", sans-serif;
-				color: $gold;
-				text-transform: uppercase;
-				text-decoration: none;
-				font-size: 16px;
-				line-height: 33px;
-			}
 			p {
 				color: inherit;
 				text-align: left;
 				margin: 0;
 				line-height: 18px;
 				@media only screen and (max-width: 1280px) {
-					font-size: 11px;
+					font-size: 14px;
 				}
-				@media only screen and (max-width: 850px) {
+				@media only screen and (max-width: 980px) {
 					font-size: 11px;
 					line-height: 15px;
 				}
 				@media only screen and (max-width: 768px) {
+					text-align: center;
 					font-size: 14px;
 					line-height: 22px;
 				}
 			}
 		}
 		a {
+			position: relative;
 			margin: 0;
+			height: 15vw;
+			overflow: hidden;
 			@media only screen and (max-width: 1200px) {
 				&.show-xxl {
 					display: none;
 				}
 			}
 			@media only screen and (max-width: 768px) {
+				height: 20vw;
 				&.show-med {
 					display: none;
 				}
@@ -134,8 +118,12 @@ footer {
 		}
 		img {
 			width: 100%;
-			height: 15vw;
+			height: 100%;
 			object-fit: cover;
+			&:hover{
+				transform: scale(1.03);
+				transition: all 0.4s ease;
+			}
 			@media only screen and (max-width: 768px) {
 				width: 100%;
 				height: auto;
