@@ -1,10 +1,8 @@
 <template>
 	<footer>
 		<section class="instafeed">
-			<span class="instagram-icon fab fa-instagram"></span>
 			<div class="instagram-intro">
 				<p>Want to get to know me better? Let's hang out on Instagram, it has all the dirt on my dog, amazing pics from New Zealand and some silly selfies.</p>
-				<a href="http://instagram.com/claudia414" target="_blank" rel="noreferrer" class="cta-link">@Claudia414</a>
 			</div>
 			<a href="https://www.instagram.com/p/BpMC6uWFZjl/" target="_blank" rel="noreferrer">
 				<img src="../assets/Insta-ClaudiaOnARock.jpg" alt="Instagram photo of Claudia sitting on a rock in a river" loading="lazy"/>
@@ -17,6 +15,15 @@
 			</a>
 			<a href="https://www.instagram.com/p/BtWhHvSnMMa/" target="_blank" rel="noreferrer">
 				<img src="../assets/Insta-GuusGolden.jpg" alt="Instagram photo headshot of Guus, Claudia's Golden Retriever" loading="lazy"/>
+			</a>
+			<a href="https://www.instagram.com/p/CCCezaXhBoW/" target="_blank" rel="noreferrer" class="show-med">
+				<img src="../assets/Insta-ClaudiaAtPunakaiki.jpg" alt="Instagram photo of Claudia at Punakaiki Pancake Rocks at sunset" loading="lazy"/>
+			</a>
+			<a href="https://www.instagram.com/p/B_Qqrpxpkf2/" target="_blank" rel="noreferrer" class="show-med">
+				<img src="../assets/Insta-ClaudiaAtKaikouraWithShell.jpg" alt="Instagram photo of Claudia with a shell on the rocks at Kaikoura" loading="lazy"/>
+			</a>
+			<a href="https://www.instagram.com/p/B98PlGuBULZ/" target="_blank" rel="noreferrer" class="show-med show-xxl">
+				<img src="../assets/Insta-Waterfall.jpg" alt="Instagram photo of a watterfall" loading="lazy"/>
 			</a>
 		</section>
 		<section class="legal">
@@ -53,73 +60,70 @@ footer {
 	height: auto;
 	.instafeed {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: 100%;
-		grid-template-areas: "instagram-intro ....";
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: repeat(2, auto);
+		grid-template-areas:
+				"instagram-intro  instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro instagram-intro"
+				"instagram-pic    instagram-pic   instagram-pic   instagram-pic instagram-pic    instagram-pic   instagram-pic";
 		padding: 0;
+		@media only screen and (max-width: 1200px) {
+			grid-template-columns: repeat(6, 1fr);
+				}
 		@media only screen and (max-width: 768px) {
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(2, auto);
-			grid-template-areas:
-				"instagram-icon  instagram-intro instagram-intro instagram-intro"
-				"instagram-pic    instagram-pic   instagram-pic   instagram-pic";
-			padding-left: 0;
-		}
-		.instagram-icon {
-			display: none;
-			@media only screen and (max-width: 768px) {
-				display: inline-block;
-				grid-area: instagram-icon;
-				background-color: $gold2;
-				display: flex;
-				justify-content: center;
-				font-size: 32px;
-				color: $text-color;
-				align-items: center;
-				min-height: 140px;
-			}
 		}
 		.instagram-intro {
 			grid-area: instagram-intro;
 			display: flex;
 			justify-content: center;
-			align-items: flex-start;
+			align-items: center;
 			flex-direction: column;
 			margin: 0;
 			padding: 20px;
-			.cta-link {
-				font-family: "Karla", sans-serif;
-				color: $gold;
-				text-transform: uppercase;
-				text-decoration: none;
-				font-size: 16px;
-				line-height: 33px;
-			}
 			p {
 				color: inherit;
 				text-align: left;
 				margin: 0;
-				line-height: 20px;
-				@media only screen and (max-width: 1028px) {
-					font-size: 11px;
+				line-height: 18px;
+				@media only screen and (max-width: 1280px) {
+					font-size: 14px;
 				}
-				@media only screen and (max-width: 850px) {
+				@media only screen and (max-width: 980px) {
 					font-size: 11px;
 					line-height: 15px;
 				}
 				@media only screen and (max-width: 768px) {
+					text-align: center;
 					font-size: 14px;
 					line-height: 22px;
 				}
 			}
 		}
 		a {
+			position: relative;
 			margin: 0;
+			height: 15vw;
+			overflow: hidden;
+			@media only screen and (max-width: 1200px) {
+				&.show-xxl {
+					display: none;
+				}
+			}
+			@media only screen and (max-width: 768px) {
+				height: 20vw;
+				&.show-med {
+					display: none;
+				}
+			}
 		}
 		img {
 			width: 100%;
-			height: auto;
+			height: 100%;
 			object-fit: cover;
+			&:hover{
+				transform: scale(1.03);
+				transition: all 0.4s ease;
+			}
 			@media only screen and (max-width: 768px) {
 				width: 100%;
 				height: auto;
