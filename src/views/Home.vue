@@ -2,7 +2,7 @@
 	<div class="home">
 		<vue-headful
 			title="CE | Developer, educator, adventurer"
-			description="Claudia writes about coding websites for beginners and migrating to New Zealand. She wants to help more women into webdevelopment"
+			description="Claudia writes about coding websites and moving to New Zealand. She wants to help more women into webdevelopment"
 			image="../assets/ClaudiaByLaurenMcCormick2.jpg"
 			url="https://www.claudiaengelsman.com/"
 		/>
