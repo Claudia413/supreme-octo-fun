@@ -6,6 +6,7 @@ import About from './views/About.vue'
 import BlogOverview from './views/BlogOverview.vue'
 import BlogPost from './views/BlogPost.vue'
 import Links from './views/Links.vue'
+import HireMe from './views/HireMe.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'
 import ComingSoon from './components/ComingSoon.vue'
@@ -24,6 +25,11 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       // component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/work-with-me',
+      name: 'work-with-me',
+      component: HireMe
     },
     {
       path: '/',
