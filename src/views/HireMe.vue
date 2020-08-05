@@ -29,7 +29,7 @@
 				<li>A safe and technically sound website that does not require much maintenance</li>
 			</ul>
 			<h4>Code for a Cause</h4>
-			<p>I believe in helping others and for that reason I have set up this Code for a Cause project. I will help non-profit organizations with their website for half a day per week. Currently I have only one opening for a non-profit left in my schedule so get in touch as soon as possible!</p>
+			<p>I believe in helping others and for that reason I have set up this Code for a Cause project. I will help non-profit organizations with their website for half a day per week for free. Currently I have only one opening for a non-profit left in my schedule so get in touch as soon as possible!</p>
 			<h4>Hire me</h4>
 			<p>For the right company I can be more than a project based freelancer, with the right company I'd love to commit and be an employee working with your team. Get in touch and let's grab a coffee/tea together!</p>
 			<p>Some of my favorite skills are VueJs, Javascript, HTML5, CSS3. I also have experience with Prismic.io (API CMS), React, Gatsby, PHP (Laravel), Scrum and Holocracy, and a lot more abbreviations ;-)</p>
