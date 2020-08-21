@@ -12,7 +12,7 @@
     "axios": "^0.19.2",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^3.0.1",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-headful": "^2.1.0",
     "vue-router": "^3.4.1",
     "vue-typed-js": "^0.1.2",
@@ -27,7 +27,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "vuePlugins": {
     "service": [
