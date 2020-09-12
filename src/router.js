@@ -10,7 +10,7 @@ import HireMe from './views/HireMe.vue'
 import AlmostThere from './components/AlmostThere.vue'
 import ThanksForSigningUp from './components/ThanksForSigningUp'
 import ComingSoon from './components/ComingSoon.vue'
-
+import Portfolio from './views/Portfolio.vue'
 
 Vue.use(Router)
 
@@ -70,6 +70,11 @@ export default new Router({
       path: '/comingsoon',
       name: 'comingsoon',
       component: ComingSoon
+    },
+    {
+      path: '/portfolio',
+      name: 'portfolio',
+      component: Portfolio
     },
     {
       path: '*',
