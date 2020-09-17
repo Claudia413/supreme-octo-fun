@@ -14,7 +14,7 @@
 		>
 		<section class="intro-text text-block">
 			<h3>Hi there!</h3>
-			<p>Here you will find my favorite projects. Projects that turned out wonderful, were interesting to built or for really cool people and companies.</p>
+			<p>Here you will find my favorite projects. Projects that are wonderful, interesting to built or for really cool people and companies.</p>
 		</section>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"

@@ -2,7 +2,7 @@
 	<div class="home">
 		<vue-headful
 			title="CE | Developer, educator, adventurer"
-			description="Claudia writes about coding websites and moving to New Zealand. She wants to help more women into webdevelopment"
+			description="Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and art."
 			image="../assets/ClaudiaByLaurenMcCormick2.jpg"
 			url="https://www.claudiaengelsman.com/"
 		/>
@@ -21,28 +21,18 @@
 			class="intro-pic img-block">
 		<section class="intro-text text-block menu-padding">
 			<h3>About</h3>
-			<p>Hi, hi, I'm Claudia. I want to help you build your own websites, from scratch. A mere 3 years ago I became a developer without any prior coding knowledge. It wasn't easy, but it was so worth it. Now I want to help others do the same. Coding helped me move to New Zealand and I share about that journey as well. For building websites and moving to NZ, you're in the right place!</p>
-			<!-- Without any prior experience. I will help you to do the same by sharing everything I’ve learned, and help you find inspiration and stay motivated to start creating your own websites from scratch. -->
-			<!-- <p>P.S. If you get lost anywhere, just use the compass on the right!</p> -->
+			<p>Hi, hi, I'm Claudia. I'm a webdeveloper in New Zealand. My boyfriend and I moved here at the beginning of 2020, just before the world got weird. Here I share about our move and projects I'm working on. For cool websites and moving to NZ, you're in the right place!</p>
 			<router-link to="/about" class="button mt-2">More about me</router-link>
 		</section>
-		<TextSlider title="Now is the perfect time to start because:" :numberOfSlides="5">
+		<!-- <TextSlider title="Now is the perfect time to get a website for your business:" :numberOfSlides="3">
 			<template v-slot:slide1>
-				<span class="bold">It has never been easier to build websites.</span> Not kidding; technology is quickly improving the ease and fun of building websites, making this an excellent time to try it (again).
+				<span class="bold">The whole world is online.</span> Since lockdown, everyone, everywhere is going online to find everything they need.
 			</template>
-			<template v-slot:slide2>There is a huge shortage of developers and there is a big gap in male/female ratio in development. More job openings than developers means developers have the <span class="bold">advantage in job negotiations.</span> Sounds good huh?
+			<template v-slot:slide2>With a website, your business is working while you're asleep or away.<span class="bold">Your website is always available</span> to answer the most basic questions your customers have.
 			</template>
-			<template v-slot:slide3>Are you bored out of your mind with your current job? Do you feel your brain melting doing the same tasks over and over again? Coding websites will always have you <span class="bold">finding new solutions and using your brain</span> to create.
+			<template v-slot:slide3>A website is an important extension of your brand. <span class="bold">a solid website will improve your credibility.</span>
 			</template>
-			<template v-slot:slide4>
-				Is your current office space a bit gloomy? Building websites can be done from any computer with a solid internet connection.
-				<span class="bold">Working from home or working remotely from a hammock, it is your choice.</span>
-			</template>
-			<template v-slot:slide5>
-				You already know someone in the field, who's can answer questions and help you get started.
-				<span class="bold">Spoiler alert: It's me! I want to help you, wherever you're starting from. {{'<3'}} </span>
-			</template>
-		</TextSlider>
+		</TextSlider> -->
 		<img
 			alt="Claudia Engelsman, developer who will help you build a website yourself"
 			src="../assets/ClaudiaEngelsmanHike.jpg"
@@ -94,7 +84,7 @@
 // @ is an alias to /src
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
-import TextSlider from "@/components/TextSlider.vue";
+// import TextSlider from "@/components/TextSlider.vue";
 import NewsletterSignUp from "@/components/NewsletterSignUp.vue"
 import BlogPreview from "@/components/BlogPreview.vue"
 
@@ -110,7 +100,7 @@ export default {
 	components: {
 		HeaderAnimation,
 		MenuSlide,
-		TextSlider,
+		// TextSlider,
 		NewsletterSignUp,
 		BlogPreview
 	},
