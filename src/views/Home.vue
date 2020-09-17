@@ -41,7 +41,7 @@
 		<section class="try-it-text text-block">
 			<h3>The blog</h3>
 			<!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
-			<p>Dive in to the library of posts for help, inspiration, tutorials, resources and so much more.</p>
+			<p>Read about New Zealand, the move there, emigrating, resources and so much more.</p>
 			<router-link to="/blog" class="button mt-2">To the blog</router-link>
 		</section>
 		<!-- Blog previews from Prismic and empty squares while loading from Prismic -->
