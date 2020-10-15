@@ -12,33 +12,10 @@
 			</template>
 		</HeaderAnimation>
 		<MenuSlide/>
-        <section class="full-block blog-reel tech">
-            <h3>Tech & Coding</h3>
-            <div class="blogs">
-                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
-                    <div class="blog-pic"></div>
-                    <div class="blog-tag-text"></div>
-                </div>
-                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
-                    <div class="blog-pic"></div>
-                    <div class="blog-tag-text"></div>
-                </div>
-                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
-                    <div class="blog-pic"></div>
-                    <div class="blog-tag-text"></div>
-                </div>
-                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
-                    <div class="blog-pic"></div>
-                    <div class="blog-tag-text"></div>
-                </div>
-                <BlogPreview v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
-            </div>
-            <p :class="maxPageNumber>pageNumber? '':'hidden'" @click="showMoreTechBlogPosts()"> More blogs >> </p>
-		</section>
         <!-- <section class="featured-blog">
             <h3>Featured post</h3>
         </section> -->
-        <section class="full-block blog-reel nz">
+        <section class="full-block blog-reel dark">
             <h3>New Zealand & Emigration</h3>
             <div class="blogs">
                 <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
@@ -59,7 +36,30 @@
                 </div>
                 <BlogPreview v-else v-for="(post, index) in blogpreviewsnz" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
             </div>
-            <p :class="maxPageNumberNZ>pageNumberNZ? 'light-bg':'hidden'" @click="showMoreNZBlogPosts()"> More blogs >> </p>
+            <p :class="maxPageNumberNZ>pageNumberNZ? '':'hidden'" @click="showMoreNZBlogPosts()"> More blogs >> </p>
+		</section>
+                <section class="full-block blog-reel light">
+            <h3>Tech & Coding</h3>
+            <div class="blogs">
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
+                </div>
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
+                </div>
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
+                </div>
+                <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+                    <div class="blog-pic"></div>
+                    <div class="blog-tag-text"></div>
+                </div>
+                <BlogPreview v-else v-for="(post, index) in blogpreviewstech" :key="'post-' + index" :blogId="post.uid" class="blog-post" :image="post.data.blog_image" :title="post.data.title[0].text" />
+            </div>
+            <p :class="maxPageNumber>pageNumber? 'light-bg':'hidden'" @click="showMoreTechBlogPosts()"> More blogs >> </p>
 		</section>
 	</div>
 </template>
@@ -151,7 +151,7 @@ export default {
     background-color: $primary-color;
 	height: auto;
     padding: 40px;
-    &.nz {
+    &.light {
         background-color: $text-darkbg;
         color: $primary-color;
         h3 {
