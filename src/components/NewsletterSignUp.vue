@@ -34,16 +34,16 @@
                    class="sign-up"
                    aria-label="E-mail address">
 
-              <label class="checkbox" for="group_1">
+              <!-- <label class="checkbox" for="group_1">
                      <input type="checkbox" id="group_1" name="group[28069][1]" value="1" class="av-checkbox">
                      <span></span>
                      Coding
-              </label>
-              <label class="checkbox" for="group_2">
+              </label> -->
+              <!-- <label class="checkbox" for="group_2">
                      <input type="checkbox" id="group_2" name="group[28069][2]" value="1" class="av-checkbox">
                      <span></span>
                      Moving to New Zealand
-              </label>
+              </label> -->
               <input type="submit" value="Subscribe" class="button mt-2">
               </form>
 	</div>

@@ -13,6 +13,7 @@
 			<router-link to="/about">About</router-link>
 			<!-- <router-link to="/guide">Guide</router-link> -->
 			<router-link to="/blog">Blog</router-link>
+			<!-- <router-link to="/portfolio">Portfolio</router-link> -->
 			<router-link to="/work-with-me">Work with me</router-link>
 			<SocialIconBar></SocialIconBar>
 		</nav>
