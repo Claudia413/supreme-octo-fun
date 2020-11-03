@@ -51,7 +51,7 @@ export default {
             });
         },
         returnToArticle() {
-            this.$emit('hideTutorial');
+            this.$emit('hide-tutorial');
         }
     },
     mounted() {

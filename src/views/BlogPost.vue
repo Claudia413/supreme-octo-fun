@@ -19,7 +19,7 @@
 				</div>
 			</header>
 			<transition name="slide">
-				<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" v-on:hideTutorial="returnFromTutorial" />
+				<TutorialScroll v-if="showTutorial" :tutorialuid="clickedTutorialUid" class="overlay-tutorial" v-on:hide-tutorial="returnFromTutorial" />
 			</transition>
 			<div class="content" :class="showTutorial?'blur':''">
 				<h1 class="title">{{blog.title[0].text}}</h1>
