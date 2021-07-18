@@ -14,6 +14,7 @@
         <h1>Adventures overview</h1>
         <article>
             <div class="adv-text">
+                <SouthIsland/>
                 <h2>Cape Foul Wind</h2>
                 <span class="tagline">West Coast</span>
                 <p>4-Day adventure to the West Coast.</p>
@@ -55,6 +56,7 @@ import Car from "@/assets/icons/Car.vue";
 import Leaf from "@/assets/icons/Leaf.vue";
 import Binoculars from "@/assets/icons/Binoculars.vue";
 import Arrow from "@/assets/icons/Arrow.vue";
+import SouthIsland from '../assets/icons/South-Island.vue';
 
 export default {
   name: "adventure-overview",
@@ -67,7 +69,8 @@ export default {
     Car,
     Leaf,
     Binoculars,
-    Arrow
+    Arrow,
+    SouthIsland,
   },
   methods: {},
   computed: {},
@@ -128,6 +131,7 @@ article{
         max-width: 40%;
         display: flex;
         flex-direction: column;
+        position: relative;
     }
     .icon-group {
         display: flex;
@@ -155,6 +159,9 @@ article{
 }
 .tagline {
     color: $saffron;
+    margin-top: -4px;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 @keyframes point-right {
     from {
