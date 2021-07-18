@@ -35,7 +35,8 @@ export default {
       this.$route.path === "/almost-there" ||
       this.$route.path === "/thank-you" ||
       this.$route.path === "/links" ||
-      this.$route.path === "/"
+      this.$route.path === "/" ||
+      this.$route.path === "/adventures"
     ) {
       this.showFooter = false;
     }
