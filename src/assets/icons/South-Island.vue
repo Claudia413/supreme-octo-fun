@@ -245,10 +245,10 @@ export default {
 @import "../_variables.scss";
 svg {
     fill: $saffron;
-    width: 160px;
-    height: 180px;
+    width: 120px;
+    height: 140px;
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 20px;
 }
 .st0{fill:#a7b3b0;stroke:#FFFFFF;stroke-width:0.5;}
