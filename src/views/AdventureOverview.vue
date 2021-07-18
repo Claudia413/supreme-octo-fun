@@ -14,7 +14,7 @@
         <h1>Adventures overview</h1>
         <article>
             <div class="adv-text">
-                <SouthIsland/>
+                <SouthIsland state="westcoast"/>
                 <h2>Cape Foul Wind</h2>
                 <span class="tagline">West Coast</span>
                 <p>4-Day adventure to the West Coast.</p>
