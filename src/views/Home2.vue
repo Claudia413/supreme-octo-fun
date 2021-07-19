@@ -8,10 +8,10 @@
     />
     <MenuSlide />
     <div class="welcome">
-      <div class="choice">
+      <router-link :to="'/adventures/'" class="choice">
         <span>⛰️</span>
         <h2>Adventures</h2>
-      </div>
+      </router-link>
       <div class="choice">
         <span>📖</span>
         <h2>Stories</h2>

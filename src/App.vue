@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <Footer v-if="showFooter" class="footer" />
+    <!-- <Footer v-if="showFooter" class="footer" /> -->
   </div>
 </template>
 
@@ -18,7 +18,7 @@
 
 <script>
 import "./assets/main.scss";
-import Footer from "@/components/Footer.vue";
+// import Footer from "@/components/Footer.vue";
 
 export default {
   data() {
@@ -27,7 +27,7 @@ export default {
     };
   },
   components: {
-    Footer,
+    // Footer,
   },
   created() {
     if (
