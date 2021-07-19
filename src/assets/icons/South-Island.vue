@@ -1,5 +1,5 @@
 <template>
-    <svg version="1.1" :class="state" xmlns:amcharts="http://amcharts.com/ammap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="20 0 520 680" style="enable-background:new 0 0 800 800;" xml:space="preserve" :width="width" :height="height">
+    <svg version="1.1" :class="state" xmlns:amcharts="http://amcharts.com/ammap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="20 0 520 680" style="enable-background:new 0 0 800 800;" xml:space="preserve" :style="stylesObject">
     <!-- <title>{{title}}</title> -->
 <path id="NZ-CAN" class="st0" d="M443.1,149.7l0.7,2.8l-0.6,1.8l1.1,1.7l2,0.3l1.6-1.1l1,0.6l0.2,2l1.9-0.7l0.6,0.8l-1.3,1.5l0.2,3
 	l0.8,1.2l2,0.3l0.1,1l-1.5,3.2l1.9,1.9l2.9-1.1l1.1,1.7l-0.6,1.8l2.1,1.3l-0.6,1.8l2.4,1.7l2.5,0.1l-1,0.4l-1.9,4.4l0,0l2,0.3l0,0
@@ -236,6 +236,57 @@ export default {
         state: {
             type: String,
             required: false,
+        },
+        hover: {
+            type: Boolean,
+            default: false,
+            required: false
+        },
+        top: {
+            type: String,
+            default: "20px",
+            required: false,
+        },
+        right: {
+            type: String,
+            default: "20px",
+            required: false,
+        },
+        scale: {
+            type: String,
+            default: "3",
+            required: false,
+        },
+        transformOrigin: {
+            type: String,
+            default: "50% 50%",
+            required: false,
+        },
+        transition: {
+            type: String,
+            default: "all 0.5s ease-in-out",
+            required: false,
+        }
+    },
+    computed: {
+    stylesObject: function() {
+        console.log({hover:this.hover})
+        if(this.hover) {
+            return {
+                transform: 'scale('+this.scale+')',
+                'transform-origin': this.transformOrigin,
+                transition: this.transition,
+                top: this.top,
+                right: this.right,
+            }
+        } else {
+            return {
+                'transform-origin': this.transformOrigin,
+                transition: this.transition,
+                top: this.top,
+                right: this.right,
+                }
+            }
         }
     }
 }
@@ -248,8 +299,6 @@ svg {
     width: 120px;
     height: 140px;
     position: absolute;
-    right: 20px;
-    top: 20px;
 }
 .st0{fill:#a7b3b0;stroke:#FFFFFF;stroke-width:0.5;}
 .westcoast {
@@ -283,4 +332,3 @@ svg {
     }
 }
 </style>
-
