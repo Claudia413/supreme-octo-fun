@@ -1,12 +1,12 @@
 <template>
     <article :id="id" @mouseover="hover=true" @mouseenter="hover=true" @mouseleave="hover=false">
-        <div class="adv-text">
+        <div class="art-text">
             <slot name="text-content"></slot>
         </div>
             <div class="icon-group">
                 <slot name="icons"></slot>
             </div>
-        <div class="adv-promo">
+        <div class="art-visual">
             <slot name="visual"><img src="../assets/Insta-Waterfall.jpg"/></slot>
         </div>
     </article>
@@ -50,7 +50,7 @@ article{
     max-height: 600px;
     margin: 40px 0;
     max-width: 30%;
-    .adv-promo {
+    .art-visual {
         grid-area: picture;
         img {
             width: 100%;
@@ -58,7 +58,7 @@ article{
             object-fit: cover;
         }
     }
-    .adv-text {
+    .art-text {
         grid-area: text;
         padding: 40px;
         max-width: 100%;

@@ -1,6 +1,6 @@
 <template>
     <article :id="id" @mouseover="hover=true" @mouseenter="hover=true" @mouseleave="hover=false">
-        <div class="adv-text">
+        <div class="art-text">
             <div class="mapcontainer">
                 <slot name="map" v-bind:previewHover="hover"></slot>
             </div>
@@ -9,7 +9,7 @@
                 <slot name="icons"></slot>
             </div>
         </div>
-        <div class="adv-promo">
+        <div class="art-visual">
             <slot name="visual"><img src="../assets/Insta-Waterfall.jpg"/></slot>
         </div>
     </article>
@@ -47,14 +47,14 @@ article{
     border: 1px solid $snowwhite;
     max-height: 500px;
     margin: 40px 0;
-    .adv-promo {
+    .art-visual {
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
     }
-    .adv-text {
+    .art-text {
         padding: 40px;
         max-width: 40%;
         display: flex;

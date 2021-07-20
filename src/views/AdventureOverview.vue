@@ -42,7 +42,7 @@
                 <h2>Kaikoura</h2>
                 <span class="tagline">East Coast</span>
                 <p>3-Day adventure to where the mountains meet the sea.</p>
-                <p class="link">Hiking up Mt Fyff, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
+                <p class="link">Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
             </template>
                <template v-slot:icons>
                     <Car />
@@ -58,7 +58,7 @@
             <template v-slot:text-content>
                 <h2>Kaikoura</h2>
                 <span class="tagline">East Coast</span>
-                <p class="link">Hiking up Mt Fyff, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
+                <p class="link">Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
             </template>
                <template v-slot:icons>
                     <Car />
@@ -73,7 +73,7 @@
             <template v-slot:text-content>
                 <h2>Kaikoura</h2>
                 <span class="tagline">East Coast</span>
-                <p class="link">Hiking up Mt Fyff, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
+                <p class="link">Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
             </template>
                <template v-slot:icons>
                     <Car />
@@ -88,7 +88,7 @@
             <template v-slot:text-content>
                 <h2>Kaikoura</h2>
                 <span class="tagline">East Coast</span>
-                <p class="link">Hiking up Mt Fyff, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
+                <p class="link">Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
             </template>
                <template v-slot:icons>
                     <Car />
