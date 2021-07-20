@@ -18,10 +18,10 @@
                     <i class="fas fa-map-pin" id="cape-foul-wind-pin"></i>
                 </template>
                 <template v-slot:text-content>
-                <h2>Cape Foul Wind</h2>
-                <span class="tagline">West Coast</span>
-                <p>4-Day adventure to the West Coast.</p>
-                <p class="link">Staying in a yurt with views over the ocean, hiking the Old Ghost Road and the Charming Creek Walkway near Seddonville, visiting Punakaiki Pancake Rocks, spotting local wildlife such as Kea's and Seals. Cold rainforest, a sulfur spring, old mining towns, Westport and rummaging around on the beach.<Arrow class="arrow-animation"/></p>
+                    <h2>Cape Foul Wind</h2>
+                    <span class="tagline">West Coast</span>
+                    <p>4-Day adventure to the West Coast.</p>
+                    <p class="link">Staying in a yurt with views over the ocean, hiking the Old Ghost Road and the Charming Creek Walkway near Seddonville, visiting Punakaiki Pancake Rocks, spotting local wildlife such as Kea's and Seals. Cold rainforest, a sulfur spring, old mining towns, Westport and rummaging around on the beach.<Arrow class="arrow-animation"/></p>
                 </template>
                 <template v-slot:icons>
                     <Car />
@@ -33,7 +33,7 @@
                 <img src="../assets/Insta-Waterfall.jpg"/>
             </template>
         </AdventureLargePreview>
-        <AdventureLargePreview id="kaikoura" class="article">
+        <AdventureLargePreview id="kaikoura-june21" class="article">
             <template v-slot:map="mapProps">
                     <SouthIsland state="canterbury" right="0px" top="0px" scale="3" transform-origin="95% 18%" transition="transform 0.5s ease-in-out" :hover="mapProps.previewHover" />
                 <i class="fas fa-map-pin" id="kaikoura-pin"></i>
@@ -53,6 +53,53 @@
                 <img src="../assets/ClaudiaDunedinDuneHappy.jpg"/>
             </template>
         </AdventureLargePreview>
+        <div class="small-row">
+        <AdventureSmallPreview>
+            <template v-slot:text-content>
+                <h2>Kaikoura</h2>
+                <span class="tagline">East Coast</span>
+                <p class="link">Hiking up Mt Fyff, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
+            </template>
+               <template v-slot:icons>
+                    <Car />
+                    <Footsteps />
+                    <Leaf />
+                </template>
+            <template v-slot:visual>
+                <img src="../assets/ClaudiaDunedinDuneHappy.jpg"/>
+            </template>
+        </AdventureSmallPreview>
+        <AdventureSmallPreview>
+            <template v-slot:text-content>
+                <h2>Kaikoura</h2>
+                <span class="tagline">East Coast</span>
+                <p class="link">Hiking up Mt Fyff, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
+            </template>
+               <template v-slot:icons>
+                    <Car />
+                    <Footsteps />
+                    <Leaf />
+                </template>
+            <template v-slot:visual>
+                <img src="../assets/ClaudiaDunedinDuneHappy.jpg"/>
+            </template>
+        </AdventureSmallPreview>
+        <AdventureSmallPreview>
+            <template v-slot:text-content>
+                <h2>Kaikoura</h2>
+                <span class="tagline">East Coast</span>
+                <p class="link">Hiking up Mt Fyff, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation"/></p>
+            </template>
+               <template v-slot:icons>
+                    <Car />
+                    <Footsteps />
+                    <Leaf />
+                </template>
+            <template v-slot:visual>
+                <img src="../assets/ClaudiaDunedinDuneHappy.jpg"/>
+            </template>
+        </AdventureSmallPreview>
+        </div>
     </section>
   </div>
 </template>
@@ -66,6 +113,7 @@ import Binoculars from "@/assets/icons/Binoculars.vue";
 import Arrow from "@/assets/icons/Arrow.vue";
 import SouthIsland from '../assets/icons/South-Island.vue';
 import AdventureLargePreview from '../components/AdventureLargePreview.vue';
+import AdventureSmallPreview from '../components/AdventureSmallPreview.vue';
 
 export default {
   name: "adventure-overview",
@@ -82,6 +130,7 @@ export default {
     Arrow,
     SouthIsland,
     AdventureLargePreview,
+    AdventureSmallPreview
   },
   methods: {},
   computed: {},
@@ -125,5 +174,9 @@ h2, p {
     &:nth-child(odd) {
         flex-direction: row;
     }
+}
+.small-row {
+    display: flex;
+    justify-content: space-between;
 }
 </style>
