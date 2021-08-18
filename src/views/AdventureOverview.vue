@@ -146,8 +146,8 @@
   import Binoculars from "@/assets/icons/Binoculars.vue";
   import Arrow from "@/assets/icons/Arrow.vue";
   import SouthIsland from "../assets/icons/South-Island.vue";
-  import AdventureLargePreview from "../components/AdventureLargePreview.vue";
-  import AdventureSmallPreview from "../components/AdventureSmallPreview.vue";
+  import AdventureLargePreview from "../components/NewDesign/AdventureLargePreview.vue";
+  import AdventureSmallPreview from "../components/NewDesign/AdventureSmallPreview.vue";
 
   export default {
     name: "adventure-overview",
