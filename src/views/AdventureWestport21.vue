@@ -23,7 +23,7 @@
       <p class="author">by Claudia Engelsman</p>
       <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
       <section class="overlap-grid">
-        <div class="card-text">
+        <div class="card-text animate">
           <div class="text-container">
             <h2>Old Ghost Road</h2>
             <p>
@@ -34,9 +34,17 @@
               On our first hike we did the first part of the Old Ghost Road trail. We hiked along the Mokihinui River
               for a few hours, starting from the easier end of the route in Seddonville.
             </p>
+            <p>
+              On our first hike we did the first part of the Old Ghost Road trail. We hiked along the Mokihinui River
+              for a few hours, starting from the easier end of the route in Seddonville.
+            </p>
+            <p>
+              On our first hike we did the first part of the Old Ghost Road trail. We hiked along the Mokihinui River
+              for a few hours, starting from the easier end of the route in Seddonville.
+            </p>
           </div>
         </div>
-        <div class="photo horizontal"><img src="../assets/WestCoastCover4.jpg" /></div>
+        <div class="photo horizontal animate"><img src="../assets/WestCoastCover4.jpg" /></div>
       </section>
     </div>
   </div>
@@ -130,6 +138,26 @@
       transform: translateY(0);
     }
   }
+  @keyframes slideLeft {
+    from {
+      opacity: 0.1;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideRight {
+    from {
+      opacity: 0.1;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
   h1 {
     font-family: "Karla", sans-serif;
     display: inline-block;
@@ -168,6 +196,11 @@
       padding: 48px;
       box-sizing: border-box;
     }
+    &.animate {
+      animation: slideLeft 0.9s ease-out;
+      animation-delay: 0.4s;
+      animation-fill-mode: forwards;
+    }
   }
   .photo {
     grid-column: 1/3;
@@ -178,6 +211,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    &.animate {
+      animation: slideRight 0.9s ease-out;
+      animation-delay: 0.4s;
+      animation-fill-mode: forwards;
     }
   }
 </style>
