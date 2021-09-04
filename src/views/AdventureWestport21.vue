@@ -31,20 +31,36 @@
               for a few hours, starting from the easier end of the route in Seddonville.
             </p>
             <p>
-              On our first hike we did the first part of the Old Ghost Road trail. We hiked along the Mokihinui River
-              for a few hours, starting from the easier end of the route in Seddonville.
+              This track can be a multi-day hike if you want to follow it further and along the way sleep in huts. The
+              full trail is 85km long and can be hiked or ridden with a mountainbike. The highest point is 1280m high.
             </p>
             <p>
-              On our first hike we did the first part of the Old Ghost Road trail. We hiked along the Mokihinui River
-              for a few hours, starting from the easier end of the route in Seddonville.
-            </p>
-            <p>
-              On our first hike we did the first part of the Old Ghost Road trail. We hiked along the Mokihinui River
-              for a few hours, starting from the easier end of the route in Seddonville.
+              Along the way, about 2hrs into the hike, we spotted a Kea, which was later identified as a young male.
+              Reinier took a few pictures of him with his camera and sent these with a date/time stamp and our location
+              to the Kea database. This turned out to be quite a nice sighting for them as they had not had any
+              sightings of the endangered bird in this area before.
             </p>
           </div>
         </div>
         <div class="photo horizontal animate"><img src="../assets/WestCoastCover4.jpg" /></div>
+      </section>
+      <section class="story">
+        <img class="initial" src="../assets/PInitial.png" alt="Capital Letter A" />
+        <div class="discover-heading">
+          <h2>Pounamu</h2>
+          <span class="subtitle">The Legend of green stone</span>
+        </div>
+        <p>
+          Poutini, the guardian of Pounamu and a taniwha (a giant water being), snatched a beautiful Māori woman,
+          Waitaiki, from the North Island. He brought her south eventually to the Arahura River but her husband
+          Tamaahua, who had knowledge about the spirit realm, gave chase. Close to catch up he readied himself for the
+          encounter.
+        </p>
+        <p>
+          Fearing Tamaahua's strength and determination, Poutini decided that if he could not have Waitaiki, no-one
+          would. He transformed her into his likeness, Pounamu, and laid her in the cold waters of the river. The jade
+          fragments that break off and roll down the river to the sea are known as Waitaiki’s children.
+        </p>
       </section>
     </div>
   </div>
@@ -141,7 +157,7 @@
   @keyframes slideLeft {
     from {
       opacity: 0.1;
-      transform: translateX(50px);
+      transform: translateX(100px);
     }
     to {
       opacity: 1;
@@ -167,6 +183,10 @@
     font-family: "Playfair Display", sans-serif;
     font-size: 37px;
     line-height: 64px;
+    color: $forestblack;
+  }
+  section {
+    margin: 80px 0;
   }
   .content {
     display: flex;
@@ -181,7 +201,7 @@
     max-width: 1400px;
     display: grid;
     grid-template-columns: 4fr 2fr 4fr;
-    grid-template-rows: 20% 70% 10%;
+    grid-template-rows: 2fr 7fr 1fr;
   }
   .card-text {
     grid-column: 2/4;
@@ -197,7 +217,7 @@
       box-sizing: border-box;
     }
     &.animate {
-      animation: slideLeft 0.9s ease-out;
+      animation: slideLeft 1.2s ease-out;
       animation-delay: 0.4s;
       animation-fill-mode: forwards;
     }
@@ -216,6 +236,39 @@
       animation: slideRight 0.9s ease-out;
       animation-delay: 0.4s;
       animation-fill-mode: forwards;
+    }
+  }
+  .story {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1fr 33% 33%;
+    grid-template-rows: 100px 250px;
+    grid-column-gap: 80px;
+    text-align: left;
+    .initial {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      width: 250px;
+      height: 100%;
+    }
+    .discover-heading {
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+    h3 {
+      margin-top: 0;
+    }
+    .subtitle {
+      color: $seagreen;
+      letter-spacing: 0.25em;
+      font-weight: bold;
+    }
+    p {
+      grid-row: 2/3;
+      grid-column: 2/3;
+    }
+    p + p {
+      grid-column: 3/4;
     }
   }
 </style>
