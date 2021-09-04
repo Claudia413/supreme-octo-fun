@@ -45,7 +45,7 @@
         <div class="photo horizontal animate"><img src="../assets/WestCoastCover4.jpg" /></div>
       </section>
       <section class="story">
-        <img class="initial" src="../assets/PInitial.png" alt="Capital Letter A" />
+        <img class="initial" src="../assets/PInitial.png" alt="Capital Letter P for Pounamu" />
         <div class="discover-heading">
           <h2>Pounamu</h2>
           <span class="subtitle">The Legend of green stone</span>
@@ -61,6 +61,25 @@
           would. He transformed her into his likeness, Pounamu, and laid her in the cold waters of the river. The jade
           fragments that break off and roll down the river to the sea are known as Waitaiki’s children.
         </p>
+      </section>
+      <section class="animal-stats">
+        <div class="illustration">
+          <img src="../assets/Weka.png" alt="Weka bird" />
+        </div>
+        <div class="stats">
+          <div class="numbers">
+            <h2>5</h2>
+            <h3>Bird species spotted</h3>
+          </div>
+          <div class="numbers">
+            <h2>1</h2>
+            <h3>Mammal encountered</h3>
+          </div>
+          <div class="numbers">
+            <h2>6</h2>
+            <h3>Mushrooms admired</h3>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -202,6 +221,7 @@
     display: grid;
     grid-template-columns: 4fr 2fr 4fr;
     grid-template-rows: 2fr 7fr 1fr;
+    margin-top: unset;
   }
   .card-text {
     grid-column: 2/4;
@@ -269,6 +289,33 @@
     }
     p + p {
       grid-column: 3/4;
+    }
+  }
+  .animal-stats {
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .illustration {
+      height: 100%;
+      width: 240px;
+      margin-bottom: 80px;
+      img {
+        height: 100%;
+        width: 100%;
+        margin-left: -40px;
+      }
+    }
+    .stats {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .numbers {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
