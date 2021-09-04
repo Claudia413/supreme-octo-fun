@@ -22,7 +22,7 @@
       <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
       <p class="author">by Claudia Engelsman</p>
       <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
-      <section class="overlap-grid">
+      <section class="overlap-grid top">
         <div class="card-text animate">
           <div class="text-container">
             <h2>Old Ghost Road</h2>
@@ -52,33 +52,75 @@
         </div>
         <p>
           Poutini, the guardian of Pounamu and a taniwha (a giant water being), snatched a beautiful Māori woman,
-          Waitaiki, from the North Island. He brought her south eventually to the Arahura River but her husband
-          Tamaahua, who had knowledge about the spirit realm, gave chase. Close to catch up he readied himself for the
-          encounter.
+          Waitaiki, from the North Island. He brought her south but her husband Tamaahua, was a powerful chief and
+          skilled in the rituals of the spirit world. When he realised that his wife had been taken he threw a magical
+          dart in the air. The dart pointed in the direction of his wife. He followed in pursuit. The chase continued
+          across Aotearoa (New Zealand). On the South Island close to the Arahura River he caught up with them and he
+          readied himself for the encounter the next morning.
         </p>
         <p>
           Fearing Tamaahua's strength and determination, Poutini decided that if he could not have Waitaiki, no-one
-          would. He transformed her into his likeness, Pounamu, and laid her in the cold waters of the river. The jade
-          fragments that break off and roll down the river to the sea are known as Waitaiki’s children.
+          would. He transformed her into his likeness, Pounamu, and laid her in the cold waters of the river. Then he
+          slipped downstream past the sleeping warrior. In the morning Tamaahua set out to battle but instead found his
+          wife lifeless in the river. Realising what had happened he went back home, grieving. It's said his tangi (song
+          of grief) still sounds throughout the mountains. The jade fragments that break off and roll down the river to
+          the sea are known as Waitaiki’s children.
         </p>
       </section>
       <section class="animal-stats">
         <div class="illustration">
           <img src="../assets/Weka.png" alt="Weka bird" />
+          <h2 class="large">Encounters</h2>
         </div>
         <div class="stats">
           <div class="numbers">
-            <h2>5</h2>
-            <h3>Bird species spotted</h3>
+            <h2 class="digit">05</h2>
+            <span class="subtitle">Bird species</span>
+            <hr />
+            <span>Piwakawaka, Kea, and many more heard but not seen</span>
           </div>
           <div class="numbers">
-            <h2>1</h2>
-            <h3>Mammal encountered</h3>
+            <h2 class="digit">01</h2>
+            <span class="subtitle">Mammal</span>
+            <hr />
+            <span>Accidentally woke up this sleepy seal</span>
           </div>
           <div class="numbers">
-            <h2>6</h2>
-            <h3>Mushrooms admired</h3>
+            <h2 class="digit">06</h2>
+            <span class="subtitle">Mushrooms</span>
+            <hr />
+            <span>So many different colors and species</span>
           </div>
+        </div>
+      </section>
+      <section class="overlap-grid">
+        <div class="card-text animate">
+          <div class="text-container">
+            <h2>Staying in a Yurt!</h2>
+            <p>
+              For our whole stay we slept in a yurt, a big round permanent tent. It had plastic windows with an amazing
+              view and our kitchen and bathroom were in a different building close by.
+            </p>
+            <p>
+              The yurt was made of black fabric on the outside which made it heat up by the sun in winter. Without the
+              sun there was a spaceheater which struggled to heat up the whole yurt if it was cold.
+            </p>
+            <p>
+              The yurt was very spacious and comfortable, but the best part of it was definitely the view!
+            </p>
+          </div>
+        </div>
+        <div class="photo horizontal animate">
+          <VueSlickCarousel :dots="true" :autoplay="false">
+            <div><img src="../assets/WestCoastCover4.jpg" /></div>
+            <div><img src="../assets/WestCoastCover4.jpg" /></div>
+            <template v-slot:prevArrow>
+              <button class="custom-button"><i class="fas fa-chevron-left"></i></button>
+            </template>
+            <template v-slot:nextArrow>
+              <button class="custom-button"><i class="fas fa-chevron-right"></i></button>
+            </template>
+          </VueSlickCarousel>
         </div>
       </section>
     </div>
@@ -87,7 +129,9 @@
 
 <script>
   import MenuSlide from "@/components/MenuSlide.vue";
-
+  import VueSlickCarousel from "vue-slick-carousel";
+  import "vue-slick-carousel/dist/vue-slick-carousel.css";
+  import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
   export default {
     name: "Westport21",
     data() {
@@ -95,6 +139,7 @@
     },
     components: {
       MenuSlide,
+      VueSlickCarousel,
     },
     computed: {},
     methods: {},
@@ -203,6 +248,11 @@
     font-size: 37px;
     line-height: 64px;
     color: $forestblack;
+    &.large {
+      font-size: 80px;
+      z-index: 10;
+      line-height: 120px;
+    }
   }
   section {
     margin: 80px 0;
@@ -221,7 +271,9 @@
     display: grid;
     grid-template-columns: 4fr 2fr 4fr;
     grid-template-rows: 2fr 7fr 1fr;
-    margin-top: unset;
+    &.top {
+      margin-top: unset;
+    }
   }
   .card-text {
     grid-column: 2/4;
@@ -258,17 +310,23 @@
       animation-fill-mode: forwards;
     }
   }
+  .subtitle {
+    color: $seagreen;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
   .story {
     max-width: 1400px;
     display: grid;
     grid-template-columns: 1fr 33% 33%;
-    grid-template-rows: 100px 250px;
+    grid-template-rows: 100px 270px;
     grid-column-gap: 80px;
     text-align: left;
     .initial {
       grid-column: 1/2;
       grid-row: 1/3;
-      width: 250px;
+      width: auto;
       height: 100%;
     }
     .discover-heading {
@@ -277,11 +335,6 @@
     }
     h3 {
       margin-top: 0;
-    }
-    .subtitle {
-      color: $seagreen;
-      letter-spacing: 0.25em;
-      font-weight: bold;
     }
     p {
       grid-row: 2/3;
@@ -298,13 +351,20 @@
     width: 100%;
     align-items: center;
     .illustration {
-      height: 100%;
-      width: 240px;
+      height: 360px;
+      width: 100%;
       margin-bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
       img {
-        height: 100%;
-        width: 100%;
-        margin-left: -40px;
+        height: 240px;
+        width: 240px;
+        margin-left: -30px;
+        opacity: 0.5;
+        position: absolute;
+        top: 160px;
       }
     }
     .stats {
@@ -316,6 +376,47 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 180px;
+      .digit {
+        font-size: 80px;
+        line-height: 80px;
+        margin-bottom: 20px;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
+      hr {
+        width: 40px;
+        margin: 12px 0;
+      }
+      span {
+        text-align: center;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  }
+  .custom-button {
+    font-size: 20px;
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 40px;
+    height: 40%;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: $snowwhite;
+    border: none;
+    outline: none;
+    background: transparent;
+    &::before {
+      content: "";
+    }
+    &:hover {
+      background: $forestblack;
     }
   }
 </style>

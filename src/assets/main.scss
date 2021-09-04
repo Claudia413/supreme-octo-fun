@@ -82,6 +82,28 @@ button,
   }
 }
 
+// new design button slick
+button {
+  &.slick-next {
+    right: 0;
+  }
+  &.slick-prev {
+    left: 0;
+    z-index: 10;
+  }
+  &.slick-arrow {
+    &::before {
+      color: $snowwhite;
+    }
+  }
+}
+// To fix a space somewhere in the plugin that messes with 5px empty height below pictures (make next button 100% high
+// and see how it sticks out 5px on bottom
+.slick-list {
+  font-size: 0;
+}
+// end new design button slick
+
 p {
   font-size: 14px;
   color: $text-color;
