@@ -112,8 +112,17 @@
         </div>
         <div class="photo horizontal animate">
           <VueSlickCarousel :dots="true" :autoplay="false">
-            <div><img src="../assets/WestCoastCover4.jpg" /></div>
-            <div><img src="../assets/WestCoastCover4.jpg" /></div>
+            <div class="carrousel-img"><img src="../assets/Westport21Yurt2.jpg" /></div>
+            <div class="carrousel-img"><img src="../assets/Westport21Yurt3.jpg" /></div>
+            <div class="video-container">
+              <video controls>
+                <source src="../assets/Westport21Yurt.mp4" type="video/mp4" />
+                Sorry your browser doesn't support embedded videos.
+              </video>
+            </div>
+            <div class="carrousel-img"><img src="../assets/Westport21Yurt4.jpg" /></div>
+            <div class="carrousel-img"><img src="../assets/Westport21Yurt5.jpg" /></div>
+            <div class="carrousel-img"><img src="../assets/Westport21Yurt6.jpg" /></div>
             <template v-slot:prevArrow>
               <button class="custom-button"><i class="fas fa-chevron-left"></i></button>
             </template>
@@ -412,11 +421,27 @@
     border: none;
     outline: none;
     background: transparent;
+    transition: 0.3s;
     &::before {
       content: "";
     }
     &:hover {
       background: $forestblack;
+    }
+  }
+  .carrousel-img {
+    height: 630px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .video-container {
+    height: 630px;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      margin: auto;
     }
   }
 </style>
