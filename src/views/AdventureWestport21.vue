@@ -106,7 +106,14 @@
               sun there was a spaceheater which struggled to heat up the whole yurt if it was cold.
             </p>
             <p>
-              The yurt was very spacious and comfortable, but the best part of it was definitely the view!
+              The yurt was very spacious and comfortable, but the best part of it was definitely the view! Right outside
+              was a grass field and then cliffside and the ocean. Every morning waking up to the sound of waves crashing
+              into the West Coast.
+            </p>
+            <p>
+              A small drive away from the yurt was a lighthouse where we started a hike on our last day here. The
+              lighthouse was inaccessible but close by was an unmaintained track. Sounding like adventure, we of course
+              took that route down to the sea level.
             </p>
           </div>
         </div>
