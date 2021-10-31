@@ -18,10 +18,6 @@
       </h1>
     </header>
     <div class="content">
-      <!-- <h2 class="title">Welcome to the adventure</h2>
-      <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
-      <p class="author">by Claudia Engelsman</p>
-      <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
       <section class="overlap-grid top">
         <div class="card-text animate">
           <div class="text-container">
@@ -149,7 +145,7 @@
   import "vue-slick-carousel/dist/vue-slick-carousel.css";
   import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
   export default {
-    name: "Westport21",
+    name: "AllAdventureSectionsHarcoded",
     data() {
       return {};
     },

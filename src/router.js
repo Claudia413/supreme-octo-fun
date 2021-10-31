@@ -14,7 +14,7 @@ import ThanksForSigningUp from "./components/ThanksForSigningUp";
 import ComingSoon from "./components/ComingSoon.vue";
 import Portfolio from "./views/Portfolio.vue";
 import AdventureOverview from "./views/AdventureOverview.vue";
-// import AdventureWestport21 from "./views/AdventureWestport21.vue";
+import AllAdventureSectionsHardcoded from "./views/AllAdventureSectionsHardcoded.vue";
 
 Vue.use(Router);
 
@@ -59,6 +59,11 @@ export default new Router({
       path: "/adventures",
       name: "adventure-overview",
       component: AdventureOverview,
+    },
+    {
+      path: "/adventures/test",
+      name: "AllAdventureSectionsHarcoded",
+      component: AllAdventureSectionsHardcoded,
     },
     {
       path: "/adventures/:uid",
