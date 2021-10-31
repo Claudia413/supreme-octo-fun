@@ -6,6 +6,7 @@ import TutorialLoadingAnimation from "./views/TutorialLoadingAnimation";
 import About from "./views/About.vue";
 import BlogOverview from "./views/BlogOverview.vue";
 import BlogPost from "./views/BlogPost.vue";
+import Roadtrip from "./views/Roadtrip.vue";
 import Links from "./views/Links.vue";
 import HireMe from "./views/HireMe.vue";
 import AlmostThere from "./components/AlmostThere.vue";
@@ -13,7 +14,7 @@ import ThanksForSigningUp from "./components/ThanksForSigningUp";
 import ComingSoon from "./components/ComingSoon.vue";
 import Portfolio from "./views/Portfolio.vue";
 import AdventureOverview from "./views/AdventureOverview.vue";
-import AdventureWestport21 from "./views/AdventureWestport21.vue"
+// import AdventureWestport21 from "./views/AdventureWestport21.vue";
 
 Vue.use(Router);
 
@@ -60,9 +61,9 @@ export default new Router({
       component: AdventureOverview,
     },
     {
-      path: "/adventures/westport21",
-      name: "adventure-westport21",
-      component: AdventureWestport21
+      path: "/adventures/:uid",
+      name: "roadtrip",
+      component: Roadtrip,
     },
     {
       path: "/blog",

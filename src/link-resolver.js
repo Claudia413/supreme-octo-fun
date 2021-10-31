@@ -1,18 +1,22 @@
-export default function (doc) {
-    // Return the path depending on Prismic Document's type
-    // If it is a Single Custom Type with the API ID of "home"
-    if (doc.type === 'home') {
-        return '/';
-    }
-    // If it is a Repeatable Custom Type with the API ID of "page" (must contain a UID field)
-    if (doc.type === 'page') {
-        return '/page/' + doc.uid;
-    }
+export default function(doc) {
+  // Return the path depending on Prismic Document's type
+  // If it is a Single Custom Type with the API ID of "home"
+  if (doc.type === "home") {
+    return "/";
+  }
+  // If it is a Repeatable Custom Type with the API ID of "page" (must contain a UID field)
+  if (doc.type === "page") {
+    return "/page/" + doc.uid;
+  }
 
-    if (doc.type === 'blogpost') {
-        return '/blog/' + doc.uid;
-    }
+  if (doc.type === "roadtrip") {
+    return "/adventures/" + doc.uid;
+  }
 
-    // Default to the root
-    return '/';
+  if (doc.type === "blogpost") {
+    return "/blog/" + doc.uid;
+  }
+
+  // Default to the root
+  return "/";
 }
