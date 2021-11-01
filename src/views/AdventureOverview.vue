@@ -31,13 +31,15 @@
             <h2>Cape Foul Wind</h2>
             <span class="tagline">West Coast</span>
             <p>4-Day adventure to the West Coast.</p>
-            <p class="link">
-              Staying in a yurt with views over the ocean, hiking the Old Ghost Road and the Charming Creek Walkway near
-              Seddonville, visiting Punakaiki Pancake Rocks, spotting local wildlife such as Kea's and Seals. Cold
-              rainforest, a sulfur spring, old mining towns, Westport and rummaging around on the beach.<Arrow
-                class="arrow-animation"
-              />
-            </p>
+            <router-link :to="'/adventures/westport21'" class="link">
+              <p>
+                Staying in a yurt with views over the ocean, hiking the Old Ghost Road and the Charming Creek Walkway
+                near Seddonville, visiting Punakaiki Pancake Rocks, spotting local wildlife such as Kea's and Seals.
+                Cold rainforest, a sulfur spring, old mining towns, Westport and rummaging around on the beach.<Arrow
+                  class="arrow-animation"
+                />
+              </p>
+            </router-link>
           </template>
           <template v-slot:icons>
             <Car />
@@ -66,10 +68,12 @@
             <h2>Kaikoura</h2>
             <span class="tagline">East Coast</span>
             <p>3-Day adventure to Kaikoura.</p>
-            <p class="link">
-              Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying
-              in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
-            </p>
+            <router-link :to="'/adventures/westport21'" class="link">
+              <p>
+                Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
+                staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
+              </p>
+            </router-link>
           </template>
           <template v-slot:icons>
             <Car />
@@ -85,10 +89,12 @@
             <template v-slot:text-content>
               <h2>Kaikoura</h2>
               <span class="tagline">East Coast</span>
-              <p class="link">
-                Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
-                staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
-              </p>
+              <router-link :to="'/adventures/westport21'" class="link">
+                <p>
+                  Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
+                  staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
+                </p>
+              </router-link>
             </template>
             <template v-slot:icons>
               <Car />
@@ -235,6 +241,10 @@
   .small-row {
     display: flex;
     justify-content: space-between;
+  }
+  a:hover {
+    font-weight: normal;
+    cursor: unset;
   }
   .link {
     p {
