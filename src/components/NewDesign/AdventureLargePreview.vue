@@ -98,35 +98,10 @@
     right: 50%;
     transition: all 0.2s ease-in-out;
   }
-  .link {
-    cursor: pointer;
-    .arrow-animation {
-      padding-left: 10px;
-      position: relative;
-      top: 3px;
-      fill: $snowwhite;
-      transition: fill 0.3s;
-    }
-    &:hover {
-      .arrow-animation {
-        fill: $saffron;
-        transition: fill 0.3s;
-        animation: point-right 0.4s alternate infinite ease-in;
-      }
-    }
-  }
   .tagline {
     color: $saffron;
     margin-top: -4px;
     text-transform: uppercase;
     font-size: 12px;
-  }
-  @keyframes point-right {
-    from {
-      transform: translateX(0px);
-    }
-    to {
-      transform: translateX(20px);
-    }
   }
 </style>

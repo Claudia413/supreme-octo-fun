@@ -12,62 +12,67 @@
         <span>⛰️</span>
         <h2>Adventures</h2>
       </router-link>
-      <div class="choice">
+      <router-link :to="'/blog/'" class="choice">
         <span>📖</span>
         <h2>Stories</h2>
-      </div>
+        <span class="subtitle">(the old blog for now, new part coming soon)</span>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import MenuSlide from "@/components/MenuSlide.vue";
+  import MenuSlide from "@/components/MenuSlide.vue";
 
-export default {
-  name: "home2",
-  data() {
-    return {};
-  },
-  components: {
-    MenuSlide,
-  },
-  methods: {},
-  created() {},
-};
+  export default {
+    name: "home2",
+    data() {
+      return {};
+    },
+    components: {
+      MenuSlide,
+    },
+    methods: {},
+    created() {},
+  };
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/_variables.scss";
+  @import "../assets/_variables.scss";
 
-.home {
-  z-index: 100;
-  width: 100%;
-  max-width: 100%;
-  height: 100vh;
-  display: flex;
-  background-color: #03312e;
-  @media only screen and (max-width: 768px) {
+  .home {
+    z-index: 100;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #03312e;
+    @media only screen and (max-width: 768px) {
+    }
+    h1 {
+      opacity: 1;
+    }
+    h2 {
+      color: $text-darkbg;
+    }
   }
-  h1 {
-    opacity: 1;
+  .welcome {
+    display: flex;
+    margin: auto;
   }
-  h2 {
-    color: $text-darkbg;
+  .choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    .subtitle {
+      color: $text-darkbg;
+      font-size: 12px;
+    }
   }
-}
-.welcome {
-  display: flex;
-  margin: auto;
-}
-.choice {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-.footer {
-  grid-area: footer;
-  max-width: 100vw;
-}
+  .footer {
+    grid-area: footer;
+    max-width: 100vw;
+  }
 </style>

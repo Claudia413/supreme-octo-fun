@@ -1,10 +1,10 @@
 <template>
   <div class="roadtrip">
     <vue-headful
-      :title="blog.seo_title"
-      :description="blog.seo_description"
-      :image="blog.seo_image"
-      :url="'/adventures/' + blog.uid"
+      :title="roadtrip.seo_title"
+      :description="roadtrip.seo_description"
+      :image="roadtrip.seo_image"
+      :url="'/adventures/' + roadtrip.uid"
     />
     <MenuSlide />
 

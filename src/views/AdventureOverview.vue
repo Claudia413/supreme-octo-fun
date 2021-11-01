@@ -101,10 +101,12 @@
           <template v-slot:text-content>
             <h2>Kaikoura</h2>
             <span class="tagline">East Coast</span>
-            <p class="link">
-              Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying
-              in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
-            </p>
+            <router-link to="/adventures/westport21" class="link">
+              <p>
+                Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
+                staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
+              </p>
+            </router-link>
           </template>
           <template v-slot:icons>
             <Car />
@@ -119,10 +121,12 @@
           <template v-slot:text-content>
             <h2>Kaikoura</h2>
             <span class="tagline">East Coast</span>
-            <p class="link">
-              Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying
-              in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
-            </p>
+            <router-link :to="'/adventures/westport21'" class="link">
+              <p>
+                Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
+                staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
+              </p>
+            </router-link>
           </template>
           <template v-slot:icons>
             <Car />
@@ -212,5 +216,35 @@
   .small-row {
     display: flex;
     justify-content: space-between;
+  }
+  .link {
+    p {
+      cursor: pointer;
+      &:hover {
+        font-weight: normal;
+      }
+      .arrow-animation {
+        padding-left: 10px;
+        position: relative;
+        top: 3px;
+        fill: $snowwhite;
+        transition: fill 0.3s;
+      }
+      &:hover {
+        .arrow-animation {
+          fill: $saffron;
+          transition: fill 0.3s;
+          animation: point-right 0.4s alternate infinite ease-in;
+        }
+      }
+    }
+  }
+  @keyframes point-right {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(20px);
+    }
   }
 </style>
