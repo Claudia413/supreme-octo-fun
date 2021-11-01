@@ -42,7 +42,7 @@
   article {
     display: flex;
     flex-direction: row-reverse;
-    border: 1px solid $snowwhite;
+    border: 1px solid $platinum;
     max-height: 500px;
     margin: 40px 0;
     .art-visual {

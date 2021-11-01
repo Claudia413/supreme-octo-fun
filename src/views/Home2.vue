@@ -46,7 +46,7 @@
     max-width: 100%;
     height: 100vh;
     display: flex;
-    background-color: #03312e;
+    background-color: $forestblack;
     @media only screen and (max-width: 768px) {
     }
     h1 {

@@ -10,79 +10,62 @@
     <header class="category">
       <img class="category-image" src="../assets/DunedinHeader.jpg" key="1" />
     </header>
-    <section class="content">
-      <h1>Adventures overview</h1>
-      <AdventureLargePreview id="cape-foul-wind" class="article">
-        <template v-slot:map="mapProps">
-          <SouthIsland
-            state="westcoast"
-            right="0px"
-            top="0px"
-            scale="3"
-            transform-origin="75% 5%"
-            transition="transform 0.5s ease-in-out"
-            :hover="mapProps.previewHover"
-          />
-          <i class="fas fa-map-pin" id="cape-foul-wind-pin"></i>
-        </template>
-        <template v-slot:text-content>
-          <h2>Cape Foul Wind</h2>
-          <span class="tagline">West Coast</span>
-          <p>4-Day adventure to the West Coast.</p>
-          <p class="link">
-            Staying in a yurt with views over the ocean, hiking the Old Ghost Road and the Charming Creek Walkway near
-            Seddonville, visiting Punakaiki Pancake Rocks, spotting local wildlife such as Kea's and Seals. Cold
-            rainforest, a sulfur spring, old mining towns, Westport and rummaging around on the beach.<Arrow
-              class="arrow-animation"
+    <div class="full-width-bg">
+      <div class="border" />
+      <section class="content">
+        <h1>Adventures overview</h1>
+        <AdventureLargePreview id="cape-foul-wind" class="article">
+          <template v-slot:map="mapProps">
+            <SouthIsland
+              state="westcoast"
+              right="0px"
+              top="0px"
+              scale="3"
+              transform-origin="75% 5%"
+              transition="transform 0.5s ease-in-out"
+              :hover="mapProps.previewHover"
             />
-          </p>
-        </template>
-        <template v-slot:icons>
-          <Car />
-          <Footsteps />
-          <Binoculars />
-        </template>
+            <i class="fas fa-map-pin" id="cape-foul-wind-pin"></i>
+          </template>
+          <template v-slot:text-content>
+            <h2>Cape Foul Wind</h2>
+            <span class="tagline">West Coast</span>
+            <p>4-Day adventure to the West Coast.</p>
+            <p class="link">
+              Staying in a yurt with views over the ocean, hiking the Old Ghost Road and the Charming Creek Walkway near
+              Seddonville, visiting Punakaiki Pancake Rocks, spotting local wildlife such as Kea's and Seals. Cold
+              rainforest, a sulfur spring, old mining towns, Westport and rummaging around on the beach.<Arrow
+                class="arrow-animation"
+              />
+            </p>
+          </template>
+          <template v-slot:icons>
+            <Car />
+            <Footsteps />
+            <Binoculars />
+          </template>
 
-        <template v-slot:visual>
-          <img src="../assets/WestCoastCover2.jpg" />
-        </template>
-      </AdventureLargePreview>
-      <AdventureLargePreview id="kaikoura-june21" class="article">
-        <template v-slot:map="mapProps">
-          <SouthIsland
-            state="canterbury"
-            right="0px"
-            top="0px"
-            scale="3"
-            transform-origin="95% 18%"
-            transition="transform 0.5s ease-in-out"
-            :hover="mapProps.previewHover"
-          />
-          <i class="fas fa-map-pin" id="kaikoura-pin"></i>
-        </template>
-        <template v-slot:text-content>
-          <h2>Kaikoura</h2>
-          <span class="tagline">East Coast</span>
-          <p>3-Day adventure to Kaikoura.</p>
-          <p class="link">
-            Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying
-            in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
-          </p>
-        </template>
-        <template v-slot:icons>
-          <Car />
-          <Footsteps />
-          <Leaf />
-        </template>
-        <template v-slot:visual>
-          <img src="../assets/KaikouraPeninsulaView.jpg" />
-        </template>
-      </AdventureLargePreview>
-      <div class="small-row">
-        <AdventureSmallPreview>
+          <template v-slot:visual>
+            <img src="../assets/WestCoastCover2.jpg" />
+          </template>
+        </AdventureLargePreview>
+        <AdventureLargePreview id="kaikoura-june21" class="article">
+          <template v-slot:map="mapProps">
+            <SouthIsland
+              state="canterbury"
+              right="0px"
+              top="0px"
+              scale="3"
+              transform-origin="95% 18%"
+              transition="transform 0.5s ease-in-out"
+              :hover="mapProps.previewHover"
+            />
+            <i class="fas fa-map-pin" id="kaikoura-pin"></i>
+          </template>
           <template v-slot:text-content>
             <h2>Kaikoura</h2>
             <span class="tagline">East Coast</span>
+            <p>3-Day adventure to Kaikoura.</p>
             <p class="link">
               Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins, staying
               in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
@@ -94,51 +77,71 @@
             <Leaf />
           </template>
           <template v-slot:visual>
-            <img src="../assets/ClaudiaDunedinDuneHappy.jpg" />
+            <img src="../assets/KaikouraPeninsulaView.jpg" />
           </template>
-        </AdventureSmallPreview>
-        <AdventureSmallPreview>
-          <template v-slot:text-content>
-            <h2>Kaikoura</h2>
-            <span class="tagline">East Coast</span>
-            <router-link to="/adventures/westport21" class="link">
-              <p>
+        </AdventureLargePreview>
+        <div class="small-row">
+          <AdventureSmallPreview>
+            <template v-slot:text-content>
+              <h2>Kaikoura</h2>
+              <span class="tagline">East Coast</span>
+              <p class="link">
                 Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
                 staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
               </p>
-            </router-link>
-          </template>
-          <template v-slot:icons>
-            <Car />
-            <Footsteps />
-            <Leaf />
-          </template>
-          <template v-slot:visual>
-            <img src="../assets/ClaudiaDunedinDuneHappy.jpg" />
-          </template>
-        </AdventureSmallPreview>
-        <AdventureSmallPreview>
-          <template v-slot:text-content>
-            <h2>Kaikoura</h2>
-            <span class="tagline">East Coast</span>
-            <router-link :to="'/adventures/westport21'" class="link">
-              <p>
-                Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
-                staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
-              </p>
-            </router-link>
-          </template>
-          <template v-slot:icons>
-            <Car />
-            <Footsteps />
-            <Leaf />
-          </template>
-          <template v-slot:visual>
-            <img src="../assets/ClaudiaDunedinDuneHappy.jpg" />
-          </template>
-        </AdventureSmallPreview>
-      </div>
-    </section>
+            </template>
+            <template v-slot:icons>
+              <Car />
+              <Footsteps />
+              <Leaf />
+            </template>
+            <template v-slot:visual>
+              <img src="../assets/ClaudiaDunedinDuneHappy.jpg" />
+            </template>
+          </AdventureSmallPreview>
+          <AdventureSmallPreview>
+            <template v-slot:text-content>
+              <h2>Kaikoura</h2>
+              <span class="tagline">East Coast</span>
+              <router-link to="/adventures/westport21" class="link">
+                <p>
+                  Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
+                  staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
+                </p>
+              </router-link>
+            </template>
+            <template v-slot:icons>
+              <Car />
+              <Footsteps />
+              <Leaf />
+            </template>
+            <template v-slot:visual>
+              <img src="../assets/ClaudiaDunedinDuneHappy.jpg" />
+            </template>
+          </AdventureSmallPreview>
+          <AdventureSmallPreview>
+            <template v-slot:text-content>
+              <h2>Kaikoura</h2>
+              <span class="tagline">East Coast</span>
+              <router-link :to="'/adventures/westport21'" class="link">
+                <p>
+                  Hiking up Mt Fyffe, our Whale Watching tour, hiking the Kaikoura Peninsula, scouting for Dolphins,
+                  staying in an AirBnb, and many birds and Seals to see.<Arrow class="arrow-animation" />
+                </p>
+              </router-link>
+            </template>
+            <template v-slot:icons>
+              <Car />
+              <Footsteps />
+              <Leaf />
+            </template>
+            <template v-slot:visual>
+              <img src="../assets/ClaudiaDunedinDuneHappy.jpg" />
+            </template>
+          </AdventureSmallPreview>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -180,7 +183,11 @@
 
   .overview {
     width: 100%;
-    background-color: #03312e;
+  }
+  .full-width-bg {
+    position: relative;
+    top: 600px;
+    background-color: $forestblack;
   }
   .category {
     display: flex;
@@ -189,6 +196,9 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: -2;
     .category-image {
       height: 600px;
       width: 100%;
@@ -196,7 +206,16 @@
       object-position: center 40%;
     }
   }
+  .border {
+    position: absolute;
+    top: -260px; // almost same as height to have it line up with top of bg
+    height: 270px;
+    width: 100%;
+    background-image: url("../assets/ForestBlackCanopy.png");
+    background-repeat: repeat-y;
+  }
   .content {
+    background-color: $forestblack;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -206,7 +225,7 @@
   }
   h2,
   p {
-    color: $snowwhite;
+    color: $platinum;
   }
   .article {
     &:nth-child(odd) {
