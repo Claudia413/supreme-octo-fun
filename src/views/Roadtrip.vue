@@ -289,6 +289,14 @@
     &.top {
       margin-top: unset;
     }
+    @media only screen and (max-width: 911px) {
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 240px 1fr 5fr;
+    }
+    @media only screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
   .card-text {
     grid-column: 2/4;
@@ -308,6 +316,20 @@
       animation-delay: 0.4s;
       animation-fill-mode: forwards;
     }
+    @media only screen and (max-width: 911px) {
+      grid-column: 2/4;
+      grid-row: 2/4;
+      .text-container {
+        max-width: 95%;
+        padding-top: 140px;
+        text-align: justify;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .text-container {
+        padding-top: 48px;
+      }
+    }
   }
   .photo {
     grid-column: 1/3;
@@ -323,6 +345,10 @@
       animation: slideRight 0.9s ease-out;
       animation-delay: 0.4s;
       animation-fill-mode: forwards;
+    }
+    @media only screen and (max-width: 911px) {
+      grid-column: 1/3;
+      grid-row: 1/3;
     }
   }
   .subtitle {
