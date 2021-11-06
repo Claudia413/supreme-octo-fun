@@ -40,6 +40,78 @@
           <p>{{ slice.primary.text_content[1].text }}</p>
         </section>
 
+        <section v-if="slice.slice_type === 'full_width_carousel'" class="full-width" :key="'slice-' + index">
+          <div class="carousel landscape">
+            <VueSlickCarousel
+              :dots="true"
+              :autoplay="false"
+              :centerMode="true"
+              :slidesToShow="2"
+              :centerPadding="'40px'"
+              key="full-width-carrousel"
+            >
+              <div v-for="(item, index) in slice.items" class="carousel-photo" :key="'item-' + index">
+                <!-- <div>hello</div>
+                <img src="../assets/Westport21Yurt3.jpg" /> -->
+                <prismic-image v-if="item.photo.url" :field="item.photo" />
+                <!-- <div v-if="item.video_url" class="video-container">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  :src="item.video_url.url"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div> -->
+              </div>
+              <template v-slot:prevArrow>
+                <button class="custom-button"><i class="fas fa-chevron-left"></i></button>
+              </template>
+              <template v-slot:nextArrow>
+                <button class="custom-button"><i class="fas fa-chevron-right"></i></button>
+              </template>
+            </VueSlickCarousel>
+          </div>
+        </section>
+
+        <section v-if="slice.slice_type === 'full_width_carousel'" class="full-width" :key="'mobile-slice-' + index">
+          <div class="carousel landscape mobile">
+            <VueSlickCarousel
+              :dots="true"
+              :autoplay="false"
+              :centerMode="true"
+              :slidesToShow="1"
+              :centerPadding="'40px'"
+              key="full-width-carrousel"
+            >
+              <div v-for="(item, index) in slice.items" class="carousel-photo" :key="'item-' + index">
+                <!-- <div>hello</div>
+                <img src="../assets/Westport21Yurt3.jpg" /> -->
+                <prismic-image v-if="item.photo.url" :field="item.photo" />
+                <!-- <div v-if="item.video_url" class="video-container">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  :src="item.video_url.url"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div> -->
+              </div>
+              <template v-slot:prevArrow>
+                <button class="custom-button"><i class="fas fa-chevron-left"></i></button>
+              </template>
+              <template v-slot:nextArrow>
+                <button class="custom-button"><i class="fas fa-chevron-right"></i></button>
+              </template>
+            </VueSlickCarousel>
+          </div>
+        </section>
+
         <section v-if="slice.slice_type === 'stats'" :key="'slice-' + index" class="animal-stats">
           <div class="illustration">
             <prismic-image :field="slice.primary.image" class="initial" />
@@ -65,7 +137,7 @@
           </div>
           <div class="photo horizontal animate">
             <VueSlickCarousel :dots="true" :autoplay="false">
-              <div v-for="(item, index) in slice.items" class="carrousel-img" :key="'item-' + index">
+              <div v-for="(item, index) in slice.items" class="carousel-img" :key="'item-' + index">
                 <prismic-image v-if="item.image.url" :field="item.image" />
                 <div v-if="item.video_url.url" class="video-container">
                   <iframe
@@ -284,18 +356,19 @@
     top: -40px;
     max-width: 1400px;
     display: grid;
-    grid-template-columns: 4fr 2fr 4fr;
-    grid-template-rows: 2fr 7fr 1fr;
+    grid-template-columns: 5fr 2fr 5fr;
+    grid-template-rows: 2fr 9fr 1fr;
     &.top {
       margin-top: unset;
     }
     @media only screen and (max-width: 911px) {
       grid-template-columns: 1fr 10fr 1fr;
-      grid-template-rows: 240px 1fr 5fr;
+      grid-template-rows: 3fr 80px auto;
     }
     @media only screen and (max-width: 768px) {
       display: flex;
       flex-direction: column-reverse;
+      max-width: 100%;
     }
   }
   .card-text {
@@ -307,7 +380,7 @@
     display: flex;
     justify-content: flex-end;
     .text-container {
-      max-width: 60%;
+      max-width: 70%;
       padding: 48px;
       box-sizing: border-box;
     }
@@ -336,6 +409,8 @@
     grid-row: 2/4;
     overflow: hidden;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 8px $snowwhite solid;
+    display: block;
     img {
       width: 100%;
       height: 100%;
@@ -360,15 +435,16 @@
   .story {
     max-width: 1400px;
     display: grid;
-    grid-template-columns: 1fr 33% 33%;
-    grid-template-rows: 100px 270px;
-    grid-column-gap: 80px;
+    grid-template-columns: 25% 30% 30%;
+    grid-template-rows: 100px 300px;
+    grid-column-gap: 60px;
     text-align: left;
     .initial {
       grid-column: 1/2;
       grid-row: 1/3;
       width: auto;
       height: 100%;
+      max-width: 100%;
     }
     .discover-heading {
       grid-column: 2/4;
@@ -383,6 +459,56 @@
     }
     p + p {
       grid-column: 3/4;
+    }
+    @media only screen and (max-width: 911px) {
+      grid-template-columns: 45% 45%;
+      grid-template-rows: 100px 270px;
+      text-align: justify;
+      .initial {
+        display: none;
+      }
+      .discover-heading {
+        grid-column: 1/3;
+        grid-row: 1/2;
+      }
+      p {
+        grid-row: 2/3;
+        grid-column: 1/2;
+      }
+      p + p {
+        grid-column: 2/3;
+      }
+    }
+  }
+  .carousel {
+    height: auto;
+    width: calc(100vw - 15px);
+    overflow: hidden;
+    &.mobile {
+      display: none;
+    }
+    .slick-slider {
+      height: 100%;
+      overflow: hidden;
+    }
+    .carousel-photo {
+      height: 100%;
+      width: 100%;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+        border: $snowwhite solid 8px;
+      }
+    }
+    .custom-button {
+      height: 100%;
+    }
+    @media only screen and (max-width: 911px) {
+      display: none;
+      &.mobile {
+        display: block;
+      }
     }
   }
   .animal-stats {
@@ -461,7 +587,7 @@
       background: $forestblack;
     }
   }
-  .carrousel-img {
+  .carousel-img {
     height: 630px;
     width: 100%;
     object-fit: cover;
