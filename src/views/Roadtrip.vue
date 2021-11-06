@@ -76,8 +76,12 @@
           </div>
         </section>
 
-        <section v-if="slice.slice_type === 'full_width_carousel'" class="full-width" :key="'mobile-slice-' + index">
-          <div class="carousel landscape mobile">
+        <section
+          v-if="slice.slice_type === 'full_width_carousel'"
+          class="full-width mobile"
+          :key="'mobile-slice-' + index"
+        >
+          <div class="carousel landscape">
             <VueSlickCarousel
               :dots="true"
               :autoplay="false"
@@ -480,13 +484,21 @@
       }
     }
   }
+  .full-width {
+    &.mobile {
+      display: none;
+    }
+    @media only screen and (max-width: 911px) {
+      display: none;
+      &.mobile {
+        display: block;
+      }
+    }
+  }
   .carousel {
     height: auto;
     width: calc(100vw - 15px);
     overflow: hidden;
-    &.mobile {
-      display: none;
-    }
     .slick-slider {
       height: 100%;
       overflow: hidden;
@@ -503,12 +515,6 @@
     }
     .custom-button {
       height: 100%;
-    }
-    @media only screen and (max-width: 911px) {
-      display: none;
-      &.mobile {
-        display: block;
-      }
     }
   }
   .animal-stats {
