@@ -108,7 +108,7 @@
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows: 500px auto;
+    grid-template-rows: repeat(5, 500px);
     grid-template-areas:
       "intro-pic intro-pic intro-text intro-text"
       "small-business small-business small-business business-pic"
