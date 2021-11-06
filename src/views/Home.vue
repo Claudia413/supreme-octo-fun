@@ -41,8 +41,8 @@
     <section class="intro-text text-block menu-padding">
       <h3>About</h3>
       <p>
-        Hi, hi, I'm Claudia. I'm a webdeveloper in New Zealand. My boyfriend and I moved here at the beginning of 2020,
-        just before the world got weird. Here I share about our move and projects I'm working on. For cool websites and
+        Hi, I'm Claudia. I'm a webdeveloper in New Zealand. My boyfriend and I moved here at the beginning of 2020, just
+        before the world got weird. Here I share about our move and projects I'm working on. For cool websites and
         moving to NZ, you're in the right place!
       </p>
       <router-link to="/about" class="button mt-2">More about me</router-link>
