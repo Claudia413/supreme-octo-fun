@@ -441,6 +441,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border: 8px $snowwhite solid;
     display: block;
+    max-height: 630px;
     img {
       width: 100%;
       height: 100%;
