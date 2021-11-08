@@ -10,8 +10,8 @@
     <header class="category">
       <img class="category-image" src="../assets/DunedinHeader.jpg" key="1" />
     </header>
-    <div class="full-width-bg">
-      <div class="border" />
+    <div class="full-width-bg forest">
+      <div class="border canopy" />
       <section class="content">
         <h1>Adventures overview</h1>
         <AdventureLargePreview id="cape-foul-wind" class="article">
@@ -148,6 +148,10 @@
         </div>
       </section>
     </div>
+    <div class="full-width-bg range">
+      <div class="border mountains" />
+      <footer></footer>
+    </div>
   </div>
 </template>
 
@@ -191,9 +195,15 @@
     width: 100%;
   }
   .full-width-bg {
-    position: relative;
-    top: 600px;
-    background-color: $forestblack;
+    &.forest {
+      position: relative;
+      top: 600px;
+      background-color: $forestblack;
+    }
+    &.range {
+      position: relative;
+      bottom: -440px; // 600px from forest relative offset - 160 height of mountain border
+    }
   }
   .category {
     display: flex;
@@ -213,12 +223,22 @@
     }
   }
   .border {
-    position: absolute;
-    top: -260px; // almost same as height to have it line up with top of bg
-    height: 270px;
-    width: 100%;
-    background-image: url("../assets/ForestBlackCanopy.png");
-    background-repeat: repeat-y;
+    &.canopy {
+      position: absolute;
+      top: -260px; // almost same as height to have it line up with top of bg
+      height: 270px;
+      width: 100%;
+      background-image: url("../assets/ForestBlackCanopy.png");
+      background-repeat: repeat-x;
+    }
+    &.mountains {
+      position: relative;
+      top: 0;
+      height: 160px;
+      width: 100%;
+      background-image: url("../assets/RockGreyMountainRange.png");
+      background-repeat: repeat-x;
+    }
   }
   .content {
     background-color: $forestblack;
@@ -241,6 +261,7 @@
   .small-row {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 80px;
   }
   a:hover {
     font-weight: normal;
@@ -275,5 +296,10 @@
     to {
       transform: translateX(20px);
     }
+  }
+  footer {
+    background-color: $rockgrey;
+    height: 300px;
+    width: 100%;
   }
 </style>
