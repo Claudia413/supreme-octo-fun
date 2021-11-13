@@ -55,8 +55,8 @@
 			</template>
 			<template v-slot:slide3>A website is an important extension of your brand. <span class="bold">a solid website will improve your credibility.</span>
 			</template>
-		</TextSlider> -->
-    <!-- Blog previews from Prismic and empty squares while loading from Prismic -->
+		</TextSlider>
+		Blog previews from Prismic and empty squares while loading from Prismic -->
     <section class="full-block-row blog-highlight">
       <div v-if="loadingBlogs" class="blog-post">
         <div class="blog-pic placeholder"></div>
@@ -98,8 +98,8 @@
         I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead
         of a stomach. My mission is to make the internet a more beautiful and user-friendly place. With a dash of magic.
       </p>
-      <!-- <SocialIconBar></SocialIconBar> -->
-    <!-- </section> -->
+      <SocialIconBar></SocialIconBar>
+     </section> -->
   </div>
 </template>
 
@@ -112,7 +112,7 @@
   import BlogPreview from "@/components/BlogPreview.vue";
 
   export default {
-    name: "home",
+    name: "homePage",
     data() {
       return {
         loadingBlogs: true,

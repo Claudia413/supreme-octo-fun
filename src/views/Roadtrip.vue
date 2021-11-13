@@ -177,7 +177,7 @@
   import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
   export default {
-    name: "Roadtrip",
+    name: "RoadtripPage",
     data() {
       return {
         roadtrip: {
@@ -201,7 +201,7 @@
       VueSlickCarousel,
     },
     computed: {
-      notAlreadyInUrl: function() {
+      notAlreadyInUrl: function () {
         return !this.currentUrl.includes(this.$route.params.tutid);
       },
     },
