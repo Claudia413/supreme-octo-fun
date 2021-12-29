@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: "Footsteps",
+    name: "FootstepsIcon",
     props: {
       title: {
         type: String,

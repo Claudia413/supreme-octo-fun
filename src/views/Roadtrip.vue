@@ -177,7 +177,7 @@
   import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
   export default {
-    name: "Roadtrip",
+    name: "RoadtripPage",
     data() {
       return {
         roadtrip: {
@@ -201,7 +201,7 @@
       VueSlickCarousel,
     },
     computed: {
-      notAlreadyInUrl: function() {
+      notAlreadyInUrl: function () {
         return !this.currentUrl.includes(this.$route.params.tutid);
       },
     },
@@ -281,6 +281,14 @@
       transform: translateY(50px);
       display: flex;
       flex-direction: column;
+      @media only screen and (max-width: 911px) {
+        line-height: 3rem;
+        font-size: 5rem;
+      }
+      @media only screen and (max-width: 768px) {
+        font-size: 4rem;
+        line-height: 2rem;
+      }
       &.animate {
         animation: show 0.9s ease-out;
         animation-delay: 0.4s;
@@ -296,6 +304,12 @@
         margin-bottom: calc(8rem - 4px);
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
+        @media only screen and (max-width: 911px) {
+          font-size: 1rem;
+        }
+        @media only screen and (max-width: 768px) {
+          font-size: 0.7rem;
+        }
       }
     }
   }
@@ -344,9 +358,19 @@
       z-index: 10;
       line-height: 120px;
     }
+    @media only screen and (max-width: 911px) {
+      font-size: 2rem;
+      &.large {
+        font-size: 4rem;
+        line-height: 4rem;
+      }
+    }
   }
   section {
     margin: 80px 0;
+    @media only screen and (max-width: 911px) {
+      margin: 40px 0;
+    }
   }
   .content {
     display: flex;
@@ -356,14 +380,16 @@
     padding: 0 40px;
   }
   .overlap-grid {
-    position: relative;
-    top: -40px;
     max-width: 1400px;
     display: grid;
     grid-template-columns: 5fr 2fr 5fr;
     grid-template-rows: 2fr 9fr 1fr;
     &.top {
+      position: relative;
+      top: -40px;
       margin-top: unset;
+      // margin is done from normal positioning, since its relative, it gets too much so we undo that here
+      margin-bottom: 0;
     }
     @media only screen and (max-width: 911px) {
       grid-template-columns: 1fr 10fr 1fr;
@@ -415,6 +441,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border: 8px $snowwhite solid;
     display: block;
+    max-height: 630px;
     img {
       width: 100%;
       height: 100%;
@@ -466,7 +493,7 @@
     }
     @media only screen and (max-width: 911px) {
       grid-template-columns: 45% 45%;
-      grid-template-rows: 100px 270px;
+      grid-template-rows: 100px auto;
       text-align: justify;
       .initial {
         display: none;
@@ -482,6 +509,9 @@
       p + p {
         grid-column: 2/3;
       }
+    }
+    @media only screen and (max-width: 911px) {
+      column-gap: 24px;
     }
   }
   .full-width {
@@ -539,6 +569,13 @@
         position: absolute;
         top: 160px;
       }
+      @media only screen and (max-width: 911px) {
+        margin-bottom: 40px;
+        img {
+          height: 200px;
+          width: 200px;
+        }
+      }
     }
     .stats {
       width: 100%;
@@ -550,10 +587,16 @@
       flex-direction: column;
       align-items: center;
       max-width: 180px;
+      @media only screen and (max-width: 911px) {
+        max-width: 30%;
+      }
       .digit {
         font-size: 80px;
         line-height: 80px;
         margin-bottom: 20px;
+        @media only screen and (max-width: 911px) {
+          font-size: 4rem;
+        }
       }
       .subtitle {
         font-size: 14px;
@@ -566,6 +609,10 @@
         text-align: center;
         font-size: 14px;
         line-height: 21px;
+        @media only screen and (max-width: 911px) {
+          font-size: 12px;
+          line-height: 18px;
+        }
       }
     }
   }

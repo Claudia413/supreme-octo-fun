@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: "Arrow",
+    name: "ArrowIcon",
     props: {
       color: {
         type: String,
