@@ -35,7 +35,7 @@
     </section>
     <img
       alt="Claudia Engelsman, developer who will teach you how to code a website"
-      src="../assets/ClaudiaByLaurenMcCormick2.jpg"
+      src="../assets/ClaudiaHeadshotKaikoura.jpg"
       class="intro-pic img-block"
     />
     <section class="intro-text text-block menu-padding">
@@ -202,7 +202,7 @@
   }
   .intro-pic {
     grid-area: intro-pic;
-    object-position: center;
+    object-position: left 20%;
   }
   .intro-text {
     grid-area: intro-text;
