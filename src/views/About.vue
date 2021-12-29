@@ -43,8 +43,7 @@
       <p>
         Since that start I've completed a coding bootcamp, learned a few more coding languages on the job, worked on
         different sized projects in different teams and switched jobs. We then moved to New Zealand in pursuit of more
-        adventure and I am currently looking for a new job in a country with a whole new working culture and
-        environment.
+        adventure and I started working in a growing Saas company where I still am today.
       </p>
       <p>
         Now that I’m here, with all this experience I still remember I had such a hard and confusing time in the
@@ -54,9 +53,9 @@
       </p>
       <p>
         When I’m not creating or experimenting as a developer, you can find me outside on hikes or on the couch in yoga
-        pants with my pupper and some B&J ice cream; dreaming of adventures in New Zealand. I also enjoy watercolor
-        painting and creating art from time to time and I don’t make enough time for this. Hopefully one day I will
-        master time-management and have enough time for all my (creative) interests and endeavours.
+        pants with my Switch and Xbox playing video games. I also enjoy watercolor painting, creating art from time to
+        time and I don’t make enough time for this. Hopefully one day I will master time-management and have enough time
+        for all my (creative) interests and endeavours.
       </p>
     </section>
     <!-- <section class="video-block full-block"> -->
@@ -95,7 +94,7 @@
         webdevelopment.</template
       >
       <template v-slot:slide7
-        >Nailbiting has been a problem since I got my first teeth. I’m working on it. For about 26 years in a row
+        >Nailbiting has been a problem since I got my first teeth. I’m working on it. For about 28 years in a row
         now.</template
       >
       <template v-slot:slide8

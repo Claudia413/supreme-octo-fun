@@ -10,7 +10,7 @@
       <template v-slot:title>
         <h1>Claudia Engelsman</h1>
         <vue-typed-js
-          :strings="['Developer', 'Mentor', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Here to help you']"
+          :strings="['Developer', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Creative', 'Developer']"
           :loop="false"
           :typeSpeed="75"
           :backDelay="250"
@@ -30,7 +30,7 @@
     <section class="try-it-text text-block">
       <h3>The blog</h3>
       <!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
-      <p>Read about New Zealand, the move there, emigrating, and a lot more.</p>
+      <p>Read about New Zealand, the move there, emigrating, and my views on working in tech.</p>
       <router-link to="/blog" class="button mt-2">To the blog</router-link>
     </section>
     <img
@@ -42,8 +42,7 @@
       <h3>About</h3>
       <p>
         Hi, I'm Claudia. I'm a webdeveloper in New Zealand. My boyfriend and I moved here at the beginning of 2020, just
-        before the world got weird. Here I share about our move and projects I'm working on. For cool websites and
-        moving to NZ, you're in the right place!
+        before the world got weird. Here I share about our move, adventures and my writings on tech industry.
       </p>
       <router-link to="/about" class="button mt-2">More about me</router-link>
     </section>
