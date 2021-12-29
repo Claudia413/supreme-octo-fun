@@ -20,14 +20,14 @@
       </p>
       <p>Warning: working with me may result in cool websites, laughter and sparkles</p>
     </section>
-    <img
+    <!-- <img
       alt="Close up of Claudia Engelsman"
       src="../assets/ClaudiaDunedinBeach.jpg"
       class="business-pic img-block narrow"
     />
     <section class="services text-block">
       <!-- <h3>How can I help you?</h3> -->
-      <h4>Small businesses</h4>
+    <!-- <h4>Small businesses</h4>
       <p>Create a website for your business that:</p>
       <ul>
         <li>is responsive and looks good on mobile phones, tablets and desktops</li>
@@ -58,7 +58,7 @@
         attached.
       </p>
       <p>Currently I have only one opening for a non-profit left in my schedule so get in touch as soon as possible!</p>
-    </section>
+    </section> -->
     <img
       alt="Claudia Engelsman, creating a place online for your business"
       src="../assets/ClaudiaDunedinDune.jpg"
@@ -108,11 +108,11 @@
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows: repeat(5, 500px);
+    grid-template-rows: repeat(3, 500px);
     grid-template-areas:
       "intro-pic intro-pic intro-text intro-text"
-      "small-business small-business small-business business-pic"
-      "cause-pic cause-pic cause cause"
+      // "small-business small-business small-business business-pic"
+      // "cause-pic cause-pic cause cause"
       "hire hire hire-pic hire-pic"
       "other-pic other-pic other-pic other";
     @media only screen and (max-width: 768px) {
@@ -121,10 +121,10 @@
       grid-template-areas:
         "intro-pic intro-pic"
         "intro-text intro-text"
-        "business-pic business-pic"
-        "small-business small-business"
-        "cause-pic cause-pic"
-        "cause cause"
+        // "business-pic business-pic"
+        // "small-business small-business"
+        // "cause-pic cause-pic"
+        // "cause cause"
         "hire-pic hire-pic"
         "hire hire"
         "other-pic other-pic"

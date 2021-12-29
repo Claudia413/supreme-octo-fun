@@ -3,14 +3,14 @@
     <section class="instafeed">
       <div class="instagram-intro">
         <p>
-          Want to get to know me better? Let's hang out on Instagram, it has all the dirt on my dog, amazing pics from
-          New Zealand and some silly selfies.
+          Want to get to know me better? Let's hang out on Instagram, it has all my favorite pics from New Zealand, some
+          silly selfies and occasionally cute horses and dogs.
         </p>
       </div>
-      <a href="https://www.instagram.com/p/BpMC6uWFZjl/" target="_blank" rel="noreferrer">
+      <a href="https://www.instagram.com/p/CMWKiluhzXr/" target="_blank" rel="noreferrer">
         <img
-          src="../assets/Insta-ClaudiaOnARock.jpg"
-          alt="Instagram photo of Claudia sitting on a rock in a river"
+          src="../assets/Insta-ClaudiaForest.jpg"
+          alt="Instagram photo of Claudia sitting on a rock in a forest"
           loading="lazy"
         />
       </a>
@@ -21,17 +21,17 @@
           loading="lazy"
         />
       </a>
-      <a href="https://www.instagram.com/p/B3bW_xdBGk9/" target="_blank" rel="noreferrer">
+      <a href="https://www.instagram.com/p/CVJFdo0hV4M/" target="_blank" rel="noreferrer">
         <img
-          src="../assets/Insta-ClaudiaAtLakePukaki.jpg"
+          src="../assets/Insta-ClaudiaChristchurchView.jpg"
           alt="Instagram photo of Claudia looking at Mount Cook on the edge of Lake Pukaki"
           loading="lazy"
         />
       </a>
-      <a href="https://www.instagram.com/p/BtWhHvSnMMa/" target="_blank" rel="noreferrer">
+      <a href="https://www.instagram.com/p/CU3SRlNBde6/" target="_blank" rel="noreferrer">
         <img
-          src="../assets/Insta-GuusGolden.jpg"
-          alt="Instagram photo headshot of Guus, Claudia's Golden Retriever"
+          src="../assets/Insta-Punakaiki.jpg"
+          alt="Instagram photo of Punakaiki pancake rocks during golden hour"
           loading="lazy"
         />
       </a>
@@ -42,15 +42,19 @@
           loading="lazy"
         />
       </a>
+      <a href="https://www.instagram.com/p/CWMXV4PBCwa/" target="_blank" rel="noreferrer" class="show-med show-xxl">
+        <img
+          src="../assets/Insta-ClaudiaWaterfall.jpg"
+          alt="Instagram pic of Claudia sitting on a treetrunk watching a waterfall"
+          loading="lazy"
+        />
+      </a>
       <a href="https://www.instagram.com/p/B_Qqrpxpkf2/" target="_blank" rel="noreferrer" class="show-med">
         <img
           src="../assets/Insta-ClaudiaAtKaikouraWithShell.jpg"
           alt="Instagram photo of Claudia with a shell on the rocks at Kaikoura"
           loading="lazy"
         />
-      </a>
-      <a href="https://www.instagram.com/p/B98PlGuBULZ/" target="_blank" rel="noreferrer" class="show-med show-xxl">
-        <img src="../assets/Insta-Waterfall.jpg" alt="Instagram photo of a watterfall" loading="lazy" />
       </a>
     </section>
     <section class="legal">
