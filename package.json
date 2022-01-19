@@ -10,7 +10,7 @@
   "dependencies": {
     "@prismicio/client": "^5.1.0",
     "@prismicio/vue": "^2.0.11",
-    "axios": "^0.24.0",
+    "axios": "^0.25.0",
     "prismic-dom": "^2.2.6",
     "prismic-javascript": "^3.0.2",
     "vue": "^2.6.14",
