@@ -13,7 +13,7 @@
     "axios": "^0.27.1",
     "prismic-dom": "^2.2.7",
     "prismic-javascript": "^3.0.2",
-    "vue": "^2.6.14",
+    "vue": "^2.7.7",
     "vue-headful": "^2.1.0",
     "vue-router": "^3.5.3",
     "vue-slick-carousel": "^1.0.6",
@@ -29,7 +29,7 @@
     "eslint-plugin-vue": "^7.20.0",
     "sass": "^1.51.0",
     "sass-loader": "^10.2.1",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.7.7"
   },
   "eslintConfig": {
     "root": true,
