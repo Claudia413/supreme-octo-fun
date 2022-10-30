@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio">
     <vue-headful
-      title="CE | Developer, educator, adventurer"
+      title="CE | Developer, adventurer, artist"
       description="Showcase of favorite projects"
       image="../assets/ClaudiaBWKaikoura.jpg"
       url="https://www.claudiaengelsman.com/about"
@@ -13,7 +13,7 @@
       class="intro-pic img-block"
     />
     <section class="intro-text text-block">
-      <h3>Hi there!</h3>
+      <h3>Cool stuff I've build</h3>
       <p>
         Here you will find my favorite projects. Projects that are wonderful, interesting to built or for really cool
         people and companies.

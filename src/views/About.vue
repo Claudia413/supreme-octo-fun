@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <vue-headful
-      title="CE | Developer, educator, adventurer"
+      title="CE | Developer, adventurer, artist"
       description="Claudia writes about coding websites for beginners and migrating to New Zealand. She wants to help more women into webdevelopment"
       image="../assets/ClaudiaBWKaikoura.jpg"
       url="https://www.claudiaengelsman.com/about"
