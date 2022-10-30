@@ -44,9 +44,9 @@
     <section class="project-text project1 text-block">
       <h3>Tower Junction Physio (Christchurch)</h3>
       <p>
-        A specially designed website build with Vuejs to fit all their website needs. Content managed through Prismic.io
+        A specially designed website built with Vuejs to fit all their website needs. Content managed through Prismic.io
         and hosted on Netlify. Tower Junction Physio were such lovely people to work with and were really happy with the
-        new website that is mobile friendly to view and they can update easily themselves.
+        new website that is now mobile friendly to view and they can easily update it themselves.
       </p>
       <a class="portfolio-link" href="https://www.towerjunctionphysio.co.nz/" target="_blank" rel="noreferrer"
         >Visit Tower Junction Physio website</a
@@ -60,8 +60,8 @@
     <section class="project-text project2 text-block">
       <h3>The Bikes and I</h3>
       <p>
-        A blog build for a dear friend who is crazy about bikes and loves to share about all things bikes. Website is
-        build with Vuejs and the content is managed through Prismic.io and hosted on Netlify. I did not design this
+        A blog built for a dear friend who is crazy about bikes and loves to share about all things bikes. The website
+        was built with Vuejs and the content is managed through Prismic.io and hosted on Netlify. I did not design this
         website.
       </p>
       <a class="portfolio-link" href="https://www.thebikesandi.com/" target="_blank" rel="noreferrer"
