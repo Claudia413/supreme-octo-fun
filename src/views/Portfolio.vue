@@ -48,6 +48,9 @@
         and hosted on Netlify. Tower Junction Physio were such lovely people to work with and were really happy with the
         new website that is mobile friendly to view and they can update easily themselves.
       </p>
+      <a class="portfolio-link" href="https://www.towerjunctionphysio.co.nz/" target="_blank" rel="noreferrer"
+        >Visit Tower Junction Physio website</a
+      >
     </section>
     <img
       alt="Screenshot of the Bikes and I website"
@@ -61,6 +64,9 @@
         build with Vuejs and the content is managed through Prismic.io and hosted on Netlify. I did not design this
         website.
       </p>
+      <a class="portfolio-link" href="https://www.thebikesandi.com/" target="_blank" rel="noreferrer"
+        >Visit the Bikes and I website</a
+      >
     </section>
   </div>
 </template>
@@ -179,7 +185,8 @@
       grid-area: project2image;
     }
   }
-
-  .img-block {
+  .portfolio-link {
+    font-size: 14px;
+    color: $light-blue;
   }
 </style>
