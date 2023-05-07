@@ -98,14 +98,16 @@
         I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead
         of a stomach. My mission is to make the internet a more beautiful and user-friendly place. With a dash of magic.
       </p>
-      <!-- <SocialIconBar></SocialIconBar> -->
-    <!-- </section> -->
+       <SocialIconBar></SocialIconBar> 
+    </section> -->
   </div>
 </template>
 
 <script>
   // @ is an alias to /src
   import HeaderAnimation from "@/components/HeaderAnimation.vue";
+  import { usePrismic } from "@prismicio/vue";
+
   import MenuSlide from "@/components/MenuSlide.vue";
   // import TextSlider from "@/components/TextSlider.vue";
   // import NewsletterSignUp from "@/components/NewsletterSignUp.vue";

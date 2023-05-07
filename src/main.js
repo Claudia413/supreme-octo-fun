@@ -1,29 +1,26 @@
-import Vue from "vue";
-import PrismicVue from "@prismicio/vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import linkResolver from "./link-resolver";
-import VueTypedJs from "vue-typed-js";
-import vueHeadful from "vue-headful";
+import './assets/main.scss'
 
-Vue.config.productionTip = false;
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import { createPrismic } from "@prismicio/vue";
 
-const accessToken = process.env.VUE_APP_PRISMIC_API_KEY;
+import App from './App.vue'
+import router from './router'
+import  linkResolver  from './link-resolver';
 
-Vue.use(PrismicVue, {
-  endpoint: window.prismic.endpoint,
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+
+const accessToken = import.meta.env.VUE_APP_PRISMIC_API_KEY;
+
+app.use(createPrismic, {
+  endpoint: 'https://claudiaengelsman-com.prismic.io/api/v2',
   linkResolver,
   apiOptions: {
     accessToken,
   },
 });
-Vue.use(VueTypedJs);
 
-Vue.component("vue-headful", vueHeadful);
-
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount("#app");
+app.mount('#app')

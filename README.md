@@ -2,34 +2,38 @@
 
 View this project live at: https://www.claudiaengelsman.com/
 
-## Project setup
-```
-npm install
-```
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Connecting to Prismic
 
 Set up your Prismic access token in the env file as the VUE_APP_PRISMIC_API_KEY=YOURSECRETAPIKEYHERE
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Project Setup
+
+```sh
+npm install
 ```
 
-### Compiles and minifies for production
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
 ```
+
+### Compile and Minify for Production
+
+```sh
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
+### Lint with [ESLint](https://eslint.org/)
 
-### Lints and fixes files
-```
+```sh
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

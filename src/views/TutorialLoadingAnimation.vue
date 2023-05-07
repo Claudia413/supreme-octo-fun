@@ -89,13 +89,13 @@
                     <p>margin: 10px;</p>
                     <p>background-color: #284B63;</p>
                     <p>border-radius: 50%;</p>
-                    <p>animation-iteration-count: infinite;
+                    <p>animation-iteration-count: infinite;</p>
                     <p>animation-name: grow;</p>
                     <p>animation-duration: 1s;</p>
                     <p>}</p>
                     <p class="start">@keyframes grow {</p>
                     <p>from {</p>
-                        <p class="extra">height: 2rem;<p>
+                        <p class="extra">height: 2rem;</p>
                         <p class="extra">width: 2rem;</p>
                     <p>}</p>
                     <p>to {</p>
@@ -133,7 +133,7 @@
                     <p>margin: 10px;</p>
                     <p>background-color: #284B63;</p>
                     <p>border-radius: 50%;</p>
-                    <p>animation-iteration-count: infinite;
+                    <p>animation-iteration-count: infinite;</p>
                     <p>animation-name: grow;</p>
                     <p>animation-duration: 0.6s;</p>
                     <p>}</p>
@@ -145,7 +145,7 @@
                     <p>}</p>
                     <p class="start">@keyframes grow {</p>
                     <p>from {</p>
-                        <p class="extra">height: 2rem;<p>
+                        <p class="extra">height: 2rem;</p>
                         <p class="extra">width: 2rem;</p>
                     <p>}</p>
                     <p>to {</p>
@@ -184,7 +184,7 @@
                     <p>margin: 10px;</p>
                     <p>background-color: #284B63;</p>
                     <p>border-radius: 50%;</p>
-                    <p>animation-iteration-count: infinite;
+                    <p>animation-iteration-count: infinite;</p>
                     <p>animation-name: grow;</p>
                     <p>animation-duration: 0.6s;</p>
                     <p>animation-direction: alternate;</p>
@@ -197,7 +197,7 @@
                     <p>}</p>
                     <p class="start">@keyframes grow {</p>
                     <p>from {</p>
-                        <p class="extra">height: 2rem;<p>
+                        <p class="extra">height: 2rem;</p>
                         <p class="extra">width: 2rem;</p>
                     <p>}</p>
                     <p>to {</p>

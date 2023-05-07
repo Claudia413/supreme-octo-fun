@@ -66,7 +66,7 @@
 
 <script>
 // @ is an alias to /src
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
 import HeaderAnimation from "@/components/HeaderAnimation.vue";
 import MenuSlide from "@/components/MenuSlide.vue";
 import BlogPreview from "@/components/BlogPreview.vue";
@@ -125,10 +125,10 @@ export default {
             this.getContentNZ(this.pageNumberNZ);
         }
     },
-    computed: mapState([
-        'blogpreviewsnz',
-        'blogpreviewstech'
-        ]),
+    // computed: mapState([
+    //     'blogpreviewsnz',
+    //     'blogpreviewstech'
+    //     ]),
 	created () {
         if (this.$store.state.blogpreviewsnz.length === 0) {
             this.getContentNZ(this.pageNumberNZ);
