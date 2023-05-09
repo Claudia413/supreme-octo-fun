@@ -1,17 +1,17 @@
 <template>
   <div class="overview">
-    <vue-headful
+    <!-- <vue-headful
       title="CE | Adventurer, Developer, Dreamer"
       description="Blog library with posts about Coding, Tech, New Zealand and emigration"
       image="../assets/ClaudiaByLaurenMcCormick2.jpg"
       url="https://www.claudiaengelsman.com/adventures"
-    />
+    /> -->
     <MenuSlide />
     <header class="category">
       <img class="category-image" src="../assets/DunedinHeader.jpg" key="1" />
     </header>
     <div class="full-width-bg">
-      <div class="border" />
+      <div class="border" ></div>
       <section class="content">
         <h1>Adventures overview</h1>
         <AdventureLargePreview id="cape-foul-wind" class="article">

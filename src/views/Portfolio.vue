@@ -1,11 +1,11 @@
 <template>
 	<div class="portfolio">
-		<vue-headful
+		<!-- <vue-headful
 			title="CE | Developer, educator, adventurer"
 			description="Showcase of favorite projects"
 			image="../assets/ClaudiaBWKaikoura.jpg"
 			url="https://www.claudiaengelsman.com/about"
-		/>
+		/> -->
 		<MenuSlide/>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"

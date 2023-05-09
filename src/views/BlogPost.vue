@@ -1,11 +1,11 @@
 <template>
   <div class="blog">
-    <vue-headful
+    <!-- <vue-headful
       :title="blog.seo_title"
       :description="blog.seo_description"
       :image="blog.seo_image"
       :url="'/blog' + blog.uid"
-    />
+    /> -->
     <MenuSlide />
     <div class="blog-grid">
       <header>

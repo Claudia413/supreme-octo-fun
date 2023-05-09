@@ -1,11 +1,11 @@
 <template>
   <div class="hireme">
-    <vue-headful
+    <!-- <vue-headful
       title="CE | Developer, educator, adventurer"
       description="Claudia writes about coding websites and moving to New Zealand. She also helps small businesses with setting up their website as a freelancer."
       image="../assets/ClaudiaBWKaikoura.jpg"
       url="https://www.claudiaengelsman.com/workwithme"
-    />
+    /> -->
     <MenuSlide />
     <img
       alt="Claudia Engelsman, creating a place online for your business"

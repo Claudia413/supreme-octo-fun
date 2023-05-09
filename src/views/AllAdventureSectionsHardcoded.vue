@@ -1,11 +1,11 @@
 <template>
   <div class="blog">
-    <vue-headful
+    <!-- <vue-headful
       title="Westport July 2021"
       description="A 4 day adventure to the westcoast of the South Island of New Zealand"
       image="../assets/GoldHeader.jpg"
       :url="'/adventure/westport21'"
-    />
+    /> -->
     <MenuSlide />
     <header>
       <!-- <video width="1200px" height="500px" loop autoplay>

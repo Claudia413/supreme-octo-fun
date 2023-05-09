@@ -1,11 +1,11 @@
 <template>
   <div class="roadtrip">
-    <vue-headful
+    <!-- <vue-headful
       :title="roadtrip.seo_title"
       :description="roadtrip.seo_description"
       :image="roadtrip.seo_image"
       :url="'/adventures/' + roadtrip.uid"
-    />
+    /> -->
     <MenuSlide />
 
     <header v-if="roadtrip.header.primary">

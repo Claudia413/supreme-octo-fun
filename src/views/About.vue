@@ -1,11 +1,11 @@
 <template>
 	<div class="about">
-		<vue-headful
+		<!-- <vue-headful
 			title="CE | Developer, educator, adventurer"
 			description="Claudia writes about coding websites for beginners and migrating to New Zealand. She wants to help more women into webdevelopment"
 			image="../assets/ClaudiaBWKaikoura.jpg"
 			url="https://www.claudiaengelsman.com/about"
-		/>
+		/> -->
 		<MenuSlide/>
 		<img
 			alt="Claudia Engelsman, developer who will teach you how to code a website"

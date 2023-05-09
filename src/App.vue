@@ -1,24 +1,7 @@
-<template>
-  <div id="app">
-    <router-view />
-    <Footer v-if="showFooter" class="footer" />
-  </div>
-</template>
-
-<style lang="scss">
-  #app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 4000px;
-    margin: auto;
-  }
-</style>
-
 <script>
   import "./assets/main.scss";
   import Footer from "@/components/Footer.vue";
+  import router from "./router";
 
   export default {
     data() {
@@ -29,7 +12,7 @@
     components: {
       Footer,
     },
-    created() {
+    mounted() {
       if (
         this.$route.path === "/comingsoon" ||
         this.$route.path === "/almost-there" ||
@@ -57,3 +40,21 @@
     },
   };
 </script>
+
+<template>
+  <div id="app">
+    <router-view></router-view>
+    <Footer v-if="showFooter" class="footer"></Footer>
+  </div>
+</template>
+
+<style lang="scss">
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 4000px;
+    margin: auto;
+  }
+</style>

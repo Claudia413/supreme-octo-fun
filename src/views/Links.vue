@@ -1,11 +1,11 @@
 <template>
 	<div class="links">
-		<vue-headful
+		<!-- <vue-headful
 			title="CE | Developer, educator, adventurer"
 			description="Claudia writes about coding websites for beginners and migrating to New Zealand. She wants to help more women into webdevelopment"
 			image="../assets/ClaudiaByLaurenMcCormick2.jpg"
 			url="https://www.claudiaengelsman.com/"
-		/>
+		/> -->
 		<div class="hex photo"></div>
 		<SocialIconBar :instagram="false" :website="true"/>
 		<img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
