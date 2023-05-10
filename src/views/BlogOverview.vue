@@ -1,32 +1,30 @@
 <script setup>
-// @ is an alias to /src
-// import { mapState } from 'vuex';
 import HeaderAnimation from '@/components/HeaderAnimation.vue'
 import MenuSlide from '@/components/MenuSlide.vue'
 import BlogPreview from '@/components/BlogPreview.vue'
 import { usePrismic } from '@prismicio/vue'
 import { ref, onMounted } from 'vue'
+import { useBlogStore } from '@/stores/blogStore'
+import { storeToRefs } from 'pinia'
 
 const pageNumber = ref(1)
 const maxPageNumber = ref(2)
 const pageNumberNZ = ref(1)
 const maxPageNumberNZ = ref(2)
-const blogpreviewstech = ref([])
-const blogpreviewsnz = ref([])
+const prismic = usePrismic()
+const state = useBlogStore()
+const { blogpreviewstech, blogpreviewsnz } = storeToRefs(state)
 
 const getContentTech = async (pageNumber) => {
-  const prismic = usePrismic()
   try {
-    const response = await prismic.client.getByType('blogpost', {
-      predicate: prismic.predicate.at('document.tags', ['Tech']),
+    const response = await prismic.client.getByTag('Tech', {
       orderings: { field: 'document.first_publication_date', direction: 'desc' },
       pageSize: 4,
-      page: pageNumber.value,
+      page: pageNumber,
       fetch: ['blogpost.title', 'blogpost.blog_image']
     })
-    blogpreviewstech.value = response.results
     maxPageNumber.value = response.total_pages
-    //   this.$store.dispatch('setTechBlogPreviewsFromPrismic', response.results)
+    state.setTechBlogPreviewsFromPrismic(response.results)
     // response is the response object, response.results holds the documents
   } catch (error) {
     console.log(error)
@@ -34,19 +32,15 @@ const getContentTech = async (pageNumber) => {
 }
 
 const getContentNZ = async (pageNumberNZ) => {
-  console.log('pagenumber NZ', pageNumberNZ)
-  const prismic = usePrismic()
   try {
-    const response = await prismic.client.getByType('blogpost', {
-      predicate: prismic.predicate.at('document.tags', ['NZ']),
+    const response = await prismic.client.getByTag('NZ', {
       orderings: { field: 'document.first_publication_date', direction: 'desc' },
       pageSize: 4,
       page: pageNumberNZ,
       fetch: ['blogpost.title', 'blogpost.blog_image']
     })
-
-    blogpreviewsnz.value = response.results
     maxPageNumberNZ.value = response.total_pages
+    state.setNZBlogPreviewsFromPrismic(response.results)
   } catch (error) {
     console.error(error)
   }
@@ -67,12 +61,12 @@ const showMoreNZBlogPosts = () => {
 //     'blogpreviewstech'
 //     ]),
 onMounted(() => {
-  // if (this.$store.state.blogpreviewsnz.length === 0) {
-  getContentNZ(pageNumberNZ.value)
-  // }
-  // if (this.$store.state.blogpreviewstech.length === 0) {
-  getContentTech(pageNumber.value)
-  // }
+  if (state.blogpreviewsnz.length === 0) {
+    getContentNZ(pageNumberNZ.value)
+  }
+  if (state.blogpreviewstech.length === 0) {
+    getContentTech(pageNumber.value)
+  }
 })
 </script>
 
@@ -96,22 +90,22 @@ onMounted(() => {
     <section class="full-block blog-reel dark">
       <h3>New Zealand & Emigration</h3>
       <div class="blogs">
-        <!-- <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsNZ" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
         </div>
-        <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsNZ" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
         </div>
-        <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsNZ" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
         </div>
-        <div v-if="$store.state.loadingBlogsNZ" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsNZ" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
-        </div> -->
+        </div>
         <BlogPreview
           v-for="(post, index) in blogpreviewsnz"
           :key="'post-' + index"
@@ -128,22 +122,22 @@ onMounted(() => {
     <section class="full-block blog-reel light">
       <h3>Tech & Coding</h3>
       <div class="blogs">
-        <!-- <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsTech" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
         </div>
-        <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsTech" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
         </div>
-        <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsTech" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
         </div>
-        <div v-if="$store.state.loadingBlogsTech" class="blog-post placeholder">
+        <div v-if="state.loadingBlogsTech" class="blog-post placeholder">
           <div class="blog-pic"></div>
           <div class="blog-tag-text"></div>
-        </div> -->
+        </div>
         <BlogPreview
           v-for="(post, index) in blogpreviewstech"
           :key="'post-' + index"
