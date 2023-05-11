@@ -7,6 +7,7 @@ import MenuSlide from '@/components/MenuSlide.vue'
 // import NewsletterSignUp from "@/components/NewsletterSignUp.vue";
 import BlogPreview from '@/components/BlogPreview.vue'
 import { usePrismic } from '@prismicio/vue'
+import { useHead } from 'unhead'
 
 export default {
   name: 'home',
@@ -43,18 +44,24 @@ export default {
   },
   mounted() {
     this.getContent()
+    useHead({
+      title: 'CE | Developer, adventurer',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and art.'
+        },
+        { name: 'image', content: '../assets/ClaudiaByLaurenMcCormick2.jpg' },
+        { name: 'url', content: 'https://www.claudiaengelsman.com/' }
+      ]
+    })
   }
 }
 </script>
 
 <template>
   <div class="home">
-    <!-- <vue-headful
-      title="CE | Developer, educator, adventurer"
-      description="Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and art."
-      image="../assets/ClaudiaByLaurenMcCormick2.jpg"
-      url="https://www.claudiaengelsman.com/"
-    /> -->
     <HeaderAnimation class="headeranimation">
       <template v-slot:title>
         <h1>Claudia Engelsman</h1>

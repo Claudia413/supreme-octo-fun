@@ -1,11 +1,5 @@
 <template>
   <div class="blog">
-    <!-- <vue-headful
-      :title="blog.seo_title"
-      :description="blog.seo_description"
-      :image="blog.seo_image"
-      :url="'/blog' + blog.uid"
-    /> -->
     <MenuSlide />
     <div class="blog-grid">
       <header>
@@ -91,6 +85,7 @@
 import MenuSlide from '@/components/MenuSlide.vue'
 import AsideBlog from '@/components/AsideBlog.vue'
 import TutorialScroll from '@/components/TutorialScroll.vue'
+import { useHead } from 'unhead'
 
 export default {
   name: 'blogPost',
@@ -142,6 +137,7 @@ export default {
         this.blog.prismicID = document.id
         this.contentLoading = false
         this.getRelatedContent(document.id)
+        this.fillHeadElement()
       })
     },
     getRelatedContent(prismicId) {
@@ -166,6 +162,19 @@ export default {
     returnFromTutorial() {
       this.showTutorial = false
       window.scrollTo({ top: this.savedScrollPosition, behavior: 'smooth' })
+    },
+    fillHeadElement() {
+      useHead({
+        title: this.blog.seo_title,
+        meta: [
+          {
+            name: 'description',
+            content: this.blog.seo_description
+          },
+          { name: 'image', content: this.blog.seo_image },
+          { name: 'url', content: '/blog' + this.blog.uid }
+        ]
+      })
     }
   },
   mounted() {
@@ -178,6 +187,17 @@ export default {
     if (this.$route.params.tutid) {
       this.openTutorial(this.$route.params.tutid)
     }
+    useHead({
+      title: this.blog.seo_title,
+      meta: [
+        {
+          name: 'description',
+          content: this.blog.seo_description
+        },
+        { name: 'image', content: this.blog.seo_image },
+        { name: 'url', content: '/blog' + this.blog.uid }
+      ]
+    })
   },
   beforeRouteUpdate(to, from, next) {
     this.getContent(to.params.uid)

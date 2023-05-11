@@ -10,13 +10,11 @@
     </transition>
     <div class="slider">
       <h4 :class="titleColor">{{ title }}</h4>
-      <div v-for="n in numberOfSlides" :key="n">
-        <transition appear name="fade-out" mode="out-in" :key="n">
-          <p class="inspiration" :class="textColor" v-show="slideIndex === n">
-            <slot :name="'slide' + n"></slot>
-          </p>
-        </transition>
-      </div>
+      <transition name="fade" mode="out-in">
+        <p class="inspiration" :class="textColor" v-if="isCurrentSlideVisible">
+          <slot :name="'slide' + slideIndex"></slot>
+        </p>
+      </transition>
     </div>
     <div class="arrow" @click="incrementSlideIndex(1)">
       <span class="fas fa-chevron-right"></span>
@@ -50,6 +48,11 @@ export default {
     textColor: {
       type: String,
       default: 'color-darkbg'
+    }
+  },
+  computed: {
+    isCurrentSlideVisible() {
+      return this.slideIndex > 0 && this.slideIndex <= this.numberOfSlides
     }
   },
   methods: {
@@ -156,10 +159,10 @@ export default {
     }
   }
   .fade-enter-active {
-    animation: fade-in 0.3s;
+    animation: fade-in 0.5s;
   }
   .fade-leave-active {
-    animation: fade-in 0.3s reverse;
+    animation: fade-in 0.5s reverse;
   }
   @keyframes fade-in {
     0% {

@@ -6,6 +6,7 @@ import { usePrismic } from '@prismicio/vue'
 import { ref, onMounted } from 'vue'
 import { useBlogStore } from '@/stores/blogStore'
 import { storeToRefs } from 'pinia'
+import { useHead } from 'unhead'
 
 const pageNumber = ref(1)
 const maxPageNumber = ref(2)
@@ -56,10 +57,6 @@ const showMoreNZBlogPosts = () => {
   getContentNZ(pageNumberNZ.value)
 }
 
-// computed: mapState([
-//     'blogpreviewsnz',
-//     'blogpreviewstech'
-//     ]),
 onMounted(() => {
   if (state.blogpreviewsnz.length === 0) {
     getContentNZ(pageNumberNZ.value)
@@ -67,17 +64,22 @@ onMounted(() => {
   if (state.blogpreviewstech.length === 0) {
     getContentTech(pageNumber.value)
   }
+  useHead({
+    title: 'CE | Developer, adventurer',
+    meta: [
+      {
+        name: 'description',
+        content: 'Blog library with posts about Coding, women in Tech, New Zealand and emigration'
+      },
+      { name: 'image', content: '../assets/ClaudiaByLaurenMcCormick2.jpg' },
+      { name: 'url', content: 'https://www.claudiaengelsman.com/blog' }
+    ]
+  })
 })
 </script>
 
 <template>
   <div class="overview">
-    <!-- <vue-headful
-			title="CE | Developer, educator, adventurer"
-			description="Blog library with posts about Coding, Tech, New Zealand and emigration"
-			image="../assets/ClaudiaByLaurenMcCormick2.jpg"
-			url="https://www.claudiaengelsman.com/blog"
-		/> -->
     <HeaderAnimation class="headeranimation">
       <template v-slot:title>
         <h1>Welcome to the blog!</h1>
