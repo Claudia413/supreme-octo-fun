@@ -3,11 +3,8 @@
     <div class="hex photo"></div>
     <SocialIconBar :instagram="false" :website="true" />
     <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
-    <a href="https://www.youtube.com/watch?v=w_lgHMAMLyg" class="button mt-2"
-      >New Zealand Road Trip part 2 on Youtube</a
-    >
-    <a href="https://feminine-project-name-generator.netlify.com/" class="button mt-2"
-      >Try the Feminine project name generator</a
+    <a href="https://www.youtube.com/@claudiaengelsman/videos" class="button mt-2"
+      >New Zealand vlogs on Youtube</a
     >
     <h3>Latest post on Coding & Tech:</h3>
     <div class="blogs">
@@ -50,6 +47,7 @@
 // @ is an alias to /src
 import SocialIconBar from '@/components/SocialIconBar.vue'
 import BlogPreview from '@/components/BlogPreview.vue'
+import { usePrismic } from '@prismicio/vue'
 
 export default {
   name: 'links',
@@ -66,43 +64,33 @@ export default {
     BlogPreview
   },
   methods: {
-    getContentTech() {
-      this.$prismic.client
-        .get(
-          [
-            this.$prismic.Predicates.at('document.type', 'blogpost'),
-            this.$prismic.Predicates.at('document.tags', ['Tech'])
-          ],
-          {
-            orderings: '[document.first_publication_date desc]',
-            pageSize: 1,
-            fetch: ['blogpost.title', 'blogpost.blog_image']
-          }
-        )
-        .then((response) => {
-          this.loadingBlogsTech = false
-          this.blogpreviewstech = response.results
-          // response is the response object, response.results holds the documents
+    async getContentTech() {
+      const prismic = usePrismic()
+      try {
+        const response = await this.$prismic.client.getByTag('Tech', {
+          orderings: { field: 'document.first_publication_date', direction: 'desc' },
+          pageSize: 1,
+          fetch: ['blogpost.title', 'blogpost.blog_image']
         })
+        this.loadingBlogsTech = false
+        this.blogpreviewstech = response.results
+      } catch (error) {
+        console.log(error)
+      }
     },
-    getContentNZ() {
-      this.$prismic.client
-        .get(
-          [
-            this.$prismic.Predicates.at('document.type', 'blogpost'),
-            this.$prismic.Predicates.at('document.tags', ['NZ'])
-          ],
-          {
-            orderings: '[document.first_publication_date desc]',
-            pageSize: 1,
-            fetch: ['blogpost.title', 'blogpost.blog_image']
-          }
-        )
-        .then((response) => {
-          this.loadingBlogsNZ = false
-          this.blogpreviewsnz = response.results
-          // response is the response object, response.results holds the documents
+    async getContentNZ() {
+      const prismic = usePrismic()
+      try {
+        const response = await this.$prismic.client.getByTag('NZ', {
+          orderings: { field: 'document.first_publication_date', direction: 'desc' },
+          pageSize: 1,
+          fetch: ['blogpost.title', 'blogpost.blog_image']
         })
+        this.loadingBlogsNZ = false
+        this.blogpreviewsnz = response.results
+      } catch (error) {
+        console.log(error)
+      }
     }
   },
   mounted() {
@@ -132,6 +120,9 @@ export default {
     line-height: 36px;
     text-align: center;
     max-width: 280px;
+  }
+  .photo {
+    margin: 12px 0;
   }
   .hex {
     width: 150px;
