@@ -15,13 +15,13 @@
       </p>
       <p>Warning: working with me may result in cool websites, laughter and sparkles</p>
     </section>
-    <img
+    <!-- <img
       alt="Close up of Claudia Engelsman"
       src="../assets/ClaudiaDunedinBeach.jpg"
       class="business-pic img-block narrow"
     />
     <section class="services text-block">
-      <!-- <h3>How can I help you?</h3> -->
+      <h3>How can I help you?</h3>
       <h4>Small businesses</h4>
       <p>Create a website for your business that:</p>
       <ul>
@@ -41,13 +41,13 @@
         <li>links to your social media accounts</li>
         <li>is safe and technically sound and does not require much maintenance</li>
       </ul>
-    </section>
-    <img
+    </section> -->
+    <!-- <img
       alt="Claudia Engelsman, creating a place online for your business"
       src="../assets/ClaudiaCastleHill.jpg"
       class="cause-pic img-block"
-    />
-    <section class="cause text-block">
+    /> -->
+    <!-- <section class="cause text-block">
       <h4>Code for a Cause</h4>
       <p>
         I believe in helping others and for that reason I have set up Code for a Cause. I will help
@@ -60,7 +60,7 @@
         Currently I have only one opening for a non-profit left in my schedule so get in touch as
         soon as possible!
       </p>
-    </section>
+    </section> -->
     <img
       alt="Claudia Engelsman, creating a place online for your business"
       src="../assets/ClaudiaDunedinDune.jpg"
@@ -130,8 +130,8 @@ export default {
   grid-template-rows: repeat(5, 500px);
   grid-template-areas:
     'intro-pic intro-pic intro-text intro-text'
-    'small-business small-business small-business business-pic'
-    'cause-pic cause-pic cause cause'
+    // 'small-business small-business small-business business-pic'
+    // 'cause-pic cause-pic cause cause'
     'hire hire hire-pic hire-pic'
     'other-pic other-pic other-pic other';
   @media only screen and (max-width: 768px) {
@@ -140,10 +140,10 @@ export default {
     grid-template-areas:
       'intro-pic intro-pic'
       'intro-text intro-text'
-      'business-pic business-pic'
-      'small-business small-business'
-      'cause-pic cause-pic'
-      'cause cause'
+      // 'business-pic business-pic'
+      // 'small-business small-business'
+      // 'cause-pic cause-pic'
+      // 'cause cause'
       'hire-pic hire-pic'
       'hire hire'
       'other-pic other-pic'

@@ -8,18 +8,28 @@ import MenuSlide from '@/components/MenuSlide.vue'
 import BlogPreview from '@/components/BlogPreview.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
+import { Typed } from '@duskmoon/vue3-typed-js'
 
 export default {
   name: 'home',
   data() {
     return {
       loadingBlogs: true,
-      blogpreviews: []
+      blogpreviews: [],
+      typeOptions: {
+        strings: ['Developer', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Immigrant', 'Explorer'],
+        backDelay: 250,
+        backSpeed: 35,
+        smartBackspace: true,
+        loop: false,
+        typeSpeed: 75
+      }
     }
   },
   components: {
     HeaderAnimation,
     MenuSlide,
+    Typed,
     // TextSlider,
     // NewsletterSignUp,
     BlogPreview
@@ -65,6 +75,9 @@ export default {
     <HeaderAnimation class="headeranimation">
       <template v-slot:title>
         <h1>Claudia Engelsman</h1>
+        <Typed :options="this.typeOptions">
+          <h2><span class="typing"></span></h2>
+        </Typed>
       </template>
     </HeaderAnimation>
     <MenuSlide />

@@ -12,20 +12,12 @@
         />
         <div class="intro">
           <p>Welcome to the blog</p>
-          <!-- <vue-typed-js
-            :strings="['Guide', 'Education', 'Motivation', 'Resources', 'Inspiration']"
-            :loop="true"
-            :loopCount="2"
-            :typeSpeed="75"
-            :backDelay="250"
-            :backSpeed="35"
-            :smartBackspace="true"
-          > -->
           <h1>
             Your {{ blog.labels[0] == 'NZ' ? 'New Zealand' : 'Coding' }}
-            <span class="typing">Inspiration</span>
+            <Typed :options="this.typeOptions">
+              <span class="typing">Inspiration</span>
+            </Typed>
           </h1>
-          <!-- </vue-typed-js> -->
         </div>
       </header>
       <transition name="slide">
@@ -86,6 +78,7 @@ import MenuSlide from '@/components/MenuSlide.vue'
 import AsideBlog from '@/components/AsideBlog.vue'
 import TutorialScroll from '@/components/TutorialScroll.vue'
 import { useHead } from 'unhead'
+import { Typed } from '@duskmoon/vue3-typed-js'
 
 export default {
   name: 'blogPost',
@@ -109,13 +102,23 @@ export default {
       clickedTutorialUid: '',
       savedScrollPosition: Number,
       showTutorial: false,
-      currentUrl: window.location.href
+      currentUrl: window.location.href,
+      typeOptions: {
+        strings: ['Guide', 'Resources', 'Motivation', 'Inspiration'],
+        backDelay: 250,
+        backSpeed: 35,
+        smartBackspace: true,
+        loop: true,
+        loopCount: 2,
+        typeSpeed: 75
+      }
     }
   },
   components: {
     MenuSlide,
     AsideBlog,
-    TutorialScroll
+    TutorialScroll,
+    Typed
   },
   computed: {
     notAlreadyInUrl: function () {
