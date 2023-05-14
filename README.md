@@ -12,7 +12,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Connecting to Prismic
 
-Set up your Prismic access token in the env file as the VUE_APP_PRISMIC_API_KEY=YOURSECRETAPIKEYHERE
+Set up your Prismic access token in the env file as the VITE_VUE_APP_PRISMIC_API_KEY=YOURSECRETAPIKEYHERE
 
 ## Project Setup
 
