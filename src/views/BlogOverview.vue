@@ -4,7 +4,7 @@ import MenuSlide from '@/components/MenuSlide.vue'
 import BlogPreview from '@/components/BlogPreview.vue'
 import { usePrismic } from '@prismicio/vue'
 import { ref, onMounted } from 'vue'
-import { useBlogStore } from '@/stores/blogStore'
+import { useBlogStore } from '@/stores/blogstore'
 import { storeToRefs } from 'pinia'
 import { useHead } from 'unhead'
 
