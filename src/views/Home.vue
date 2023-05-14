@@ -1,24 +1,83 @@
+<script>
+// @ is an alias to /src
+import HeaderAnimation from '@/components/HeaderAnimation.vue'
+
+import MenuSlide from '@/components/MenuSlide.vue'
+// import TextSlider from "@/components/TextSlider.vue";
+// import NewsletterSignUp from "@/components/NewsletterSignUp.vue";
+import BlogPreview from '@/components/BlogPreview.vue'
+import { usePrismic } from '@prismicio/vue'
+import { useHead } from 'unhead'
+import { Typed } from '@duskmoon/vue3-typed-js'
+
+export default {
+  name: 'home',
+  data() {
+    return {
+      loadingBlogs: true,
+      blogpreviews: [],
+      typeOptions: {
+        strings: ['Developer', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Immigrant', 'Explorer'],
+        backDelay: 250,
+        backSpeed: 35,
+        smartBackspace: true,
+        loop: false,
+        typeSpeed: 75
+      }
+    }
+  },
+  components: {
+    HeaderAnimation,
+    MenuSlide,
+    Typed,
+    // TextSlider,
+    // NewsletterSignUp,
+    BlogPreview
+  },
+  methods: {
+    async getContent() {
+      const prismic = usePrismic()
+      try {
+        const response = await this.$prismic.client.getByType('blogpost', {
+          orderings: { field: 'document.first_publication_date', direction: 'desc' },
+          pageSize: 4,
+          fetch: ['blogpost.title', 'blogpost.blog_image'],
+          predicate: prismic.predicate.not('document.tags', ['TEST'])
+        })
+
+        this.blogpreviews = response.results
+        this.loadingBlogs = false
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  },
+  mounted() {
+    this.getContent()
+    useHead({
+      title: 'CE | Developer, adventurer',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and art.'
+        },
+        { name: 'image', content: '../assets/ClaudiaByLaurenMcCormick2.jpg' },
+        { name: 'url', content: 'https://www.claudiaengelsman.com/' }
+      ]
+    })
+  }
+}
+</script>
+
 <template>
   <div class="home">
-    <vue-headful
-      title="CE | Developer, adventurer, artist"
-      description="Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and art."
-      image="../assets/ClaudiaByLaurenMcCormick2.jpg"
-      url="https://www.claudiaengelsman.com/"
-    />
     <HeaderAnimation class="headeranimation">
       <template v-slot:title>
         <h1>Claudia Engelsman</h1>
-        <vue-typed-js
-          :strings="['Developer', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Creative', 'Developer']"
-          :loop="false"
-          :typeSpeed="75"
-          :backDelay="250"
-          :backSpeed="35"
-          :smartBackspace="true"
-        >
+        <Typed :options="this.typeOptions">
           <h2><span class="typing"></span></h2>
-        </vue-typed-js>
+        </Typed>
       </template>
     </HeaderAnimation>
     <MenuSlide />
@@ -41,8 +100,9 @@
     <section class="intro-text text-block menu-padding">
       <h3>About</h3>
       <p>
-        Hi, I'm Claudia. I'm a webdeveloper in New Zealand. My boyfriend and I moved here at the beginning of 2020, just
-        before the world got weird. Here I share about our move, adventures and my writings on tech industry.
+        Hi, I'm Claudia. I'm a webdeveloper in New Zealand. My boyfriend and I moved here at the
+        beginning of 2020, just before the world got weird. Here I share about our move and projects
+        I'm working on. For cool websites and moving to NZ, you're in the right place!
       </p>
       <router-link to="/about" class="button mt-2">More about me</router-link>
     </section>
@@ -97,208 +157,158 @@
         I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead
         of a stomach. My mission is to make the internet a more beautiful and user-friendly place. With a dash of magic.
       </p>
-      <SocialIconBar></SocialIconBar>
-     </section> -->
+       <SocialIconBar></SocialIconBar> 
+    </section> -->
   </div>
 </template>
 
-<script>
-  // @ is an alias to /src
-  import HeaderAnimation from "@/components/HeaderAnimation.vue";
-  import MenuSlide from "@/components/MenuSlide.vue";
-  // import TextSlider from "@/components/TextSlider.vue";
-  // import NewsletterSignUp from "@/components/NewsletterSignUp.vue";
-  import BlogPreview from "@/components/BlogPreview.vue";
-
-  export default {
-    name: "homePage",
-    data() {
-      return {
-        loadingBlogs: true,
-        blogpreviews: [],
-      };
-    },
-    components: {
-      HeaderAnimation,
-      MenuSlide,
-      // TextSlider,
-      // NewsletterSignUp,
-      BlogPreview,
-    },
-    methods: {
-      getContent() {
-        this.$prismic.client
-          .query(
-            [
-              this.$prismic.Predicates.at("document.type", "blogpost"),
-              this.$prismic.Predicates.not("document.tags", ["TEST"]),
-            ],
-            {
-              orderings: "[document.first_publication_date desc]",
-              pageSize: 4,
-              fetch: ["blogpost.title", "blogpost.blog_image"],
-            }
-          )
-          .then((response) => {
-            this.blogpreviews = response.results;
-            this.loadingBlogs = false;
-            // response is the response object, response.results holds the documents
-          });
-      },
-    },
-    created() {
-      this.getContent();
-    },
-  };
-</script>
-
 <style lang="scss" scoped>
-  @import "../assets/_variables.scss";
+@import '../assets/_variables.scss';
 
-  .home {
-    z-index: 100;
-    width: 100%;
-    max-width: 100%;
-    height: calc(100% - 400px);
-    display: grid;
-    grid-gap: 0;
+.home {
+  z-index: 100;
+  width: 100%;
+  max-width: 100%;
+  height: calc(100% - 400px);
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto 440px auto 400px auto auto;
+  grid-template-areas:
+    'header header'
+    'try-it-text try-it-pic'
+    'slider slider'
+    'intro-pic intro-text'
+    'blog-highlight blog-highlight'
+    'freebie-text bio-link-text'
+    'footer footer';
+  @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: auto 440px auto 400px auto auto;
+    grid-template-rows: auto;
     grid-template-areas:
-      "header header"
-      "try-it-text try-it-pic"
-      "slider slider"
-      "intro-pic intro-text"
-      "blog-highlight blog-highlight"
-      "freebie-text bio-link-text"
-      "footer footer";
-    @media only screen and (max-width: 768px) {
-      grid-template-columns: repeat(2, 50%);
-      grid-template-rows: auto;
-      grid-template-areas:
-        "header header"
-        "slider slider"
-        "try-it-pic try-it-pic"
-        "try-it-text try-it-text"
-        "intro-pic intro-pic"
-        "intro-text intro-text"
-        "blog-highlight blog-highlight"
-        "bio-link-text bio-link-text"
-        "freebie-text freebie-text"
-        "footer footer";
-    }
-    .mt-2 {
-      margin-top: 20px;
-    }
-    h1 {
-      opacity: 1;
-    }
-    h2 {
-      color: $text-darkbg;
-    }
+      'header header'
+      'slider slider'
+      'try-it-pic try-it-pic'
+      'try-it-text try-it-text'
+      'intro-pic intro-pic'
+      'intro-text intro-text'
+      'blog-highlight blog-highlight'
+      'bio-link-text bio-link-text'
+      'freebie-text freebie-text'
+      'footer footer';
   }
-  .headeranimation {
-    grid-area: header;
+  .mt-2 {
+    margin-top: 20px;
   }
-  .intro-pic {
-    grid-area: intro-pic;
-    object-position: left 20%;
+  h1 {
+    opacity: 1;
   }
-  .intro-text {
-    grid-area: intro-text;
-    line-height: 1.4rem;
-    // @media only screen and (max-width: 1148px) {
-    // 	line-height: 1.3rem;
-    // }
+  h2 {
+    color: $text-darkbg;
   }
-  .try-it-pic {
-    grid-area: try-it-pic;
-  }
-  .try-it-text {
-    grid-area: try-it-text;
-  }
-  .bold {
-    font-weight: 600;
-  }
-  .home .blog-highlight {
-    grid-area: blog-highlight;
-    background-color: $background-color-grey;
-    height: auto;
-    padding: 40px;
-    justify-content: space-evenly;
-    @media only screen and (max-width: 768px) {
-      flex-direction: column;
-    }
-  }
-  .blog-post {
-    display: flex;
-    align-content: center;
+}
+.headeranimation {
+  grid-area: header;
+}
+.intro-pic {
+  grid-area: intro-pic;
+  object-position: center;
+}
+.intro-text {
+  grid-area: intro-text;
+  line-height: 1.4rem;
+  // @media only screen and (max-width: 1148px) {
+  // 	line-height: 1.3rem;
+  // }
+}
+.try-it-pic {
+  grid-area: try-it-pic;
+}
+.try-it-text {
+  grid-area: try-it-text;
+}
+.bold {
+  font-weight: 600;
+}
+.home .blog-highlight {
+  grid-area: blog-highlight;
+  background-color: $background-color-grey;
+  height: auto;
+  padding: 40px;
+  justify-content: space-evenly;
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
-    position: relative;
-    cursor: pointer;
-    &:hover {
-      .blog-tag-text {
-        opacity: 0.95;
-        transition: opacity 0.3s ease;
-      }
-    }
+  }
+}
+.blog-post {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  &:hover {
     .blog-tag-text {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      font-family: "Abel";
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 16px;
-      max-width: 100%;
-      margin: 24px;
-      text-align: center;
-      background-color: #fdfdfd;
-      padding: 32px;
-      opacity: 0.85;
+      opacity: 0.95;
       transition: opacity 0.3s ease;
     }
+  }
+  .blog-tag-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'Abel';
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    max-width: 100%;
+    margin: 24px;
+    text-align: center;
+    background-color: #fdfdfd;
+    padding: 32px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+  }
+  .blog-pic {
+    height: 240px;
+    width: 220px;
+    object-fit: cover;
+  }
+  @media only screen and (max-width: 1112px) {
     .blog-pic {
-      height: 240px;
-      width: 220px;
-      object-fit: cover;
-    }
-    @media only screen and (max-width: 1112px) {
-      .blog-pic {
-        height: 200px;
-        width: 200px;
-      }
-    }
-    @media only screen and (max-width: 768px) {
-      margin-bottom: 32px;
-      .blog-tag-text {
-        margin: 32px;
-      }
-      .blog-pic {
-        height: 320px;
-        width: 340px;
-      }
+      height: 200px;
+      width: 200px;
     }
   }
-  .freebie-text {
-    grid-area: freebie-text;
-    background-color: $secondary-color;
-    h3 {
-      color: $light-blue;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 32px;
+    .blog-tag-text {
+      margin: 32px;
     }
-    @media only screen and (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .blog-pic {
+      height: 320px;
+      width: 340px;
     }
   }
-  .bio-link-text {
-    grid-area: bio-link-text;
+}
+.freebie-text {
+  grid-area: freebie-text;
+  background-color: $secondary-color;
+  h3 {
+    color: $light-blue;
   }
-  .footer {
-    grid-area: footer;
-    max-width: 100vw;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+}
+.bio-link-text {
+  grid-area: bio-link-text;
+}
+.footer {
+  grid-area: footer;
+  max-width: 100vw;
+}
 </style>

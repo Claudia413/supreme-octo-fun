@@ -1,7 +1,11 @@
 <template>
   <div class="menu-to-slide" :class="menuOpen ? 'active' : ''">
     <div class="menu-button" @click="toggleMenu()">
-      <img src="./../assets/hexagonal.svg" alt="background hexagon for sliding out the menu" class="hex" />
+      <img
+        src="./../assets/hexagonal.svg"
+        alt="background hexagon for sliding out the menu"
+        class="hex"
+      />
       <i class="far fa-compass menu-icon"></i>
     </div>
     <nav class="menu-list" aria-label="Main">
@@ -17,29 +21,29 @@
 </template>
 
 <script>
-  import SocialIconBar from "@/components/SocialIconBar.vue";
+import SocialIconBar from '@/components/SocialIconBar.vue'
 
-  export default {
-    name: "MenuSlide",
-    data() {
-      return {
-        menuOpen: false,
-      };
-    },
-    components: {
-      SocialIconBar,
-    },
-    methods: {
-      toggleMenu() {
-        this.menuOpen = !this.menuOpen;
-      },
-    },
-  };
+export default {
+  name: 'MenuSlide',
+  data() {
+    return {
+      menuOpen: false
+    }
+  },
+  components: {
+    SocialIconBar
+  },
+  methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  @import "../assets/_variables.scss";
+@import '../assets/_variables.scss';
 
   .menu-to-slide {
     display: flex;

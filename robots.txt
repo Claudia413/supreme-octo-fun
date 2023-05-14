@@ -1,2 +1,4 @@
 user-agent: *
-disallow:
+disallow: /home2
+disallow: /adventures
+disallow: /adventures/*

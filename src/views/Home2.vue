@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <vue-headful
+    <!-- <vue-headful
       title="CE | Adventurer, Developer, Dreamer"
       description="Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and art."
       image="../assets/ClaudiaByLaurenMcCormick2.jpg"
       url="https://www.claudiaengelsman.com/"
-    />
+    /> -->
     <MenuSlide />
     <div class="welcome">
       <router-link :to="'/adventures'" class="choice">
