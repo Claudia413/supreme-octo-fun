@@ -25,7 +25,7 @@
   import MenuSlide from "@/components/MenuSlide.vue";
 
   export default {
-    name: "home2",
+    name: "HomePage2",
     data() {
       return {};
     },

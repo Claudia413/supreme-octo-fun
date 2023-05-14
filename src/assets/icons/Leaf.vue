@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: "Leaf",
+    name: "LeafIcon",
     props: {
       title: {
         type: String,

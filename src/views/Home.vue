@@ -89,12 +89,12 @@ export default {
     <section class="try-it-text text-block">
       <h3>The blog</h3>
       <!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
-      <p>Read about New Zealand, the move there, emigrating, and a lot more.</p>
+      <p>Read about New Zealand, the move there, emigrating, and my views on working in tech.</p>
       <router-link to="/blog" class="button mt-2">To the blog</router-link>
     </section>
     <img
       alt="Claudia Engelsman, developer who will teach you how to code a website"
-      src="../assets/ClaudiaByLaurenMcCormick2.jpg"
+      src="../assets/ClaudiaHeadshotKaikoura.jpg"
       class="intro-pic img-block"
     />
     <section class="intro-text text-block menu-padding">
@@ -114,8 +114,8 @@ export default {
 			</template>
 			<template v-slot:slide3>A website is an important extension of your brand. <span class="bold">a solid website will improve your credibility.</span>
 			</template>
-		</TextSlider> -->
-    <!-- Blog previews from Prismic and empty squares while loading from Prismic -->
+		</TextSlider>
+		Blog previews from Prismic and empty squares while loading from Prismic -->
     <section class="full-block-row blog-highlight">
       <div v-if="loadingBlogs" class="blog-post">
         <div class="blog-pic placeholder"></div>
