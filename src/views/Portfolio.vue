@@ -1,11 +1,5 @@
 <template>
   <div class="portfolio">
-    <!-- <vue-headful
-      title="CE | Developer, adventurer, artist"
-      description="Showcase of favorite projects"
-      image="../assets/ClaudiaBWKaikoura.jpg"
-      url="https://www.claudiaengelsman.com/about"
-    /> -->
     <MenuSlide />
     <header>
       <img
