@@ -149,7 +149,6 @@ export default {
           filters: [this.$prismic.filter.similar(prismicId, 2)]
         })
         .then((response) => {
-          console.log('response', response)
           this.relatedPostTitle = response.results[0].data.title[0].text
           this.relatedPostId = response.results[0].uid
         })

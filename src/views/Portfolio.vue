@@ -1,11 +1,11 @@
 <template>
   <div class="portfolio">
-    <vue-headful
+    <!-- <vue-headful
       title="CE | Developer, adventurer, artist"
       description="Showcase of favorite projects"
       image="../assets/ClaudiaBWKaikoura.jpg"
       url="https://www.claudiaengelsman.com/about"
-    />
+    /> -->
     <MenuSlide />
     <header>
       <img
@@ -79,6 +79,7 @@
 <script>
 import MenuSlide from '@/components/MenuSlide.vue'
 import { Typed } from '@duskmoon/vue3-typed-js'
+import { useHead } from 'unhead'
 
 export default {
   name: 'PortfolioPage',
@@ -98,6 +99,19 @@ export default {
   components: {
     MenuSlide,
     Typed
+  },
+  mounted() {
+    useHead({
+      title: "CE | Developer, adventurer, artist",
+      meta: [
+        {
+          name: 'description',
+          content: "Showcase of favorite projects"
+        },
+        { name: 'image', content: "../assets/ClaudiaBWKaikoura.jpg" },
+        { name: 'url', content: "https://www.claudiaengelsman.com/portfolio" }
+      ]
+    })
   }
 }
 </script>
