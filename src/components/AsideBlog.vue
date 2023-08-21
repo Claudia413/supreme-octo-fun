@@ -52,17 +52,11 @@ export default {
   methods: {
     getBlogFromThisCategory(categoryLabel) {
       this.$prismic.client
-        .get(
-          [
-            this.$prismic.predicate.at('document.type', 'blogpost'),
-            this.$prismic.predicate.at('document.tags', [categoryLabel])
-          ],
-          {
-            orderings: '[document.first_publication_date desc]',
-            pageSize: 2,
-            fetch: ['blogpost.title', 'blogpost.blog_image']
-          }
-        )
+        .getByTag(categoryLabel, {
+      orderings: { field: 'document.first_publication_date', direction: 'desc' },
+      pageSize: 2,
+      fetch: ['blogpost.title', 'blogpost.blog_image']
+    })
         .then((response) => {
           if (this.blogID === response.results[0].id) {
             this.blogpreview = response.results[1]
