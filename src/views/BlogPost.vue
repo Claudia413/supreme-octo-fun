@@ -73,7 +73,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import MenuSlide from '@/components/MenuSlide.vue'
 import AsideBlog from '@/components/AsideBlog.vue'
 import TutorialScroll from '@/components/TutorialScroll.vue'
