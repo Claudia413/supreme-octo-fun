@@ -14,7 +14,7 @@ const accessToken = import.meta.env.VITE_VUE_APP_PRISMIC_API_KEY;
 app.use(createPinia())
 app.use(router)
 app.use(createPrismic({
-  endpoint: 'https://claudiaengelsman-com.prismic.io/api/v2',
+  endpoint: 'https://claudiaengelsman-com.cdn.prismic.io/api/v2',
   linkResolver,
   clientConfig: {
     accessToken,

@@ -73,7 +73,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import MenuSlide from '@/components/MenuSlide.vue'
 import AsideBlog from '@/components/AsideBlog.vue'
 import TutorialScroll from '@/components/TutorialScroll.vue'
@@ -145,8 +144,8 @@ export default {
     },
     getRelatedContent(prismicId) {
       this.$prismic.client
-        .get(this.$prismic.predicate.similar(prismicId, 10), {
-          orderings: '[my.blog_post.date desc]'
+        .getByTag(this.blog.labels[0], {
+          filters: [this.$prismic.filter.similar(prismicId, 2)]
         })
         .then((response) => {
           this.relatedPostTitle = response.results[0].data.title[0].text
@@ -217,6 +216,7 @@ header {
   position: relative;
   display: flex;
   justify-content: center;
+
   .cover {
     position: absolute;
     top: 0;
@@ -233,23 +233,27 @@ header {
     display: block;
     z-index: 0;
   }
+
   .intro {
     z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     h1 {
       font-family: 'Karla', sans-serif;
       display: inline-block;
       text-align: center;
     }
+
     h2 {
       font-family: 'Spectral', sans-serif;
       font-size: 37px;
       line-height: 64px;
       color: white;
     }
+
     p {
       color: white;
       border-bottom: white 2px solid;
@@ -260,6 +264,7 @@ header {
 .blog {
   background-color: #f5f5f5;
   width: 100%;
+
   .blog-grid {
     display: grid;
     grid-gap: 0;
@@ -268,6 +273,7 @@ header {
     grid-template-areas:
       'header header'
       'content aside';
+
     @media only screen and (max-width: 768px) {
       grid-template-areas:
         'header header'
@@ -275,14 +281,17 @@ header {
         'aside aside';
     }
   }
+
   .slide-enter-active,
   .slide-leave-active {
     transition: transform 0.5s;
   }
+
   .slide-enter,
   .slide-leave-to {
     transform: translate(-600px, 0px);
   }
+
   .overlay-tutorial {
     grid-area: content;
     background-color: rgba(230, 230, 230, 100);
@@ -291,6 +300,7 @@ header {
     margin: 0;
     height: auto;
   }
+
   .content {
     grid-area: content;
     width: 100%;
@@ -300,86 +310,108 @@ header {
     display: flex;
     flex-direction: column;
     padding: 48px 0;
+
     &.blur {
       filter: blur(8px);
     }
+
     @media only screen and (max-width: 768px) {
       padding: 0;
     }
+
     .title {
       color: $primary-bright;
       text-align: center;
       padding: 24px 12px;
     }
+
     .deco {
       width: 48px;
       margin: 0 auto;
     }
+
     .author {
       text-align: center;
       font-size: 12px;
       font-weight: bold;
       margin-top: 24px;
     }
+
     .subtitle {
       padding: 12px;
       text-align: justify;
     }
+
     .heading {
       color: $primary-bright;
       line-height: 36px;
       font-size: 18px;
     }
+
     section {
       padding: 8px 12px 12px;
     }
+
     .dent-right {
       @media only screen and (max-width: 768px) {
         padding: 12px 60px 12px 20px;
       }
     }
+
     p {
       line-height: 26px;
     }
+
     a {
       font-size: 14px;
     }
+
     .blog-image {
       max-width: 100%;
     }
+
     .text {
       text-align: justify;
+
       ol {
         font-size: 14px;
         line-height: 26px;
         color: #30343f;
       }
     }
+
     .caption {
       color: $dark-blue;
+
       p {
         margin-top: 0;
       }
     }
+
     .cta {
       display: flex;
       justify-content: space-between;
+
       a {
         font-size: 14px;
       }
     }
+
     .tutorial-link {
       color: $yellow;
       cursor: pointer;
+
       &:hover {
         font-weight: bolder;
       }
     }
   }
+
   .blog-bar {
     grid-area: aside;
     width: auto;
     max-width: 400px;
+
     @media only screen and (max-width: 768px) {
       width: 100%;
       max-width: unset;

@@ -42,7 +42,9 @@ export default {
           orderings: { field: 'document.first_publication_date', direction: 'desc' },
           pageSize: 4,
           fetch: ['blogpost.title', 'blogpost.blog_image'],
-          predicate: prismic.predicate.not('document.tags', ['TEST'])
+          filters: [
+      prismic.filter.not('document.tags', ['TEST'])
+    ]
         })
 
         this.blogpreviews = response.results
