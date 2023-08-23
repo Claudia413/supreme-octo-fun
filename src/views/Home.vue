@@ -1,10 +1,7 @@
 <script>
-// @ is an alias to /src
 import HeaderAnimation from '@/components/HeaderAnimation.vue'
 
 import MenuSlide from '@/components/MenuSlide.vue'
-// import TextSlider from "@/components/TextSlider.vue";
-// import NewsletterSignUp from "@/components/NewsletterSignUp.vue";
 import BlogPreview from '@/components/BlogPreview.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
@@ -30,8 +27,6 @@ export default {
     HeaderAnimation,
     MenuSlide,
     Typed,
-    // TextSlider,
-    // NewsletterSignUp,
     BlogPreview
   },
   methods: {
@@ -90,7 +85,6 @@ export default {
     />
     <section class="try-it-text text-block">
       <h3>The blog</h3>
-      <!-- <p>Curious about building websites but don't know where to start? Have you already started but felt overwhelmed by all the information out there? Here is my guide with articles, explanations, and handy tips to get you further ahead.</p> -->
       <p>Read about New Zealand, the move there, emigrating, and my views on working in tech.</p>
       <router-link to="/blog" class="button mt-2">To the blog</router-link>
     </section>
@@ -108,16 +102,6 @@ export default {
       </p>
       <router-link to="/about" class="button mt-2">More about me</router-link>
     </section>
-    <!-- <TextSlider title="Now is the perfect time to get a website for your business:" :numberOfSlides="3">
-			<template v-slot:slide1>
-				<span class="bold">The whole world is online.</span> Since lockdown, everyone, everywhere is going online to find everything they need.
-			</template>
-			<template v-slot:slide2>With a website, your business is working while you're asleep or away.<span class="bold">Your website is always available</span> to answer the most basic questions your customers have.
-			</template>
-			<template v-slot:slide3>A website is an important extension of your brand. <span class="bold">a solid website will improve your credibility.</span>
-			</template>
-		</TextSlider>
-		Blog previews from Prismic and empty squares while loading from Prismic -->
     <section class="full-block-row blog-highlight">
       <div v-if="loadingBlogs" class="blog-post">
         <div class="blog-pic placeholder"></div>
@@ -145,22 +129,6 @@ export default {
         :title="post.data.title[0].text"
       />
     </section>
-    <!-- <section class="freebie-text text-block">
-      <h3>Let's stay in touch</h3>
-      <p class="text-darkbg">
-        Sign up to receive the latest blog updates in your inbox. And don't worry, I hate spam just as much as you do. I
-        promise you will only get email once in a while and it will only have the really cool stuff!
-      </p>
-      <NewsletterSignUp />
-    </section>
-    <section class="bio-link-text text-block menu-padding">
-      <h3>Hiya!</h3>
-      <p>
-        I’m Claudia Engelsman, an IT geek with a passion for creating, a love for New Zealand and a black hole instead
-        of a stomach. My mission is to make the internet a more beautiful and user-friendly place. With a dash of magic.
-      </p>
-       <SocialIconBar></SocialIconBar> 
-    </section> -->
   </div>
 </template>
 
