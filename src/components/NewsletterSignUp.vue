@@ -76,7 +76,7 @@ form {
               display: flex;
               align-items: center;
               color: white;
-              font-family: 'Karla', sans-serif;
+              font-family: "Karla", "Average Sans", sans-serif;
               font-size: 14px;
               margin-bottom: 12px;
               span {

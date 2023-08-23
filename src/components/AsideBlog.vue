@@ -1,11 +1,11 @@
 <template>
   <aside>
     <section class="short-bio">
-      <img src="../assets/ClaudiaWithMacbookSmall.jpg" class="headshot" />
+      <img src="../assets/ClaudiaWithMacbookSmall.jpg" class="headshot" alt="The author, Claudia, holding a laptop and smiling" />
       <p>
         Hiya, I'm Claudia and and here to help you with upping your website skills and I write about
         moving to New Zealand.<span class="extended-bio">
-          My dream is for more women succeed in developer and tech roles and I personally want to
+          My dream is for more women succeed in developer and tech roles and I want to
           help you get there and cheer you on along the way.</span
         >
       </p>

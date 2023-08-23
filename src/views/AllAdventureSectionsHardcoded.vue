@@ -255,12 +255,12 @@ header {
   }
 }
 h1 {
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", "Average Sans", sans-serif;
   display: inline-block;
   text-align: center;
 }
 h2 {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Karla", "Average Sans", sans-serif;
   font-size: 37px;
   line-height: 64px;
   color: $forestblack;

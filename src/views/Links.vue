@@ -115,7 +115,7 @@ export default {
   flex-direction: column;
   width: 100%;
   h3 {
-    font-family: 'Karla', sans-serif;
+    font-family: "Karla", "Average Sans", sans-serif;
     font-size: 18px;
     line-height: 36px;
     text-align: center;

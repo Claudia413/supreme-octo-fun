@@ -356,7 +356,7 @@ header {
   }
 }
 h1 {
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", "Average Sans", sans-serif;
   display: inline-block;
   text-align: center;
 }
