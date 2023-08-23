@@ -203,7 +203,7 @@ export default {
   }
   h4 {
     color: $light-blue;
-    font-family: 'Karla', sans-serif;
+    font-family: "Karla", "Average Sans", sans-serif;
     text-transform: none;
     font-weight: 500;
     margin-bottom: 0;

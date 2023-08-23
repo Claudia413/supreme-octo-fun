@@ -70,7 +70,7 @@ export default {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		font-family: "Karla", serif;
+		font-family: "Karla", "Average Sans", sans-serif;
 		font-weight: 600;
 		font-size: 16px;
 		line-height: 24px;
