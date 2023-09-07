@@ -15,7 +15,7 @@
     "axios": "^1.5.0",
     "pinia": "^2.1.6",
     "sass": "^1.66.1",
-    "unhead": "^1.5.1",
+    "unhead": "^1.5.3",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
     "vue-slick-carousel": "^1.0.6"
