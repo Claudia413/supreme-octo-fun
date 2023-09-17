@@ -153,7 +153,7 @@ export default {
 }
 
 .camera {
-  width: 250px;
+  width: 280px;
   height: auto;
   object-fit: contain;
   filter: brightness(70%) drop-shadow(15px 10px 15px);
