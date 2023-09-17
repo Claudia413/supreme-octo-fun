@@ -58,14 +58,15 @@ export default {
       <nav class="menu">
         <li class="first">Photos</li>
         <li class="second">Blog</li>
-        <li>Vlog</li>
-        <li>About</li>
+        <li class="third">Vlog</li>
+        <li class="fourth">About</li>
       </nav>
     </header>
     <div class="content">
       <section class="content-block">
         <Photogrid />
       </section>
+      <img class="camera" src="../assets/Canon77D.gif" />
       <div class="content-block">
         <p>second one</p>
       </div>
@@ -133,6 +134,20 @@ export default {
   .second {
     position: sticky;
     left: 0px;
+  }
+}
+
+.camera {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(70%) drop-shadow(15px 10px 15px);
+  position: absolute;
+  transform: rotate(-25deg);
+  top: 10%;
+  left: 4vw;
+  @media only screen and (max-width: 768px) {
+    width: 25%;
   }
 }
 </style>

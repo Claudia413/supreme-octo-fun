@@ -5,8 +5,8 @@ export default {
   data() {
     return {
       randomRotation: Math.floor(Math.random() * 41) - 20, // Generate a random rotation value (-20 to +20 degrees)
-      randomNudge: Math.floor(Math.random() * 61) - 20, // Random nudge value between -20 and +40 pixels
-      randomNudgeRight: Math.floor(Math.random() * 61) - 20 // Random nudge value between -20 and +40 pixels
+      randomNudgeDown: Math.floor(Math.random() * 61) - 20, // Random nudge from top value between -20 and +40 pixels
+      randomNudgeRight: Math.floor(Math.random() * 121) - 40 // Random nudge value between -40 and +80 pixels
     }
   },
   components: {},
@@ -20,7 +20,7 @@ export default {
     :src="img"
     :style="{
       '--rotation': randomRotation + 'deg',
-      '--nudge': randomNudge + 'px',
+      '--nudge': randomNudgeDown + 'px',
       '--nudgeright': randomNudgeRight + 'px'
     }"
   />
@@ -34,7 +34,7 @@ export default {
   height: auto;
   width: 100%;
   background: white;
-  border: 3px white solid;
+  border: 4px white solid;
   object-fit: cover;
   transform: rotate(var(--rotation, 0deg));
   object-position: center;
