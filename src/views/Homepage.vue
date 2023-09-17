@@ -32,6 +32,15 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    },
+    handleWheel(event) {
+      if ('deltaX' in event) {
+        event.preventDefault()
+
+        window.scrollBy({
+          left: event.deltaY
+        })
+      }
     }
   },
   mounted() {
@@ -48,6 +57,12 @@ export default {
         { name: 'url', content: 'https://www.claudiaengelsman.com/' }
       ]
     })
+
+    document.addEventListener('wheel', this.handleWheel, { passive: false })
+  },
+
+  beforeUnmount() {
+    document.removeEventListener('wheel', this.handleWheel)
   }
 }
 </script>
