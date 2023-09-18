@@ -107,6 +107,7 @@ export default {
   flex-direction: column;
   background-image: url('../assets/WalnutDeskBG.jpg');
   background-repeat: repeat;
+  overflow-y: hidden;
 }
 
 .content {
