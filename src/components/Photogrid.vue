@@ -26,13 +26,12 @@ export default {
   </div>
 </template>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import '../assets/_variables.scss';
 
 .grid {
   width: 900px;
-  margin-top: 15%;
+  margin-top: 10vh;
   height: 75%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
