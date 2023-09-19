@@ -24,7 +24,6 @@ export default {
 
 .map {
   width: 900px;
-  margin-top: 15%;
   height: 75%;
   display: flex;
   position: relative;
