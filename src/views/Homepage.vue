@@ -78,17 +78,17 @@ export default {
   <div class="home">
     <StackMenu />
     <div class="content">
-      <section class="content-block">
+      <section class="content-block" id="Photoscontent">
         <Photogrid />
       </section>
       <img class="camera" src="../assets/Canon77D.gif" />
-      <div class="content-block">
+      <div class="content-block" id="Blogcontent">
         <MapNZ />
       </div>
-      <div class="content-block">
+      <div class="content-block" id="Vlogcontent">
         <p>third one</p>
       </div>
-      <div class="content-block">
+      <div class="content-block" id="Aboutcontent">
         <p>fourth one</p>
       </div>
     </div>

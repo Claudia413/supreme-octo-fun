@@ -80,7 +80,7 @@ export default {
     <nav class="left-menu">
       <TransitionGroup name="list">
         <li v-for="item in leftMenu" :key="item" :id="item">
-          {{ item }}
+          <a :href="'#' + item + 'content'">{{ item }}</a>
         </li>
       </TransitionGroup>
     </nav>
@@ -92,14 +92,14 @@ export default {
           :id="item"
           :class="isInVerticalList(item) ? 'hidden' : ''"
         >
-          {{ item }}
+          <a :href="'#' + item + 'content'">{{ item }}</a>
         </li>
       </TransitionGroup>
     </nav>
     <nav class="right-menu">
       <TransitionGroup name="list">
         <li v-for="item in rightMenu" :key="item" :id="item">
-          {{ item }}
+          <a :href="'#' + item + 'content'">{{ item }}</a>
         </li>
       </TransitionGroup>
     </nav>
@@ -112,19 +112,25 @@ export default {
 header {
   display: flex;
   position: relative;
-  font-size: 16px;
+  font-size: 3rem;
+  font-family: 'Cormorant', serif;
 }
 
 li {
   list-style: none;
   margin-right: 900px;
+  a {
+    font-size: inherit;
+  }
 }
 .menu {
-  padding: 2rem 0;
+  padding: 3rem 0;
   color: white;
+  text-align: center;
+  opacity: 0.8;
   display: flex;
   li:first-of-type {
-    margin-left: 30vw;
+    margin-left: calc(25vw + 450px);
   }
   .hidden {
     opacity: 0;
@@ -133,20 +139,31 @@ li {
 
 .left-menu {
   position: fixed;
-  top: 32px;
+  bottom: 88vh;
   left: 10px;
-  color: pink;
+  text-align: left;
+  color: white;
+  opacity: 0.6;
   display: flex;
   flex-direction: column;
+  font-size: 1.25rem;
+  //raise z above following center menu
+  z-index: 50;
+  li {
+    margin-right: 0;
+  }
 }
 
 .right-menu {
   position: fixed;
-  top: 32px;
+  bottom: 88vh;
   right: 10px;
-  color: pink;
+  text-align: right;
+  color: white;
+  opacity: 0.6;
   display: flex;
   flex-direction: column;
+  font-size: 1.25rem;
   li {
     margin-right: 0;
   }
