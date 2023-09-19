@@ -1,7 +1,8 @@
 <script>
-import BlogPreview from '@/components/BlogPreview.vue'
-import Photogrid from '@/components/Photogrid.vue'
+import BlogPreview from '../components/BlogPreview.vue'
+import Photogrid from '../components/Photogrid.vue'
 import MapNZ from '../components/MapNZ.vue'
+import StackMenu from '../components/StackMenu.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
 
@@ -10,13 +11,17 @@ export default {
   data() {
     return {
       loadingBlogs: true,
-      blogpreviews: []
+      blogpreviews: [],
+      leftMenu: [''],
+      menu: ['Photos', 'Blog'],
+      rightMenu: ['Vlog', 'About']
     }
   },
   components: {
     BlogPreview,
     Photogrid,
-    MapNZ
+    MapNZ,
+    StackMenu
   },
   methods: {
     async getContent() {
@@ -71,14 +76,7 @@ export default {
 
 <template>
   <div class="home">
-    <header>
-      <nav class="menu">
-        <li class="first">Photos</li>
-        <li class="second">Blog</li>
-        <li class="third">Vlog</li>
-        <li class="fourth">About</li>
-      </nav>
-    </header>
+    <StackMenu />
     <div class="content">
       <section class="content-block">
         <Photogrid />
@@ -136,6 +134,9 @@ export default {
   }
 }
 
+header {
+  display: flex;
+}
 .menu {
   padding: 2rem 0;
   color: white;
@@ -143,15 +144,6 @@ export default {
   li {
     list-style: none;
     margin-right: 900px;
-  }
-  .first {
-    margin-left: 33vw;
-    position: sticky;
-    left: 0px;
-  }
-  .second {
-    position: sticky;
-    left: 0px;
   }
 }
 
