@@ -10,32 +10,17 @@ export default {
       menuItemPhotos: '',
       menuItemBlog: '',
       menuItemVlog: '',
-      menuItemAbout: '',
-      thresholdList: []
+      menuItemAbout: ''
     }
   },
   components: { StackMenuItem },
   methods: {
-    buildThresholdList() {
-      let thresholds = []
-      let numSteps = 5
-
-      for (let i = 1.0; i <= numSteps; i++) {
-        let ratio = i / numSteps
-        thresholds.push(ratio)
-      }
-
-      thresholds.push(0)
-      this.thresholdList = thresholds
-      return thresholds
-    },
     createObserver() {
       let observer
 
       let options = {
         root: null,
-        rootMargin: '0px -100px 0px -100px',
-        threshold: this.buildThresholdList()
+        rootMargin: '0px -100px 0px -100px'
       }
 
       observer = new IntersectionObserver(this.handleIntersect, options)
@@ -103,12 +88,7 @@ export default {
           :id="item"
           :class="isInVerticalList(item) ? 'hidden' : ''"
         >
-          <StackMenuItem
-            :href="'#' + item + 'content'"
-            :itemText="item"
-            :thresholdList="this.thresholdList"
-            :id="item + 'text'"
-          />
+          <StackMenuItem :href="'#' + item + 'content'" :itemText="item" :id="item + 'text'" />
         </li>
       </TransitionGroup>
     </nav>
@@ -135,9 +115,6 @@ header {
 li {
   list-style: none;
   margin-right: 900px;
-  a {
-    font-size: inherit;
-  }
 }
 .menu {
   padding: 3rem 0;

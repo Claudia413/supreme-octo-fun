@@ -1,48 +1,35 @@
 <script>
 export default {
   name: 'stackMenuItem',
-  props: { href: String, itemText: String, thresholdList: Array, id: String },
+  props: { href: String, itemText: String, id: String },
   data() {
     return {
-      menuItem: '',
-      prevRatio: 0.0,
-      increasingColor: 'rgba(255, 255, 255, ratio)',
-      decreasingColor: 'rgba(255, 255, 255, ratio)'
+      menuItem: ''
     }
   },
   components: {},
-  methods: {
-    createObserver() {
-      let observer
-
-      let options = {
-        root: null,
-        rootMargin: '0px 20% 0px 20%',
-        threshold: this.thresholdList
-      }
-
-      observer = new IntersectionObserver(this.handleIntersect, options)
-      observer.observe(this.menuItem)
-    },
-    handleIntersect(entries, observer) {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > this.prevRatio) {
-          entry.target.style.color = this.increasingColor.replace('ratio', entry.intersectionRatio)
-        } else {
-          entry.target.style.color = this.decreasingColor.replace('ratio', entry.intersectionRatio)
-        }
-
-        this.prevRatio = entry.intersectionRatio
-      })
-    }
-  },
+  methods: {},
   mounted() {
     window.addEventListener(
       'load',
       (event) => {
-        this.menuItem = document.querySelector('#' + this.id)
+        const menuItem = (this.menuItem = document.querySelector('#' + this.id))
 
-        this.createObserver()
+        requestAnimationFrame(animate)
+        function animate() {
+          const elementRect = menuItem.getBoundingClientRect()
+          const percentage = (elementRect.x + elementRect.width / 2) / window.innerWidth
+
+          const opacity = Math.max(0.4 + 0.6 * (1 - Math.abs(2 * percentage - 1)), 0.4)
+          const fontSize = Math.max(
+            Math.min(1.25 + 1.75 * (1 - Math.abs(2 * percentage - 1)), 3),
+            1.25
+          )
+
+          menuItem.style.opacity = `${opacity}`
+          menuItem.style.fontSize = `${fontSize}rem`
+          requestAnimationFrame(animate)
+        }
       },
       false
     )
@@ -60,5 +47,6 @@ export default {
 a {
   font-size: inherit;
   transition: color 0.2s;
+  color: white;
 }
 </style>
