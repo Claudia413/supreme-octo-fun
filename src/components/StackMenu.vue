@@ -1,4 +1,5 @@
 <script>
+import StackMenuItem from '../components/StackMenuItem.vue'
 export default {
   name: 'stackMenu',
   data() {
@@ -9,17 +10,32 @@ export default {
       menuItemPhotos: '',
       menuItemBlog: '',
       menuItemVlog: '',
-      menuItemAbout: ''
+      menuItemAbout: '',
+      thresholdList: []
     }
   },
-  components: {},
+  components: { StackMenuItem },
   methods: {
+    buildThresholdList() {
+      let thresholds = []
+      let numSteps = 5
+
+      for (let i = 1.0; i <= numSteps; i++) {
+        let ratio = i / numSteps
+        thresholds.push(ratio)
+      }
+
+      thresholds.push(0)
+      this.thresholdList = thresholds
+      return thresholds
+    },
     createObserver() {
       let observer
 
       let options = {
         root: null,
-        rootMargin: '0px -100px'
+        rootMargin: '0px -100px 0px -100px',
+        threshold: this.buildThresholdList()
       }
 
       observer = new IntersectionObserver(this.handleIntersect, options)
@@ -30,18 +46,13 @@ export default {
     },
     handleIntersect(entries, observer) {
       entries.forEach((entry) => {
-        console.log('entry', entry)
         // when item goes almost off screen on left side move it to leftMenu
         if (entry.intersectionRatio === 0 && entry.boundingClientRect.x < 100) {
           if (!this.leftMenu.includes(entry.target.id)) {
             this.leftMenu.push(entry.target.id)
           }
-
-          console.log('left menu array', this.leftMenu)
-          console.log('center menu array', this.menu)
           // when item goes almost off screen on right side move it to rightMenu
-        } else if (entry.intersectionRatio === 0 && entry.boundingClientRect.x > 100) {
-          console.log('going up right!')
+        } else if (entry.intersectionRatio === 0 && entry.boundingClientRect.x > 800) {
           if (!this.rightMenu.includes(entry.target.id)) {
             this.rightMenu.push(entry.target.id)
           }
@@ -80,7 +91,7 @@ export default {
     <nav class="left-menu">
       <TransitionGroup name="list">
         <li v-for="item in leftMenu" :key="item" :id="item">
-          <a :href="'#' + item + 'content'">{{ item }}</a>
+          <StackMenuItem :href="'#' + item + 'content'" :itemText="item" />
         </li>
       </TransitionGroup>
     </nav>
@@ -92,14 +103,19 @@ export default {
           :id="item"
           :class="isInVerticalList(item) ? 'hidden' : ''"
         >
-          <a :href="'#' + item + 'content'">{{ item }}</a>
+          <StackMenuItem
+            :href="'#' + item + 'content'"
+            :itemText="item"
+            :thresholdList="this.thresholdList"
+            :id="item + 'text'"
+          />
         </li>
       </TransitionGroup>
     </nav>
     <nav class="right-menu">
       <TransitionGroup name="list">
         <li v-for="item in rightMenu" :key="item" :id="item">
-          <a :href="'#' + item + 'content'">{{ item }}</a>
+          <StackMenuItem :href="'#' + item + 'content'" :itemText="item" />
         </li>
       </TransitionGroup>
     </nav>
