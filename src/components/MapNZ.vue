@@ -34,7 +34,7 @@ export default {
   .image {
     height: 75%;
     width: auto;
-    filter: saturate(0.87);
+    filter: saturate(0.87) drop-shadow(10px 10px 15px);
     rotate: -15deg;
     position: absolute;
     top: 0;
