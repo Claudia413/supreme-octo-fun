@@ -1,6 +1,7 @@
 <script>
 import BlogPreview from '@/components/BlogPreview.vue'
 import Photogrid from '@/components/Photogrid.vue'
+import MapNZ from '../components/MapNZ.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
 
@@ -14,7 +15,8 @@ export default {
   },
   components: {
     BlogPreview,
-    Photogrid
+    Photogrid,
+    MapNZ
   },
   methods: {
     async getContent() {
@@ -83,7 +85,7 @@ export default {
       </section>
       <img class="camera" src="../assets/Canon77D.gif" />
       <div class="content-block">
-        <p>second one</p>
+        <MapNZ />
       </div>
       <div class="content-block">
         <p>third one</p>
