@@ -27,8 +27,10 @@ export default {
           Math.min(1.25 + 1.75 * (1 - Math.abs(2 * percentage - 1)), 3),
           1.25
         )
+        const top = 22 * Math.abs(1 - 2 * percentage)
         this.$refs.menuItem.style.opacity = `${opacity}`
         this.$refs.menuItem.style.fontSize = `${fontSize}rem`
+        this.$refs.menuItem.style.transform = `translateY(${top}px)`
 
         if (elapsed < 200) {
           // Stop the animation after 200 miliseconds
@@ -70,5 +72,7 @@ a {
   font-size: inherit;
   transition: color 0.2s;
   color: white;
+  transform: translateY(0px);
+  display: inline-block;
 }
 </style>
