@@ -8,37 +8,59 @@ export default {
     }
   },
   components: {},
-  methods: {},
+  methods: {
+    handleWheel(event) {
+      let start, previousTimeStamp
+      let done = false
+
+      const animate = (timeStamp) => {
+        // Use an arrow function to prevent stack issues with 'this'
+        //Using timer to prevent animation from going constantly
+        if (start === undefined) {
+          start = timeStamp
+        }
+        const elapsed = timeStamp - start
+        const elementRect = this.$refs.menuItem.getBoundingClientRect()
+        const percentage = (elementRect.x + elementRect.width / 2) / window.innerWidth
+        const opacity = Math.max(0.4 + 0.6 * (1 - Math.abs(2 * percentage - 1)), 0.4)
+        const fontSize = Math.max(
+          Math.min(1.25 + 1.75 * (1 - Math.abs(2 * percentage - 1)), 3),
+          1.25
+        )
+        this.$refs.menuItem.style.opacity = `${opacity}`
+        this.$refs.menuItem.style.fontSize = `${fontSize}rem`
+
+        if (elapsed < 200) {
+          // Stop the animation after 200 miliseconds
+          previousTimeStamp = timeStamp
+          if (!done) {
+            requestAnimationFrame(animate)
+          }
+        }
+      }
+
+      requestAnimationFrame(animate)
+    }
+  },
   mounted() {
+    document.addEventListener('wheel', this.handleWheel, { passive: false })
     window.addEventListener(
       'load',
       (event) => {
-        const menuItem = (this.menuItem = document.querySelector('#' + this.id))
-
-        requestAnimationFrame(animate)
-        function animate() {
-          const elementRect = menuItem.getBoundingClientRect()
-          const percentage = (elementRect.x + elementRect.width / 2) / window.innerWidth
-
-          const opacity = Math.max(0.4 + 0.6 * (1 - Math.abs(2 * percentage - 1)), 0.4)
-          const fontSize = Math.max(
-            Math.min(1.25 + 1.75 * (1 - Math.abs(2 * percentage - 1)), 3),
-            1.25
-          )
-
-          menuItem.style.opacity = `${opacity}`
-          menuItem.style.fontSize = `${fontSize}rem`
-          requestAnimationFrame(animate)
-        }
+        this.menuItem = this.menuItem = document.querySelector('#' + this.id)
       },
       false
     )
+  },
+  beforeDestroy() {
+    // Clean up event listener before component is destroyed
+    document.removeEventListener('wheel', this.handleWheel)
   }
 }
 </script>
 
 <template>
-  <a :href="href" :id="id">{{ itemText }}</a>
+  <a :href="href" ref="menuItem" :id="id">{{ itemText }}</a>
 </template>
 
 <style lang="scss" scoped>

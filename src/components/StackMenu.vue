@@ -76,7 +76,7 @@ export default {
     <nav class="left-menu">
       <TransitionGroup name="list">
         <li v-for="item in leftMenu" :key="item" :id="item">
-          <StackMenuItem :href="'#' + item + 'content'" :itemText="item" />
+          <a :href="'#' + item + 'content'" :id="item + 'text0'">{{ item }}</a>
         </li>
       </TransitionGroup>
     </nav>
@@ -95,7 +95,7 @@ export default {
     <nav class="right-menu">
       <TransitionGroup name="list">
         <li v-for="item in rightMenu" :key="item" :id="item">
-          <StackMenuItem :href="'#' + item + 'content'" :itemText="item" />
+          <a :href="'#' + item + 'content'" :id="item + 'text2'"> {{ item }} </a>
         </li>
       </TransitionGroup>
     </nav>
