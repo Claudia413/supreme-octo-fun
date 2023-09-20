@@ -9,7 +9,7 @@ export default {
   },
   components: {},
   methods: {
-    handleWheel(event) {
+    handleScroll(event) {
       let start, previousTimeStamp
       let done = false
 
@@ -45,7 +45,7 @@ export default {
     }
   },
   mounted() {
-    document.addEventListener('wheel', this.handleWheel, { passive: false })
+    document.addEventListener('scroll', this.handleScroll, { passive: false })
     window.addEventListener(
       'load',
       (event) => {
@@ -54,11 +54,11 @@ export default {
       false
     )
     // kick off 1 animation cycle for when page gets refreshed in different position
-    this.handleWheel(event)
+    this.handleScroll(event)
   },
   beforeDestroy() {
     // Clean up event listener before component is destroyed
-    document.removeEventListener('wheel', this.handleWheel)
+    document.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>

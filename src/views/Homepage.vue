@@ -41,7 +41,7 @@ export default {
       }
     },
     handleWheel(event) {
-      if ('deltaX' in event) {
+      if ('deltaY' in event) {
         event.preventDefault()
 
         window.scrollBy({
@@ -82,15 +82,15 @@ export default {
         <Photogrid />
       </section>
       <img class="camera" src="../assets/Canon77D.gif" />
-      <div class="content-block" id="Blogcontent">
+      <section class="content-block" id="Blogcontent">
         <MapNZ />
-      </div>
-      <div class="content-block" id="Vlogcontent">
+      </section>
+      <section class="content-block" id="Vlogcontent">
         <p>third one</p>
-      </div>
-      <div class="content-block" id="Aboutcontent">
+      </section>
+      <section class="content-block" id="Aboutcontent">
         <p>fourth one</p>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -108,6 +108,13 @@ export default {
   background-image: url('../assets/WalnutDeskBG.jpg');
   background-repeat: repeat;
   overflow-y: hidden;
+}
+
+#Photoscontent,
+#Aboutcontent,
+#Blogcontent,
+#Vlogcontent {
+  scroll-behavior: smooth;
 }
 
 .content {
