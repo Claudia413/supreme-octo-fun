@@ -74,7 +74,7 @@ export default {
 <template>
   <header id="stack-menu">
     <nav class="left-menu">
-      <TransitionGroup name="list">
+      <TransitionGroup name="list-left">
         <li v-for="item in leftMenu" :key="item" :id="item">
           <a :href="'#' + item + 'content'" :id="item + 'text0'">{{ item }}</a>
         </li>
@@ -93,7 +93,7 @@ export default {
       </TransitionGroup>
     </nav>
     <nav class="right-menu">
-      <TransitionGroup name="list">
+      <TransitionGroup name="list-right">
         <li v-for="item in rightMenu" :key="item" :id="item">
           <a :href="'#' + item + 'content'" :id="item + 'text2'"> {{ item }} </a>
         </li>
@@ -120,7 +120,6 @@ li {
   padding: 3rem 0;
   color: white;
   text-align: center;
-  opacity: 0.8;
   display: flex;
   li:first-of-type {
     margin-left: calc(25vw + 450px);
@@ -160,5 +159,52 @@ li {
   li {
     margin-right: 0;
   }
+}
+
+//Left list animation below
+.list-left-move, /* apply transition to moving elements */
+.list-left-enter-active,
+.list-left-leave-active {
+  transition: all 0.3s ease;
+}
+
+.list-left-enter-from {
+  opacity: 0.4;
+  transform: translateX(25px);
+}
+.list-left-leave-to {
+  opacity: 0;
+  transform: translate(25px, 1px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-left-leave-active {
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+//Right list animation below
+
+.list-right-move, /* apply transition to moving elements */
+.list-right-enter-active,
+.list-right-leave-active {
+  transition: all 0.3s ease;
+}
+
+.list-right-enter-from {
+  opacity: 0.4;
+  transform: translateX(-25px);
+}
+.list-right-leave-to {
+  opacity: 0;
+  transform: translateX(-25px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-right-leave-active {
+  position: absolute;
+  transition: transform 0.3s ease;
 }
 </style>
