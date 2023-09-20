@@ -53,6 +53,8 @@ export default {
       },
       false
     )
+    // kick off 1 animation cycle for when page gets refreshed in different position
+    this.handleWheel(event)
   },
   beforeDestroy() {
     // Clean up event listener before component is destroyed
