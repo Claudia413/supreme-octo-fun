@@ -3,6 +3,7 @@ import BlogPreview from '../components/BlogPreview.vue'
 import Photogrid from '../components/Photogrid.vue'
 import MapNZ from '../components/MapNZ.vue'
 import StackMenu from '../components/StackMenu.vue'
+import PhotoGallery from '../components/PhotoGallery.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
 
@@ -14,14 +15,16 @@ export default {
       blogpreviews: [],
       leftMenu: [''],
       menu: ['Photos', 'Blog'],
-      rightMenu: ['Vlog', 'About']
+      rightMenu: ['Vlog', 'About'],
+      photoGalleryOpen: false
     }
   },
   components: {
     BlogPreview,
     Photogrid,
     MapNZ,
-    StackMenu
+    StackMenu,
+    PhotoGallery
   },
   methods: {
     async getContent() {
@@ -41,7 +44,9 @@ export default {
       }
     },
     handleWheel(event) {
-      if ('deltaY' in event) {
+      if (this.photoGalleryOpen) {
+        //do not scroll horizontally so do nothing
+      } else if ('deltaY' in event) {
         event.preventDefault()
 
         window.scrollBy({
@@ -75,11 +80,12 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="home" :class="photoGalleryOpen ? 'no-scroll' : ''">
     <StackMenu />
     <div class="content">
       <section class="content-block" id="Photoscontent">
         <Photogrid />
+        <PhotoGallery v-if="photoGalleryOpen" />
       </section>
       <img class="camera" src="../assets/Canon77D.gif" />
       <section class="content-block" id="Blogcontent">
@@ -95,7 +101,7 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../assets/_variables.scss';
 
 .home {
@@ -108,6 +114,15 @@ export default {
   background-image: url('../assets/WalnutDeskBG.jpg');
   background-repeat: repeat;
   overflow-y: hidden;
+  &.no-scroll {
+    overflow: hidden;
+    overflow-x: hidden;
+    header,
+    .content {
+      width: 100vw;
+      overflow: hidden;
+    }
+  }
 }
 
 #Photoscontent,
@@ -138,19 +153,6 @@ export default {
   }
   p {
     color: white;
-  }
-}
-
-header {
-  display: flex;
-}
-.menu {
-  padding: 2rem 0;
-  color: white;
-  display: flex;
-  li {
-    list-style: none;
-    margin-right: 900px;
   }
 }
 
