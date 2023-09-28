@@ -27,7 +27,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba($color: #252525, $alpha: 0.6);
+  background-color: rgba($color: #252525, $alpha: 0.8);
   z-index: 100;
 }
 </style>
