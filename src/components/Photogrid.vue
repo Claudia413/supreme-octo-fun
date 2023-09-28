@@ -1,28 +1,30 @@
 <script>
 import PhotogridPhoto from '@/components/PhotogridPhoto.vue'
+import Photos from '@/assets/PhotoGallery.json'
+
 export default {
   name: 'Photogrid',
   data() {
-    return {}
+    return {
+      Photos
+    }
   },
   components: {
     PhotogridPhoto
   },
-  methods: {}
+  methods: {},
+  mounted() {}
 }
 </script>
 
 <template>
   <div class="grid">
-    <PhotogridPhoto img="../src/assets/WestCoastCover2.jpg" />
-    <PhotogridPhoto img="../src/assets/WestCoastCover4.jpg" />
-    <PhotogridPhoto img="../src/assets/Westport21Yurt5.jpg" />
-    <PhotogridPhoto img="../src/assets/Westport21Yurt4.jpg" />
-    <PhotogridPhoto img="../src/assets/ClaudiaDunedinDuneHappy.jpg" />
-    <PhotogridPhoto img="../src/assets/DunedinHeader.jpg" />
-    <PhotogridPhoto img="../src/assets/KaikouraRainbowSky.jpg" />
-    <PhotogridPhoto img="../src/assets/Westport21Yurt2.jpg" />
-    <PhotogridPhoto img="../src/assets/Westport21Yurt6.jpg" />
+    <PhotogridPhoto
+      v-for="(photo, category) in Photos"
+      :key="category"
+      :img="photo[0].url"
+      @click="$emit('openGallery', category)"
+    ></PhotogridPhoto>
   </div>
 </template>
 

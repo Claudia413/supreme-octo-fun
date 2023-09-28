@@ -1,15 +1,22 @@
 <script>
 import Backdrop from './Backdrop.vue'
+import Photos from '../assets/PhotoGallery.json'
 
 export default {
   name: 'PhotoGallery',
   data() {
-    return {}
+    return {
+      Photos
+    }
+  },
+  props: {
+    spotlight: {}
   },
   components: {
     Backdrop
   },
-  methods: {}
+  methods: {},
+  mounted() {}
 }
 </script>
 
@@ -17,26 +24,17 @@ export default {
   <Backdrop>
     <div class="gallery">
       <div class="spotlight">
-        <img class="image" src="../assets/Westport21Yurt2.jpg" />
+        <img class="image" :src="Photos[spotlight][0].url" />
       </div>
       <div class="gallery-content">
         <h2>Title</h2>
         <p>Context</p>
         <div class="more">
-          <div class="col">
-            <img class="image" src="../assets/Westport21Yurt2.jpg" />
-
-            <div class="img-title">Title</div>
-          </div>
-          <div class="col">
-            <img class="image" src="../assets/Westport21Yurt2.jpg" />
-
-            <div class="img-title">Title</div>
-          </div>
-          <div class="col">
-            <img class="image" src="../assets/Westport21Yurt2.jpg" />
-
-            <div class="img-title">Title</div>
+          <div v-for="(photo, index) in Photos[spotlight]" :key="index" class="col">
+            <img class="image" :src="photo.url" />
+            <div class="img-title">
+              {{ photo.title }}
+            </div>
           </div>
         </div>
       </div>

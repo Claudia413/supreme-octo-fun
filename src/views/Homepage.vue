@@ -16,7 +16,8 @@ export default {
       leftMenu: [''],
       menu: ['Photos', 'Blog'],
       rightMenu: ['Vlog', 'About'],
-      photoGalleryOpen: false
+      photoGalleryOpen: false,
+      photoGalleryCategoryOpened: null
     }
   },
   components: {
@@ -53,6 +54,10 @@ export default {
           left: event.deltaY
         })
       }
+    },
+    openGallery(category) {
+      this.photoGalleryOpen = true
+      this.photoGalleryCategoryOpened = category
     }
   },
   mounted() {
@@ -84,8 +89,8 @@ export default {
     <StackMenu />
     <div class="content">
       <section class="content-block" id="Photoscontent">
-        <Photogrid />
-        <PhotoGallery v-if="photoGalleryOpen" />
+        <Photogrid @openGallery="openGallery" />
+        <PhotoGallery v-if="photoGalleryOpen" :spotlight="photoGalleryCategoryOpened" />
       </section>
       <img class="camera" src="../assets/Canon77D.gif" />
       <section class="content-block" id="Blogcontent">
