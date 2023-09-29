@@ -40,5 +40,6 @@ export default {
   object-position: center;
   margin-top: var(--nudge, 0px);
   margin-left: var(--nudgeright, 0px);
+  cursor: pointer;
 }
 </style>
