@@ -32,7 +32,7 @@ export default {
         <img class="image" :src="currentSpotlight || Photos[spotlight][0].url" />
       </div>
       <div class="gallery-content">
-        <h2>Title</h2>
+        <h2>{{ currentSpotlight.title || Photos[spotlight][0].title }}</h2>
         <p>Context</p>
         <div class="more">
           <div
@@ -57,6 +57,12 @@ export default {
 
 .gallery {
   background-color: rgb(36, 41, 40);
+  background: radial-gradient(
+    circle,
+    rgba(58, 65, 64, 1) 0%,
+    rgba(41, 40, 36, 1) 81%,
+    rgba(22, 24, 23, 1) 100%
+  );
   height: 95%;
   width: 80%;
   margin: auto;
