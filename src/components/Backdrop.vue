@@ -5,12 +5,20 @@ export default {
     return {}
   },
   components: {},
-  methods: {}
+  methods: {
+    backdropClick(e) {
+      if (e.target !== this.$refs.backdrop) {
+        // do nothing if clicking in a child element
+      } else {
+        this.$emit('backdropClick')
+      }
+    }
+  }
 }
 </script>
 
 <template>
-  <div class="backdrop">
+  <div class="backdrop" @click="backdropClick" ref="backdrop">
     <slot></slot>
   </div>
 </template>

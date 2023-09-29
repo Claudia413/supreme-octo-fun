@@ -58,6 +58,10 @@ export default {
     openGallery(category) {
       this.photoGalleryOpen = true
       this.photoGalleryCategoryOpened = category
+    },
+    closeGallery() {
+      this.photoGalleryOpen = false
+      this.photoGalleryCategoryOpened = null
     }
   },
   mounted() {
@@ -90,7 +94,11 @@ export default {
     <div class="content">
       <section class="content-block" id="Photoscontent">
         <Photogrid @openGallery="openGallery" />
-        <PhotoGallery v-if="photoGalleryOpen" :spotlight="photoGalleryCategoryOpened" />
+        <PhotoGallery
+          v-if="photoGalleryOpen"
+          :spotlight="photoGalleryCategoryOpened"
+          @closeGallery="closeGallery"
+        />
       </section>
       <img class="camera" src="../assets/Canon77D.gif" />
       <section class="content-block" id="Blogcontent">

@@ -6,7 +6,8 @@ export default {
   name: 'PhotoGallery',
   data() {
     return {
-      Photos
+      Photos,
+      currentSpotlight: ''
     }
   },
   props: {
@@ -15,23 +16,32 @@ export default {
   components: {
     Backdrop
   },
-  methods: {},
+  methods: {
+    closeGallery() {
+      this.$emit('closeGallery')
+    }
+  },
   mounted() {}
 }
 </script>
 
 <template>
-  <Backdrop>
+  <Backdrop @backdropClick="closeGallery">
     <div class="gallery">
       <div class="spotlight">
-        <img class="image" :src="Photos[spotlight][0].url" />
+        <img class="image" :src="currentSpotlight || Photos[spotlight][0].url" />
       </div>
       <div class="gallery-content">
         <h2>Title</h2>
         <p>Context</p>
         <div class="more">
-          <div v-for="(photo, index) in Photos[spotlight]" :key="index" class="col">
-            <img class="image" :src="photo.url" />
+          <div
+            v-for="(photo, index) in Photos[spotlight]"
+            :key="index"
+            class="col"
+            @click="currentSpotlight = photo.url"
+          >
+            <img class="image small" :src="photo.url" />
             <div class="img-title">
               {{ photo.title }}
             </div>
@@ -54,6 +64,7 @@ export default {
   display: flex;
   flex-direction: column;
   border-radius: 3px;
+  overflow-y: auto;
 }
 
 .spotlight {
@@ -67,7 +78,10 @@ export default {
 .image {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  &.small {
+    cursor: pointer;
+  }
 }
 
 .gallery-content {
@@ -88,6 +102,10 @@ export default {
   color: rgb(214, 214, 214);
   padding: 2.5rem;
   margin-right: 1rem;
+  @media only screen and (max-width: 1200px) {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
 .col:last-child {
