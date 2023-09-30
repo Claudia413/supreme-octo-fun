@@ -21,25 +21,29 @@ export default {
       this.$emit('closeGallery')
     }
   },
-  mounted() {}
+  mounted() {
+    this.$refs.gallery.focus()
+  }
 }
 </script>
 
 <template>
   <Backdrop @backdropClick="closeGallery">
-    <div class="gallery">
+    <div class="gallery" tabindex="-1" ref="gallery" @keyup.esc="closeGallery">
       <div class="spotlight">
         <img class="image" :src="currentSpotlight || Photos[spotlight][0].url" />
       </div>
       <div class="gallery-content">
-        <h2>{{ currentSpotlight.title || Photos[spotlight][0].title }}</h2>
-        <p>Context</p>
+        <h2>{{ spotlight }}</h2>
+        <p>{{ currentSpotlight.title || Photos[spotlight][0].title }}</p>
         <div class="more">
           <div
             v-for="(photo, index) in Photos[spotlight]"
             :key="index"
             class="col"
             @click="currentSpotlight = photo.url"
+            tabindex="0"
+            @keyup.enter="currentSpotlight = photo.url"
           >
             <img class="image small" :src="photo.url" />
             <div class="img-title">
@@ -87,6 +91,7 @@ export default {
   object-fit: contain;
   &.small {
     cursor: pointer;
+    max-height: 24vh;
   }
 }
 
@@ -95,6 +100,10 @@ export default {
   flex-direction: column;
   align-items: center;
   color: rgb(214, 214, 214);
+}
+
+h2 {
+  text-transform: capitalize;
 }
 
 .more {

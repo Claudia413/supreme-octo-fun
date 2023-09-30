@@ -24,6 +24,8 @@ export default {
       :key="category"
       :img="photo[0].url"
       @click="$emit('openGallery', category)"
+      @keyup.enter="$emit('openGallery', category)"
+      tabindex="0"
     ></PhotogridPhoto>
   </div>
 </template>
@@ -33,11 +35,10 @@ export default {
 
 .grid {
   width: 900px;
-  margin-top: 10vh;
   height: 75%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(3, 300px);
   @media only screen and (max-width: 768px) {
     width: 90vw;
     height: 90%;
