@@ -27,10 +27,10 @@ export default {
           Math.min(1.25 + 1.75 * (1 - Math.abs(2 * percentage - 1)), 3),
           1.25
         )
-        const top = 22 * Math.abs(1 - 2 * percentage)
+        const top = 3 * Math.abs(1 - 2 * percentage)
         this.$refs.menuItem.style.opacity = `${opacity}`
         this.$refs.menuItem.style.fontSize = `${fontSize}rem`
-        this.$refs.menuItem.style.transform = `translateY(${top}px)`
+        this.$refs.menuItem.style.transform = `translateY(${top}vh)`
 
         if (elapsed < 200) {
           // Stop the animation after 200 miliseconds
