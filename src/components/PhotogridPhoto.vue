@@ -31,15 +31,12 @@ export default {
 @import '../assets/_variables.scss';
 
 .photo {
-  height: auto;
-  width: 100%;
-  background: white;
   border: 4px white solid;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 300px;
+  cursor: pointer;
   transform: rotate(var(--rotation, 0deg));
-  object-position: center;
   margin-top: var(--nudge, 0px);
   margin-left: var(--nudgeright, 0px);
-  cursor: pointer;
 }
 </style>
