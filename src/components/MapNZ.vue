@@ -1,13 +1,10 @@
 <script>
-import PhotogridPhoto from '@/components/PhotogridPhoto.vue'
 export default {
   name: 'MapNZ',
   data() {
     return {}
   },
-  components: {
-    PhotogridPhoto
-  },
+  components: {},
   methods: {}
 }
 </script>
@@ -15,6 +12,10 @@ export default {
 <template>
   <div class="map">
     <img class="image" src="../assets/MapNZSouthIsland2.png" />
+    <div class="stack">
+      <img class="book" src="../assets/BookstackBook.png" />
+      <img class="books" src="../assets/Bookstack.png" />
+    </div>
   </div>
 </template>
 
@@ -38,7 +39,60 @@ export default {
     rotate: -15deg;
     position: absolute;
     top: 0;
+    right: 104px;
+  }
+
+  .stack {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+      .book {
+        transform: translateY(-25px);
+        animation: wobble 1.5s alternate;
+      }
+    }
+  }
+
+  @keyframes wobble {
+    0% {
+      transform: translateX(0%) translateY(-5px) rotate(-1deg);
+    }
+    15% {
+      transform: translateX(-3%) translateY(-10px) rotate(1deg);
+    }
+    30% {
+      transform: translateX(1%) translateY(-15px) rotate(3deg);
+    }
+    45% {
+      transform: translateX(-5%) translateY(-25px) rotate(-3deg);
+    }
+    60% {
+      transform: translateX(2%) translateY(-25px) rotate(2deg);
+    }
+    75% {
+      transform: translateX(-1%) translateY(-25px) rotate(-1deg);
+    }
+    100% {
+      transform: translateX(0%) translateY(-25px);
+    }
+  }
+  .book {
+    height: 7%;
+    width: auto;
+    filter: saturate(0.87) drop-shadow(-10px 10px 15px);
+    position: absolute;
+    right: 15px;
+    top: 0;
+    transition: all 0.5s ease;
+  }
+  .books {
+    height: 95%;
+    width: auto;
+    filter: saturate(0.87) drop-shadow(-10px 10px 15px);
+    position: absolute;
     right: 0;
+    bottom: 0;
   }
 }
 </style>
