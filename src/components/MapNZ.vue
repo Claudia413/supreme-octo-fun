@@ -13,8 +13,8 @@ export default {
   <div class="map">
     <img class="image" src="../assets/MapNZSouthIsland2.png" />
     <div class="stack">
-      <img class="book" src="../assets/BookstackBook.png" />
-      <img class="books" src="../assets/Bookstack.png" />
+      <img class="book" src="../assets/BookstackBookUp.png" />
+      <img class="books" src="../assets/BookstackUp.png" />
     </div>
   </div>
 </template>
