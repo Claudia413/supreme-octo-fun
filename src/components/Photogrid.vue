@@ -42,6 +42,10 @@ export default {
   @media only screen and (max-width: 768px) {
     width: 90vw;
     height: 90%;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(5, 250px);
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>

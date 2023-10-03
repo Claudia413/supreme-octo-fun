@@ -47,7 +47,7 @@ export default {
     handleWheel(event) {
       if (this.photoGalleryOpen) {
         //do not scroll horizontally so do nothing
-      } else if ('deltaY' in event) {
+      } else if ('deltaY' in event && event.view.innerWidth >= 768) {
         event.preventDefault()
 
         window.scrollBy({
@@ -127,6 +127,9 @@ export default {
   background-image: url('../assets/WalnutDeskBG.jpg');
   background-repeat: repeat;
   overflow-y: hidden;
+  @media only screen and (max-width: 768px) {
+    overflow-y: auto;
+  }
   &.no-scroll {
     overflow: hidden;
     overflow-x: hidden;
@@ -147,6 +150,9 @@ export default {
 
 .content {
   display: flex;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .content-block:first-child {

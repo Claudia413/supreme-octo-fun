@@ -35,8 +35,14 @@ export default {
   max-width: 100%;
   max-height: 300px;
   cursor: pointer;
-  transform: rotate(var(--rotation, 0deg));
+  transform: rotate(var(--rotation));
   margin-top: var(--nudge, 0px);
   margin-left: var(--nudgeright, 0px);
+  @media only screen and (max-width: 768px) {
+    max-height: 250px;
+    transform: rotate(calc(var(--rotation) / 2));
+    margin-top: calc(var(--nudge, 0px) / 2);
+    margin-left: calc(var(--nudgeright, 0px) / 2);
+  }
 }
 </style>
