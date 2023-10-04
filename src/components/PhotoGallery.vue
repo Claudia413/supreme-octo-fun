@@ -75,6 +75,10 @@ export default {
   flex-direction: column;
   border-radius: 3px;
   overflow-y: auto;
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+    height: 100%;
+  }
 }
 
 .spotlight {

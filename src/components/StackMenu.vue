@@ -100,6 +100,9 @@ export default {
       </TransitionGroup>
     </nav>
   </header>
+  <header id="stack-menu">
+    <h2>testing</h2>
+  </header>
 </template>
 
 <style lang="scss" scoped>
@@ -110,6 +113,17 @@ header {
   position: relative;
   font-size: 3rem;
   font-family: 'Cormorant', serif;
+  &#stack-menu {
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &#mobile-menu {
+    display: none;
+    @media only screen and (max-width: 768px) {
+      display: block;
+    }
+  }
 }
 
 li {
