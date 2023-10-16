@@ -13,7 +13,7 @@
     "@duskmoon/vue3-typed-js": "^0.0.4",
     "@prismicio/vue": "^4.1.0",
     "axios": "^1.5.1",
-    "pinia": "^2.1.6",
+    "pinia": "^2.1.7",
     "sass": "^1.69.2",
     "unhead": "^1.7.4",
     "vue": "^3.3.4",
