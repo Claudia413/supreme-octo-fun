@@ -109,7 +109,7 @@ export default {
     </nav>
   </header>
   <header id="menu-mobile">
-    <BackdropMenu v-if="mobileMenuOpen" @backdropMenuClick="toggleMobileMenu">
+    <BackdropMenu v-show="mobileMenuOpen" @backdropMenuClick="toggleMobileMenu">
       <div class="bg-circle"></div>
       <nav v-if="mobileMenuOpen" class="menu-mobile-nav">
         <li v-for="item in menu" :key="item + '-mobile'" :id="item + '-mobile'" class="nav-item">
@@ -123,7 +123,8 @@ export default {
         scale="1.5"
         fill="white"
         label="menu-toggle"
-        :animation="mobileMenuOpen ? 'float' : ''"
+        animation="float"
+        hover="true"
         speed="slow"
       />
     </div>
@@ -162,11 +163,12 @@ header {
   margin: 1.5rem;
   cursor: pointer;
   z-index: 100;
+  margin-top: 2.4rem;
 }
 
 .bg-circle {
   background: rgba(41, 40, 36, 0);
-  background: radial-gradient(circle, rgba(41, 40, 36, 1) 30%, rgba(58, 65, 64, 0) 56%);
+  background: radial-gradient(circle, rgba(41, 40, 36, 0.85) 30%, rgba(58, 65, 64, 0) 56%);
   width: 800px;
   height: 800px;
   position: absolute;
@@ -190,23 +192,59 @@ header {
 }
 
 .nav-item {
-  rotate: 0deg;
-  transform: translate(0px, 18px);
+  animation: firstnav 0.3s ease 0s 1 forwards;
+}
+
+@keyframes firstnav {
+  0% {
+    transform: translateX(18px) translateY(18px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(0px) translateY(18px) rotate(0deg);
+  }
 }
 
 .nav-item ~ .nav-item {
-  rotate: 331deg;
-  transform: translate(-9px, 25px);
+  animation: secondnav 0.3s ease 0s 1 forwards;
+}
+
+@keyframes secondnav {
+  0% {
+    transform: translateX(11px) translateY(12px) rotate(-27deg);
+  }
+
+  100% {
+    transform: translateX(-7px) translateY(30px) rotate(-29deg);
+  }
 }
 
 .nav-item ~ .nav-item ~ .nav-item {
-  rotate: 302deg;
-  transform: translate(-6px, 43px);
+  animation: thirdnav 0.3s ease 0s 1 forwards;
+}
+
+@keyframes thirdnav {
+  0% {
+    transform: translateX(41px) translateY(16px) rotate(-46deg);
+  }
+
+  100% {
+    transform: translateX(23px) translateY(34px) rotate(-48deg);
+  }
 }
 
 .nav-item ~ .nav-item ~ .nav-item ~ .nav-item {
-  rotate: 272deg;
-  transform: translateY(80px);
+  animation: fourthnav 0.3s ease 0s 1 forwards;
+}
+
+@keyframes fourthnav {
+  0% {
+    transform: translateX(80px) translateY(-10px) rotate(272deg);
+  }
+
+  100% {
+    transform: translateX(80px) translateY(10px) rotate(271deg);
+  }
 }
 
 li {
