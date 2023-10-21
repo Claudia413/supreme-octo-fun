@@ -87,6 +87,7 @@ export default {
           :key="item"
           :id="item"
           :class="isInVerticalList(item) ? 'hidden' : ''"
+          class="center-item"
         >
           <StackMenuItem :href="'#' + item + 'content'" :itemText="item" :id="item + 'text'" />
         </li>
@@ -129,6 +130,10 @@ header {
 li {
   list-style: none;
   margin-right: 900px;
+}
+
+.center-item {
+  height: 3rem;
 }
 .menu {
   padding: 3rem 0;

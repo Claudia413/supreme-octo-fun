@@ -35,10 +35,10 @@ export default {
 
 .grid {
   width: 900px;
-  height: 75%;
+  height: 90%;
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(3, 300px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 30%);
   @media only screen and (max-width: 768px) {
     width: 90vw;
     height: 90%;

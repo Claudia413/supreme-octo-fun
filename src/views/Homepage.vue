@@ -93,6 +93,7 @@ export default {
     <StackMenu />
     <div class="content">
       <section class="content-block" id="Photoscontent">
+        <img class="camera" src="../assets/Canon77D.gif" />
         <Photogrid @openGallery="openGallery" />
         <PhotoGallery
           v-if="photoGalleryOpen"
@@ -100,7 +101,7 @@ export default {
           @closeGallery="closeGallery"
         />
       </section>
-      <img class="camera" src="../assets/Canon77D.gif" />
+
       <section class="content-block" id="Blogcontent">
         <MapNZ />
       </section>
@@ -158,17 +159,23 @@ export default {
 .content-block:first-child {
   margin-left: 25vw;
   @media only screen and (max-width: 768px) {
-    margin-top: 25%;
-    margin: 25vh 1rem 0;
+    margin: 5vh 1rem 0;
   }
 }
 
 .content-block {
   box-sizing: border-box;
-  margin-right: 500px;
+  height: 80vh;
+  max-height: 1000px;
   @media only screen and (min-width: 1200px) {
-    min-width: 500px;
-    min-height: 500px;
+    margin-right: 500px;
+    min-height: 80%;
+  }
+  @media only screen and (max-width: 768px) {
+    min-height: 80vh;
+    height: auto;
+    max-height: unset;
+    margin-top: 5vh;
   }
   p {
     color: white;
@@ -186,6 +193,7 @@ export default {
   left: 4vw;
   @media only screen and (max-width: 768px) {
     width: 25%;
+    position: static;
   }
 }
 </style>
