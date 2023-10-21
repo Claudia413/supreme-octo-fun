@@ -130,7 +130,7 @@ export default {
         fill="white"
         label="menu-toggle"
         animation="float"
-        hover="true"
+        hover
         speed="slow"
       />
     </div>
