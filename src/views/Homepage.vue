@@ -159,7 +159,7 @@ export default {
 .content-block:first-child {
   margin-left: 25vw;
   @media only screen and (max-width: 768px) {
-    margin: 5vh 1rem 0 1rem;
+    margin: 0 1rem 0 1rem;
   }
 }
 

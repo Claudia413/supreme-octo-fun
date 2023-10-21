@@ -1,5 +1,8 @@
 <script>
 import StackMenuItem from '../components/StackMenuItem.vue'
+import MobileMenuItem from '../components/MobileMenuItem.vue'
+import BackdropMenu from '../components/BackdropMenu.vue'
+
 export default {
   name: 'stackMenu',
   data() {
@@ -10,10 +13,11 @@ export default {
       menuItemPhotos: '',
       menuItemBlog: '',
       menuItemVlog: '',
-      menuItemAbout: ''
+      menuItemAbout: '',
+      mobileMenuOpen: false
     }
   },
-  components: { StackMenuItem },
+  components: { StackMenuItem, MobileMenuItem, BackdropMenu },
   methods: {
     createObserver() {
       let observer
@@ -50,6 +54,9 @@ export default {
     },
     isInVerticalList(itemID) {
       return this.leftMenu.includes(itemID) || this.rightMenu.includes(itemID)
+    },
+    toggleMobileMenu() {
+      this.mobileMenuOpen = !this.mobileMenuOpen
     }
   },
   mounted() {
@@ -101,8 +108,25 @@ export default {
       </TransitionGroup>
     </nav>
   </header>
-  <header id="stack-menu">
-    <h2>testing</h2>
+  <header id="menu-mobile">
+    <BackdropMenu v-if="mobileMenuOpen" @backdropMenuClick="toggleMobileMenu">
+      <div class="bg-circle"></div>
+      <nav v-if="mobileMenuOpen" class="menu-mobile-nav">
+        <li v-for="item in menu" :key="item + '-mobile'" :id="item + '-mobile'" class="nav-item">
+          <MobileMenuItem :href="'#' + item + 'content'" :itemText="item" :id="item + 'text'" />
+        </li>
+      </nav>
+    </BackdropMenu>
+    <div class="menu-mobile-icon" @click="toggleMobileMenu">
+      <v-icon
+        name="ri-menu-5-line"
+        scale="1.5"
+        fill="white"
+        label="menu-toggle"
+        :animation="mobileMenuOpen ? 'float' : ''"
+        speed="slow"
+      />
+    </div>
   </header>
 </template>
 
@@ -112,24 +136,86 @@ export default {
 header {
   display: flex;
   position: relative;
-  font-size: 3rem;
   font-family: 'Cormorant', serif;
   &#stack-menu {
+    font-size: 3rem;
     @media only screen and (max-width: 768px) {
       display: none;
     }
   }
-  &#mobile-menu {
+  &#menu-mobile {
     display: none;
     @media only screen and (max-width: 768px) {
-      display: block;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: end;
+      z-index: 900;
+      nav {
+        display: flex;
+      }
     }
   }
+}
+
+.menu-mobile-icon {
+  margin: 1.5rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.bg-circle {
+  background: rgba(41, 40, 36, 0);
+  background: radial-gradient(circle, rgba(41, 40, 36, 1) 30%, rgba(58, 65, 64, 0) 56%);
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  top: -400px;
+  right: -400px;
+  pointer-events: none;
+}
+
+.menu-mobile-nav {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 6rem;
+  display: flex;
+  flex-direction: column;
+  a {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+}
+
+.nav-item {
+  rotate: 0deg;
+  transform: translate(0px, 18px);
+}
+
+.nav-item ~ .nav-item {
+  rotate: 331deg;
+  transform: translate(-9px, 25px);
+}
+
+.nav-item ~ .nav-item ~ .nav-item {
+  rotate: 302deg;
+  transform: translate(-6px, 43px);
+}
+
+.nav-item ~ .nav-item ~ .nav-item ~ .nav-item {
+  rotate: 272deg;
+  transform: translateY(80px);
 }
 
 li {
   list-style: none;
   margin-right: 900px;
+  @media only screen and (max-width: 768px) {
+    margin-right: unset;
+    text-align: right;
+  }
 }
 
 .center-item {
