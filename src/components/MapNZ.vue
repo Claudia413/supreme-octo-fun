@@ -40,6 +40,10 @@ export default {
     position: absolute;
     top: 0;
     right: 104px;
+    @media only screen and (max-width: 768px) {
+      width: 70vw;
+      height: auto;
+    }
   }
 
   .stack {

@@ -44,5 +44,8 @@ export default {
     margin-top: calc(var(--nudge, 0px) / 2);
     margin-left: calc(var(--nudgeright, 0px) / 2);
   }
+  @media only screen and (max-width: 490px) {
+    max-height: 150px;
+  }
 }
 </style>

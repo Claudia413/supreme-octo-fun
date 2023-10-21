@@ -159,7 +159,7 @@ export default {
 .content-block:first-child {
   margin-left: 25vw;
   @media only screen and (max-width: 768px) {
-    margin: 5vh 1rem 0;
+    margin: 5vh 1rem 0 1rem;
   }
 }
 
@@ -175,7 +175,7 @@ export default {
     min-height: 80vh;
     height: auto;
     max-height: unset;
-    margin-top: 5vh;
+    margin: 5vh 1rem 0 1rem;
   }
   p {
     color: white;
