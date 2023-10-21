@@ -30,6 +30,9 @@ export default {
 <template>
   <Backdrop @backdropClick="closeGallery">
     <div class="gallery" tabindex="-1" ref="gallery" @keyup.esc="closeGallery">
+      <div class="close-icon" @click="closeGallery">
+        <v-icon name="md-close" scale="1"></v-icon>
+      </div>
       <div class="spotlight">
         <img class="image" :src="currentSpotlight || Photos[spotlight][0].url" />
       </div>
@@ -79,6 +82,14 @@ export default {
     width: 95%;
     height: 100%;
   }
+}
+
+.close-icon {
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  color: rgb(214, 214, 214);
+  margin: 0.25rem;
 }
 
 .spotlight {
