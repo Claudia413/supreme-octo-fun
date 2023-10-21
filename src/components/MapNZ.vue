@@ -52,8 +52,43 @@ export default {
         animation: wobble 1.5s alternate;
       }
     }
+    @media only screen and (max-width: 768px) {
+      align-items: end;
+      width: 100%;
+    }
   }
 
+  .book {
+    height: 7%;
+    width: auto;
+    filter: saturate(0.87) drop-shadow(-10px 10px 15px);
+    position: absolute;
+    right: 15px;
+    top: 0;
+    transition: all 0.5s ease;
+    @media only screen and (max-width: 768px) {
+      width: 25%;
+      height: auto;
+      position: relative;
+      top: 10px;
+      right: 6px;
+    }
+  }
+  .books {
+    height: 95%;
+    width: auto;
+    filter: saturate(0.87) drop-shadow(-10px 10px 15px);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @media only screen and (max-width: 768px) {
+      width: 25%;
+      height: auto;
+      position: relative;
+    }
+  }
+
+  // animation keyframes
   @keyframes wobble {
     0% {
       transform: translateX(0%) translateY(-5px) rotate(-1deg);
@@ -76,23 +111,6 @@ export default {
     100% {
       transform: translateX(0%) translateY(-25px);
     }
-  }
-  .book {
-    height: 7%;
-    width: auto;
-    filter: saturate(0.87) drop-shadow(-10px 10px 15px);
-    position: absolute;
-    right: 15px;
-    top: 0;
-    transition: all 0.5s ease;
-  }
-  .books {
-    height: 95%;
-    width: auto;
-    filter: saturate(0.87) drop-shadow(-10px 10px 15px);
-    position: absolute;
-    right: 0;
-    bottom: 0;
   }
 }
 </style>
