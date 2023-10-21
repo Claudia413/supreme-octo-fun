@@ -55,8 +55,8 @@ export default {
     isInVerticalList(itemID) {
       return this.leftMenu.includes(itemID) || this.rightMenu.includes(itemID)
     },
-    toggleMobileMenu() {
-      this.mobileMenuOpen = !this.mobileMenuOpen
+    toggleMobileMenu(setToThis) {
+      this.mobileMenuOpen = setToThis || !this.mobileMenuOpen
     }
   },
   mounted() {
@@ -109,7 +109,7 @@ export default {
     </nav>
   </header>
   <header id="menu-mobile">
-    <BackdropMenu v-show="mobileMenuOpen" @backdropMenuClick="toggleMobileMenu">
+    <BackdropMenu v-show="mobileMenuOpen" @backdropMenuClick="toggleMobileMenu()">
       <div class="bg-circle"></div>
       <nav v-if="mobileMenuOpen" class="menu-mobile-nav">
         <li v-for="item in menu" :key="item + '-mobile'" :id="item + '-mobile'" class="nav-item">
@@ -117,7 +117,13 @@ export default {
         </li>
       </nav>
     </BackdropMenu>
-    <div class="menu-mobile-icon" @click="toggleMobileMenu">
+    <div
+      class="menu-mobile-icon"
+      @click="toggleMobileMenu()"
+      @keyup.enter="toggleMobileMenu()"
+      @keyup.esc="toggleMobileMenu(false)"
+      tabindex="0"
+    >
       <v-icon
         name="ri-menu-5-line"
         scale="1.5"
