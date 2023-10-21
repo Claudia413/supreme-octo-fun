@@ -18,9 +18,11 @@ export default {
 </script>
 
 <template>
-  <div class="backdrop" @click="backdropClick" ref="backdrop">
-    <slot></slot>
-  </div>
+  <Transition appear name="fade">
+    <div class="backdrop" @click="backdropClick" ref="backdrop">
+      <slot></slot>
+    </div>
+  </Transition>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -37,5 +39,27 @@ export default {
   right: 0;
   background-color: rgba($color: #252525, $alpha: 0.8);
   z-index: 100;
+  display: flex;
+}
+
+//fade animation below
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.fade-leave-active {
+  position: absolute;
+  transition: opacity 0.3s ease;
 }
 </style>

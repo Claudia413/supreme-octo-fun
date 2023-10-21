@@ -4,6 +4,7 @@ import Photogrid from '../components/Photogrid.vue'
 import MapNZ from '../components/MapNZ.vue'
 import StackMenu from '../components/StackMenu.vue'
 import PhotoGallery from '../components/PhotoGallery.vue'
+import BlogView from '../components/BlogView.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
 
@@ -17,7 +18,9 @@ export default {
       menu: ['Photos', 'Blog'],
       rightMenu: ['Vlog', 'About'],
       photoGalleryOpen: false,
-      photoGalleryCategoryOpened: null
+      photoGalleryCategoryOpened: null,
+      newZealandBlogOpen: false,
+      newZealandBlogId: null
     }
   },
   components: {
@@ -25,7 +28,8 @@ export default {
     Photogrid,
     MapNZ,
     StackMenu,
-    PhotoGallery
+    PhotoGallery,
+    BlogView
   },
   methods: {
     async getContent() {
@@ -45,7 +49,7 @@ export default {
       }
     },
     handleWheel(event) {
-      if (this.photoGalleryOpen) {
+      if (this.photoGalleryOpen || this.newZealandBlogOpen) {
         //do not scroll horizontally so do nothing
       } else if ('deltaY' in event && event.view.innerWidth >= 768) {
         event.preventDefault()
@@ -62,6 +66,10 @@ export default {
     closeGallery() {
       this.photoGalleryOpen = false
       this.photoGalleryCategoryOpened = null
+    },
+    closeBlogView() {
+      this.newZealandBlogOpen = false
+      this.newZealandBlogId = null
     }
   },
   mounted() {
@@ -103,7 +111,14 @@ export default {
       </section>
 
       <section class="content-block" id="Blogcontent">
-        <MapNZ />
+        <MapNZ
+          @click="
+            () => {
+              this.newZealandBlogOpen = true
+            }
+          "
+        />
+        <BlogView v-if="newZealandBlogOpen" @closeBlogView="closeBlogView" />
       </section>
       <section class="content-block" id="Vlogcontent">
         <p>third one</p>
