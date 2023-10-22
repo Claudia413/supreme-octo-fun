@@ -1,26 +1,66 @@
 <script>
 import Backdrop from './Backdrop.vue'
+import BlogPreview from './BlogPreview.vue'
+import { usePrismic } from '@prismicio/vue'
 
 export default {
   name: 'BlogView',
   data() {
     return {
-      currentBlog: ''
+      currentBlog: '',
+      bigBlogPreview: null,
+      loadingBlogs: true,
+      blogs: null
     }
   },
   props: {
     spotlight: {}
   },
   components: {
-    Backdrop
+    Backdrop,
+    BlogPreview
   },
   methods: {
+    async getContentNZ() {
+      const prismic = usePrismic()
+      try {
+        const response = await this.$prismic.client.getByTag('NZ', {
+          orderings: { field: 'document.first_publication_date', direction: 'desc' },
+          pageSize: 1,
+          fetch: ['blogpost.title', 'blogpost.blog_image'],
+          filters: [prismic.filter.not('document.tags', ['TEST'])]
+        })
+
+        this.bigBlogPreview = response.results
+      } catch (error) {
+        console.error(error)
+      }
+      try {
+        const response = await this.$prismic.client.getByTag('NZ', {
+          orderings: { field: 'document.first_publication_date', direction: 'desc' },
+          fetch: ['blogpost.title'],
+          filters: [prismic.filter.not('document.tags', ['TEST'])]
+        })
+
+        this.blogs = response.results
+      } catch (error) {
+        console.error(error)
+      } finally {
+        this.loadingBlogs = false
+      }
+    },
     closeBlogView() {
       this.$emit('closeBlogView')
     }
   },
+  computed: {
+    showBookmark() {
+      return this.currentBlog.length === 0
+    }
+  },
   mounted() {
     this.$refs.blogview.focus()
+    this.getContentNZ()
   }
 }
 </script>
@@ -32,6 +72,24 @@ export default {
         <div class="blog-content">
           <h2>Testing stuff here wieeeeejj</h2>
         </div>
+      </div>
+    </Transition>
+    <Transition name="slide-left" appear>
+      <div class="bookmark-blog-index" v-show="showBookmark">
+        <h3>Blogs</h3>
+        <BlogPreview
+          v-if="!loadingBlogs"
+          :key="'post-' + this.bigBlogPreview[0].uid"
+          :blogId="this.bigBlogPreview[0].uid"
+          class="blog-post"
+          :image="this.bigBlogPreview[0].data.blog_image"
+          :title="this.bigBlogPreview[0].data.title[0].text"
+        />
+        <ul class="bookmark-blog-list">
+          <li class="bookmark-blog-title" v-for="post in blogs" :blogId="post.uid" tabindex="0">
+            {{ post.data.title[0].text }}
+          </li>
+        </ul>
       </div>
     </Transition>
   </Backdrop>
@@ -73,6 +131,28 @@ h2 {
   text-transform: capitalize;
 }
 
+.bookmark-blog-index {
+  background-color: white;
+  height: 80%;
+  width: 260px;
+  border-radius: 3px;
+  rotate: -2deg;
+  position: absolute;
+  right: 70px;
+  top: 77px;
+  padding: 0.75rem;
+  overflow-y: auto;
+}
+
+.bookmark-blog-list {
+  padding-inline-start: 0;
+}
+.bookmark-blog-title {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
 //Grow animation below
 .grow-move,
 .grow-enter-active,
@@ -92,6 +172,22 @@ h2 {
 /* ensure leaving items are taken out of layout flow so that moving
    animations can be calculated correctly. */
 .grow-leave-active {
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.slide-left-move,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-left-enter-from {
+  transform: translateX(250px);
+  opacity: 0.6;
+}
+
+.slide-left-leave-to {
   position: absolute;
   transition: transform 0.3s ease;
 }
