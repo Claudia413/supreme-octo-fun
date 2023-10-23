@@ -97,11 +97,6 @@ export default {
 
     document.addEventListener('wheel', this.handleWheel, { passive: false })
   },
-  beforeRouteUpdate(to, from, next) {
-    console.log('route updating')
-    this.blogUID = to.params.uid
-    next()
-  },
   beforeUnmount() {
     document.removeEventListener('wheel', this.handleWheel)
   }

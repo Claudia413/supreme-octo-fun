@@ -43,12 +43,8 @@ export default {
     TutorialScroll
   },
   watch: {
-    // whenever uid changes, this function will run
-    uid(newUID, oldUID) {
-      console.log('old and new', oldUID, newUID)
-      if (newUID !== oldUID) {
-        this.getContent(newUID)
-      }
+    $route(to, from) {
+      this.getContent(to.params.uid)
     }
   },
   methods: {
