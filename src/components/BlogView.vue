@@ -12,7 +12,7 @@ export default {
       bigBlogPreview: null,
       loadingBlogs: true,
       blogs: null,
-      contentLoading: true,
+      contentLoading: false,
       // if we open a blog post directly from url we do not get category prop and need to store it internally
       currentCategory: [],
       blog: {
@@ -128,28 +128,24 @@ export default {
     <Transition appear name="grow">
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
         <div class="blog-content">
-          <h2>Testing stuff here wieeeeejj</h2>
-
-          <div class="content">
-            <h1 class="title">{{ blog.title[0].text }}</h1>
-            <!-- <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
-            <p v-show="contentLoading">Loading, hold on 1 sec</p>
-            <p v-show="!contentLoading" class="author">by Claudia Engelsman</p>
-            <prismic-rich-text :field="blog.subtitle" class="subtitle dent-right" />
-            <section v-for="(slice, index) in slices" :key="'slice-' + index" class="dent-right">
-              <template v-if="slice.slice_type === 'blog_text_block'">
-                <h2 class="heading">{{ slice.primary.section_title[0].text }}</h2>
-                <prismic-rich-text :field="slice.primary.section_text" class="text" />
-              </template>
-              <template v-else-if="slice.slice_type === 'blog_text_block_continued'">
-                <prismic-rich-text :field="slice.primary.section_text" class="text" />
-              </template>
-              <template v-else-if="slice.slice_type === 'image_with_caption'">
-                <prismic-image :field="slice.primary.image" class="blog-image" />
-                <prismic-rich-text :field="slice.primary.image_description" class="caption" />
-              </template>
-            </section>
-          </div>
+          <h1 class="title">{{ blog.title[0].text }}</h1>
+          <!-- <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
+          <p v-show="contentLoading">Loading, hold on 1 sec</p>
+          <p v-show="!contentLoading" class="author">by Claudia Engelsman</p>
+          <prismic-rich-text :field="blog.subtitle" class="subtitle dent-right" />
+          <section v-for="(slice, index) in slices" :key="'slice-' + index" class="dent-right">
+            <template v-if="slice.slice_type === 'blog_text_block'">
+              <h2 class="heading">{{ slice.primary.section_title[0].text }}</h2>
+              <prismic-rich-text :field="slice.primary.section_text" class="text" />
+            </template>
+            <template v-else-if="slice.slice_type === 'blog_text_block_continued'">
+              <prismic-rich-text :field="slice.primary.section_text" class="text" />
+            </template>
+            <template v-else-if="slice.slice_type === 'image_with_caption'">
+              <prismic-image :field="slice.primary.image" class="blog-image" />
+              <prismic-rich-text :field="slice.primary.image_description" class="caption" />
+            </template>
+          </section>
         </div>
       </div>
     </Transition>
@@ -208,7 +204,7 @@ export default {
   color: rgb(46, 46, 46);
 }
 
-h2 {
+h1 {
   text-transform: capitalize;
 }
 
