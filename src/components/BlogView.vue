@@ -1,7 +1,6 @@
 <script>
 import Backdrop from './Backdrop.vue'
 import BlogPreview from './BlogPreview.vue'
-import TutorialScroll from '@/components/TutorialScroll.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
 
@@ -26,11 +25,7 @@ export default {
         seo_description: '',
         seo_image: ''
       },
-      slices: [],
-      clickedTutorialUid: '',
-      savedScrollPosition: Number,
-      showTutorial: false,
-      currentUrl: window.location.href
+      slices: []
     }
   },
   props: {
@@ -39,8 +34,7 @@ export default {
   },
   components: {
     Backdrop,
-    BlogPreview,
-    TutorialScroll
+    BlogPreview
   },
   watch: {
     $route(to, from) {
@@ -96,19 +90,6 @@ export default {
         this.fillHeadElement()
       })
     },
-    openTutorial(tutorialUid) {
-      this.clickedTutorialUid = tutorialUid
-      this.savedScrollPosition = window.scrollY
-      if (!this.$route.params.tutid && this.notAlreadyInUrl) {
-        history.pushState({}, '', this.currentUrl + '/' + tutorialUid)
-      }
-      this.showTutorial = true
-      window.scrollTo({ top: 300, behavior: 'smooth' })
-    },
-    returnFromTutorial() {
-      this.showTutorial = false
-      window.scrollTo({ top: this.savedScrollPosition, behavior: 'smooth' })
-    },
     fillHeadElement() {
       useHead({
         title: this.blog.seo_title,
@@ -129,9 +110,6 @@ export default {
   computed: {
     showBookmark() {
       return this.currentBlog.length === 0
-    },
-    notAlreadyInUrl: function () {
-      return !this.currentUrl.includes(this.$route.params.tutid)
     }
   },
   mounted() {
@@ -140,12 +118,6 @@ export default {
       this.getContent(this.uid)
     } else {
       this.getContentByCategory(this.category)
-    }
-    window.addEventListener('popstate', function () {
-      that.returnFromTutorial()
-    })
-    if (this.$route.params.tutid) {
-      this.openTutorial(this.$route.params.tutid)
     }
   }
 }
@@ -157,15 +129,8 @@ export default {
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
         <div class="blog-content">
           <h2>Testing stuff here wieeeeejj</h2>
-          <transition name="slide">
-            <TutorialScroll
-              v-if="showTutorial"
-              :tutorialuid="clickedTutorialUid"
-              class="overlay-tutorial"
-              v-on:hide-tutorial="returnFromTutorial"
-            />
-          </transition>
-          <div class="content" :class="showTutorial ? 'blur' : ''">
+
+          <div class="content">
             <h1 class="title">{{ blog.title[0].text }}</h1>
             <!-- <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
             <p v-show="contentLoading">Loading, hold on 1 sec</p>
@@ -182,18 +147,6 @@ export default {
               <template v-else-if="slice.slice_type === 'image_with_caption'">
                 <prismic-image :field="slice.primary.image" class="blog-image" />
                 <prismic-rich-text :field="slice.primary.image_description" class="caption" />
-              </template>
-              <template v-else-if="slice.slice_type === 'text_with_custom_link'">
-                <p>
-                  {{ slice.primary.text[0].text }}
-                  <span
-                    @click="openTutorial(slice.primary.tutorial_uid[0].text)"
-                    class="tutorial-link"
-                  >
-                    {{ slice.primary.link[0].text }}
-                  </span>
-                  {{ slice.primary.text_continued[0].text }}
-                </p>
               </template>
             </section>
           </div>
