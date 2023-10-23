@@ -19,8 +19,9 @@ export default {
       rightMenu: ['Vlog', 'About'],
       photoGalleryOpen: false,
       photoGalleryCategoryOpened: null,
-      newZealandBlogOpen: false,
-      newZealandBlogId: null
+      blogOpen: false,
+      blogCategory: '',
+      blogUID: null
     }
   },
   components: {
@@ -49,7 +50,7 @@ export default {
       }
     },
     handleWheel(event) {
-      if (this.photoGalleryOpen || this.newZealandBlogOpen) {
+      if (this.photoGalleryOpen || this.blogOpen) {
         //do not scroll horizontally so do nothing
       } else if ('deltaY' in event && event.view.innerWidth >= 768) {
         event.preventDefault()
@@ -68,12 +69,19 @@ export default {
       this.photoGalleryCategoryOpened = null
     },
     closeBlogView() {
-      this.newZealandBlogOpen = false
-      this.newZealandBlogId = null
+      this.blogOpen = false
+      this.blogUID = null
+      this.$router.push('/')
+    },
+    openBlogView(uid) {
+      this.blogOpen = true
+      this.blogUID = uid
     }
   },
   mounted() {
-    this.getContent()
+    if (this.$route.params.uid) {
+      this.openBlogView(this.$route.params.uid)
+    }
     useHead({
       title: 'CE | Developer, adventurer',
       meta: [
@@ -89,7 +97,11 @@ export default {
 
     document.addEventListener('wheel', this.handleWheel, { passive: false })
   },
-
+  beforeRouteUpdate(to, from, next) {
+    console.log('route updating')
+    this.blogUID = to.params.uid
+    next()
+  },
   beforeUnmount() {
     document.removeEventListener('wheel', this.handleWheel)
   }
@@ -114,11 +126,17 @@ export default {
         <MapNZ
           @click="
             () => {
-              this.newZealandBlogOpen = true
+              this.blogOpen = true
+              this.blogCategory = 'NZ'
             }
           "
         />
-        <BlogView v-if="newZealandBlogOpen" @closeBlogView="closeBlogView" />
+        <BlogView
+          v-if="blogOpen"
+          :category="blogCategory"
+          :uid="blogUID"
+          @closeBlogView="closeBlogView"
+        />
       </section>
       <section class="content-block" id="Vlogcontent">
         <p>third one</p>

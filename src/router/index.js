@@ -65,7 +65,7 @@ const router = createRouter({
     {
       path: "/blog/:uid/:tutid?",
       name: "blog-post",
-      component: () => import('../views/BlogPost.vue')
+      component: () => import('../views/Homepage.vue')
     },
     {
       path: "/links",

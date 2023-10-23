@@ -1,7 +1,9 @@
 <script>
 import Backdrop from './Backdrop.vue'
 import BlogPreview from './BlogPreview.vue'
+import TutorialScroll from '@/components/TutorialScroll.vue'
 import { usePrismic } from '@prismicio/vue'
+import { useHead } from 'unhead'
 
 export default {
   name: 'BlogView',
@@ -10,21 +12,50 @@ export default {
       currentBlog: '',
       bigBlogPreview: null,
       loadingBlogs: true,
-      blogs: null
+      blogs: null,
+      contentLoading: true,
+      // if we open a blog post directly from url we do not get category prop and need to store it internally
+      currentCategory: [],
+      blog: {
+        title: [{ text: '' }],
+        subtitle: [],
+        header: {},
+        prismicID: '',
+        uid: '',
+        seo_title: '',
+        seo_description: '',
+        seo_image: ''
+      },
+      slices: [],
+      clickedTutorialUid: '',
+      savedScrollPosition: Number,
+      showTutorial: false,
+      currentUrl: window.location.href
     }
   },
   props: {
-    spotlight: {}
+    uid: '',
+    category: ''
   },
   components: {
     Backdrop,
-    BlogPreview
+    BlogPreview,
+    TutorialScroll
+  },
+  watch: {
+    // whenever uid changes, this function will run
+    uid(newUID, oldUID) {
+      console.log('old and new', oldUID, newUID)
+      if (newUID !== oldUID) {
+        this.getContent(newUID)
+      }
+    }
   },
   methods: {
-    async getContentNZ() {
+    async getContentByCategory(category) {
       const prismic = usePrismic()
       try {
-        const response = await this.$prismic.client.getByTag('NZ', {
+        const response = await this.$prismic.client.getByTag(category, {
           orderings: { field: 'document.first_publication_date', direction: 'desc' },
           pageSize: 1,
           fetch: ['blogpost.title', 'blogpost.blog_image'],
@@ -49,6 +80,52 @@ export default {
         this.loadingBlogs = false
       }
     },
+    getContent(uid) {
+      this.contentLoading = true
+      this.$prismic.client.getByUID('blogpost', uid).then((document) => {
+        // Can't simply put the result in an empty blog object without console erros about undefined before its done loading. So we set them individually with starting empty objects and arrays
+        this.blog.title = document.data.title
+        this.blog.subtitle = document.data.subtitle
+        this.blog.header = document.data.blog_image
+        this.currentCategory = document.tags
+        this.blog.seo_title = document.data.seo_title[0].text
+        this.blog.seo_description = document.data.seo_description[0].text
+        this.blog.seo_image = document.data.seo_image.url
+        this.slices = document.data.body
+        this.blog.prismicID = document.id
+        this.currentBlog = document.uid
+        this.contentLoading = false
+
+        // this.getRelatedContent(document.id)
+        this.fillHeadElement()
+      })
+    },
+    openTutorial(tutorialUid) {
+      this.clickedTutorialUid = tutorialUid
+      this.savedScrollPosition = window.scrollY
+      if (!this.$route.params.tutid && this.notAlreadyInUrl) {
+        history.pushState({}, '', this.currentUrl + '/' + tutorialUid)
+      }
+      this.showTutorial = true
+      window.scrollTo({ top: 300, behavior: 'smooth' })
+    },
+    returnFromTutorial() {
+      this.showTutorial = false
+      window.scrollTo({ top: this.savedScrollPosition, behavior: 'smooth' })
+    },
+    fillHeadElement() {
+      useHead({
+        title: this.blog.seo_title,
+        meta: [
+          {
+            name: 'description',
+            content: this.blog.seo_description
+          },
+          { name: 'image', content: this.blog.seo_image },
+          { name: 'url', content: '/blog' + this.blog.uid }
+        ]
+      })
+    },
     closeBlogView() {
       this.$emit('closeBlogView')
     }
@@ -56,11 +133,24 @@ export default {
   computed: {
     showBookmark() {
       return this.currentBlog.length === 0
+    },
+    notAlreadyInUrl: function () {
+      return !this.currentUrl.includes(this.$route.params.tutid)
     }
   },
   mounted() {
     this.$refs.blogview.focus()
-    this.getContentNZ()
+    if (this.uid) {
+      this.getContent(this.uid)
+    } else {
+      this.getContentByCategory(this.category)
+    }
+    window.addEventListener('popstate', function () {
+      that.returnFromTutorial()
+    })
+    if (this.$route.params.tutid) {
+      this.openTutorial(this.$route.params.tutid)
+    }
   }
 }
 </script>
@@ -71,6 +161,46 @@ export default {
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
         <div class="blog-content">
           <h2>Testing stuff here wieeeeejj</h2>
+          <transition name="slide">
+            <TutorialScroll
+              v-if="showTutorial"
+              :tutorialuid="clickedTutorialUid"
+              class="overlay-tutorial"
+              v-on:hide-tutorial="returnFromTutorial"
+            />
+          </transition>
+          <div class="content" :class="showTutorial ? 'blur' : ''">
+            <h1 class="title">{{ blog.title[0].text }}</h1>
+            <!-- <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
+            <p v-show="contentLoading">Loading, hold on 1 sec</p>
+            <p v-show="!contentLoading" class="author">by Claudia Engelsman</p>
+            <prismic-rich-text :field="blog.subtitle" class="subtitle dent-right" />
+            <section v-for="(slice, index) in slices" :key="'slice-' + index" class="dent-right">
+              <template v-if="slice.slice_type === 'blog_text_block'">
+                <h2 class="heading">{{ slice.primary.section_title[0].text }}</h2>
+                <prismic-rich-text :field="slice.primary.section_text" class="text" />
+              </template>
+              <template v-else-if="slice.slice_type === 'blog_text_block_continued'">
+                <prismic-rich-text :field="slice.primary.section_text" class="text" />
+              </template>
+              <template v-else-if="slice.slice_type === 'image_with_caption'">
+                <prismic-image :field="slice.primary.image" class="blog-image" />
+                <prismic-rich-text :field="slice.primary.image_description" class="caption" />
+              </template>
+              <template v-else-if="slice.slice_type === 'text_with_custom_link'">
+                <p>
+                  {{ slice.primary.text[0].text }}
+                  <span
+                    @click="openTutorial(slice.primary.tutorial_uid[0].text)"
+                    class="tutorial-link"
+                  >
+                    {{ slice.primary.link[0].text }}
+                  </span>
+                  {{ slice.primary.text_continued[0].text }}
+                </p>
+              </template>
+            </section>
+          </div>
         </div>
       </div>
     </Transition>
@@ -86,8 +216,10 @@ export default {
           :title="this.bigBlogPreview[0].data.title[0].text"
         />
         <ul class="bookmark-blog-list">
-          <li class="bookmark-blog-title" v-for="post in blogs" :blogId="post.uid" tabindex="0">
-            {{ post.data.title[0].text }}
+          <li class="bookmark-blog-title" v-for="post in blogs" :key="post.uid" tabindex="0">
+            <router-link :to="'/blog/' + post.uid" class="blog-post">{{
+              post.data.title[0].text
+            }}</router-link>
           </li>
         </ul>
       </div>
