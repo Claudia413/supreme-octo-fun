@@ -20,7 +20,6 @@ export default {
         subtitle: [],
         header: {},
         prismicID: '',
-        uid: '',
         seo_title: '',
         seo_description: '',
         seo_image: ''
@@ -110,6 +109,9 @@ export default {
   computed: {
     showBookmark() {
       return this.currentBlog.length === 0
+    },
+    showEmptyState() {
+      return !this.contentLoading && this.currentBlog.length === 0
     }
   },
   mounted() {
@@ -128,12 +130,13 @@ export default {
     <Transition appear name="grow">
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
         <div class="blog-content">
+          <h3 v-if="showEmptyState">Choose an article to read on the right</h3>
+          <h3 v-show="contentLoading">Loading, hold on 1 sec</h3>
           <h1 class="title">{{ blog.title[0].text }}</h1>
           <!-- <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
-          <p v-show="contentLoading">Loading, hold on 1 sec</p>
-          <p v-show="!contentLoading" class="author">by Claudia Engelsman</p>
-          <prismic-rich-text :field="blog.subtitle" class="subtitle dent-right" />
-          <section v-for="(slice, index) in slices" :key="'slice-' + index" class="dent-right">
+          <p v-show="!contentLoading && !showEmptyState" class="author">by Claudia Engelsman</p>
+          <prismic-rich-text :field="blog.subtitle" class="subtitle blog-body" />
+          <section v-for="(slice, index) in slices" :key="'slice-' + index" class="blog-body">
             <template v-if="slice.slice_type === 'blog_text_block'">
               <h2 class="heading">{{ slice.primary.section_title[0].text }}</h2>
               <prismic-rich-text :field="slice.primary.section_text" class="text" />
@@ -202,10 +205,21 @@ export default {
   flex-direction: column;
   align-items: center;
   color: rgb(46, 46, 46);
+  padding: 2rem;
 }
 
 h1 {
   text-transform: capitalize;
+}
+
+h1,
+h2,
+h3 {
+  color: #5a675d;
+}
+
+.blog-body {
+  max-width: 800px;
 }
 
 .bookmark-blog-index {
@@ -219,10 +233,14 @@ h1 {
   top: 77px;
   padding: 0.75rem;
   overflow-y: auto;
+  color: #5a675d;
 }
 
 .bookmark-blog-list {
   padding-inline-start: 0;
+  a {
+    font-size: 1rem;
+  }
 }
 .bookmark-blog-title {
   list-style: none;
