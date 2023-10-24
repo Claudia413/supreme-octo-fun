@@ -129,7 +129,7 @@ export default {
   <Backdrop @backdropClick="closeBlogView">
     <Transition appear name="grow">
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
-        <div class="blog-content">
+        <div class="blog-content" :class="showBookmark ? 'bookmark-on' : ''">
           <h3 v-if="showEmptyState">Choose an article to read on the right</h3>
           <h3 v-show="contentLoading">Loading, hold on 1 sec</h3>
           <h1 class="title">{{ blog.title[0].text }}</h1>
@@ -153,21 +153,20 @@ export default {
       </div>
     </Transition>
     <Transition name="slide-left" appear>
-      <div class="bookmark-blog-index" v-show="showBookmark">
-        <h3>Blogs</h3>
+      <div class="bookmark-blog-index" v-show="showBookmark" @keyup.esc="closeBlogView">
+        <h3>Most Recent</h3>
         <BlogPreview
           v-if="!loadingBlogs"
           :key="'post-' + this.bigBlogPreview[0].uid"
           :blogId="this.bigBlogPreview[0].uid"
-          class="blog-post"
+          class="blog-post-preview"
           :image="this.bigBlogPreview[0].data.blog_image"
           :title="this.bigBlogPreview[0].data.title[0].text"
         />
+        <h3>Articles</h3>
         <ul class="bookmark-blog-list">
           <li class="bookmark-blog-title" v-for="post in blogs" :key="post.uid" tabindex="0">
-            <router-link :to="'/blog/' + post.uid" class="blog-post">{{
-              post.data.title[0].text
-            }}</router-link>
+            <router-link :to="'/blog/' + post.uid">{{ post.data.title[0].text }}</router-link>
           </li>
         </ul>
       </div>
@@ -175,7 +174,7 @@ export default {
   </Backdrop>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../assets/_variables.scss';
 
 .blog-container {
@@ -196,7 +195,8 @@ export default {
   overflow-y: auto;
   @media only screen and (max-width: 768px) {
     width: 95%;
-    height: 100%;
+    height: 98%;
+    margin-bottom: 0%;
   }
 }
 
@@ -206,6 +206,11 @@ export default {
   align-items: center;
   color: rgb(46, 46, 46);
   padding: 2rem;
+  @media only screen and (max-width: 1000px) {
+    &.bookmark-on {
+      padding-right: 18rem;
+    }
+  }
 }
 
 h1 {
@@ -220,6 +225,12 @@ h3 {
 
 .blog-body {
   max-width: 800px;
+  .text {
+    font-size: 1rem;
+    a {
+      font-size: 1rem;
+    }
+  }
 }
 
 .bookmark-blog-index {
@@ -234,13 +245,29 @@ h3 {
   padding: 0.75rem;
   overflow-y: auto;
   color: #5a675d;
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+    height: 92%;
+    rotate: 0deg;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.blog-post-preview {
+  max-height: 280px;
+  max-width: 280px;
 }
 
 .bookmark-blog-list {
   padding-inline-start: 0;
-  a {
-    font-size: 1rem;
-  }
+}
+
+a {
+  font-size: 1rem;
 }
 .bookmark-blog-title {
   list-style: none;
