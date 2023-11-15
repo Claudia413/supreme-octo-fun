@@ -130,7 +130,7 @@ export default {
     <Transition appear name="grow">
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
         <div class="blog-content" :class="showBookmark ? 'bookmark-on' : ''">
-          <h3 v-if="showEmptyState">Choose an article to read on the right</h3>
+          <h3 v-if="showEmptyState" class="placeholder">Choose an article to read on the right</h3>
           <h3 v-show="contentLoading">Loading, hold on 1 sec</h3>
           <h1 class="title">{{ blog.title[0].text }}</h1>
           <!-- <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" /> -->
@@ -154,21 +154,24 @@ export default {
     </Transition>
     <Transition name="slide-left" appear>
       <div class="bookmark-blog-index" v-show="showBookmark" @keyup.esc="closeBlogView">
-        <h3>Most Recent</h3>
-        <BlogPreview
-          v-if="!loadingBlogs"
-          :key="'post-' + this.bigBlogPreview[0].uid"
-          :blogId="this.bigBlogPreview[0].uid"
-          class="blog-post-preview"
-          :image="this.bigBlogPreview[0].data.blog_image"
-          :title="this.bigBlogPreview[0].data.title[0].text"
-        />
-        <h3>Articles</h3>
-        <ul class="bookmark-blog-list">
-          <li class="bookmark-blog-title" v-for="post in blogs" :key="post.uid" tabindex="0">
-            <router-link :to="'/blog/' + post.uid">{{ post.data.title[0].text }}</router-link>
-          </li>
-        </ul>
+        <div class="inner">
+          <h3>Most Recent</h3>
+          <BlogPreview
+            v-if="!loadingBlogs"
+            :key="'post-' + this.bigBlogPreview[0].uid"
+            :blogId="this.bigBlogPreview[0].uid"
+            class="blog-post-preview"
+            :image="this.bigBlogPreview[0].data.blog_image"
+            :title="this.bigBlogPreview[0].data.title[0].text"
+          />
+          <h3>Articles</h3>
+          <ul class="bookmark-blog-list">
+            <li class="bookmark-blog-title" v-for="post in blogs" :key="post.uid" tabindex="0">
+              <router-link :to="'/blog/' + post.uid">{{ post.data.title[0].text }}</router-link>
+            </li>
+          </ul>
+        </div>
+        <div class="fade-bottom"></div>
       </div>
     </Transition>
   </Backdrop>
@@ -206,6 +209,17 @@ export default {
   align-items: center;
   color: rgb(46, 46, 46);
   padding: 2rem;
+  &.bookmark-on {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+    font-weight: bold;
+    padding-right: 18rem;
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
   @media only screen and (max-width: 1000px) {
     &.bookmark-on {
       padding-right: 18rem;
@@ -221,6 +235,9 @@ h1,
 h2,
 h3 {
   color: #5a675d;
+}
+
+.placeholder {
 }
 
 .blog-body {
@@ -242,9 +259,8 @@ h3 {
   position: absolute;
   right: 70px;
   top: 77px;
-  padding: 0.75rem;
-  overflow-y: auto;
   color: #5a675d;
+  overflow: hidden;
   @media only screen and (max-width: 768px) {
     width: 90%;
     height: 92%;
@@ -255,6 +271,13 @@ h3 {
     bottom: 0;
     margin: auto;
   }
+}
+
+.inner {
+  position: relative;
+  padding: 0.75rem;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .blog-post-preview {
@@ -273,6 +296,14 @@ a {
   list-style: none;
   margin-bottom: 1.5rem;
   cursor: pointer;
+}
+
+.fade-bottom {
+  height: 64px;
+  width: calc(100% - 9px);
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, rgb(244, 244, 244) 0, rgba(244, 244, 244, 0) 100%);
 }
 
 //Grow animation below
