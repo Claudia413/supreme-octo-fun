@@ -7,6 +7,7 @@ import PhotoGallery from '../components/PhotoGallery.vue'
 import BlogView from '../components/BlogView.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
+import DustSpecks from '../components/DustSpecks.vue'
 
 export default {
   name: 'home',
@@ -30,7 +31,8 @@ export default {
     MapNZ,
     StackMenu,
     PhotoGallery,
-    BlogView
+    BlogView,
+    DustSpecks
   },
   methods: {
     async getContent() {
@@ -141,6 +143,8 @@ export default {
       </section>
     </div>
   </div>
+  <DustSpecks />
+  <DustSpecks horizontal="true" />
 </template>
 
 <style lang="scss" scoped>

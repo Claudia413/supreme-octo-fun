@@ -48,6 +48,7 @@ export default {
 
   .stack {
     height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     &:hover {
