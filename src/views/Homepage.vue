@@ -223,6 +223,7 @@ export default {
   transform: rotate(-25deg);
   top: 10%;
   left: 4vw;
+  z-index: 5;
   @media only screen and (max-width: 768px) {
     width: 25%;
     position: static;

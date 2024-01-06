@@ -79,10 +79,10 @@ export default {
   .speck:nth-child(#{$i}) {
     --size: #{random(10) * 0.1}vw;
     --left-ini: #{random(20) - 10}vw;
-    --left-end: #{random(100) - 10}vw;
+    --left-end: #{random(50) - 10}vw;
     left: #{random(100)}vw;
     animation: speckle #{20 + random(10)}s ease-in infinite;
-    animation-delay: -#{random(20)}s;
+    animation-delay: -#{random(10)}s;
     opacity: 0.7;
     pointer-events: none;
     filter: blur(1px);
