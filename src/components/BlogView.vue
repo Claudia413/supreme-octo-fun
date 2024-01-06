@@ -188,9 +188,9 @@ export default {
     rgb(247, 244, 237) 81%,
     rgb(235, 240, 237) 100%
   );
-  height: 80%;
-  width: 85%;
-  margin: auto;
+  height: 90%;
+  width: 90%;
+  margin: auto auto 1rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -287,6 +287,7 @@ h3 {
 
 .bookmark-blog-list {
   padding-inline-start: 0;
+  margin-bottom: 4rem;
 }
 
 a {
@@ -304,6 +305,7 @@ a {
   position: absolute;
   bottom: 0;
   background: linear-gradient(0deg, rgb(244, 244, 244) 0, rgba(244, 244, 244, 0) 100%);
+  pointer-events: none;
 }
 
 //Grow animation below
