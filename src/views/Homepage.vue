@@ -78,6 +78,10 @@ export default {
     openBlogView(uid) {
       this.blogOpen = true
       this.blogUID = uid
+    },
+    openNZBlogView() {
+      this.blogOpen = true
+      this.blogCategory = 'NZ'
     }
   },
   mounted() {
@@ -111,6 +115,10 @@ export default {
     <div class="content">
       <section class="content-block" id="Photoscontent">
         <img class="camera" src="../assets/Canon77D.gif" />
+        <img class="candle" src="../assets/DeskCandle1.png" />
+        <img class="candle extra" src="../assets/DeskCandle2.png" />
+        <!-- <img class="flower" src="../assets/DeskFlower1.png" />
+        <img class="flower extra" src="../assets/DeskFlower2.png" /> -->
         <Photogrid @openGallery="openGallery" />
         <PhotoGallery
           v-if="photoGalleryOpen"
@@ -120,20 +128,14 @@ export default {
       </section>
 
       <section class="content-block" id="Blogcontent">
-        <MapNZ
-          @click="
-            () => {
-              this.blogOpen = true
-              this.blogCategory = 'NZ'
-            }
-          "
-        />
+        <MapNZ @clickOpenBlog="openNZBlogView" />
         <BlogView
           v-if="blogOpen"
           :category="blogCategory"
           :uid="blogUID"
           @closeBlogView="closeBlogView"
         />
+        <img class="platypus" src="../assets/PlatypusNifflerOnCoinStackNoBG.png" />
       </section>
       <section class="content-block" id="Vlogcontent">
         <p>third one</p>
@@ -199,8 +201,9 @@ export default {
   box-sizing: border-box;
   height: 80vh;
   max-height: 1000px;
+  margin-right: 20vw;
   @media only screen and (min-width: 1200px) {
-    margin-right: 500px;
+    margin-right: min(20vw, 500px);
     min-height: 80%;
   }
   @media only screen and (max-width: 768px) {
@@ -227,6 +230,62 @@ export default {
   @media only screen and (max-width: 768px) {
     width: 25%;
     position: static;
+  }
+}
+
+.candle {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(95%) drop-shadow(8px 16px 15px);
+  position: absolute;
+  top: 40%;
+  left: 10vw;
+  z-index: 5;
+  @media only screen and (max-width: 768px) {
+    width: 10%;
+    position: relative;
+  }
+  &.extra {
+    top: 49%;
+    left: 13vw;
+    rotate: 210deg;
+    filter: drop-shadow(-19px -18px 15px);
+  }
+}
+
+.flower {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(90%) drop-shadow(8px 16px 15px);
+  position: absolute;
+  top: 80%;
+  right: 30vw;
+  rotate: 30deg;
+  z-index: 5;
+  @media only screen and (max-width: 768px) {
+    width: 18%;
+    position: relative;
+  }
+  &.extra {
+    width: 200px;
+    top: 69%;
+    left: 13vw;
+    rotate: 25deg;
+    filter: brightness(90%) drop-shadow(-6px 15px 8px);
+  }
+}
+
+.platypus {
+  position: relative;
+  top: -500px;
+  left: -150px;
+  height: 300px;
+  filter: brightness(80%) drop-shadow(-2px 4px 2px);
+  pointer-events: none;
+  @media only screen and (max-width: 768px) {
+    top: -100px;
   }
 }
 </style>

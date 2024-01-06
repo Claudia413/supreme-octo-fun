@@ -29,7 +29,7 @@ export default {
 }
 
 .speck {
-  --size: 0.5vw;
+  --size: min(0.5vw, 5px);
   width: var(--size);
   height: var(--size);
   background: rgb(252, 246, 226);

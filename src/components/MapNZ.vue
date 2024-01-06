@@ -5,14 +5,18 @@ export default {
     return {}
   },
   components: {},
-  methods: {}
+  methods: {
+    openBlogView() {
+      this.$emit('clickOpenBlog')
+    }
+  }
 }
 </script>
 
 <template>
   <div class="map">
     <img class="image" src="../assets/MapNZSouthIsland2.png" />
-    <div class="stack">
+    <div class="stack" @click="openBlogView">
       <img class="book" src="../assets/BookstackBookUp.png" />
       <img class="books" src="../assets/BookstackUp.png" />
     </div>
@@ -30,7 +34,7 @@ export default {
   position: relative;
   @media only screen and (max-width: 768px) {
     width: 90vw;
-    height: 90%;
+    height: 90vw;
   }
   .image {
     height: 75%;
@@ -47,10 +51,14 @@ export default {
   }
 
   .stack {
-    height: auto;
-    width: 100%;
+    width: 200px;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
     &:hover {
       .book {
         transform: translateY(-25px);
