@@ -50,94 +50,6 @@
           <p>{{ slice.primary.text_content[1].text }}</p>
         </section>
 
-        <section
-          v-if="slice.slice_type === 'full_width_carousel'"
-          class="full-width"
-          :key="'slice-' + index"
-        >
-          <div class="carousel landscape">
-            <!-- <VueSlickCarousel
-              :dots="true"
-              :autoplay="false"
-              :centerMode="true"
-              :slidesToShow="2"
-              :centerPadding="'40px'"
-              key="full-width-carrousel"
-            >
-              <div
-                v-for="(item, index) in slice.items"
-                class="carousel-photo"
-                :key="'item-' + index"
-              >
-               <div>hello</div>
-                <img src="../assets/Westport21Yurt3.jpg" /> -->
-            <!-- <prismic-image v-if="item.photo.url" :field="item.photo" /> -->
-            <!-- <div v-if="item.video_url" class="video-container">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  :src="item.video_url.url"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div> -->
-            <!-- </div>
-              <template v-slot:prevArrow>
-                <button class="custom-button"><i class="fas fa-chevron-left"></i></button>
-              </template>
-              <template v-slot:nextArrow>
-                <button class="custom-button"><i class="fas fa-chevron-right"></i></button>
-              </template>
-            </VueSlickCarousel> -->
-          </div>
-        </section>
-
-        <section
-          v-if="slice.slice_type === 'full_width_carousel'"
-          class="full-width mobile"
-          :key="'mobile-slice-' + index"
-        >
-          <div class="carousel landscape">
-            <!-- <VueSlickCarousel
-              :dots="true"
-              :autoplay="false"
-              :centerMode="true"
-              :slidesToShow="1"
-              :centerPadding="'40px'"
-              key="full-width-carrousel"
-            >
-              <div
-                v-for="(item, index) in slice.items"
-                class="carousel-photo"
-                :key="'item-' + index"
-              >
-                <div>hello</div>
-                <img src="../assets/Westport21Yurt3.jpg" /> -->
-            <!-- <prismic-image v-if="item.photo.url" :field="item.photo" /> -->
-            <!-- <div v-if="item.video_url" class="video-container">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  :src="item.video_url.url"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div> 
-              </div>
-              <template v-slot:prevArrow>
-                <button class="custom-button"><i class="fas fa-chevron-left"></i></button>
-              </template>
-              <template v-slot:nextArrow>
-                <button class="custom-button"><i class="fas fa-chevron-right"></i></button>
-              </template>
-            </VueSlickCarousel> -->
-          </div>
-        </section>
-
         <section v-if="slice.slice_type === 'stats'" :key="'slice-' + index" class="animal-stats">
           <div class="illustration">
             <prismic-image :field="slice.primary.image" class="initial" />
@@ -167,27 +79,6 @@
           </div>
           <div class="photo horizontal animate">
             <prismic-image v-if="slice.items[0].image.url" :field="slice.items[0].image" />
-            <!-- <VueSlickCarousel :dots="true" :autoplay="false">
-              <div v-for="(item, index) in slice.items" class="carousel-img" :key="'item-' + index"> 
-                <div v-if="item.video_url.url" class="video-container">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    :src="item.video_url.url"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <template v-slot:prevArrow>
-                <button class="custom-button"><i class="fas fa-chevron-left"></i></button>
-              </template>
-              <template v-slot:nextArrow>
-                <button class="custom-button"><i class="fas fa-chevron-right"></i></button>
-              </template>
-            </VueSlickCarousel> -->
           </div>
         </section>
       </template>
@@ -198,9 +89,6 @@
 <script>
 // @ is an alias to /src
 import MenuSlide from '@/components/MenuSlide.vue'
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
   name: 'Roadtrip',
@@ -223,8 +111,7 @@ export default {
     }
   },
   components: {
-    MenuSlide,
-    VueSlickCarousel
+    MenuSlide
   },
   computed: {
     notAlreadyInUrl: function () {
@@ -525,10 +412,6 @@ section {
   height: auto;
   width: calc(100vw - 15px);
   overflow: hidden;
-  .slick-slider {
-    height: 100%;
-    overflow: hidden;
-  }
   .carousel-photo {
     height: 100%;
     width: 100%;
