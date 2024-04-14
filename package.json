@@ -7,29 +7,28 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
-    "@prismicio/vue": "^4.1.0",
-    "axios": "^1.6.5",
+    "@prismicio/vue": "^4.2.1",
+    "axios": "^1.6.8",
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.1.7",
-    "sass": "^1.69.7",
-    "unhead": "^1.8.9",
-    "vue": "^3.4.10",
-    "vue-router": "^4.2.5",
-    "vue-slick-carousel": "^1.0.6"
+    "sass": "^1.75.0",
+    "unhead": "^1.9.5",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.6.1",
-    "@vitejs/plugin-vue": "^5.0.3",
+    "@rushstack/eslint-patch": "^1.10.2",
+    "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.20.0",
-    "prettier": "^3.1.1",
-    "vite": "^5.0.11"
+    "eslint": "^9.0.0",
+    "eslint-plugin-vue": "^9.24.1",
+    "prettier": "^3.2.5",
+    "vite": "^5.2.8"
   }
 }
