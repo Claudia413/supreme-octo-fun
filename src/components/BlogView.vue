@@ -10,6 +10,7 @@ export default {
     return {
       currentBlog: '',
       bigBlogPreview: null,
+      moreBigBlogPreview: [],
       loadingBlogs: true,
       blogs: null,
       contentLoading: false,
@@ -43,6 +44,7 @@ export default {
   methods: {
     async getContentByCategory(category) {
       const prismic = usePrismic()
+      // Get first blog post title and image to show on top of bookmark
       try {
         const response = await this.$prismic.client.getByTag(category, {
           orderings: { field: 'document.first_publication_date', direction: 'desc' },
@@ -55,6 +57,7 @@ export default {
       } catch (error) {
         console.error(error)
       }
+      // Get all other blogs titles to show on bookmark
       try {
         const response = await this.$prismic.client.getByTag('NZ', {
           orderings: { field: 'document.first_publication_date', direction: 'desc' },
@@ -67,6 +70,22 @@ export default {
         console.error(error)
       } finally {
         this.loadingBlogs = false
+      }
+    },
+    async getMoreContentByCategory(category) {
+      const prismic = this.$prismic;
+      // Get first three blog post title and image to show after article
+      try {
+        const response = await this.$prismic.client.getByTag(category, {
+          orderings: { field: 'document.first_publication_date', direction: 'desc' },
+          pageSize: 3,
+          fetch: ['blogpost.title', 'blogpost.blog_image'],
+          filters: [prismic.filter.not('document.tags', ['TEST'])]
+        })
+
+        this.moreBigBlogPreview = response.results
+      } catch (error) {
+        console.error(error)
       }
     },
     getContent(uid) {
@@ -118,8 +137,14 @@ export default {
     this.$refs.blogview.focus()
     if (this.uid) {
       this.getContent(this.uid)
+      // Wait for 1 second to get the category back from prismic
+      setTimeout(() => {
+        // Call the method with the first element of currentCategory
+        this.getMoreContentByCategory(this.currentCategory[0]);
+      }, 1000);
     } else {
       this.getContentByCategory(this.category)
+      this.getMoreContentByCategory(this.category);
     }
   }
 }
@@ -149,6 +174,17 @@ export default {
               <prismic-rich-text :field="slice.primary.image_description" class="caption" />
             </template>
           </section>
+          <p>More recent posts in this category</p>
+          <div v-if="!showEmptyState" class="row">
+            <BlogPreview
+              v-for="(blog) in moreBigBlogPreview"
+              :key="'post-' + blog.uid"
+              :blogId="blog.uid"
+              class="blog-post-preview"
+              :image="blog.data.blog_image"
+              :title="blog.data.title[0].text"
+            />
+          </div>
         </div>
       </div>
     </Transition>
@@ -224,6 +260,13 @@ export default {
     &.bookmark-on {
       padding-right: 18rem;
     }
+  }
+}
+
+.row {
+  display: flex;
+   @media only screen and (max-width: 768px) {
+    flex-direction: column;
   }
 }
 
@@ -344,6 +387,7 @@ a {
 
 .slide-left-leave-to {
   position: absolute;
+  transform: translateX(350px);
   transition: transform 0.3s ease;
 }
 </style>
