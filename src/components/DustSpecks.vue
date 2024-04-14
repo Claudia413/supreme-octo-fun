@@ -29,14 +29,14 @@ export default {
 }
 
 .speck {
-  --size: min(0.5vw, 5px);
+  --size: min(0.35vw, 5px);
   width: var(--size);
   height: var(--size);
   background: rgb(252, 246, 226);
   border-radius: 50%;
   position: absolute;
   top: -5vh;
-  z-index: 100;
+  z-index: 800;
   display: flex;
 }
 
@@ -93,7 +93,7 @@ export default {
     }
     .inner-speck {
       --size-inner: #{max(random(10) * 10, 50)}%;
-      background-color: rgb(243, 199, 117);
+      background-color: rgb(239, 214, 167);
       filter: blur(1px);
       animation: flicker 0.8s alternate infinite;
       animation-delay: -#{1 - (calc(random(5) / 10))}s;
