@@ -2,31 +2,32 @@
   "name": "supreme-octo-fun",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
-    "@prismicio/vue": "^4.1.0",
+    "@prismicio/vue": "^4.2.1",
     "axios": "^1.6.8",
     "pinia": "^2.1.7",
-    "sass": "^1.72.0",
-    "unhead": "^1.9.4",
+    "sass": "^1.75.0",
+    "unhead": "^1.9.5",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.1",
+    "@rushstack/eslint-patch": "^1.10.2",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.24.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-vue": "^9.24.1",
     "prettier": "^3.2.5",
-    "vite": "^5.2.7"
+    "vite": "^5.2.8"
   }
 }
