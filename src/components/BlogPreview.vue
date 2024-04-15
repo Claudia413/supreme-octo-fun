@@ -101,6 +101,7 @@ export default {
     }
   }
   @media only screen and (max-width: 768px) {
+    margin: 0;
     margin-bottom: 32px;
     .blog-tag-text {
       margin: 32px;

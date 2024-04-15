@@ -57,6 +57,9 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    },
+    async getAllNZBlogTitles() {
+      const prismic = usePrismic()
       // Get all other blogs titles to show on bookmark
       try {
         const response = await this.$prismic.client.getByTag('NZ', {
@@ -64,7 +67,7 @@ export default {
           fetch: ['blogpost.title'],
           filters: [prismic.filter.not('document.tags', ['TEST'])]
         })
-
+  
         this.blogs = response.results
       } catch (error) {
         console.error(error)
@@ -137,6 +140,7 @@ export default {
     this.$refs.blogview.focus()
     if (this.uid) {
       this.getContent(this.uid)
+      this.getAllNZBlogTitles();
       // Wait for 1 second to get the category back from prismic
       setTimeout(() => {
         // Call the method with the first element of currentCategory
@@ -145,6 +149,7 @@ export default {
     } else {
       this.getContentByCategory(this.category)
       this.getMoreContentByCategory(this.category);
+      this.getAllNZBlogTitles()
     }
   }
 }
@@ -154,7 +159,7 @@ export default {
   <Backdrop @backdropClick="closeBlogView">
     <Transition appear name="grow">
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
-        <div class="blog-content" :class="showBookmark ? 'bookmark-on' : ''">
+        <article class="blog-content" :class="showBookmark ? 'bookmark-on' : ''">
           <h3 v-if="showEmptyState" class="placeholder">Choose an article to read on the right</h3>
           <h3 v-show="contentLoading">Loading, hold on 1 sec</h3>
           <h1 class="title">{{ blog.title[0].text }}</h1>
@@ -174,7 +179,7 @@ export default {
               <prismic-rich-text :field="slice.primary.image_description" class="caption" />
             </template>
           </section>
-          <p>More recent posts in this category</p>
+          <p class="recents" v-if="!showEmptyState">More recent posts in this category</p>
           <div v-if="!showEmptyState" class="row">
             <BlogPreview
               v-for="(blog) in moreBigBlogPreview"
@@ -185,8 +190,16 @@ export default {
               :title="blog.data.title[0].text"
             />
           </div>
+          <div class="more-blogs" v-if="!showEmptyState">
+            <p class="recents">All the blog posts available</p>
+            <ul class="blog-list">
+              <li class="blog-title" v-for="post in blogs" :key="post.uid" tabindex="0">
+                <router-link :to="'/blog/' + post.uid">{{ post.data.title[0].text }}</router-link>
+              </li>
+            </ul>
+          </div>
+          </article>
         </div>
-      </div>
     </Transition>
     <Transition name="slide-left" appear>
       <div class="bookmark-blog-index" v-show="showBookmark" @keyup.esc="closeBlogView">
@@ -265,8 +278,33 @@ export default {
 
 .row {
   display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
    @media only screen and (max-width: 768px) {
     flex-direction: column;
+  }
+}
+
+.recents {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 3rem 0 1.2rem 0;
+}
+
+.more-blogs{
+  max-width: 100%;
+}
+.blog-list {
+  list-style: none;
+  width: 800px;
+  max-width: 800px;
+  padding-inline-start: 0;
+  line-height: 1.8;
+  a {
+    font-size: 14px;
+  }
+  @media only screen and (max-width: 768px) {
+   width: unset;
   }
 }
 
@@ -280,15 +318,12 @@ h3 {
   color: #5a675d;
 }
 
-.placeholder {
-}
-
 .blog-body {
   max-width: 800px;
   .text {
     font-size: 1rem;
     a {
-      font-size: 1rem;
+      font-size: 14px;
     }
   }
 }
