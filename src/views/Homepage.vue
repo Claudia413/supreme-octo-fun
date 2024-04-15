@@ -146,7 +146,7 @@ export default {
     </div>
   </div>
   <DustSpecks />
-  <DustSpecks horizontal="true" />
+  <DustSpecks :horizontal="true" />
 </template>
 
 <style lang="scss" scoped>
