@@ -238,14 +238,16 @@ export default {
       <div class="bookmark-blog-index" v-show="showBookmark" @keyup.esc="closeBlogView">
         <div class="inner">
           <h3>Most Recent</h3>
-          <BlogPreview
-            v-if="!loadingBlogs"
-            :key="'post-' + this.bigBlogPreview[0].uid"
-            :blogId="this.bigBlogPreview[0].uid"
-            class="blog-post-preview"
-            :image="this.bigBlogPreview[0].data.blog_image"
-            :title="this.bigBlogPreview[0].data.title[0].text"
-          />
+          <div class="preview-container">
+            <BlogPreview
+              v-if="!loadingBlogs"
+              :key="'post-' + this.bigBlogPreview[0].uid"
+              :blogId="this.bigBlogPreview[0].uid"
+              class="blog-post-preview"
+              :image="this.bigBlogPreview[0].data.blog_image"
+              :title="this.bigBlogPreview[0].data.title[0].text"
+            />
+          </div>
           <h3>Articles</h3>
           <ul class="bookmark-blog-list">
             <li class="bookmark-blog-title" v-for="post in blogs" :key="post.uid" tabindex="0">
@@ -389,12 +391,18 @@ h3 {
   color: #5a675d;
   overflow: hidden;
   @media only screen and (max-width: 768px) {
-    width: 90%;
-    height: 92%;
+    background: radial-gradient(
+      circle,
+      rgb(255, 254, 249) 0%,
+      rgb(247, 244, 237) 81%,
+      rgb(235, 240, 237) 100%
+    );
+    width: 94%;
+    height: 96%;
     rotate: 0deg;
     right: 0;
     left: 0;
-    top: 0;
+    top: 4%;
     bottom: 0;
     margin: auto;
   }
@@ -405,6 +413,11 @@ h3 {
   padding: 0.75rem;
   overflow-y: auto;
   height: 100%;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .blog-post-preview {
