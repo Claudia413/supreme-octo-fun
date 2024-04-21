@@ -26,6 +26,7 @@ export default {
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: 90;
 }
 
 .speck {

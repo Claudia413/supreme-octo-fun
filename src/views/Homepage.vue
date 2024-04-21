@@ -53,7 +53,7 @@ export default {
     },
     handleWheel(event) {
       if (this.photoGalleryOpen || this.blogOpen) {
-        //do not scroll horizontally so do nothing
+        //do not scroll horizontally on blog or gallery view so do nothing
       } else if ('deltaY' in event && event.view.innerWidth >= 768) {
         event.preventDefault()
 
@@ -129,6 +129,7 @@ export default {
 
       <section class="content-block" id="Blogcontent">
         <MapNZ @clickOpenBlog="openNZBlogView" />
+        <img class="laptop" src="../assets/laptop.png" />
         <BlogView
           v-if="blogOpen"
           :category="blogCategory"
@@ -203,7 +204,7 @@ export default {
   max-height: 1000px;
   margin-right: 20vw;
   @media only screen and (min-width: 1200px) {
-    margin-right: min(20vw, 500px);
+    margin-right: min(20vw, 300px);
     min-height: 80%;
   }
   @media only screen and (max-width: 768px) {
@@ -279,13 +280,35 @@ export default {
 
 .platypus {
   position: relative;
-  top: -500px;
-  left: -150px;
+  top: -900px;
   height: 300px;
   filter: brightness(80%) drop-shadow(-2px 4px 2px);
   pointer-events: none;
+  scale: 1;
+  display: block;
   @media only screen and (max-width: 768px) {
-    top: -100px;
+    top: -100%;
+    left: 50%;
+    transform: scaleX(-1);
+    scale: 0.9;
+    z-index: 0;
+    max-height: 300px;
+    height: 25%;
+  }
+}
+
+.laptop {
+  translate: 0px -180px;
+  rotate: 40deg;
+  scale: 1;
+  filter: drop-shadow(-1px 2px 4px);
+  position: relative;
+  z-index: 100;
+  display: block;
+  @media only screen and (max-width: 768px) {
+    max-width: 50%;
+    top: 80px;
+    left: -90px;
   }
 }
 </style>

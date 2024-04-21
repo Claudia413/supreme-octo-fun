@@ -32,6 +32,7 @@ export default {
   height: 75%;
   display: flex;
   position: relative;
+  z-index: 50;
   @media only screen and (max-width: 768px) {
     width: 90vw;
     height: 90vw;
