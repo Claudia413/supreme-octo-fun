@@ -17,7 +17,7 @@ export default {
       blogpreviews: [],
       leftMenu: [''],
       menu: ['Photos', 'Blog'],
-      rightMenu: ['Vlog', 'About'],
+      rightMenu: ['Vlog', 'Projects'],
       photoGalleryOpen: false,
       photoGalleryCategoryOpened: null,
       blogOpen: false,
@@ -141,7 +141,7 @@ export default {
       <section class="content-block" id="Vlogcontent">
         <p>third one</p>
       </section>
-      <section class="content-block" id="Aboutcontent">
+      <section class="content-block" id="Projectscontent">
         <p>fourth one</p>
       </section>
     </div>
@@ -178,7 +178,7 @@ export default {
 }
 
 #Photoscontent,
-#Aboutcontent,
+#Projectscontent,
 #Blogcontent,
 #Vlogcontent {
   scroll-behavior: smooth;

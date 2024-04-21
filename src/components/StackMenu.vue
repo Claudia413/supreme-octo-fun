@@ -8,12 +8,12 @@ export default {
   data() {
     return {
       leftMenu: [],
-      menu: ['Photos', 'Blog', 'Vlog', 'About'],
+      menu: ['Photos', 'Blog', 'Vlog', 'Projects'],
       rightMenu: [],
       menuItemPhotos: '',
       menuItemBlog: '',
       menuItemVlog: '',
-      menuItemAbout: '',
+      menuItemProjects: '',
       mobileMenuOpen: false
     }
   },
@@ -31,7 +31,7 @@ export default {
       observer.observe(this.menuItemPhotos)
       observer.observe(this.menuItemBlog)
       observer.observe(this.menuItemVlog)
-      observer.observe(this.menuItemAbout)
+      observer.observe(this.menuItemProjects)
     },
     handleIntersect(entries, observer) {
       entries.forEach((entry) => {
@@ -66,7 +66,7 @@ export default {
         this.menuItemPhotos = document.querySelector('#Photos')
         this.menuItemBlog = document.querySelector('#Blog')
         this.menuItemVlog = document.querySelector('#Vlog')
-        this.menuItemAbout = document.querySelector('#About')
+        this.menuItemProjects = document.querySelector('#Projects')
 
         this.createObserver()
       },
@@ -174,7 +174,7 @@ header {
 
 .bg-circle {
   background: rgba(41, 40, 36, 0);
-  background: radial-gradient(circle, rgba(41, 40, 36, 0.85) 30%, rgba(58, 65, 64, 0) 56%);
+  background: radial-gradient(circle, rgba(41, 40, 36, 0.8) 30%, rgba(68, 73, 72, 0) 56%);
   width: 800px;
   height: 800px;
   position: absolute;
@@ -198,57 +198,66 @@ header {
 }
 
 .nav-item {
+  opacity: 0;
   animation: firstnav 0.3s ease 0s 1 forwards;
 }
 
 @keyframes firstnav {
   0% {
+    opacity: 1;
     transform: translateX(18px) translateY(18px) rotate(0deg);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(0px) translateY(18px) rotate(0deg);
   }
 }
 
 .nav-item ~ .nav-item {
-  animation: secondnav 0.3s ease 0s 1 forwards;
+  animation: secondnav 0.3s ease 0.15s 1 forwards;
 }
 
 @keyframes secondnav {
   0% {
+    opacity: 1;
     transform: translateX(11px) translateY(12px) rotate(-27deg);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(-7px) translateY(30px) rotate(-29deg);
   }
 }
 
 .nav-item ~ .nav-item ~ .nav-item {
-  animation: thirdnav 0.3s ease 0s 1 forwards;
+  animation: thirdnav 0.3s ease 0.3s 1 forwards;
 }
 
 @keyframes thirdnav {
   0% {
+    opacity: 1;
     transform: translateX(41px) translateY(16px) rotate(-46deg);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(23px) translateY(34px) rotate(-48deg);
   }
 }
 
 .nav-item ~ .nav-item ~ .nav-item ~ .nav-item {
-  animation: fourthnav 0.3s ease 0s 1 forwards;
+  animation: fourthnav 0.3s ease 0.45s 1 forwards;
 }
 
 @keyframes fourthnav {
   0% {
+    opacity: 1;
     transform: translateX(80px) translateY(-10px) rotate(272deg);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(80px) translateY(10px) rotate(271deg);
   }
 }
