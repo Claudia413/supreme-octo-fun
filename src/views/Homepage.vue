@@ -82,6 +82,10 @@ export default {
     openNZBlogView() {
       this.blogOpen = true
       this.blogCategory = 'NZ'
+    },
+    openTechBlogView() {
+      this.blogOpen = true
+      this.blogCategory = 'Tech'
     }
   },
   mounted() {
@@ -129,7 +133,7 @@ export default {
 
       <section class="content-block" id="Blogcontent">
         <MapNZ @clickOpenBlog="openNZBlogView" />
-        <img class="laptop" src="../assets/laptop.png" />
+        <img class="laptop" @click="openTechBlogView" src="../assets/laptop.png" />
         <BlogView
           v-if="blogOpen"
           :category="blogCategory"

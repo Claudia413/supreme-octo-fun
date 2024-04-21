@@ -12,7 +12,7 @@ export default {
       bigBlogPreview: null,
       moreBigBlogPreview: [],
       loadingBlogs: true,
-      blogs: null,
+      blogs: [],
       contentLoading: false,
       // if we open a blog post directly from url we do not get category prop and need to store it internally
       currentCategory: [],
@@ -39,10 +39,11 @@ export default {
   watch: {
     $route(to, from) {
       this.getContent(to.params.uid)
+      this.$refs.blogview.scrollTop = 0
     }
   },
   methods: {
-    async getContentByCategory(category) {
+    async getBigBlogPreviewByCategory(category) {
       const prismic = usePrismic()
       // Get first blog post title and image to show on top of bookmark
       try {
@@ -58,16 +59,16 @@ export default {
         console.error(error)
       }
     },
-    async getAllNZBlogTitles() {
+    async getAllBlogTitles() {
       const prismic = usePrismic()
       // Get all other blogs titles to show on bookmark
       try {
-        const response = await this.$prismic.client.getByTag('NZ', {
+        const response = await this.$prismic.client.getBySomeTags(['NZ', 'Tech'], {
           orderings: { field: 'document.first_publication_date', direction: 'desc' },
           fetch: ['blogpost.title'],
           filters: [prismic.filter.not('document.tags', ['TEST'])]
         })
-  
+
         this.blogs = response.results
       } catch (error) {
         console.error(error)
@@ -76,7 +77,7 @@ export default {
       }
     },
     async getMoreContentByCategory(category) {
-      const prismic = this.$prismic;
+      const prismic = this.$prismic
       // Get first three blog post title and image to show after article
       try {
         const response = await this.$prismic.client.getByTag(category, {
@@ -93,23 +94,27 @@ export default {
     },
     getContent(uid) {
       this.contentLoading = true
-      this.$prismic.client.getByUID('blogpost', uid).then((document) => {
-        // Can't simply put the result in an empty blog object without console erros about undefined before its done loading. So we set them individually with starting empty objects and arrays
-        this.blog.title = document.data.title
-        this.blog.subtitle = document.data.subtitle
-        this.blog.header = document.data.blog_image
-        this.currentCategory = document.tags
-        this.blog.seo_title = document.data.seo_title[0].text
-        this.blog.seo_description = document.data.seo_description[0].text
-        this.blog.seo_image = document.data.seo_image.url
-        this.slices = document.data.body
-        this.blog.prismicID = document.id
-        this.currentBlog = document.uid
-        this.contentLoading = false
-
-        // this.getRelatedContent(document.id)
-        this.fillHeadElement()
-      })
+      this.$prismic.client
+        .getByUID('blogpost', uid)
+        .then((document) => {
+          // Can't simply put the result in an empty blog object without console erros about undefined before its done loading. So we set them individually with starting empty objects and arrays
+          this.blog.title = document.data.title
+          this.blog.subtitle = document.data.subtitle
+          this.blog.header = document.data.blog_image
+          this.currentCategory = document.tags
+          this.blog.seo_title = document.data.seo_title[0].text
+          this.blog.seo_description = document.data.seo_description[0].text
+          this.blog.seo_image = document.data.seo_image.url
+          this.slices = document.data.body
+          this.blog.prismicID = document.id
+          this.currentBlog = document.uid
+          this.contentLoading = false
+          // this.getRelatedContent(document.id)
+          this.fillHeadElement()
+        })
+        .finally(() => {
+          this.getMoreContentByCategory(this.currentCategory)
+        })
     },
     fillHeadElement() {
       useHead({
@@ -134,22 +139,29 @@ export default {
     },
     showEmptyState() {
       return !this.contentLoading && this.currentBlog.length === 0
+    },
+    techBlogs() {
+      return [...this.blogs].filter((blog) => blog.tags.includes('Tech'))
+    },
+    nzBlogs() {
+      return [...this.blogs].filter((blog) => blog.tags.includes('NZ'))
     }
   },
   mounted() {
     this.$refs.blogview.focus()
     if (this.uid) {
       this.getContent(this.uid)
-      this.getAllNZBlogTitles();
+      this.getAllBlogTitles()
       // Wait for 1 second to get the category back from prismic
       setTimeout(() => {
         // Call the method with the first element of currentCategory
-        this.getMoreContentByCategory(this.currentCategory[0]);
-      }, 1000);
+        this.getMoreContentByCategory(this.currentCategory[0])
+        this.getBigBlogPreviewByCategory(this.currentCategory[0])
+      }, 1000)
     } else {
-      this.getContentByCategory(this.category)
-      this.getMoreContentByCategory(this.category);
-      this.getAllNZBlogTitles()
+      this.getBigBlogPreviewByCategory(this.category)
+      this.getMoreContentByCategory(this.currentCategory[0] || this.category)
+      this.getAllBlogTitles()
     }
   }
 }
@@ -159,7 +171,7 @@ export default {
   <Backdrop @backdropClick="closeBlogView">
     <Transition appear name="grow">
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
-        <article class="blog-content" :class="showBookmark ? 'bookmark-on' : ''">
+        <article class="blog-content" :class="showBookmark ? 'bookmark-on' : ''" ref="article">
           <h3 v-if="showEmptyState" class="placeholder">Choose an article to read on the right</h3>
           <h3 v-show="contentLoading">Loading, hold on 1 sec</h3>
           <h1 class="title">{{ blog.title[0].text }}</h1>
@@ -182,7 +194,7 @@ export default {
           <p class="recents" v-if="!showEmptyState">More recent posts in this category</p>
           <div v-if="!showEmptyState" class="row">
             <BlogPreview
-              v-for="(blog) in moreBigBlogPreview"
+              v-for="blog in moreBigBlogPreview"
               :key="'post-' + blog.uid"
               :blogId="blog.uid"
               class="blog-post-preview"
@@ -192,15 +204,33 @@ export default {
           </div>
           <div class="more-blogs" v-if="!showEmptyState">
             <p class="recents">All the blog posts available</p>
-            <ul class="blog-list">
-              <li class="blog-title" v-for="post in blogs" :key="post.uid" tabindex="0">
-                <router-link :to="'/blog/' + post.uid">{{ post.data.title[0].text }}</router-link>
-              </li>
-            </ul>
+            <div class="twoCol" v-if="!showEmptyState">
+              <div>
+                <h5>Tech</h5>
+                <ul class="blog-list">
+                  <li class="blog-title" v-for="post in techBlogs" :key="post.uid" tabindex="0">
+                    <router-link :to="'/blog/' + post.uid">{{
+                      post.data.title[0].text
+                    }}</router-link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5>New Zealand</h5>
+                <ul class="blog-list">
+                  <li class="blog-title" v-for="post in nzBlogs" :key="post.uid" tabindex="0">
+                    <router-link :to="'/blog/' + post.uid">{{
+                      post.data.title[0].text
+                    }}</router-link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          </article>
-        </div>
+        </article>
+      </div>
     </Transition>
+    <!-- Bookmark -->
     <Transition name="slide-left" appear>
       <div class="bookmark-blog-index" v-show="showBookmark" @keyup.esc="closeBlogView">
         <div class="inner">
@@ -280,7 +310,7 @@ export default {
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
-   @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
 }
@@ -291,20 +321,36 @@ export default {
   margin: 3rem 0 1.2rem 0;
 }
 
-.more-blogs{
+.more-blogs {
   max-width: 100%;
 }
 .blog-list {
   list-style: none;
-  width: 800px;
   max-width: 800px;
   padding-inline-start: 0;
   line-height: 1.8;
+  margin-top: 0.5rem;
+  li {
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
   a {
     font-size: 14px;
   }
   @media only screen and (max-width: 768px) {
-   width: unset;
+    width: unset;
+  }
+}
+
+.twoCol {
+  display: flex;
+  gap: 1rem;
+  max-width: 800px;
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+  h5 {
+    margin: 0;
   }
 }
 
@@ -331,7 +377,7 @@ h3 {
 .bookmark-blog-index {
   background-color: white;
   height: 80%;
-  width: 260px;
+  width: 280px;
   border-radius: 3px;
   rotate: -2deg;
   position: absolute;
