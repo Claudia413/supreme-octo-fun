@@ -27,6 +27,8 @@ export default {
 @import '../assets/_variables.scss';
 
 .backdrop {
+  // Pointer events set back to auto cuz pointer events set to none in parent mobile menu header
+  pointer-events: auto;
   height: 100vh;
   width: 100%;
   position: absolute;

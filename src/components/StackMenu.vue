@@ -153,6 +153,7 @@ header {
   &#menu-mobile {
     display: none;
     @media only screen and (max-width: 768px) {
+      pointer-events: none;
       position: sticky;
       top: 0;
       display: flex;
@@ -166,6 +167,7 @@ header {
 }
 
 .menu-mobile-icon {
+  pointer-events: auto;
   margin: 1.5rem;
   cursor: pointer;
   z-index: 100;

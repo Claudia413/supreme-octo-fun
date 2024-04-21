@@ -1,5 +1,6 @@
 <script>
 import Backdrop from './Backdrop.vue'
+import Close from './Close.vue'
 import Photos from '../assets/PhotoGallery.json'
 
 export default {
@@ -14,7 +15,8 @@ export default {
     spotlight: {}
   },
   components: {
-    Backdrop
+    Backdrop,
+    Close
   },
   methods: {
     closeGallery() {
@@ -30,9 +32,7 @@ export default {
 <template>
   <Backdrop @backdropClick="closeGallery">
     <div class="gallery" tabindex="-1" ref="gallery" @keyup.esc="closeGallery">
-      <div class="close-icon" @click="closeGallery">
-        <v-icon name="md-close" scale="1"></v-icon>
-      </div>
+      <Close @close="closeGallery" />
       <div class="spotlight">
         <img class="image" :src="currentSpotlight || Photos[spotlight][0].url" />
       </div>

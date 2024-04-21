@@ -307,7 +307,7 @@ export default {
   scale: 1;
   filter: drop-shadow(-1px 2px 4px);
   position: relative;
-  z-index: 100;
+  z-index: 80;
   display: block;
   @media only screen and (max-width: 768px) {
     max-width: 50%;

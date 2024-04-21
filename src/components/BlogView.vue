@@ -1,6 +1,7 @@
 <script>
 import Backdrop from './Backdrop.vue'
 import BlogPreview from './BlogPreview.vue'
+import Close from './Close.vue'
 import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
 
@@ -34,7 +35,8 @@ export default {
   },
   components: {
     Backdrop,
-    BlogPreview
+    BlogPreview,
+    Close
   },
   watch: {
     $route(to, from) {
@@ -171,6 +173,7 @@ export default {
   <Backdrop @backdropClick="closeBlogView">
     <Transition appear name="grow">
       <div class="blog-container" tabindex="-1" ref="blogview" @keyup.esc="closeBlogView">
+        <Close @close="closeBlogView" :dark="true" />
         <article class="blog-content" :class="showBookmark ? 'bookmark-on' : ''" ref="article">
           <h3 v-if="showEmptyState" class="placeholder">Choose an article to read on the right</h3>
           <h3 v-show="contentLoading">Loading, hold on 1 sec</h3>
