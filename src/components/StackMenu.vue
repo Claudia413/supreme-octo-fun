@@ -17,6 +17,9 @@ export default {
       mobileMenuOpen: false
     }
   },
+  props: {
+    dark: false
+  },
   components: { StackMenuItem, MobileMenuItem, BackdropMenu },
   methods: {
     createObserver() {
@@ -117,8 +120,15 @@ export default {
         </li>
       </nav>
     </BackdropMenu>
+    <!-- CSS checks if mobile menu with built in dark bg is open, if not we might have light theme blog open, then we need dark icon -->
     <div
-      class="menu-mobile-icon"
+      :class="
+        mobileMenuOpen
+          ? 'menu-mobile-icon'
+          : this.dark
+            ? 'menu-mobile-icon dark'
+            : 'menu-mobile-icon'
+      "
       @click="toggleMobileMenu()"
       @keyup.enter="toggleMobileMenu()"
       @keyup.esc="toggleMobileMenu(false)"
@@ -127,7 +137,7 @@ export default {
       <v-icon
         name="ri-menu-5-line"
         scale="1.5"
-        fill="white"
+        fill="currentColor"
         label="menu-toggle"
         animation="float"
         hover
@@ -152,6 +162,7 @@ header {
   }
   &#menu-mobile {
     display: none;
+    color: white;
     @media only screen and (max-width: 768px) {
       pointer-events: none;
       position: sticky;
@@ -172,11 +183,14 @@ header {
   cursor: pointer;
   z-index: 100;
   margin-top: 2.4rem;
+  &.dark {
+    color: #5a675d;
+  }
 }
 
 .bg-circle {
   background: rgba(41, 40, 36, 0);
-  background: radial-gradient(circle, rgba(41, 40, 36, 0.8) 30%, rgba(68, 73, 72, 0) 56%);
+  background: radial-gradient(circle, rgba(41, 40, 36, 0.8) 20%, rgba(68, 73, 72, 0) 56%);
   width: 800px;
   height: 800px;
   position: absolute;

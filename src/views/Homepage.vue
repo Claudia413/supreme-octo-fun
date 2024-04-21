@@ -115,7 +115,7 @@ export default {
 
 <template>
   <div class="home" :class="photoGalleryOpen ? 'no-scroll' : ''">
-    <StackMenu />
+    <StackMenu :dark="this.blogOpen" />
     <div class="content">
       <section class="content-block" id="Photoscontent">
         <img class="camera" src="../assets/Canon77D.gif" />
