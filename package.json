@@ -17,7 +17,7 @@
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.1.7",
     "sass": "^1.75.0",
-    "unhead": "^1.9.5",
+    "unhead": "^1.9.7",
     "vue": "^3.4.23",
     "vue-router": "^4.3.2"
   },
@@ -26,9 +26,9 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^9.0.0",
+    "eslint": "^9.1.1",
     "eslint-plugin-vue": "^9.25.0",
     "prettier": "^3.2.5",
-    "vite": "^5.2.9"
+    "vite": "^5.2.10"
   }
 }
