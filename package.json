@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
-    "@prismicio/vue": "^4.2.1",
+    "@prismicio/vue": "^4.2.2",
     "axios": "^1.6.8",
     "pinia": "^2.1.7",
     "sass": "^1.75.0",
     "unhead": "^1.9.7",
-    "vue": "^3.4.23",
+    "vue": "^3.4.25",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
