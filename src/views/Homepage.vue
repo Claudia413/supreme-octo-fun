@@ -190,8 +190,10 @@ export default {
 
 .content {
   display: flex;
+  margin-top: 100px;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    margin-top: unset;
   }
   @media only screen and (max-width: 472px) {
     overflow-x: hidden;
