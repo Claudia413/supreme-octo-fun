@@ -38,7 +38,7 @@ export default {
       </div>
       <div class="gallery-content">
         <h2>{{ spotlight }}</h2>
-        <p>{{ currentSpotlight.title || Photos[spotlight][0].title }}</p>
+        <p class="description">{{ currentSpotlight.title || Photos[spotlight][0].title }}</p>
         <div class="more">
           <div
             v-for="(photo, index) in Photos[spotlight]"
@@ -100,6 +100,11 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
+
+.description {
+  color: rgb(214, 214, 214);
+}
+
 .image {
   width: 100%;
   height: auto;

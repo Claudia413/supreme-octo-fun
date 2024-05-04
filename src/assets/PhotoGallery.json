@@ -1,84 +1,100 @@
 {
   "sunrise": [
-    { "id": 1, "url": "src/assets/SunriseClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 2, "url": "src/assets/SunriseClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 3, "url": "src/assets/SunriseClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 4, "url": "src/assets/SunriseClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    {
+      "id": 1,
+      "url": "src/assets/SunriseClaudiaEngelsman.jpg",
+      "title": "Seashell at Sumner Beach"
+    },
+    { "id": 2, "url": "src/assets/SunriseClaudiaEngelsman2.jpg", "title": "Seagulls waking up" },
+    { "id": 3, "url": "src/assets/SunriseClaudiaEngelsman3.jpg", "title": "Sunset in the Catlins" },
+    { "id": 4, "url": "src/assets/SunriseClaudiaEngelsman4.jpg", "title": "Ripples" }
   ],
   "catlins": [
-    { "id": 5, "url": "src/assets/CatlinsClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 6, "url": "src/assets/CatlinsClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 7, "url": "src/assets/CatlinsClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 8, "url": "src/assets/CatlinsClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 5, "url": "src/assets/CatlinsClaudiaEngelsman.jpg", "title": "Nugget point" },
+    { "id": 6, "url": "src/assets/CatlinsClaudiaEngelsman2.jpg", "title": "Nugget point view" },
+    {
+      "id": 7,
+      "url": "src/assets/CatlinsClaudiaEngelsman3.jpg",
+      "title": "Sunset at Nugget point"
+    },
+    { "id": 8, "url": "src/assets/CatlinsClaudiaEngelsman4.jpg", "title": "Last sunrays" }
   ],
   "dunes": [
-    { "id": 9, "url": "src/assets/DunesClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 10, "url": "src/assets/DunesClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 11, "url": "src/assets/DunesClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 12, "url": "src/assets/DunesClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 9, "url": "src/assets/DunesClaudiaEngelsman.jpg", "title": "Sparkles" },
+    { "id": 10, "url": "src/assets/DunesClaudiaEngelsman2.jpg", "title": "Golden dunes" },
+    { "id": 11, "url": "src/assets/DunesClaudiaEngelsman3.jpg", "title": "Golden mountains" },
+    { "id": 12, "url": "src/assets/DunesClaudiaEngelsman4.jpg", "title": "Line in the sand" }
   ],
   "waterfall": [
-    { "id": 25, "url": "src/assets/WaterfallClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 26, "url": "src/assets/WaterfallClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 27, "url": "src/assets/WaterfallClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 28, "url": "src/assets/WaterfallClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    {
+      "id": 25,
+      "url": "src/assets/WaterfallClaudiaEngelsman.jpg",
+      "title": "Waterfall at Milford"
+    },
+    { "id": 26, "url": "src/assets/WaterfallClaudiaEngelsman2.jpg", "title": "Fairies live here" },
+    { "id": 27, "url": "src/assets/WaterfallClaudiaEngelsman3.jpg", "title": "Everflowing" },
+    { "id": 28, "url": "src/assets/WaterfallClaudiaEngelsman4.jpg", "title": "Gravity" }
   ],
 
   "dark": [
-    { "id": 37, "url": "src/assets/DarkClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 38, "url": "src/assets/DarkClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 39, "url": "src/assets/DarkClaudiaEngelsman3.jpg", "title": "this is a beach" }
+    { "id": 37, "url": "src/assets/DarkClaudiaEngelsman.jpg", "title": "Duckling" },
+    { "id": 38, "url": "src/assets/DarkClaudiaEngelsman2.jpg", "title": "Sage" },
+    { "id": 39, "url": "src/assets/DarkClaudiaEngelsman3.jpg", "title": "Tiny flowers" }
   ],
 
   "spring flowers": [
     {
       "id": 13,
       "url": "src/assets/SpringFlowersClaudiaEngelsman.jpg",
-      "title": "this is a beach"
+      "title": "Blossom"
     },
     {
       "id": 14,
       "url": "src/assets/SpringFlowersClaudiaEngelsman2.jpg",
-      "title": "this is a beach"
+      "title": "Sea of flowers"
     },
     {
       "id": 15,
       "url": "src/assets/SpringFlowersClaudiaEngelsman3.jpg",
-      "title": "this is a beach"
+      "title": "White blossom"
     }
   ],
   "wildlife": [
-    { "id": 33, "url": "src/assets/WildlifeClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 34, "url": "src/assets/WildlifeClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 35, "url": "src/assets/WildlifeClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 36, "url": "src/assets/WildlifeClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 33, "url": "src/assets/WildlifeClaudiaEngelsman.jpg", "title": "Sea lion" },
+    {
+      "id": 34,
+      "url": "src/assets/WildlifeClaudiaEngelsman2.jpg",
+      "title": "Sea lion on the rocks"
+    },
+    { "id": 35, "url": "src/assets/WildlifeClaudiaEngelsman3.jpg", "title": "Dusty Sea lion" },
+    { "id": 36, "url": "src/assets/WildlifeClaudiaEngelsman4.jpg", "title": "Dolphin at Picton" }
   ],
   "beach": [
-    { "id": 21, "url": "src/assets/BeachClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 22, "url": "src/assets/BeachClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 23, "url": "src/assets/BeachClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 24, "url": "src/assets/BeachClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 21, "url": "src/assets/BeachClaudiaEngelsman.jpg", "title": "Getting breakfast" },
+    { "id": 22, "url": "src/assets/BeachClaudiaEngelsman2.jpg", "title": "Life is good" },
+    { "id": 23, "url": "src/assets/BeachClaudiaEngelsman3.jpg", "title": "Beach dog" },
+    { "id": 24, "url": "src/assets/BeachClaudiaEngelsman4.jpg", "title": "Morning swim" }
   ],
   "welcome flat": [
     {
       "id": 29,
       "url": "src/assets/WelcomeFlatClaudiaEngelsman.jpg",
-      "title": "this is a beach"
+      "title": "Incoming clouds"
     },
     {
       "id": 30,
       "url": "src/assets/WelcomeFlatClaudiaEngelsman2.jpg",
-      "title": "this is a beach"
+      "title": "After the rain"
     },
     {
       "id": 31,
       "url": "src/assets/WelcomeFlatClaudiaEngelsman3.jpg",
-      "title": "this is a beach"
+      "title": "Forest track"
     },
     {
       "id": 32,
       "url": "src/assets/WelcomeFlatClaudiaEngelsman4.jpg",
-      "title": "this is a beach"
+      "title": "Forest stream"
     }
   ]
 }
