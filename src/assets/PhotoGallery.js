@@ -87,11 +87,11 @@ const photos = {
   ],
 
   dark: [
-    { id: 37, url: '/assets/GalleryImgs/DarkClaudiaEngelsman.jpg', title: 'Duckling' },
-    { id: 38, url: '/assets/GalleryImgs/DarkClaudiaEngelsman2.jpg', title: 'Sage' },
+    { id: 37, url: modules['./GalleryImgs/DarkClaudiaEngelsman.jpg'].default, title: 'Duckling' },
+    { id: 38, url: modules['./GalleryImgs/DarkClaudiaEngelsman2.jpg'].default, title: 'Sage' },
     {
       id: 39,
-      url: '/assets/GalleryImgs/DarkClaudiaEngelsman3.jpg',
+      url: modules['./GalleryImgs/DarkClaudiaEngelsman3.jpg'].default,
       title: 'Tiny flowers'
     }
   ],
@@ -99,79 +99,83 @@ const photos = {
   'spring flowers': [
     {
       id: 13,
-      url: '/assets/GalleryImgs/SpringFlowersClaudiaEngelsman.jpg',
+      url: modules['./GalleryImgs/SpringFlowersClaudiaEngelsman.jpg'].default,
       title: 'Blossom'
     },
     {
       id: 14,
-      url: '/assets/GalleryImgs/SpringFlowersClaudiaEngelsman2.jpg',
+      url: modules['./GalleryImgs/SpringFlowersClaudiaEngelsman2.jpg'].default,
       title: 'Sea of flowers'
     },
     {
       id: 15,
-      url: '/assets/GalleryImgs/SpringFlowersClaudiaEngelsman3.jpg',
+      url: modules['./GalleryImgs/SpringFlowersClaudiaEngelsman3.jpg'].default,
       title: 'White blossom'
     }
   ],
   wildlife: [
     {
       id: 33,
-      url: '/assets/GalleryImgs/WildlifeClaudiaEngelsman.jpg',
+      url: modules['./GalleryImgs/WildlifeClaudiaEngelsman.jpg'].default,
       title: 'Sea lion'
     },
     {
       id: 34,
-      url: '/assets/GalleryImgs/WildlifeClaudiaEngelsman2.jpg',
+      url: modules['./GalleryImgs/WildlifeClaudiaEngelsman2.jpg'].default,
       title: 'Sea lion on the rocks'
     },
     {
       id: 35,
-      url: '/assets/GalleryImgs/WildlifeClaudiaEngelsman3.jpg',
+      url: modules['./GalleryImgs/WildlifeClaudiaEngelsman3.jpg'].default,
       title: 'Dusty Sea lion'
     },
     {
       id: 36,
-      url: '/assets/GalleryImgs/WildlifeClaudiaEngelsman4.jpg',
+      url: modules['./GalleryImgs/WildlifeClaudiaEngelsman4.jpg'].default,
       title: 'Dolphin at Picton'
     }
   ],
   beach: [
     {
       id: 21,
-      url: '/assets/GalleryImgs/BeachClaudiaEngelsman.jpg',
+      url: modules['./GalleryImgs/BeachClaudiaEngelsman.jpg'].default,
       title: 'Getting breakfast'
     },
     {
       id: 22,
-      url: '/assets/GalleryImgs/BeachClaudiaEngelsman2.jpg',
+      url: modules['./GalleryImgs/BeachClaudiaEngelsman2.jpg'].default,
       title: 'Life is good'
     },
-    { id: 23, url: '/assets/GalleryImgs/BeachClaudiaEngelsman3.jpg', title: 'Beach dog' },
+    {
+      id: 23,
+      url: modules['./GalleryImgs/BeachClaudiaEngelsman3.jpg'].default,
+      title: 'Beach dog'
+    },
     {
       id: 24,
-      url: '/assets/GalleryImgs/BeachClaudiaEngelsman4.jpg',
+      url: modules['./GalleryImgs/BeachClaudiaEngelsman4.jpg'].default,
       title: 'Morning swim'
     }
   ],
   'welcome flat': [
     {
       id: 29,
-      url: '/assets/GalleryImgs/WelcomeFlatClaudiaEngelsman.jpg',
+      url: modules['./GalleryImgs/WelcomeFlatClaudiaEngelsman.jpg'].default,
       title: 'Incoming clouds'
     },
     {
       id: 30,
-      url: '/assets/GalleryImgs/WelcomeFlatClaudiaEngelsman2.jpg',
+      url: modules['./GalleryImgs/WelcomeFlatClaudiaEngelsman2.jpg'].default,
       title: 'After the rain'
     },
     {
       id: 31,
-      url: '/assets/GalleryImgs/WelcomeFlatClaudiaEngelsman3.jpg',
+      url: modules['./GalleryImgs/WelcomeFlatClaudiaEngelsman3.jpg'].default,
       title: 'Forest track'
     },
     {
       id: 32,
-      url: '/assets/GalleryImgs/WelcomeFlatClaudiaEngelsman4.jpg',
+      url: modules['./GalleryImgs/WelcomeFlatClaudiaEngelsman4.jpg'].default,
       title: 'Forest stream'
     }
   ]
