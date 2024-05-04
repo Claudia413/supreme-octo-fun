@@ -1,14 +1,14 @@
 <script>
 import Backdrop from './Backdrop.vue'
 import Close from './Close.vue'
-import Photos from '../assets/PhotoGallery.json'
-const modules = import.meta.glob('../assets/GalleryImgs/*.jpg')
+import photos from '../assets/PhotoGallery.js'
+// const modules = import.meta.glob('../assets/GalleryImgs/*.jpg')
 
 export default {
   name: 'PhotoGallery',
   data() {
     return {
-      Photos,
+      photos,
       currentSpotlight: ''
     }
   },
@@ -35,14 +35,14 @@ export default {
     <div class="gallery" tabindex="-1" ref="gallery" @keyup.esc="closeGallery">
       <Close @close="closeGallery" />
       <div class="spotlight">
-        <img class="image" :src="currentSpotlight || Photos[spotlight][0].url" />
+        <img class="image" :src="currentSpotlight || photos[spotlight][0].url" />
       </div>
       <div class="gallery-content">
         <h2>{{ spotlight }}</h2>
-        <p class="description">{{ currentSpotlight.title || Photos[spotlight][0].title }}</p>
+        <p class="description">{{ currentSpotlight.title || photos[spotlight][0].title }}</p>
         <div class="more">
           <div
-            v-for="(photo, index) in Photos[spotlight]"
+            v-for="(photo, index) in photos[spotlight]"
             :key="index"
             class="col"
             @click="currentSpotlight = photo.url"

@@ -306,7 +306,7 @@ li {
 
 .left-menu {
   position: fixed;
-  bottom: 88vh;
+  bottom: 90vh;
   left: 10px;
   text-align: left;
   color: white;
@@ -323,7 +323,7 @@ li {
 
 .right-menu {
   position: fixed;
-  bottom: 88vh;
+  bottom: 90vh;
   right: 10px;
   text-align: right;
   color: white;

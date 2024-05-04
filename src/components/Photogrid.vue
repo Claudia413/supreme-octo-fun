@@ -1,12 +1,12 @@
 <script>
 import PhotogridPhoto from '@/components/PhotogridPhoto.vue'
-import Photos from '@/assets/PhotoGallery.json'
+import photos from '@/assets/PhotoGallery.js'
 
 export default {
   name: 'Photogrid',
   data() {
     return {
-      Photos
+      photos
     }
   },
   components: {
@@ -20,7 +20,7 @@ export default {
 <template>
   <div class="grid">
     <PhotogridPhoto
-      v-for="(photo, category) in Photos"
+      v-for="(photo, category) in photos"
       :key="category"
       :img="photo[0].url"
       @click="$emit('openGallery', category)"
