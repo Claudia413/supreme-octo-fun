@@ -377,6 +377,9 @@ h3 {
       font-size: 14px;
     }
   }
+  img {
+    max-width: 100%;
+  }
 }
 
 .bookmark-blog-index {
