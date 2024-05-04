@@ -193,10 +193,13 @@ export default {
   @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
+  @media only screen and (max-width: 472px) {
+    overflow-x: hidden;
+  }
 }
 
 .content-block:first-child {
-  margin-left: 25vw;
+  margin-left: 20vw;
   @media only screen and (max-width: 768px) {
     margin: 0 1rem 0 1rem;
   }
@@ -298,6 +301,9 @@ export default {
     z-index: 0;
     max-height: 300px;
     height: 25%;
+  }
+  @media only screen and (max-width: 472px) {
+    top: -750px;
   }
 }
 

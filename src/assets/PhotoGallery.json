@@ -1,83 +1,83 @@
 {
   "sunrise": [
-    { "id": 1, "url": "../src/assets/SunriseClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 2, "url": "../src/assets/SunriseClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 3, "url": "../src/assets/SunriseClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 4, "url": "../src/assets/SunriseClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 1, "url": "src/assets/SunriseClaudiaEngelsman.jpg", "title": "this is a beach" },
+    { "id": 2, "url": "src/assets/SunriseClaudiaEngelsman2.jpg", "title": "this is a beach" },
+    { "id": 3, "url": "src/assets/SunriseClaudiaEngelsman3.jpg", "title": "this is a beach" },
+    { "id": 4, "url": "src/assets/SunriseClaudiaEngelsman4.jpg", "title": "this is a beach" }
   ],
   "catlins": [
-    { "id": 5, "url": "../src/assets/CatlinsClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 6, "url": "../src/assets/CatlinsClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 7, "url": "../src/assets/CatlinsClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 8, "url": "../src/assets/CatlinsClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 5, "url": "src/assets/CatlinsClaudiaEngelsman.jpg", "title": "this is a beach" },
+    { "id": 6, "url": "src/assets/CatlinsClaudiaEngelsman2.jpg", "title": "this is a beach" },
+    { "id": 7, "url": "src/assets/CatlinsClaudiaEngelsman3.jpg", "title": "this is a beach" },
+    { "id": 8, "url": "src/assets/CatlinsClaudiaEngelsman4.jpg", "title": "this is a beach" }
   ],
   "dunes": [
-    { "id": 9, "url": "../src/assets/DunesClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 10, "url": "../src/assets/DunesClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 11, "url": "../src/assets/DunesClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 12, "url": "../src/assets/DunesClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 9, "url": "src/assets/DunesClaudiaEngelsman.jpg", "title": "this is a beach" },
+    { "id": 10, "url": "src/assets/DunesClaudiaEngelsman2.jpg", "title": "this is a beach" },
+    { "id": 11, "url": "src/assets/DunesClaudiaEngelsman3.jpg", "title": "this is a beach" },
+    { "id": 12, "url": "src/assets/DunesClaudiaEngelsman4.jpg", "title": "this is a beach" }
   ],
   "waterfall": [
-    { "id": 25, "url": "../src/assets/WaterfallClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 26, "url": "../src/assets/WaterfallClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 27, "url": "../src/assets/WaterfallClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 28, "url": "../src/assets/WaterfallClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 25, "url": "src/assets/WaterfallClaudiaEngelsman.jpg", "title": "this is a beach" },
+    { "id": 26, "url": "src/assets/WaterfallClaudiaEngelsman2.jpg", "title": "this is a beach" },
+    { "id": 27, "url": "src/assets/WaterfallClaudiaEngelsman3.jpg", "title": "this is a beach" },
+    { "id": 28, "url": "src/assets/WaterfallClaudiaEngelsman4.jpg", "title": "this is a beach" }
   ],
 
   "dark": [
-    { "id": 37, "url": "../src/assets/DarkClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 38, "url": "../src/assets/DarkClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 39, "url": "../src/assets/DarkClaudiaEngelsman3.jpg", "title": "this is a beach" }
+    { "id": 37, "url": "src/assets/DarkClaudiaEngelsman.jpg", "title": "this is a beach" },
+    { "id": 38, "url": "src/assets/DarkClaudiaEngelsman2.jpg", "title": "this is a beach" },
+    { "id": 39, "url": "src/assets/DarkClaudiaEngelsman3.jpg", "title": "this is a beach" }
   ],
 
   "spring flowers": [
     {
       "id": 13,
-      "url": "../src/assets/SpringFlowersClaudiaEngelsman.jpg",
+      "url": "src/assets/SpringFlowersClaudiaEngelsman.jpg",
       "title": "this is a beach"
     },
     {
       "id": 14,
-      "url": "../src/assets/SpringFlowersClaudiaEngelsman2.jpg",
+      "url": "src/assets/SpringFlowersClaudiaEngelsman2.jpg",
       "title": "this is a beach"
     },
     {
       "id": 15,
-      "url": "../src/assets/SpringFlowersClaudiaEngelsman3.jpg",
+      "url": "src/assets/SpringFlowersClaudiaEngelsman3.jpg",
       "title": "this is a beach"
     }
   ],
   "wildlife": [
-    { "id": 33, "url": "../src/assets/WildlifeClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 34, "url": "../src/assets/WildlifeClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 35, "url": "../src/assets/WildlifeClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 36, "url": "../src/assets/WildlifeClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 33, "url": "src/assets/WildlifeClaudiaEngelsman.jpg", "title": "this is a beach" },
+    { "id": 34, "url": "src/assets/WildlifeClaudiaEngelsman2.jpg", "title": "this is a beach" },
+    { "id": 35, "url": "src/assets/WildlifeClaudiaEngelsman3.jpg", "title": "this is a beach" },
+    { "id": 36, "url": "src/assets/WildlifeClaudiaEngelsman4.jpg", "title": "this is a beach" }
   ],
   "beach": [
-    { "id": 21, "url": "../src/assets/BeachClaudiaEngelsman.jpg", "title": "this is a beach" },
-    { "id": 22, "url": "../src/assets/BeachClaudiaEngelsman2.jpg", "title": "this is a beach" },
-    { "id": 23, "url": "../src/assets/BeachClaudiaEngelsman3.jpg", "title": "this is a beach" },
-    { "id": 24, "url": "../src/assets/BeachClaudiaEngelsman4.jpg", "title": "this is a beach" }
+    { "id": 21, "url": "src/assets/BeachClaudiaEngelsman.jpg", "title": "this is a beach" },
+    { "id": 22, "url": "src/assets/BeachClaudiaEngelsman2.jpg", "title": "this is a beach" },
+    { "id": 23, "url": "src/assets/BeachClaudiaEngelsman3.jpg", "title": "this is a beach" },
+    { "id": 24, "url": "src/assets/BeachClaudiaEngelsman4.jpg", "title": "this is a beach" }
   ],
   "welcome flat": [
     {
       "id": 29,
-      "url": "../src/assets/WelcomeFlatClaudiaEngelsman.jpg",
+      "url": "src/assets/WelcomeFlatClaudiaEngelsman.jpg",
       "title": "this is a beach"
     },
     {
       "id": 30,
-      "url": "../src/assets/WelcomeFlatClaudiaEngelsman2.jpg",
+      "url": "src/assets/WelcomeFlatClaudiaEngelsman2.jpg",
       "title": "this is a beach"
     },
     {
       "id": 31,
-      "url": "../src/assets/WelcomeFlatClaudiaEngelsman3.jpg",
+      "url": "src/assets/WelcomeFlatClaudiaEngelsman3.jpg",
       "title": "this is a beach"
     },
     {
       "id": 32,
-      "url": "../src/assets/WelcomeFlatClaudiaEngelsman4.jpg",
+      "url": "src/assets/WelcomeFlatClaudiaEngelsman4.jpg",
       "title": "this is a beach"
     }
   ]
