@@ -23,10 +23,7 @@ export default {
         const elementRect = this.$refs.menuItem.getBoundingClientRect()
         const percentage = (elementRect.x + elementRect.width / 2) / window.innerWidth
         const opacity = Math.max(0.4 + 0.6 * (1 - Math.abs(2 * percentage - 1)), 0.4)
-        const fontSize = Math.max(
-          Math.min(1.25 + 1.75 * (1 - Math.abs(2 * percentage - 1)), 3),
-          1.25
-        )
+        const fontSize = Math.max(Math.min(1.25 * (1 - Math.abs(2 * percentage - 1)), 3), 1.25)
         const top = 3 * Math.abs(1 - 2 * percentage)
         this.$refs.menuItem.style.opacity = `${opacity}`
         this.$refs.menuItem.style.fontSize = `${fontSize}rem`
@@ -73,7 +70,7 @@ export default {
 a {
   font-size: inherit;
   transition: color 0.2s;
-  color: white;
+  color: #e2e2e2;
   transform: translateY(0px);
   display: inline-block;
 }

@@ -290,6 +290,7 @@ li {
 .center-item {
   height: 3rem;
 }
+
 .menu {
   padding: 3rem 0;
   color: white;
