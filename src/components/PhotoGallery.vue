@@ -2,7 +2,6 @@
 import Backdrop from './Backdrop.vue'
 import Close from './Close.vue'
 import photos from '../assets/PhotoGallery.js'
-// const modules = import.meta.glob('../assets/GalleryImgs/*.jpg')
 
 export default {
   name: 'PhotoGallery',
