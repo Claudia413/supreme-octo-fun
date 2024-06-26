@@ -13,23 +13,23 @@
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
     "@prismicio/vue": "^4.2.2",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.1.7",
-    "sass": "^1.76.0",
-    "unhead": "^1.9.9",
-    "vue": "^3.4.26",
-    "vue-router": "^4.3.2"
+    "sass": "^1.77.6",
+    "unhead": "^1.9.14",
+    "vue": "^3.4.30",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.2",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@rushstack/eslint-patch": "^1.10.3",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^9.1.1",
-    "eslint-plugin-vue": "^9.25.0",
-    "prettier": "^3.2.5",
-    "vite": "^5.2.11"
+    "eslint": "^9.5.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "prettier": "^3.3.2",
+    "vite": "^5.3.1"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.6.1"
