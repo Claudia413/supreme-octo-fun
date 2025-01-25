@@ -93,7 +93,7 @@ export default {
             <li>
               <ShinyImage
                 webUrl="https://www.automagial.work"
-                imageUrl="/src/assets/CalendarPlusScreenshot.png"
+                imageUrl="../assets/CalendarPlusScreenshot.png"
               ></ShinyImage
               ><a href="https://www.automagial.work"
                 >Calendar Plus by<br />
@@ -103,7 +103,7 @@ export default {
             <li>
               <ShinyImage
                 webUrl="https://www.southernescapetours.co.nz"
-                imageUrl="/src/assets/SETBlackBG.jpg"
+                imageUrl="../assets/SETBlackBG.jpg"
               ></ShinyImage>
               <a href="https://www.southernescapetours.co.nz">Southern Escape Tours</a>
             </li>
