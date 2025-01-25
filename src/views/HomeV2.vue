@@ -44,7 +44,7 @@ export default {
   <div class="home">
     <div class="menubar">
       <router-link to="/" class="button mt-2">Home</router-link>
-      <router-link to="/about" class="button mt-2">About</router-link>
+      <!-- <router-link to="/about" class="button mt-2">About</router-link> -->
       <router-link to="/blog" class="button mt-2">Archived Blog (old style)</router-link>
     </div>
     <div class="content">
@@ -122,17 +122,19 @@ export default {
           <h2>Where?</h2>
           <p>Where am I now?</p>
         </div>
-        <div class="mapcontainer">
-          <SouthIsland
-            state="canterbury"
-            right="0px"
-            top="0px"
-            scale="3.5"
-            transform-origin="88% 39%"
-            transition="transform 0.8s ease-in-out"
-            :hover="hover"
-          />
-          <i class="fas fa-map-pin" id="christchurch-pin"></i>
+        <div class="stamp-border">
+          <div class="mapcontainer">
+            <SouthIsland
+              state="canterbury"
+              right="0px"
+              top="0px"
+              scale="3.5"
+              transform-origin="88% 39%"
+              transition="transform 0.8s ease-in-out"
+              :hover="hover"
+            />
+            <i class="fas fa-map-pin" id="christchurch-pin"></i>
+          </div>
         </div>
       </section>
     </aside>
@@ -246,7 +248,7 @@ export default {
 }
 
 .work {
-  background-color: #2b2b2b;
+  background-color: #595959;
   border-radius: 18px;
   color: $platinum;
   p {
@@ -297,6 +299,7 @@ export default {
   display: flex;
   justify-content: space-between;
   background-color: #d4edbf;
+  width: 60%;
   &:hover {
     .fa-map-pin {
       display: block;
@@ -324,5 +327,21 @@ export default {
   width: 120px;
   overflow: hidden;
   position: relative;
+}
+
+.stamp-border {
+  /* Change this value to adjust the stamp perforation size: */
+  --radius: 3px;
+
+  background-image: radial-gradient(var(--radius), transparent 98%, white),
+    linear-gradient(white 0 0);
+  background-repeat: round, no-repeat;
+  background-position:
+    calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
+    50%;
+  background-size:
+    calc(var(--radius) * 3) calc(var(--radius) * 3),
+    calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
+  padding: 12px;
 }
 </style>
