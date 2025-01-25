@@ -1,13 +1,9 @@
 <script>
-import HeaderAnimation from '@/components/HeaderAnimation.vue'
-
-import MenuSlide from '@/components/MenuSlide.vue'
-import BlogPreview from '@/components/BlogPreview.vue'
-import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
-import { Typed } from '@duskmoon/vue3-typed-js'
 import ShinyImage from '@/components/ShinyImage.vue'
 import SouthIsland from '../assets/icons/South-Island.vue'
+import CalPlusImg from '../assets/CalendarPlusScreenshot.png'
+import SETImg from '../assets/SETBlackBG.jpg'
 
 export default {
   name: 'home',
@@ -71,13 +67,31 @@ export default {
         <div class="list-split">
           <ul>
             <li>Learning:</li>
-            <li>Trying:</li>
+            <li>Playing:</li>
             <li>Dreaming of visiting:</li>
+            <li>Trying:</li>
+            <li>Craving:</li>
+            <li>Rewatching:</li>
           </ul>
           <ul>
             <li>Marketing</li>
-            <li>Growing Dahlia's</li>
+            <li>Dragon Age: Veilguard</li>
             <li>Japan, Australia, Azores</li>
+            <li>Growing Dahlia's</li>
+            <li>Nibbit crisps</li>
+            <li>Ally McBeal</li>
+          </ul>
+        </div>
+        <div>
+          <p>Things that are good right now</p>
+          <ul>
+            <li><p>Big fluffy Dahlia's in the garden</p></li>
+            <li>
+              <p>Long days and sunshine</p>
+            </li>
+            <li>
+              <p>Waterfalls</p>
+            </li>
           </ul>
         </div>
       </section>
@@ -92,10 +106,10 @@ export default {
           <ul class="list">
             <li>
               <ShinyImage
-                webUrl="https://www.automagial.work"
+                webUrl="https://www.automagical.work"
                 imageUrl="../assets/CalendarPlusScreenshot.png"
               ></ShinyImage
-              ><a href="https://www.automagial.work"
+              ><a href="https://www.automagical.work"
                 >Calendar Plus by<br />
                 automagical.work</a
               >
