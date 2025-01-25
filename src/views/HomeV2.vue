@@ -491,6 +491,9 @@ export default {
 }
 
 .projects {
+  background-color: $indigo;
+  border-radius: 18px;
+  height: fit-content;
   .list {
     display: flex;
     justify-content: space-between;
