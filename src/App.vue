@@ -19,7 +19,8 @@ export default {
       this.$route.path === '/thank-you' ||
       this.$route.path === '/links' ||
       this.$route.path === '/home2' ||
-      this.$route.path === '/adventures'
+      this.$route.path === '/adventures' ||
+      this.$route.path === '/'
     ) {
       this.showFooter = false
     }
@@ -32,7 +33,8 @@ export default {
       this.$route.path === '/thank-you' ||
       this.$route.path === '/links' ||
       this.$route.path === '/home2' ||
-      this.$route.path === '/adventures'
+      this.$route.path === '/adventures' ||
+      this.$route.path === '/'
     ) {
       this.showFooter = false
     } else {
@@ -55,6 +57,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   max-width: 4000px;
   margin: auto;
 }
