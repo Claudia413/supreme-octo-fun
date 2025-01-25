@@ -21,7 +21,6 @@ export default {
   },
   methods: {},
   mounted() {
-    this.getContent()
     useHead({
       title: 'CE | Geek, developer, trier of things',
       meta: [
@@ -41,7 +40,7 @@ export default {
 <template>
   <div class="home">
     <div class="menubar">
-      <router-link to="/home" class="button mt-2">Home</router-link>
+      <router-link to="/" class="button mt-2">Home</router-link>
       <router-link to="/about" class="button mt-2">About</router-link>
       <router-link to="/blog" class="button mt-2">Archived Blog (old style)</router-link>
     </div>
