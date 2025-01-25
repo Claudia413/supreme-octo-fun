@@ -2,8 +2,6 @@
 import { useHead } from 'unhead'
 import ShinyImage from '@/components/ShinyImage.vue'
 import SouthIsland from '../assets/icons/South-Island.vue'
-import CalPlusImg from '../assets/CalendarPlusScreenshot.png'
-import SETImg from '../assets/SETBlackBG.jpg'
 
 export default {
   name: 'home',

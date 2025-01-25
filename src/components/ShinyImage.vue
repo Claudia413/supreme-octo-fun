@@ -14,22 +14,6 @@ const imgSrc = computed(() => {
 })
 </script>
 
-<!-- <script>
-export default {
-  name: 'ShinyImage',
-  props: {
-    imageUrl: {
-      type: Object,
-      required: true
-    },
-    webUrl: {
-      type: String,
-      required: true
-    }
-  }
-}
-</script> -->
-
 <style scoped>
 a {
   text-decoration: none;

@@ -284,122 +284,121 @@
 </template>
 
 <script>
-  export default {
-    name: "South-island",
-    props: {
-      title: {
-        type: String,
-        default: "South Island of New Zealand",
-        required: false,
-      },
-      state: {
-        type: String,
-        required: false,
-      },
-      hover: {
-        type: Boolean,
-        default: false,
-        required: false,
-      },
-      top: {
-        type: String,
-        default: "20px",
-        required: false,
-      },
-      right: {
-        type: String,
-        default: "20px",
-        required: false,
-      },
-      scale: {
-        type: String,
-        default: "3",
-        required: false,
-      },
-      transformOrigin: {
-        type: String,
-        default: "50% 50%",
-        required: false,
-      },
-      transition: {
-        type: String,
-        default: "all 0.5s ease-in-out",
-        required: false,
-      },
+export default {
+  name: 'South-island',
+  props: {
+    title: {
+      type: String,
+      default: 'South Island of New Zealand',
+      required: false
     },
-    computed: {
-      stylesObject: function () {
-        console.log({ hover: this.hover });
-        if (this.hover) {
-          return {
-            transform: "scale(" + this.scale + ")",
-            "transform-origin": this.transformOrigin,
-            transition: this.transition,
-            top: this.top,
-            right: this.right,
-          };
-        } else {
-          return {
-            "transform-origin": this.transformOrigin,
-            transition: this.transition,
-            top: this.top,
-            right: this.right,
-          };
+    state: {
+      type: String,
+      required: false
+    },
+    hover: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    top: {
+      type: String,
+      default: '20px',
+      required: false
+    },
+    right: {
+      type: String,
+      default: '20px',
+      required: false
+    },
+    scale: {
+      type: String,
+      default: '3',
+      required: false
+    },
+    transformOrigin: {
+      type: String,
+      default: '50% 50%',
+      required: false
+    },
+    transition: {
+      type: String,
+      default: 'all 0.5s ease-in-out',
+      required: false
+    }
+  },
+  computed: {
+    stylesObject: function () {
+      if (this.hover) {
+        return {
+          transform: 'scale(' + this.scale + ')',
+          'transform-origin': this.transformOrigin,
+          transition: this.transition,
+          top: this.top,
+          right: this.right
         }
-      },
-    },
-  };
+      } else {
+        return {
+          'transform-origin': this.transformOrigin,
+          transition: this.transition,
+          top: this.top,
+          right: this.right
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
-  @import "../_variables.scss";
-  svg {
-    fill: $saffron;
-    width: 120px;
-    height: 140px;
-    position: absolute;
+@import '../_variables.scss';
+svg {
+  fill: $saffron;
+  width: 120px;
+  height: 140px;
+  position: absolute;
+}
+.st0 {
+  fill: #a7b3b0;
+  stroke: #ffffff;
+  stroke-width: 0.5;
+}
+.westcoast {
+  #NZ-WTC {
+    fill: $seagreen;
   }
-  .st0 {
-    fill: #a7b3b0;
-    stroke: #ffffff;
-    stroke-width: 0.5;
+}
+.tasman {
+  #NZ-TAS {
+    fill: $seagreen;
   }
-  .westcoast {
-    #NZ-WTC {
-      fill: $seagreen;
-    }
+}
+.marlborough {
+  #NZ-MBH {
+    fill: $seagreen;
   }
-  .tasman {
-    #NZ-TAS {
-      fill: $seagreen;
-    }
+}
+.canterbury {
+  #NZ-CAN {
+    fill: $seagreen;
   }
-  .marlborough {
-    #NZ-MBH {
-      fill: $seagreen;
-    }
+}
+.southland {
+  #NZ-STL,
+  #NZ-STL2,
+  #NZ-STL3,
+  #NZ-STL4,
+  #NZ-STL5,
+  #NZ-STL6,
+  #NZ-STL7,
+  #NZ-STL8,
+  #NZ-STL9 {
+    fill: $seagreen;
   }
-  .canterbury {
-    #NZ-CAN {
-      fill: $seagreen;
-    }
+}
+.otago {
+  #NZ-OTA {
+    fill: $seagreen;
   }
-  .southland {
-    #NZ-STL,
-    #NZ-STL2,
-    #NZ-STL3,
-    #NZ-STL4,
-    #NZ-STL5,
-    #NZ-STL6,
-    #NZ-STL7,
-    #NZ-STL8,
-    #NZ-STL9 {
-      fill: $seagreen;
-    }
-  }
-  .otago {
-    #NZ-OTA {
-      fill: $seagreen;
-    }
-  }
+}
 </style>
