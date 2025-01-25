@@ -56,6 +56,7 @@ export default {
               this is my own little corner of the internet you might find some experiments and other
               fun stuff here too.
             </p>
+            <p>Ps. This website design is still a work in progress as of January 2025</p>
           </div>
         </div>
       </section>

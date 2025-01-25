@@ -28,8 +28,8 @@ a {
 }
 
 a {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   font-size: 30px;
   color: #fff;
   background: none;
@@ -97,8 +97,8 @@ img {
   left: -5px;
   position: relative;
   top: -5px;
-  width: 210px;
-  height: 210px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   opacity: 1;
 }
