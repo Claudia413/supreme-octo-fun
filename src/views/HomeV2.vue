@@ -92,26 +92,26 @@ export default {
           <ul class="list">
             <li>
               <ShinyImage
-                webUrl="https://www.claudiaengelsman.com"
+                webUrl="https://www.automagial.work"
                 imageUrl="/src/assets/CalendarPlusScreenshot.png"
               ></ShinyImage
-              ><a href="https://www.claudiaengelsman.com"
+              ><a href="https://www.automagial.work"
                 >Calendar Plus by<br />
                 automagical.work</a
               >
             </li>
             <li>
               <ShinyImage
-                webUrl="https://www.claudiaengelsman.com"
+                webUrl="https://www.southernescapetours.co.nz"
                 imageUrl="/src/assets/SETBlackBG.jpg"
               ></ShinyImage>
-              <a href="https://www.claudiaengelsman.com">Southern Escape Tours</a>
+              <a href="https://www.southernescapetours.co.nz">Southern Escape Tours</a>
             </li>
           </ul>
         </div>
       </section>
     </div>
-    <aside>
+    <aside class="aside-where">
       <section
         class="list-block text-block where"
         @mouseover="hover = true"
@@ -138,6 +138,26 @@ export default {
         </div>
       </section>
     </aside>
+    <div class="content">
+      <section class="text-block projects">
+        <h2>Projects</h2>
+        <p>A few projects I have done over the years.</p>
+        <div>
+          <ul class="list">
+            <li>
+              <a href="https://www.towerjunctionphysio.co.nz/"
+                >Physio website for company in Christchurch</a
+              >
+            </li>
+            <li>
+              <a href="https://thinkfirst.netlify.app/"
+                >Weekdend project: Charles Bukowski inspired writing webapp</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -294,7 +314,11 @@ export default {
     }
   }
 }
-
+.aside-where {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+}
 .where {
   display: flex;
   justify-content: space-between;
