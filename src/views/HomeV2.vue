@@ -67,24 +67,27 @@ export default {
         <h2>Q1 2025</h2>
         <p>A brief overview of what I am up to</p>
         <div class="list-split">
+          <h4>Professionally</h4>
           <ul>
-            <li>Learning:</li>
-            <li>Playing:</li>
-            <li>Dreaming of visiting:</li>
-            <li>Trying:</li>
-            <li>Craving:</li>
-            <li>Rewatching:</li>
+            <li><span class="first">Learning: </span><span>Marketing</span></li>
+            <li>
+              <span class="first">Playing with: </span><span>CSS Grid and Container Queries</span>
+            </li>
+            <li><span class="first">Fav YT: </span><span>Kevin Powell</span></li>
+            <li><span class="first">Wanting to try: </span><span>SendGrid API for texts</span></li>
           </ul>
+          <h4>Personally</h4>
           <ul>
-            <li>Marketing</li>
-            <li>Dragon Age: Veilguard</li>
-            <li>Japan, Australia, Azores</li>
-            <li>Growing Dahlia's</li>
-            <li>Nibbit crisps</li>
-            <li>Ally McBeal</li>
+            <li>
+              <span class="first">Dreaming of visiting: </span><span>Japan, Australia, Azores</span>
+            </li>
+            <li><span class="first">Playing: </span><span>Dragon Age: Veilguard</span></li>
+            <li><span class="first">Trying: </span><span>Growing Dahlia's</span></li>
+            <li><span class="first">Craving: </span><span>Nibbit Crisps</span></li>
+            <li><span class="first">Rewatching: </span><span>Ally McBeal</span></li>
           </ul>
         </div>
-        <div>
+        <!-- <div>
           <p>Things that are good right now:</p>
           <ul class="list">
             <li><p>Big fluffy Dahlia's in the garden</p></li>
@@ -95,7 +98,7 @@ export default {
               <p>Waterfalls</p>
             </li>
           </ul>
-        </div>
+        </div> -->
       </section>
     </aside>
     <div class="content work">
@@ -184,7 +187,7 @@ export default {
   display: grid;
   grid-gap: 40px;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 100px repeat(8, 150px);
+  grid-template-rows: 100px auto;
 
   background-color: #edebf7;
   opacity: 1;
@@ -330,8 +333,13 @@ export default {
 .aside-list-block {
   grid-row: auto / span 3;
   justify-self: center;
+  @media only screen and (max-width: 1155px) {
+    grid-row: 2 / span 4;
+    grid-column: 2 / 3;
+  }
   @media only screen and (max-width: 768px) {
     grid-column: 1 / 2;
+    grid-row: auto;
   }
 }
 .list-block {
@@ -342,21 +350,29 @@ export default {
     color: $forestblack;
   }
   .list-split {
-    display: flex;
-    justify-content: space-around;
     ul {
       list-style: none;
       margin-inline-start: 0;
       padding-inline-start: 0;
+      width: 100%;
       li {
         margin-bottom: 4px;
+        display: flex;
+        width: 100%;
+        .first {
+          font-weight: 600;
+          width: 40%;
+          text-align: right;
+          margin-right: 1ch;
+          flex-shrink: 0;
+        }
+        span {
+          flex-shrink: 20;
+        }
       }
     }
-    ul:first-of-type {
-      text-align: right;
-      font-weight: 600;
-      margin-right: 8px;
-      width: 40%;
+    h4 {
+      text-align: center;
     }
   }
   .list {
@@ -377,12 +393,27 @@ export default {
   justify-content: center;
   grid-row: 5 / span 1;
   grid-column: 2 / 3;
+  container-type: inline-size;
+  container-name: asidewhere;
   .text-block {
     text-align: left;
+  }
+  @media only screen and (max-width: 1155px) {
+    grid-column: 2 / 3;
+    grid-row: 6;
   }
   @media only screen and (max-width: 768px) {
     grid-column: 1 / 2;
     grid-row: auto;
+  }
+  @container asidewhere (max-width: 300px) {
+    .where {
+      display: flex;
+      flex-direction: column;
+    }
+    .stamp-border {
+      max-width: 144px;
+    }
   }
 }
 .where {
