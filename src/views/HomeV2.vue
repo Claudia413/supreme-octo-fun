@@ -45,7 +45,7 @@ export default {
       <!-- <router-link to="/about" class="button mt-2">About</router-link> -->
       <router-link to="/blog" class="button mt-2">Archived Blog (old style)</router-link>
     </div>
-    <div class="content">
+    <div class="content intro">
       <section class="intro-block text-block">
         <div class="intro-content">
           <img src="../assets/ClaudiaEngelsman.jpg" alt="Claudia Engelsman" class="intro-image" />
@@ -62,7 +62,7 @@ export default {
         </div>
       </section>
     </div>
-    <aside>
+    <aside class="aside-list-block">
       <section class="list-block text-block">
         <h2>Q1 2025</h2>
         <p>A brief overview of what I am up to</p>
@@ -85,8 +85,8 @@ export default {
           </ul>
         </div>
         <div>
-          <p>Things that are good right now</p>
-          <ul>
+          <p>Things that are good right now:</p>
+          <ul class="list">
             <li><p>Big fluffy Dahlia's in the garden</p></li>
             <li>
               <p>Long days and sunshine</p>
@@ -98,7 +98,7 @@ export default {
         </div>
       </section>
     </aside>
-    <div class="content">
+    <div class="content work">
       <section class="text-block work">
         <h2>Work</h2>
         <p>
@@ -133,7 +133,7 @@ export default {
       >
         <div>
           <h2>Where?</h2>
-          <p>Where am I now?</p>
+          <p>Christchurch, New Zealand</p>
         </div>
         <div class="stamp-border">
           <div class="mapcontainer">
@@ -151,7 +151,7 @@ export default {
         </div>
       </section>
     </aside>
-    <div class="content">
+    <div class="content projects">
       <section class="text-block projects">
         <h2>Projects</h2>
         <p>A few projects I have done over the years.</p>
@@ -182,9 +182,9 @@ export default {
   max-width: 100%;
   height: 100%;
   display: grid;
-  grid-gap: 32px;
+  grid-gap: 40px;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 100px repeat(8, 150px);
 
   background-color: #edebf7;
   opacity: 1;
@@ -223,6 +223,32 @@ export default {
 .content {
   width: 80%;
   justify-self: center;
+  &.intro {
+    grid-row: auto / span 2;
+  }
+  &.work {
+    grid-row: auto / span 3;
+    height: fit-content;
+    align-self: end;
+  }
+  &.projects {
+    grid-row: auto / span 2;
+    grid-column: 1 / 2;
+  }
+  @media only screen and (max-width: 768px) {
+    &.intro {
+      grid-row: auto;
+      grid-column: 1 / 2;
+    }
+    &.work {
+      grid-row: auto;
+      grid-column: 1 / 2;
+    }
+    &.projects {
+      grid-row: auto;
+      grid-column: 1 / 2;
+    }
+  }
 }
 .intro-block {
   border-radius: 18px;
@@ -301,10 +327,17 @@ export default {
     }
   }
 }
-
+.aside-list-block {
+  grid-row: auto / span 3;
+  justify-self: center;
+  @media only screen and (max-width: 768px) {
+    grid-column: 1 / 2;
+  }
+}
 .list-block {
   border-radius: 18px;
   background-color: #e5bbfe;
+  max-width: 460px;
   h2 {
     color: $forestblack;
   }
@@ -313,7 +346,6 @@ export default {
     justify-content: space-around;
     ul {
       list-style: none;
-      margin-block-start: 0;
       margin-inline-start: 0;
       padding-inline-start: 0;
       li {
@@ -324,6 +356,18 @@ export default {
       text-align: right;
       font-weight: 600;
       margin-right: 8px;
+      width: 40%;
+    }
+  }
+  .list {
+    list-style: none;
+    margin-inline-start: 0;
+    padding-inline-start: 1rem;
+    li {
+      font-weight: 600;
+      p {
+        margin: 0;
+      }
     }
   }
 }
@@ -331,12 +375,21 @@ export default {
   display: flex;
   height: fit-content;
   justify-content: center;
+  grid-row: 5 / span 1;
+  grid-column: 2 / 3;
+  .text-block {
+    text-align: left;
+  }
+  @media only screen and (max-width: 768px) {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
 }
 .where {
   display: flex;
   justify-content: space-between;
   background-color: #d4edbf;
-  width: 60%;
+  width: 80%;
   &:hover {
     .fa-map-pin {
       display: block;
