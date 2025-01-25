@@ -10,7 +10,7 @@ import { computed } from 'vue'
 const props = defineProps(['imageUrl', 'webUrl'])
 
 const imgSrc = computed(() => {
-  return new URL(`${props.imageUrl}`, import.meta.url).href
+  return new URL(`../${props.imageUrl}`, import.meta.url).href
 })
 </script>
 
