@@ -3,7 +3,7 @@ import { useHead } from 'unhead'
 import ShinyImage from '@/components/ShinyImage.vue'
 import SouthIsland from '../assets/icons/South-Island.vue'
 import SET from '../assets/SETBlackBG.jpg'
-import CalPlus from '../assets/CalendarPlusScreenshot.png'
+import CalPlus from '../assets/CalendarPlusScreenShot.png'
 
 export default {
   name: 'home',
