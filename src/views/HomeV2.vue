@@ -7,17 +7,20 @@ import { usePrismic } from '@prismicio/vue'
 import { useHead } from 'unhead'
 import { Typed } from '@duskmoon/vue3-typed-js'
 import ShinyImage from '@/components/ShinyImage.vue'
+import SouthIsland from '../assets/icons/South-Island.vue'
 
 export default {
   name: 'home',
   data() {
     return {
       loadingBlogs: true,
-      blogpreviews: []
+      blogpreviews: [],
+      hover: false
     }
   },
   components: {
-    ShinyImage
+    ShinyImage,
+    SouthIsland
   },
   methods: {},
   mounted() {
@@ -64,6 +67,19 @@ export default {
     <aside>
       <section class="list-block text-block">
         <h2>Q1 2025</h2>
+        <p>A brief overview of what I am up to</p>
+        <div class="list-split">
+          <ul>
+            <li>Learning:</li>
+            <li>Trying:</li>
+            <li>Dreaming of visiting:</li>
+          </ul>
+          <ul>
+            <li>Marketing</li>
+            <li>Growing Dahlia's</li>
+            <li>Japan, Australia, Azores</li>
+          </ul>
+        </div>
       </section>
     </aside>
     <div class="content">
@@ -95,6 +111,31 @@ export default {
         </div>
       </section>
     </div>
+    <aside>
+      <section
+        class="list-block text-block where"
+        @mouseover="hover = true"
+        @mouseenter="hover = true"
+        @mouseleave="hover = false"
+      >
+        <div>
+          <h2>Where?</h2>
+          <p>Where am I now?</p>
+        </div>
+        <div class="mapcontainer">
+          <SouthIsland
+            state="canterbury"
+            right="0px"
+            top="0px"
+            scale="3.5"
+            transform-origin="88% 39%"
+            transition="transform 0.8s ease-in-out"
+            :hover="hover"
+          />
+          <i class="fas fa-map-pin" id="christchurch-pin"></i>
+        </div>
+      </section>
+    </aside>
   </div>
 </template>
 
@@ -104,8 +145,7 @@ export default {
 .home {
   width: 100%;
   max-width: 100%;
-
-  height: calc(100% - 400px);
+  height: 100%;
   display: grid;
   grid-gap: 32px;
   grid-template-columns: 2fr 1fr;
@@ -133,7 +173,16 @@ export default {
   height: 80px;
   grid-column: 1 / 3;
   @media only screen and (max-width: 768px) {
+    display: flex;
     grid-column: 1 / 2;
+    .button {
+      padding: 16px 0;
+      display: flex;
+      flex-grow: 1;
+      text-align: center;
+      justify-content: center;
+      background-color: #2b2b2b;
+    }
   }
 }
 .content {
@@ -219,5 +268,61 @@ export default {
 }
 
 .list-block {
+  border-radius: 18px;
+  background-color: #e5bbfe;
+  h2 {
+    color: $forestblack;
+  }
+  .list-split {
+    display: flex;
+    justify-content: space-around;
+    ul {
+      list-style: none;
+      margin-block-start: 0;
+      margin-inline-start: 0;
+      padding-inline-start: 0;
+      li {
+        margin-bottom: 4px;
+      }
+    }
+    ul:first-of-type {
+      text-align: right;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+  }
+}
+
+.where {
+  display: flex;
+  justify-content: space-between;
+  background-color: #d4edbf;
+  &:hover {
+    .fa-map-pin {
+      display: block;
+      font-size: 12px;
+      color: $coral;
+      opacity: 1;
+      transition: all 0.75s ease-in-out;
+      &#christchurch-pin {
+        top: 65px;
+        right: 54px;
+      }
+    }
+  }
+}
+.fa-map-pin {
+  opacity: 0;
+  position: absolute;
+  top: -100px;
+  right: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.mapcontainer {
+  height: 140px;
+  width: 120px;
+  overflow: hidden;
+  position: relative;
 }
 </style>
