@@ -153,7 +153,7 @@ export default {
                 <img
                   src="../assets/ThinkFirstScreenshot.png"
                   alt="Charles Bukowski inspired writing webapp screenshot"
-                  class="project-ss"
+                  class="project-ss think"
               /></a>
               <h5>2023</h5>
               <p>Weekdend project: Charles Bukowski inspired writing webapp</p>
@@ -485,6 +485,9 @@ export default {
   height: 300px;
   object-fit: cover;
   border: 6px white solid;
+  &.think {
+    object-position: 25% 50%;
+  }
 }
 
 .projects {
