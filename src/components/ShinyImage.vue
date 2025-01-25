@@ -1,17 +1,23 @@
 <template>
   <a :href="webUrl">
-    <img :src="imgSrc" alt="Shiny Image" />
+    <img :src="imageUrl" alt="Shiny Image" />
   </a>
 </template>
 
-<script setup>
-import { computed } from 'vue'
-
-const props = defineProps(['imageUrl', 'webUrl'])
-
-const imgSrc = computed(() => {
-  return new URL(`../${props.imageUrl}`, import.meta.url).href
-})
+<script>
+export default {
+  name: 'ShinyImage',
+  props: {
+    imageUrl: {
+      type: String,
+      required: true
+    },
+    webUrl: {
+      type: String,
+      required: true
+    }
+  }
+}
 </script>
 
 <style scoped>

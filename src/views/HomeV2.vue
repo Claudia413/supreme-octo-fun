@@ -2,6 +2,8 @@
 import { useHead } from 'unhead'
 import ShinyImage from '@/components/ShinyImage.vue'
 import SouthIsland from '../assets/icons/South-Island.vue'
+import SET from '../assets/SETBlackBG.jpg'
+import CalPlus from '../assets/CalendarPlusScreenshot.png'
 
 export default {
   name: 'home',
@@ -9,7 +11,9 @@ export default {
     return {
       loadingBlogs: true,
       blogpreviews: [],
-      hover: false
+      hover: false,
+      SET,
+      CalPlus
     }
   },
   components: {
@@ -103,10 +107,7 @@ export default {
         <div>
           <ul class="list">
             <li>
-              <ShinyImage
-                webUrl="https://www.automagical.work"
-                imageUrl="../assets/CalendarPlusScreenshot.png"
-              ></ShinyImage
+              <ShinyImage webUrl="https://www.automagical.work" :imageUrl="CalPlus"></ShinyImage
               ><a href="https://www.automagical.work"
                 >Calendar Plus by<br />
                 automagical.work</a
@@ -115,7 +116,7 @@ export default {
             <li>
               <ShinyImage
                 webUrl="https://www.southernescapetours.co.nz"
-                imageUrl="../assets/SETBlackBG.jpg"
+                :imageUrl="SET"
               ></ShinyImage>
               <a href="https://www.southernescapetours.co.nz">Southern Escape Tours</a>
             </li>
