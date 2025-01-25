@@ -4,20 +4,8 @@
   </a>
 </template>
 
-<script>
-export default {
-  name: 'ShinyImage',
-  props: {
-    imageUrl: {
-      type: String,
-      required: true
-    },
-    webUrl: {
-      type: String,
-      required: true
-    }
-  }
-}
+<script setup>
+const props = defineProps(['imageUrl', 'webUrl'])
 </script>
 
 <style scoped>
