@@ -1,9 +1,9 @@
 <script>
 import { useHead } from 'unhead'
-import ShinyImage from '@/components/ShinyImage.vue'
+import StampImage from '@/components/StampImage.vue'
 import SouthIsland from '../assets/icons/South-Island.vue'
-import SET from '../assets/SETBlackBG.jpg'
-import CalPlus from '../assets/CalendarPlusScreenShot.png'
+import SET from '../assets/SETWhiteBG.jpg'
+import CalPlus from '../assets/CalendarPlusScreenShotLight.png'
 
 export default {
   name: 'home',
@@ -17,7 +17,7 @@ export default {
     }
   },
   components: {
-    ShinyImage,
+    StampImage,
     SouthIsland
   },
   methods: {},
@@ -87,18 +87,6 @@ export default {
             <li><span class="first">Rewatching: </span><span>Ally McBeal</span></li>
           </ul>
         </div>
-        <!-- <div>
-          <p>Things that are good right now:</p>
-          <ul class="list">
-            <li><p>Big fluffy Dahlia's in the garden</p></li>
-            <li>
-              <p>Long days and sunshine</p>
-            </li>
-            <li>
-              <p>Waterfalls</p>
-            </li>
-          </ul>
-        </div> -->
       </section>
     </aside>
     <div class="content work">
@@ -110,17 +98,17 @@ export default {
         <div>
           <ul class="list">
             <li>
-              <ShinyImage webUrl="https://www.automagical.work" :imageUrl="CalPlus"></ShinyImage
+              <StampImage webUrl="https://www.automagical.work" :imageUrl="CalPlus"></StampImage
               ><a href="https://www.automagical.work"
                 >Calendar Plus by<br />
                 automagical.work</a
               >
             </li>
             <li>
-              <ShinyImage
+              <StampImage
                 webUrl="https://www.southernescapetours.co.nz"
                 :imageUrl="SET"
-              ></ShinyImage>
+              ></StampImage>
               <a href="https://www.southernescapetours.co.nz">Southern Escape Tours</a>
             </li>
           </ul>
@@ -161,14 +149,38 @@ export default {
         <div>
           <ul class="list">
             <li>
-              <a href="https://www.towerjunctionphysio.co.nz/"
-                >Physio website for company in Christchurch</a
-              >
+              <a href="https://thinkfirst.netlify.app/">
+                <img
+                  src="../assets/ThinkFirstScreenshot.png"
+                  alt="Charles Bukowski inspired writing webapp screenshot"
+                  class="project-ss"
+              /></a>
+              <h5>2023</h5>
+              <p>Weekdend project: Charles Bukowski inspired writing webapp</p>
+              <p>The code is open source and viewable on Github</p>
             </li>
             <li>
-              <a href="https://thinkfirst.netlify.app/"
-                >Weekdend project: Charles Bukowski inspired writing webapp</a
-              >
+              <a href="https://www.towerjunctionphysio.co.nz/">
+                <img
+                  src="../assets/TJPScreenshot.jpg"
+                  alt="Tower Junction Physio website screenshot"
+                  class="project-ss"
+              /></a>
+              <h5>2021</h5>
+              <p>Physio website for company in Christchurch</p>
+            </li>
+            <li>
+              <a href="https://github.com/Claudia413/strong-mermaid-petal">
+                <img
+                  src="../assets/TheBikesAndIScreenshot.jpg"
+                  alt="Blog about bikes screenshot"
+                  class="project-ss"
+              /></a>
+              <h5>2021</h5>
+              <p>
+                Blog for a friend, the blog went offline but the code is open source and can be
+                viewed here.
+              </p>
             </li>
           </ul>
         </div>
@@ -182,17 +194,14 @@ export default {
 
 .home {
   width: 100%;
-  max-width: 100%;
+  max-width: 2200px;
   height: 100%;
   display: grid;
-  grid-gap: 40px;
-  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  row-gap: 40px;
+  // minus 10px for the grid-gap because explicitly settings columns will make horizontal scrollbars appear
+  grid-template-columns: calc(60% - 10px) calc(40% - 10px);
   grid-template-rows: 100px auto;
-
-  background-color: #edebf7;
-  opacity: 1;
-  background-image: radial-gradient(#324344 0.5px, #edebf7 0.5px);
-  background-size: 18px 18px;
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -204,7 +213,7 @@ export default {
     opacity: 1;
   }
   h2 {
-    color: $text-darkbg;
+    color: white;
   }
 }
 .menubar {
@@ -228,6 +237,7 @@ export default {
   justify-self: center;
   &.intro {
     grid-row: auto / span 2;
+    justify-self: end;
   }
   &.work {
     grid-row: auto / span 3;
@@ -236,20 +246,23 @@ export default {
   }
   &.projects {
     grid-row: auto / span 2;
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
   }
   @media only screen and (max-width: 768px) {
     &.intro {
       grid-row: auto;
       grid-column: 1 / 2;
+      justify-self: center;
     }
     &.work {
       grid-row: auto;
       grid-column: 1 / 2;
+      justify-self: center;
     }
     &.projects {
       grid-row: auto;
       grid-column: 1 / 2;
+      justify-self: center;
     }
   }
 }
@@ -310,11 +323,12 @@ export default {
 }
 
 .work {
-  background-color: #595959;
+  background-color: $bittersweet;
   border-radius: 18px;
-  color: $platinum;
+  color: white;
+  max-width: 800px;
   p {
-    color: $platinum;
+    color: white;
   }
   .list {
     display: flex;
@@ -344,7 +358,7 @@ export default {
 }
 .list-block {
   border-radius: 18px;
-  background-color: #e5bbfe;
+  background-color: $periwinkle;
   max-width: 460px;
   h2 {
     color: $forestblack;
@@ -419,7 +433,7 @@ export default {
 .where {
   display: flex;
   justify-content: space-between;
-  background-color: #d4edbf;
+  background-color: $meadow;
   width: 80%;
   &:hover {
     .fa-map-pin {
@@ -464,5 +478,21 @@ export default {
     calc(var(--radius) * 3) calc(var(--radius) * 3),
     calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
   padding: 12px;
+}
+
+.project-ss {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 6px white solid;
+}
+
+.projects {
+  .list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-inline-start: 0;
+  }
 }
 </style>

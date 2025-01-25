@@ -60,5 +60,9 @@ export default {
   width: 100%;
   max-width: 4000px;
   margin: auto;
+  background-color: #edebf7;
+  opacity: 1;
+  background-image: radial-gradient(#324344 0.5px, #edebf7 0.5px);
+  background-size: 18px 18px;
 }
 </style>
