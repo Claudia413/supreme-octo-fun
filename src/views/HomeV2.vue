@@ -143,9 +143,8 @@ export default {
       </section>
     </aside>
     <div class="content projects">
-      <section class="text-block projects">
+      <section class="text-block projects-content">
         <h2>Projects</h2>
-        <p>A few projects I have done over the years.</p>
         <div>
           <ul class="list">
             <li>
@@ -240,9 +239,10 @@ export default {
     justify-self: end;
   }
   &.work {
-    grid-row: auto / span 3;
+    grid-row: auto / span 2;
     height: fit-content;
     align-self: end;
+    justify-self: end;
   }
   &.projects {
     grid-row: auto / span 2;
@@ -272,6 +272,7 @@ export default {
   container-type: inline-size;
   container-name: blockwithimage;
   max-width: 800px;
+  margin-left: auto;
 }
 
 .intro-content {
@@ -323,7 +324,7 @@ export default {
 }
 
 .work {
-  background-color: $bittersweet;
+  background-color: $ocean;
   border-radius: 18px;
   color: white;
   max-width: 800px;
@@ -346,7 +347,7 @@ export default {
 }
 .aside-list-block {
   grid-row: auto / span 3;
-  justify-self: center;
+  justify-self: start;
   @media only screen and (max-width: 1155px) {
     grid-row: 2 / span 4;
     grid-column: 2 / 3;
@@ -404,7 +405,7 @@ export default {
 .aside-where {
   display: flex;
   height: fit-content;
-  justify-content: center;
+  justify-content: start;
   grid-row: 5 / span 1;
   grid-column: 2 / 3;
   container-type: inline-size;
@@ -491,14 +492,21 @@ export default {
 }
 
 .projects {
-  background-color: $indigo;
-  border-radius: 18px;
-  height: fit-content;
-  .list {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding-inline-start: 0;
+  .projects-content {
+    border-radius: 18px;
+    background-color: $bright;
+    height: fit-content;
+    color: white;
+    .list {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding-inline-start: 0;
+      p {
+        color: white;
+        margin: 0;
+      }
+    }
   }
 }
 </style>
