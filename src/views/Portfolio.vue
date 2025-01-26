@@ -27,6 +27,26 @@
       </p>
     </section>
     <img
+      alt="Screenshot of the Think First website"
+      src="../assets/ThinkFirstScreenshot.png"
+      class="project-image project0 img-block"
+    />
+    <section class="project-text project0 text-block">
+      <h3>Think First</h3>
+      <p>
+        A little weekend project I did in 2023. I wanted to build something really small and quirky.
+        After reading about Charles Bukowski I came up with the idea to make a typewriter like app
+        where you need to think before you start typing as there is no backspace or delete.
+      </p>
+      <a
+        class="portfolio-link"
+        href="https://www.thebikesandi.com/"
+        target="_blank"
+        rel="noreferrer"
+        >Visit the Think First website</a
+      >
+    </section>
+    <img
       alt="Screenshot of the Tower Junction Physio website"
       src="../assets/TJPScreenshot.jpg"
       class="project-image project1 img-block"
@@ -57,14 +77,15 @@
       <p>
         A blog built for a dear friend who is crazy about bikes and loves to share about all things
         bikes. The website was built with Vuejs and the content is managed through Prismic.io and
-        hosted on Netlify. I did not design this website.
+        hosted on Netlify. The website still exist just no longer at a domain, the code is open
+        source and viewable on my Github. I did not design this website.
       </p>
       <a
         class="portfolio-link"
-        href="https://www.thebikesandi.com/"
+        href="https://github.com/Claudia413/strong-mermaid-petal"
         target="_blank"
         rel="noreferrer"
-        >Visit the Bikes and I website</a
+        >Visit the Bikes and I code on Github</a
       >
     </section>
   </div>
@@ -96,14 +117,14 @@ export default {
   },
   mounted() {
     useHead({
-      title: "CE | Developer, adventurer, artist",
+      title: 'CE | Developer, adventurer, artist',
       meta: [
         {
           name: 'description',
-          content: "Showcase of favorite projects"
+          content: 'Showcase of favorite projects'
         },
-        { name: 'image', content: "../assets/ClaudiaBWKaikoura.jpg" },
-        { name: 'url', content: "https://www.claudiaengelsman.com/portfolio" }
+        { name: 'image', content: '../assets/ClaudiaBWKaikoura.jpg' },
+        { name: 'url', content: 'https://www.claudiaengelsman.com/portfolio' }
       ]
     })
   }
@@ -122,8 +143,9 @@ export default {
   grid-template-areas:
     'header header'
     'intro-pic intro-text'
-    'project1text project1image'
-    'project2image project2text'
+    'project0text project0image'
+    'project1image project1text'
+    'project2text project2image'
     'outro outro';
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 50%);
@@ -131,6 +153,8 @@ export default {
     grid-template-areas:
       'header header'
       'intro-text intro-text'
+      'project0image project0image'
+      'project0text project0text'
       'project1image project1image'
       'project1text project1text'
       'project2image project2image'
@@ -169,7 +193,7 @@ header {
     justify-content: center;
     align-items: center;
     h1 {
-      font-family: "Karla", "Average Sans", sans-serif;
+      font-family: 'Karla', 'Average Sans', sans-serif;
       display: inline-block;
       text-align: center;
     }
@@ -197,6 +221,9 @@ header {
   grid-area: intro-text;
 }
 .project-text {
+  &.project0 {
+    grid-area: project0text;
+  }
   &.project1 {
     grid-area: project1text;
   }
@@ -206,6 +233,9 @@ header {
 }
 .project-image {
   object-position: top left;
+  &.project0 {
+    grid-area: project0image;
+  }
   &.project1 {
     grid-area: project1image;
   }

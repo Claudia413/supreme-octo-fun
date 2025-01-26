@@ -71,7 +71,7 @@ onMounted(() => {
         name: 'description',
         content: 'Blog library with posts about Coding, women in Tech, New Zealand and emigration'
       },
-      { name: 'image', content: '../assets/ClaudiaByLaurenMcCormick2.jpg' },
+      { name: 'image', content: '../assets/ClaudiaEngelsman.jpg' },
       { name: 'url', content: 'https://www.claudiaengelsman.com/blog' }
     ]
   })
@@ -185,7 +185,9 @@ onMounted(() => {
     color: white;
     cursor: pointer;
     font-size: 16px;
-    transition: opacity 0.4s, visibility 0.4s ease-in-out;
+    transition:
+      opacity 0.4s,
+      visibility 0.4s ease-in-out;
     &.light-bg {
       color: inherit;
     }
