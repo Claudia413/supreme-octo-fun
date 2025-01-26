@@ -9,11 +9,8 @@
     <section class="intro-text text-block">
       <h3>Hello there!</h3>
       <p>
-        This is the story of a business graduate who became a paid developer in just weeks. This is
-        also the story of a girl who believes life is about helping each other and passing it on. I
-        received a lot of help during my journey to become a developer, and now that I am one, I
-        want to pay it forward and help you to get there as well! If you are curious about how I
-        reinvented myself to become a developer, this is the place to be.
+        This is the story of a business graduate who became a paid developer in just weeks. If you
+        are curious about how I reinvented myself to become a developer, this is the place to be.
       </p>
     </section>
     <section class="full-block long-bio">
@@ -41,8 +38,8 @@
       <p>
         Since that start I've completed a coding bootcamp, learned a few more coding languages on
         the job, worked on different sized projects in different teams and switched jobs. We then
-        moved to New Zealand in pursuit of more adventure and I am currently looking for a new job
-        in a country with a whole new working culture and environment.
+        moved to New Zealand in pursuit of more adventure and I've worked for a few companies here
+        with a whole new work and life culture than I was used to.
       </p>
       <p>
         Now that I’m here, with all this experience I still remember I had such a hard and confusing
@@ -53,7 +50,7 @@
       </p>
       <p>
         When I’m not creating or experimenting as a developer, you can find me outside on hikes or
-        on the couch in yoga pants with my pupper and some B&J ice cream; dreaming of adventures in
+        on the couch with some B&J ice cream with a good movie or book or dreaming up adventures in
         New Zealand. I also enjoy watercolor painting and creating art from time to time and I don’t
         make enough time for this. Hopefully one day I will master time-management and have enough
         time for all my (creative) interests and endeavours.
@@ -64,8 +61,8 @@
     <!-- </section> -->
     <TextSlider
       class="did-you-know"
-      title="10 Things you didn't know about me"
-      :numberOfSlides="10"
+      title="8 Things you didn't know about me"
+      :numberOfSlides="8"
       background-color="bg-light"
       title-color="secondary-color"
       textColor="primary-color"
@@ -78,48 +75,34 @@
       >
       <template v-slot:slide2
         >During my trip to New Zealand a few years back I fell head over heels for this beautiful
-        country and have been trying to find a way back ever since. We got a 2,5 year visa, so this
-        dreams has come true!</template
+        country and have been trying to find a way back ever since. We got our residency visa now,
+        so this dream has come true!</template
       >
       <template v-slot:slide3
         >Horses have a special place in my heart, and I hope I can keep riding until I'm old and
         wrinkly!</template
       >
       <template v-slot:slide4
-        >I love surprising my friends with elaborate set up gifts that cost me way, way too much
-        time and often way more money than expected, but when it all works out it's totally worth
-        it.</template
+        >I am a geek and I love videogames, I can literally forget time when I am playing Dragon
+        Age, Diablo or Pokemon.</template
       >
       <template v-slot:slide5
-        >I am a geek and I love videogames, I can literally forget time when I am playing Dragon Age
-        Inquisition, Diablo or Pokemon.</template
-      >
-      <template v-slot:slide6
         >My favorite geometric shape is a hexagon, can’t get enough of it, even while it is hard to
         use in webdevelopment.</template
       >
+      <template v-slot:slide6
+        >I love our robot vacuum cleaner (appropiately named Dustin) and can't wait for more tech to
+        automatically clean my house.</template
+      >
       <template v-slot:slide7
-        >Nailbiting has been a problem since I got my first teeth. I’m working on it. For about 26
-        years in a row now.</template
-      >
-      <template v-slot:slide8
-        >Also, not a pro in cleaning my house, I just don’t get the point of dusting when new dust
-        is arriving as soon as I dust it off. Can't wait until tech is available to automatically
-        clean my house!</template
-      >
-      <template v-slot:slide9
         >I am a huge Harry Potter fan, books, movies, art, merch. Sorry, not sorry for my references
         on the blog.</template
       >
-      <template v-slot:slide10
+      <template v-slot:slide8
         >Coding is the closest I can get to magic, with coding I can create things from thin air,
-        and give people a wonderfull experience. I'd say I do light magic, no dark arts and making
-        people feel horrible using it.</template
+        and give people a wonderfull experience.</template
       >
     </TextSlider>
-    <!-- <section class="video-block full-block">
-			video block
-		</section> -->
   </div>
 </template>
 

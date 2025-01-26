@@ -14,7 +14,7 @@ export default {
       loadingBlogs: true,
       blogpreviews: [],
       typeOptions: {
-        strings: ['Developer', 'Adventurer', 'Geek', 'Artist', 'Mermaid', 'Immigrant', 'Explorer'],
+        strings: ['Developer', 'Adventurer', 'Geek', 'Immigrant', 'Explorer'],
         backDelay: 250,
         backSpeed: 35,
         smartBackspace: true,
@@ -37,9 +37,7 @@ export default {
           orderings: { field: 'document.first_publication_date', direction: 'desc' },
           pageSize: 4,
           fetch: ['blogpost.title', 'blogpost.blog_image'],
-          filters: [
-      prismic.filter.not('document.tags', ['TEST'])
-    ]
+          filters: [prismic.filter.not('document.tags', ['TEST'])]
         })
 
         this.blogpreviews = response.results
@@ -57,9 +55,9 @@ export default {
         {
           name: 'description',
           content:
-            'Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and art.'
+            'Claudia is a webdeveloper who writes about (moving to) New Zealand and wants to make the world a more beautiful place through building websites and experiences.'
         },
-        { name: 'image', content: '../assets/ClaudiaByLaurenMcCormick2.jpg' },
+        { name: 'image', content: '../assets/ClaudiaEngelsman.jpg' },
         { name: 'url', content: 'https://www.claudiaengelsman.com/' }
       ]
     })

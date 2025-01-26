@@ -3,9 +3,9 @@
     <div class="hex photo"></div>
     <SocialIconBar :instagram="false" :website="true" />
     <img src="../assets/Dashdecoright.png" alt="decoration scribbly" class="deco" />
-    <a href="https://www.youtube.com/@claudiaengelsman/videos" class="button mt-2"
+    <!-- <a href="https://www.youtube.com/@claudiaengelsman/videos" class="button mt-2"
       >New Zealand vlogs on Youtube</a
-    >
+    > -->
     <h3>Latest post on Coding & Tech:</h3>
     <div class="blogs">
       <div v-if="loadingBlogsTech" class="blog-post placeholder">
@@ -115,7 +115,7 @@ export default {
   flex-direction: column;
   width: 100%;
   h3 {
-    font-family: "Karla", "Average Sans", sans-serif;
+    font-family: 'Karla', 'Average Sans', sans-serif;
     font-size: 18px;
     line-height: 36px;
     text-align: center;
@@ -129,7 +129,7 @@ export default {
     height: 150px;
     -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-    background-image: url('../assets/ClaudiaByLaurenMcCormick.jpg');
+    background-image: url('../assets/ClaudiaEngelsman.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
