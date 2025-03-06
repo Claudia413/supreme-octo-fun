@@ -49,6 +49,7 @@ export default {
     </div>
     <div class="content">
       <section class="intro-block text-block">
+        <div class="background"></div>
         <div class="intro-content">
           <img src="../assets/ClaudiaEngelsman.jpg" alt="Claudia Engelsman" class="intro-image" />
           <div>
@@ -66,6 +67,7 @@ export default {
     </div>
     <aside>
       <section class="list-block text-block">
+        <div class="background"></div>
         <h2>Q1 2025</h2>
         <p>A brief overview of what I am up to</p>
         <div class="list-split">
@@ -118,11 +120,12 @@ export default {
         @mouseenter="hover = true"
         @mouseleave="hover = false"
       >
-        <div>
+        <div class="background"></div>
+        <div class="content">
           <h2>Where?</h2>
           <p>Where am I now?</p>
         </div>
-        <div class="stamp-border">
+        <div class="stamp-border content">
           <div class="mapcontainer">
             <SouthIsland
               state="canterbury"
@@ -173,10 +176,12 @@ export default {
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
 
-  background-color: #edebf7;
+  background-color: #38360f;
   opacity: 1;
-  background-image: radial-gradient(#324344 0.5px, #edebf7 0.5px);
-  background-size: 18px 18px;
+  background-image: linear-gradient(#6d7763 1px, transparent 1px),
+    linear-gradient(to right, #6d7763 1px, #3e4114 1px);
+  background-size: 28px 28px;
+
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -194,6 +199,9 @@ export default {
 .menubar {
   height: 80px;
   grid-column: 1 / 3;
+  .button {
+    background-color: #a28657;
+  }
   @media only screen and (max-width: 768px) {
     display: flex;
     grid-column: 1 / 2;
@@ -203,7 +211,7 @@ export default {
       flex-grow: 1;
       text-align: center;
       justify-content: center;
-      background-color: #2b2b2b;
+      background-color: #9b832e;
     }
   }
 }
@@ -212,17 +220,37 @@ export default {
   justify-self: center;
 }
 .intro-block {
-  border-radius: 18px;
-  background-color: $saffron;
   container-type: inline-size;
   container-name: blockwithimage;
   max-width: 800px;
+  position: relative;
+  background-color: #a28326;
+}
+
+.background {
+  background-image: url('../assets/PublicDomainClaudeMonetWaterlillies.jpg');
+  background-blend-mode: overlay;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.25;
+  z-index: 1;
 }
 
 .intro-content {
+  z-index: 300;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  position: relative;
+  p {
+    color: $platinum;
+  }
 }
 
 .intro-image {
@@ -290,15 +318,22 @@ export default {
 }
 
 .list-block {
-  border-radius: 18px;
-  background-color: #e5bbfe;
+  position: relative;
+  background-color: #6a6719;
+  .background {
+    background-position: 50% 50%;
+  }
   h2 {
-    color: $forestblack;
+    color: #f4976d;
+  }
+  p {
+    color: white;
   }
   .list-split {
     display: flex;
     justify-content: space-around;
     ul {
+      color: white;
       list-style: none;
       margin-block-start: 0;
       margin-inline-start: 0;
@@ -322,7 +357,8 @@ export default {
 .where {
   display: flex;
   justify-content: space-between;
-  background-color: #d4edbf;
+  background-color: #a28657;
+  position: relative;
   width: 60%;
   &:hover {
     .fa-map-pin {
@@ -336,6 +372,10 @@ export default {
         right: 54px;
       }
     }
+  }
+  .content {
+    position: relative;
+    z-index: 300;
   }
 }
 .fa-map-pin {
